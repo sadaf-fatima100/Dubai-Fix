@@ -692,6 +692,40 @@ document.addEventListener('DOMContentLoaded', () => {
     setSplitPosition(50);
   }
 
+  // Auto-inject Uiverse animated expanding bubble circles for all red action buttons
+  function initRedButtonBubbleAnimation() {
+    const redBtnSelector = [
+      '.btn-hero-primary',
+      '.btn-schedule',
+      '.nav-menu-schedule-btn',
+      '.btn-about-primary',
+      '.cta-primary-btn',
+      '.cta-showcase-btn',
+      '.btn-kitchen-quote',
+      '.btn-simple-cta-call',
+      '.footer-book-btn',
+      '.modal-submit-btn',
+      '.btn-get-started',
+      '.btn-faq-call',
+      '.btn-primary',
+      '.btn-cta-navy',
+      '.btn-urgent-book'
+    ].join(',');
+
+    document.querySelectorAll(redBtnSelector).forEach(btn => {
+      if (!btn.querySelector('.btn-circle')) {
+        for (let i = 1; i <= 5; i++) {
+          const circle = document.createElement('span');
+          circle.className = `btn-circle btn-circle-${i}`;
+          circle.setAttribute('aria-hidden', 'true');
+          btn.prepend(circle);
+        }
+      }
+    });
+  }
+
+  initRedButtonBubbleAnimation();
+
   window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
   window.addEventListener('resize', updateNavbarOnScroll, { passive: true });
   updateNavbarOnScroll();

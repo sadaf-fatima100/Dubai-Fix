@@ -936,6 +936,89 @@ button[id*="phone"] svg {
   position: relative;
   z-index: 2;
 }
+
+/* ==========================================================================
+   Multi-Bubble Expanding Liquid Hover Animation (KINGFRESS / Uiverse Style)
+   Customized for Dubai Fix Appliances signature Crimson & Coral Theme
+   ========================================================================== */
+.btn-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1 !important;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.btn-circle-1 {
+  transform: translate(-3.3em, -4em);
+  background-color: #e02a24;
+}
+
+.btn-circle-2 {
+  transform: translate(-6em, 1.3em);
+  background-color: #d31815;
+}
+
+.btn-circle-3 {
+  transform: translate(-0.2em, 1.8em);
+  background-color: #ff3b30;
+}
+
+.btn-circle-4 {
+  transform: translate(3.5em, 1.4em);
+  background-color: #c51210;
+}
+
+.btn-circle-5 {
+  transform: translate(3.5em, -3.8em);
+  background-color: #e02a24;
+}
+
+/* On Hover: Circles zoom in from all 5 angles and expand 5.8x to flood the button */
+.btn-primary:hover .btn-circle,
+.btn-schedule:hover .btn-circle,
+.nav-menu-schedule-btn:hover .btn-circle,
+.btn-hero-primary:hover .btn-circle,
+.btn-about-primary:hover .btn-circle,
+.btn-prefooter-primary:hover .btn-circle,
+.btn-emergency-primary:hover .btn-circle,
+.btn-cta-navy:hover .btn-circle,
+.btn-urgent-book:hover .btn-circle,
+.cta-primary-btn:hover .btn-circle,
+.footer-book-btn:hover .btn-circle,
+.btn-dispatch-call:hover .btn-circle,
+.btn-dispatch-phone:hover .btn-circle,
+.btn-contact-submit:hover .btn-circle,
+.modal-submit-btn:hover .btn-circle,
+.sidebar-btn-book:hover .btn-circle,
+.empty-cta-btn:hover .btn-circle,
+.btn-get-started:hover .btn-circle,
+.why-btn-pill:hover .btn-circle,
+.btn-cta-banner-primary:hover .btn-circle,
+.mcard-featured-btn:hover .btn-circle,
+.btn-filter-browse:hover .btn-circle,
+.btn-read-article:hover .btn-circle,
+.btn-faq-call:hover .btn-circle,
+.btn-kitchen-quote:hover .btn-circle,
+.btn-simple-cta-call:hover .btn-circle,
+.article-cta-call-btn:hover .btn-circle,
+.sidebar-btn-call:hover .btn-circle {
+  transform: translate(-50%, -50%) scale(5.8);
+  transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Theme Liquid Palette (Signature Coral Red Hues) */
+body.dark-theme .btn-circle-1 { background-color: #ff5a52; }
+body.dark-theme .btn-circle-2 { background-color: #e02a24; }
+body.dark-theme .btn-circle-3 { background-color: #ff6b63; }
+body.dark-theme .btn-circle-4 { background-color: #ff3b30; }
+body.dark-theme .btn-circle-5 { background-color: #ff5a52; }
+
 @keyframes synchronizedButtonShine {
   0% {
     left: -100%;
@@ -1173,10 +1256,7 @@ button[id*="phone"] svg {
   border-radius: 9999px;
   background: linear-gradient(180deg, #ff3b30 0%, #e02a24 35%, #c51210 70%, #a30f0d 100%);
   border: 1px solid rgba(255, 255, 255, 0.32);
-  box-shadow:
-    0 12px 28px rgba(197, 18, 16, 0.45),
-    0 4px 14px rgba(224, 42, 36, 0.28),
-    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  box-shadow: none;
   z-index: 20;
   pointer-events: none;
 }
@@ -3084,24 +3164,24 @@ body.dark-theme .why-card-content .why-card-desc {
 } /* Bottom CTA Banner (ApexFix High-Contrast Dispatch Callout) */
 .areas-cta-banner {
   background: 
-    radial-gradient(120% 85% at 20% 0%, rgba(197, 18, 16, 0.28) 0%, transparent 65%),
-    linear-gradient(145deg, #192023 0%, #222b30 50%, #13181a 100%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 90, 82, 0.35) 0%, transparent 65%),
+    linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.26);
   border-radius: 18px;
   padding: 22px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  box-shadow: 0 16px 36px rgba(25, 32, 35, 0.4), 0 0 20px rgba(197, 18, 16, 0.15);
+  box-shadow: 0 16px 36px rgba(197, 18, 16, 0.38), 0 0 20px rgba(224, 42, 36, 0.22);
   position: relative;
   overflow: hidden;
   z-index: 1;
   transition: all 0.35s ease;
 }
 .areas-cta-banner:hover {
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.55), 0 0 28px rgba(197, 18, 16, 0.25);
-  border-color: rgba(197, 18, 16, 0.35);
+  box-shadow: 0 20px 44px rgba(197, 18, 16, 0.48), 0 0 28px rgba(224, 42, 36, 0.32);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 .areas-cta-banner::before {
   content: "";
@@ -3358,18 +3438,18 @@ body.dark-theme .why-card-content .why-card-desc {
 } /* Left Featured Card */
 .process-featured-card {
   background: 
-    radial-gradient(120% 85% at 20% 0%, rgba(197, 18, 16, 0.28) 0%, transparent 65%),
-    linear-gradient(145deg, #192023 0%, #222b30 50%, #13181a 100%);
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 90, 82, 0.35) 0%, transparent 65%),
+    linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
   border-radius: 24px;
   padding: 28px 26px 24px 26px;
   color: #ffffff;
-  box-shadow: 0 18px 42px rgba(25, 32, 35, 0.45), 0 0 24px rgba(197, 18, 16, 0.18);
+  box-shadow: 0 18px 42px rgba(197, 18, 16, 0.42), 0 0 24px rgba(224, 42, 36, 0.22);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.26);
   transition:
     transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
     background 0.35s ease,
@@ -3386,7 +3466,7 @@ body.dark-theme .why-card-content .why-card-desc {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 0) 70%
   );
   pointer-events: none;
@@ -3394,10 +3474,10 @@ body.dark-theme .why-card-content .why-card-desc {
 .process-featured-card:hover {
   transform: translateY(-3px);
   background:
-    radial-gradient(120% 85% at 20% 0%, rgba(224, 42, 36, 0.35) 0%, transparent 65%),
-    linear-gradient(145deg, #20282c 0%, #293439 50%, #171d1f 100%);
-  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.55), 0 0 32px rgba(197, 18, 16, 0.28);
-  border-color: rgba(197, 18, 16, 0.45);
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 120, 115, 0.45) 0%, transparent 65%),
+    linear-gradient(135deg, #e02a24 0%, #d31815 50%, #b30f0d 100%);
+  box-shadow: 0 26px 56px rgba(197, 18, 16, 0.52), 0 0 32px rgba(224, 42, 36, 0.35);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 .process-featured-inner {
   display: flex;
@@ -3797,10 +3877,7 @@ body.dark-theme .why-card-content .why-card-desc {
   border-radius: 9999px;
   background: linear-gradient(180deg, #ff3b30 0%, #e02a24 35%, #c51210 70%, #a30f0d 100%);
   border: 1px solid rgba(255, 255, 255, 0.32);
-  box-shadow:
-    0 12px 28px rgba(197, 18, 16, 0.45),
-    0 4px 14px rgba(224, 42, 36, 0.28),
-    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  box-shadow: none;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -6291,16 +6368,15 @@ body.dark-theme .prefooter-cta-overlay {
   border-radius: 2px;
   margin-top: 8px;
   margin-bottom: 22px;
-  box-shadow: 0 0 8px rgba(197, 18, 16, 0.35);
+  box-shadow: none;
   transition:
     width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    background 0.3s ease;
 }
 .footer-col:hover .footer-col-accent-bar {
   width: 50px;
   background: #ff5a52;
-  box-shadow: 0 0 12px rgba(255, 90, 82, 0.6);
+  box-shadow: none;
 } /* Links Lists */
 .footer-links-list {
   list-style: none;
@@ -9467,17 +9543,17 @@ body.dark-theme .nav-menu-cta-wrap {
 }
 body.dark-theme .process-featured-card {
   background:
-    radial-gradient(120% 85% at 20% 0%, rgba(224, 42, 36, 0.2) 0%, transparent 65%),
-    linear-gradient(150deg, #171c1f 0%, #101416 100%);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6);
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 90, 82, 0.32) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(211, 24, 21, 0.95) 0%, rgba(197, 18, 16, 0.92) 50%, rgba(158, 14, 12, 0.96) 100%);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6), 0 0 24px rgba(197, 18, 16, 0.32);
 }
 body.dark-theme .process-featured-card:hover {
   background:
-    radial-gradient(120% 85% at 20% 0%, rgba(255, 90, 82, 0.28) 0%, transparent 65%),
-    linear-gradient(150deg, #1c2226 0%, #14191c 100%);
-  border-color: rgba(224, 42, 36, 0.5);
-  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.75), 0 0 24px rgba(224, 42, 36, 0.22);
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 120, 115, 0.4) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(224, 42, 36, 0.98) 0%, rgba(211, 24, 21, 0.95) 50%, rgba(163, 15, 13, 0.98) 100%);
+  border-color: rgba(255, 90, 82, 0.7);
+  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.75), 0 0 32px rgba(224, 42, 36, 0.45);
 }
 body.dark-theme .btn-process-action {
   background-color: #ffffff;
@@ -10323,17 +10399,17 @@ body.dark-theme .empty-cta-btn:hover {
 }
 body.dark-theme .areas-cta-banner {
   background:
-    radial-gradient(120% 85% at 20% 0%, rgba(197, 18, 16, 0.28) 0%, transparent 65%),
-    linear-gradient(150deg, #171c1f 0%, #121618 100%);
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 90, 82, 0.32) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(211, 24, 21, 0.95) 0%, rgba(197, 18, 16, 0.92) 50%, rgba(158, 14, 12, 0.96) 100%);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 24px rgba(197, 18, 16, 0.32);
 }
 body.dark-theme .areas-cta-banner:hover {
   background:
-    radial-gradient(120% 85% at 20% 0%, rgba(224, 42, 36, 0.38) 0%, transparent 65%),
-    linear-gradient(150deg, #1f2529 0%, #151a1d 100%);
-  border-color: rgba(255, 90, 82, 0.45);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 20px rgba(197, 18, 16, 0.25);
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 120, 115, 0.4) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(224, 42, 36, 0.98) 0%, rgba(211, 24, 21, 0.95) 50%, rgba(163, 15, 13, 0.98) 100%);
+  border-color: rgba(255, 90, 82, 0.7);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 32px rgba(224, 42, 36, 0.45);
 }
 body.dark-theme .areas-cta-banner .btn-dispatch-call {
   background: #ffffff !important;
@@ -11283,10 +11359,7 @@ body.dark-theme .hub-core-body {
   border-radius: 9999px;
   background: linear-gradient(180deg, #ff3b30 0%, #e02a24 35%, #c51210 70%, #a30f0d 100%);
   border: 1px solid rgba(255, 255, 255, 0.32);
-  box-shadow:
-    0 12px 28px rgba(197, 18, 16, 0.45),
-    0 4px 14px rgba(224, 42, 36, 0.28),
-    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  box-shadow: none;
   pointer-events: none;
 }
 
@@ -11987,10 +12060,7 @@ body.dark-theme .emergency-pillar-item:hover {
   border-radius: 9999px;
   background: linear-gradient(180deg, #ff3b30 0%, #e02a24 35%, #c51210 70%, #a30f0d 100%);
   border: 1px solid rgba(255, 255, 255, 0.32);
-  box-shadow:
-    0 12px 28px rgba(197, 18, 16, 0.45),
-    0 4px 14px rgba(224, 42, 36, 0.28),
-    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  box-shadow: none;
   pointer-events: none;
 }
 .cta-showcase-title {
@@ -20814,10 +20884,7 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
   border-radius: 9999px;
   background: linear-gradient(180deg, #1d4ed8 0%, #143877 32%, #0f2b5c 70%, #1e40af 100%);
   border: 1px solid rgba(255, 255, 255, 0.24);
-  box-shadow:
-    0 10px 26px rgba(15, 43, 92, 0.38),
-    0 4px 12px rgba(6, 18, 40, 0.28),
-    inset 0 1px 1px rgba(255, 255, 255, 0.38);
+  box-shadow: none;
   position: relative;
   z-index: 5;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -20825,10 +20892,7 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
 
 .wm-perf-media-wrap:hover .wm-perf-left-accent-line {
   background: var(--btn-gradient-hover);
-  box-shadow:
-    0 14px 32px rgba(15, 43, 92, 0.48),
-    0 6px 16px rgba(37, 99, 235, 0.32),
-    inset 0 1px 1px rgba(255, 255, 255, 0.55);
+  box-shadow: none;
 }
 
 .wm-perf-img-frame {
@@ -21613,119 +21677,55 @@ body.dark-theme .wm-feature-desc {
 .float-call-btn {
   background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
-  box-shadow:
-    0 10px 26px rgba(197, 18, 16, 0.48),
-    0 0 18px rgba(224, 42, 36, 0.35),
-    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  box-shadow: none;
 }
 
 .float-call-btn:hover {
   background: linear-gradient(135deg, #e02a24 0%, #d31815 50%, #b30f0d 100%);
   transform: translateY(-3px) scale(1.06);
-  box-shadow:
-    0 14px 32px rgba(197, 18, 16, 0.58),
-    0 0 24px rgba(224, 42, 36, 0.52),
-    inset 0 1px 1px rgba(255, 255, 255, 0.55);
+  box-shadow: none;
   color: #ffffff;
 }
 
 body.dark-theme .float-call-btn {
   border-color: rgba(255, 90, 82, 0.4);
-  box-shadow:
-    0 10px 28px rgba(0, 0, 0, 0.65),
-    0 0 20px rgba(197, 18, 16, 0.38),
-    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  box-shadow: none;
 }
 
 body.dark-theme .float-call-btn:hover {
   border-color: rgba(255, 90, 82, 0.65);
-  box-shadow:
-    0 14px 34px rgba(0, 0, 0, 0.8),
-    0 0 26px rgba(224, 42, 36, 0.55),
-    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  box-shadow: none;
 }
 
 /* --- 2. WhatsApp Chat Floating Button (Signature Emerald Green Gradient) --- */
 .float-whatsapp-btn {
   background: linear-gradient(135deg, #10b981 0%, #059669 55%, #047857 100%);
   border: 1.5px solid rgba(255, 255, 255, 0.32);
-  box-shadow:
-    0 10px 26px rgba(5, 150, 105, 0.48),
-    0 0 18px rgba(16, 185, 129, 0.38),
-    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  box-shadow: none;
 }
 
 .float-whatsapp-btn:hover {
   background: linear-gradient(135deg, #34d399 0%, #059669 50%, #065f46 100%);
   transform: translateY(-4px) scale(1.07);
-  box-shadow:
-    0 14px 32px rgba(5, 150, 105, 0.62),
-    0 0 24px rgba(16, 185, 129, 0.6),
-    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  box-shadow: none;
   color: #ffffff;
+}
+
+body.dark-theme .float-whatsapp-btn {
+  box-shadow: none;
+}
+
+body.dark-theme .float-whatsapp-btn:hover {
+  box-shadow: none;
 }
 
 .float-contact-btn:active {
   transform: translateY(-1px) scale(0.97);
 }
 
-/* --- Concentric Sonar / Radar Pulse Rings --- */
+/* --- Concentric Sonar / Radar Pulse Rings Hidden (Clean look with no messy colored aura) --- */
 .float-sonar-ring {
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.float-call-btn .float-sonar-ring {
-  border: 1.8px solid rgba(224, 42, 36, 0.65);
-  background: radial-gradient(circle, rgba(197, 18, 16, 0.2) 0%, transparent 70%);
-  animation: floatSonarRed 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-}
-
-.float-call-btn .float-sonar-ring.ring-delay {
-  animation-delay: 1.4s;
-}
-
-.float-whatsapp-btn .float-sonar-ring {
-  border: 1.8px solid rgba(16, 185, 129, 0.7);
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
-  animation: floatSonarGreen 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-}
-
-.float-whatsapp-btn .float-sonar-ring.ring-delay {
-  animation-delay: 1.3s;
-}
-
-@keyframes floatSonarRed {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.85;
-  }
-  75% {
-    transform: scale(1.52);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.52);
-    opacity: 0;
-  }
-}
-
-@keyframes floatSonarGreen {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.9;
-  }
-  75% {
-    transform: scale(1.56);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.56);
-    opacity: 0;
-  }
+  display: none !important;
 }
 
 /* --- Icon Animations (Phone Ring Wiggle & WhatsApp Chatty Pop) --- */
@@ -21807,13 +21807,13 @@ body.dark-theme .float-call-btn:hover {
   border-radius: 50%;
   background: #22c55e;
   border: 2.2px solid #ffffff;
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
+  box-shadow: none;
   z-index: 3;
 }
 
 .float-call-btn .float-online-dot {
   background: #ff5a52;
-  box-shadow: 0 0 8px rgba(255, 90, 82, 0.9);
+  box-shadow: none;
 }
 
 body.dark-theme .float-online-dot {
@@ -21848,8 +21848,7 @@ body.dark-theme .float-online-dot {
   background: linear-gradient(135deg, rgba(25, 32, 35, 0.96) 0%, rgba(35, 42, 46, 0.95) 50%, rgba(19, 24, 27, 0.97) 100%);
   border: 1.5px solid rgba(255, 255, 255, 0.26);
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.42),
-    0 0 18px rgba(197, 18, 16, 0.22),
+    0 10px 26px rgba(0, 0, 0, 0.35),
     inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
@@ -21887,8 +21886,7 @@ body.dark-theme .float-online-dot {
   background: linear-gradient(135deg, rgba(6, 78, 59, 0.96) 0%, rgba(5, 150, 105, 0.95) 55%, rgba(4, 120, 87, 0.97) 100%);
   border: 1.5px solid rgba(255, 255, 255, 0.28);
   box-shadow:
-    0 12px 30px rgba(5, 150, 105, 0.42),
-    0 0 18px rgba(16, 185, 129, 0.22),
+    0 10px 26px rgba(0, 0, 0, 0.35),
     inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
@@ -21930,9 +21928,7 @@ body.dark-theme .float-online-dot {
 .float-call-btn:hover .float-btn-tooltip {
   background: linear-gradient(135deg, rgba(35, 42, 46, 0.98) 0%, rgba(45, 52, 56, 0.96) 50%, rgba(25, 32, 35, 0.98) 100%);
   border-color: rgba(255, 90, 82, 0.42);
-  box-shadow:
-    0 14px 34px rgba(0, 0, 0, 0.52),
-    0 0 24px rgba(197, 18, 16, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 .float-call-btn:hover .float-btn-tooltip::after {
@@ -21943,9 +21939,7 @@ body.dark-theme .float-online-dot {
 .float-whatsapp-btn:hover .float-btn-tooltip {
   background: linear-gradient(135deg, rgba(5, 150, 105, 0.98) 0%, rgba(16, 185, 129, 0.96) 50%, rgba(6, 95, 70, 0.98) 100%);
   border-color: rgba(255, 255, 255, 0.45);
-  box-shadow:
-    0 14px 34px rgba(5, 150, 105, 0.52),
-    0 0 24px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 .float-whatsapp-btn:hover .float-btn-tooltip::after {
@@ -21976,13 +21970,13 @@ body.dark-theme .float-online-dot {
   height: 6px;
   border-radius: 50%;
   background: #ff5a52;
-  box-shadow: 0 0 8px #ff5a52;
+  box-shadow: none;
   flex-shrink: 0;
 }
 
 .float-whatsapp-btn .float-tooltip-dot {
   background: #34d399;
-  box-shadow: 0 0 8px #34d399;
+  box-shadow: none;
 }
 
 /* Main Text / Number */
@@ -21998,7 +21992,6 @@ body.dark-theme .float-online-dot {
 
 .float-contact-btn:hover .float-tooltip-title {
   color: #ffffff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 /* --- Dark Theme Harmonization --- */
@@ -22007,7 +22000,6 @@ body.dark-theme .float-call-btn .float-btn-tooltip {
   border: 1.5px solid rgba(255, 90, 82, 0.38);
   box-shadow:
     0 14px 34px rgba(0, 0, 0, 0.72),
-    0 0 22px rgba(197, 18, 16, 0.26),
     inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
@@ -22018,9 +22010,7 @@ body.dark-theme .float-call-btn .float-btn-tooltip::after {
 body.dark-theme .float-call-btn:hover .float-btn-tooltip {
   background: linear-gradient(135deg, rgba(31, 37, 41, 0.98) 0%, rgba(39, 46, 50, 0.97) 50%, rgba(23, 28, 31, 0.98) 100%);
   border-color: rgba(255, 90, 82, 0.6);
-  box-shadow:
-    0 16px 38px rgba(0, 0, 0, 0.8),
-    0 0 28px rgba(197, 18, 16, 0.38);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.8);
 }
 
 body.dark-theme .float-call-btn:hover .float-btn-tooltip::after {
@@ -22036,7 +22026,6 @@ body.dark-theme .float-whatsapp-btn .float-btn-tooltip {
   border: 1.5px solid rgba(52, 211, 153, 0.38);
   box-shadow:
     0 14px 34px rgba(0, 0, 0, 0.72),
-    0 0 22px rgba(16, 185, 129, 0.26),
     inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
@@ -22047,9 +22036,7 @@ body.dark-theme .float-whatsapp-btn .float-btn-tooltip::after {
 body.dark-theme .float-whatsapp-btn:hover .float-btn-tooltip {
   background: linear-gradient(135deg, rgba(6, 78, 59, 0.98) 0%, rgba(16, 185, 129, 0.97) 50%, rgba(4, 46, 35, 0.98) 100%);
   border-color: rgba(52, 211, 153, 0.6);
-  box-shadow:
-    0 16px 38px rgba(0, 0, 0, 0.8),
-    0 0 28px rgba(16, 185, 129, 0.38);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.8);
 }
 
 body.dark-theme .float-whatsapp-btn:hover .float-btn-tooltip::after {
