@@ -611,6 +611,7 @@ body.dark-theme .dropdown-divider {
   text-decoration: none;
   white-space: nowrap;
   animation: primaryButtonPulseLoop 3.2s infinite ease-in-out;
+  flex-shrink: 0;
 }
 .btn-hero-primary:hover,
 .btn-get-started:hover {
@@ -644,6 +645,7 @@ body.dark-theme .dropdown-divider {
   text-decoration: none;
   white-space: nowrap;
   animation: callButtonGreenPulseLoop 3.2s infinite ease-in-out;
+  flex-shrink: 0;
 }
 .btn-hero-secondary:hover {
   color: #ffffff !important;
@@ -980,13 +982,13 @@ button[id*="phone"] svg {
 /* Base: circles start positioned at their IDLE offset (outside button), opacity 1.
    The transform on each .btn-circle-N places them safely off-canvas. */
 .btn-circle {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  pointer-events: none;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
   z-index: 2 !important;
   background-color: #171717;
   transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1934,6 +1936,7 @@ a.service-card-item:focus,
   height: 450px;
   border-radius: 22px;
   overflow: hidden;
+  border: 2.5px solid var(--brand-accent, #c51210);
   box-shadow:
     0 16px 36px rgba(10, 16, 28, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.04);
@@ -1941,7 +1944,8 @@ a.service-card-item:focus,
   cursor: pointer;
   transition:
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1956,6 +1960,7 @@ a.service-card-item *,
 .service-card-item:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 50px rgba(10, 16, 28, 0.22);
+  border-color: var(--brand-accent-hover, #a30f0d);
 }
 .service-card-bg-img {
   position: absolute;
@@ -2308,30 +2313,30 @@ a.service-card-item *,
 }
 
 /* Ensure button label text & icons stay sharp above the shimmer overlay */
-.service-card-btn > *,
-.pf-action-btn > *,
-.expertise-circle-arrow-btn > *,
-.mcard-arrow-btn > *,
-.btn-map-direction > *,
-.btn-hero-secondary > *,
-.btn-about-secondary > *,
-.btn-cta-green > *,
-.btn-prefooter-call > *,
-.btn-emergency-call > *,
-.btn-urgent-call > *,
-.sidebar-btn-call > *,
-.btn-faq-talk > *,
-.btn-dispatch-wa > *,
-.btn-dispatch-whatsapp > *,
-.btn-lb-whatsapp > *,
-.btn-lb-call > *,
-.btn-cta-banner-call > *,
-.process-phone-link > *,
-.standards-call-link > *,
-.btn-standards-gold > *,
-.btn-bento-gold > * {
+.service-card-btn > *:not(.btn-circle),
+.pf-action-btn > *:not(.btn-circle),
+.expertise-circle-arrow-btn > *:not(.btn-circle),
+.mcard-arrow-btn > *:not(.btn-circle),
+.btn-map-direction > *:not(.btn-circle),
+.btn-hero-secondary > *:not(.btn-circle),
+.btn-about-secondary > *:not(.btn-circle),
+.btn-cta-green > *:not(.btn-circle),
+.btn-prefooter-call > *:not(.btn-circle),
+.btn-emergency-call > *:not(.btn-circle),
+.btn-urgent-call > *:not(.btn-circle),
+.sidebar-btn-call > *:not(.btn-circle),
+.btn-faq-talk > *:not(.btn-circle),
+.btn-dispatch-wa > *:not(.btn-circle),
+.btn-dispatch-whatsapp > *:not(.btn-circle),
+.btn-lb-whatsapp > *:not(.btn-circle),
+.btn-lb-call > *:not(.btn-circle),
+.btn-cta-banner-call > *:not(.btn-circle),
+.process-phone-link > *:not(.btn-circle),
+.standards-call-link > *:not(.btn-circle),
+.btn-standards-gold > *:not(.btn-circle),
+.btn-bento-gold > *:not(.btn-circle) {
   position: relative;
-  z-index: 2;
+  z-index: 3 !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5810,6 +5815,33 @@ body.dark-theme .prefooter-cta-content::before {
   box-shadow: none !important;
 }
 
+/* Master Enforcement: All Vertical Brand Accent Lines (Zero Glow / Zero Blurred Shadow) */
+.hero-right-accent-line,
+.about-left-accent-line,
+.faq-right-accent-line,
+.cta-left-accent-line,
+.prefooter-cta-content::before,
+.service-hero-copy-card .hero-copy-main::before,
+.wm-perf-left-accent-line,
+.why-right-accent-line {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+body.dark-theme .hero-right-accent-line,
+body.dark-theme .about-left-accent-line,
+body.dark-theme .faq-right-accent-line,
+body.dark-theme .cta-left-accent-line,
+body.dark-theme .prefooter-cta-content::before,
+body.dark-theme .service-hero-copy-card .hero-copy-main::before,
+body.dark-theme .wm-perf-left-accent-line,
+body.dark-theme .why-right-accent-line {
+  background: linear-gradient(180deg, #ff5a52 0%, #e02a24 40%, #c51210 75%, #9e0e0c 100%) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
 /* Top-Right Overlapping Rosette Ribbon Seal Badge (Jet Black Luxury Theme) */
 .prefooter-seal-badge {
   position: absolute;
@@ -5822,7 +5854,7 @@ body.dark-theme .prefooter-cta-content::before {
 }
 
 body.dark-theme .prefooter-seal-badge {
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.8));
 }
 
 .prefooter-simple-card:hover .prefooter-seal-badge {
@@ -9523,6 +9555,9 @@ body.dark-theme .service-card-item {
 body.dark-theme a.service-card-item *,
 body.dark-theme .service-card-item * {
   text-decoration: none !important;
+}
+body.dark-theme .service-card-item:hover {
+  border-color: #ff5a52;
 }
 body.dark-theme .service-card-content {
   background: rgba(23, 28, 31, 0.94);
@@ -13281,21 +13316,15 @@ body.dark-theme .service-hero-copy-card {
   left: 0;
   width: 15px;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #1d4ed8 0%, #143877 32%, #0f2b5c 70%, #1e40af 100%);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  box-shadow:
-    0 10px 26px rgba(15, 43, 92, 0.38),
-    0 4px 12px rgba(6, 18, 40, 0.28),
-    inset 0 1px 1px rgba(255, 255, 255, 0.38);
+  background: linear-gradient(180deg, #ff3b30 0%, #e02a24 35%, #c51210 70%, #a30f0d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: none !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-hero-copy-card:hover .hero-copy-main::before {
   background: var(--btn-gradient-hover);
-  box-shadow:
-    0 14px 32px rgba(15, 43, 92, 0.48),
-    0 6px 16px rgba(37, 99, 235, 0.32),
-    inset 0 1px 1px rgba(255, 255, 255, 0.55);
+  box-shadow: none !important;
 }
 
 /* 1. Badge Tag: Exact 14px Gap to Headline */
@@ -21133,9 +21162,9 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
   height: 64%;
   align-self: flex-end;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #1d4ed8 0%, #143877 32%, #0f2b5c 70%, #1e40af 100%);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  box-shadow: none;
+  background: linear-gradient(180deg, #ff3b30 0%, #e02a24 35%, #c51210 70%, #a30f0d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: none !important;
   position: relative;
   z-index: 5;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -21143,7 +21172,7 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
 
 .wm-perf-media-wrap:hover .wm-perf-left-accent-line {
   background: var(--btn-gradient-hover);
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 .wm-perf-img-frame {
