@@ -938,52 +938,61 @@ button[id*="phone"] svg {
 /* ==========================================================================
    Multi-Bubble Expanding Liquid Hover Animation (KINGFRESS / Uiverse Style)
    Customized for Dubai Fix Appliances signature Crimson Action Buttons
-   Default (Idle): opacity 0 + extended coordinates (100% clean red, zero black specks)
-   Hover: Expands 16x from all 5 angles to flood 100% edge-to-edge with solid black
+   Default (Idle): Circles parked OUTSIDE button boundary (verified safe coordinates)
+                   so ZERO black visible on button before hover.
+   Hover: Circles swoop in from all 5 corners → expand 8.5x → full liquid fill.
    ========================================================================== */
+
+/* Base: circles start positioned at their IDLE offset (outside button), opacity 1.
+   The transform on each .btn-circle-N places them safely off-canvas. */
 .btn-circle {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 2 !important;
   background-color: #171717;
-  opacity: 0;
-  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
-  will-change: transform, opacity;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
-/* Off-canvas idle positions: strictly pushed far outside the button boundary with scale(0.5) */
+/* Idle positions — verified to be OUTSIDE the button at 14px font-size.
+   Minimum clearance: 11px. No pixel of any circle touches the button. */
 .btn-circle-1 {
-  transform: translate(-7.5em, -6em) scale(0.5);
+  /* Top-left: Y = -56px, circle bottom = -56+16 = -40px. Button top = -22px. Clear by 18px. */
+  transform: translate(-3.6em, -4.0em);
   background-color: #171717;
 }
 
 .btn-circle-2 {
-  transform: translate(-12.5em, 1.5em) scale(0.5);
+  /* Bottom-left: Y = +49px, circle top = 49-16 = +33px. Button bottom = +22px. Clear by 11px. */
+  transform: translate(-6.5em, 3.5em);
   background-color: #171717;
 }
 
 .btn-circle-3 {
-  transform: translate(-0.5em, 6.5em) scale(0.5);
+  /* Bottom-center: Y = +49px, circle top = 33px. Button bottom = +22px. Clear by 11px. */
+  transform: translate(-0.2em, 3.5em);
   background-color: #171717;
 }
 
 .btn-circle-4 {
-  transform: translate(11em, 6em) scale(0.5);
+  /* Bottom-right: Y = +49px, circle top = 33px. Button bottom = +22px. Clear by 11px. */
+  transform: translate(5.0em, 3.5em);
   background-color: #171717;
 }
 
 .btn-circle-5 {
-  transform: translate(10em, -6em) scale(0.5);
+  /* Top-right: Y = -56px, circle bottom = -40px. Button top = -22px. Clear by 18px. */
+  transform: translate(4.0em, -4.0em);
   background-color: #171717;
 }
 
-/* On Hover: Circles zoom in from all 5 angles and expand 16x (576px diameter)
-   completely covering the rounded pill caps so ZERO red is left exposed */
+/* On Hover: All circles sweep to center and expand to 8.5×.
+   Slow easing: gentle cubic-bezier with long duration for smooth flowing liquid fill. */
 .btn-primary:hover .btn-circle,
 .btn-schedule:hover .btn-circle,
 .nav-menu-schedule-btn:hover .btn-circle,
@@ -1013,51 +1022,55 @@ button[id*="phone"] svg {
 .btn-simple-cta-call:hover .btn-circle,
 .article-cta-call-btn:hover .btn-circle,
 .sidebar-btn-call:hover .btn-circle {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(16);
-  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+  transform: translate(-50%, -50%) scale(8.5);
+  transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Dynamic micro-timings for organic multi-bubble collision & merge */
+/* Staggered micro-timing — each circle arrives at a slightly different speed
+   for an organic liquid-collision look (not all circles merging at once) */
 .btn-primary:hover .btn-circle-1,
 .btn-schedule:hover .btn-circle-1,
 .nav-menu-schedule-btn:hover .btn-circle-1,
 .btn-hero-primary:hover .btn-circle-1,
 .btn-about-primary:hover .btn-circle-1,
 .cta-primary-btn:hover .btn-circle-1 {
-  transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+  transition: transform 1.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .btn-primary:hover .btn-circle-2,
 .btn-schedule:hover .btn-circle-2,
 .nav-menu-schedule-btn:hover .btn-circle-2,
 .btn-hero-primary:hover .btn-circle-2,
 .btn-about-primary:hover .btn-circle-2,
 .cta-primary-btn:hover .btn-circle-2 {
-  transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+  transition: transform 2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .btn-primary:hover .btn-circle-3,
 .btn-schedule:hover .btn-circle-3,
 .nav-menu-schedule-btn:hover .btn-circle-3,
 .btn-hero-primary:hover .btn-circle-3,
 .btn-about-primary:hover .btn-circle-3,
 .cta-primary-btn:hover .btn-circle-3 {
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+  transition: transform 1.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .btn-primary:hover .btn-circle-4,
 .btn-schedule:hover .btn-circle-4,
 .nav-menu-schedule-btn:hover .btn-circle-4,
 .btn-hero-primary:hover .btn-circle-4,
 .btn-about-primary:hover .btn-circle-4,
 .cta-primary-btn:hover .btn-circle-4 {
-  transition: transform 1.08s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+  transition: transform 2.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .btn-primary:hover .btn-circle-5,
 .btn-schedule:hover .btn-circle-5,
 .nav-menu-schedule-btn:hover .btn-circle-5,
 .btn-hero-primary:hover .btn-circle-5,
 .btn-about-primary:hover .btn-circle-5,
 .cta-primary-btn:hover .btn-circle-5 {
-  transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+  transition: transform 1.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Dark Theme Liquid Palette (Deep Onyx / Charcoal Black) */
@@ -1792,7 +1805,7 @@ a.service-card-item *,
   position: relative;
   z-index: 2;
   margin: 14px;
-  padding: 22px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -1806,7 +1819,7 @@ a.service-card-item *,
   flex-direction: column;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none !important;
-  overflow: hidden;
+  overflow: visible;
 }
 .service-card-item:hover .service-card-content {
   background: #ffffff;
@@ -1864,85 +1877,87 @@ a.service-card-item *,
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-decoration: none !important;
-} /* Signature High-Contrast Deep Charcoal / Black Strip ("Black Pati" matching Reference media_1791284151099.png) */
+} /* High-Converting Attention-Grabbing Action Button */
+/* Left-Aligned Compact Service Action (No Full-Width Capsule, Inline Link with Circular Arrow) */
 .service-card-btn {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: calc(100% + 40px) !important;
-  max-width: none !important;
-  height: auto !important;
-  margin: 18px -20px -20px -20px !important;
-  padding: 13px 20px !important;
-  border-radius: 0 0 16px 16px !important;
-  background: #000000 !important;
-  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: fit-content;
+  max-width: max-content;
+  height: auto;
+  margin-top: auto;
+  margin-right: auto;
+  padding: 4px 0;
+  border-radius: 0;
+  background: transparent !important;
+  color: var(--text-dark, #192023) !important;
   font-family: inherit;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   border: none !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: none !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none !important;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 .service-card-btn span {
   text-decoration: none !important;
-  color: #ffffff !important;
+  color: var(--text-dark, #192023) !important;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-size: 12.5px;
   line-height: 1;
-  text-transform: uppercase;
   transition: color 0.25s ease, letter-spacing 0.25s ease;
-}
+} /* Eye-Catching Circular Arrow Badge directly beside text */
 .service-card-btn svg {
   width: 28px;
   height: 28px;
   box-sizing: border-box;
   padding: 6.5px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
+  background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  stroke: #ffffff;
   flex-shrink: 0;
-  box-shadow: 0 2px 10px rgba(197, 18, 16, 0.5);
+  box-shadow: 0 2px 8px rgba(197, 18, 16, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
+} /* Grounded Stable State for Service Action Buttons */
 .service-card-btn,
 .antigravity-btn {
   animation: none !important;
   transform: none !important;
 }
 
-/* Hover State: Pure Jet Black strip with crimson accent top glow and forward arrow glide */
+/* Hover State: Arrow shifts right, subtle glow, no capsule */
 .service-card-btn:hover,
 .service-card-item:hover .service-card-btn {
-  background: #000000 !important;
-  border-top-color: #c51210 !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 14px rgba(197, 18, 16, 0.3) !important;
+  background: transparent !important;
+  color: var(--brand-accent, #c51210) !important;
+  border: none !important;
+  box-shadow: none !important;
   transform: none !important;
 }
 .service-card-btn:hover span,
 .service-card-item:hover .service-card-btn span {
-  color: #ffffff !important;
-  letter-spacing: 0.1em;
+  color: var(--brand-accent, #c51210) !important;
+  letter-spacing: 0.07em;
 }
 .service-card-btn:hover svg,
 .service-card-item:hover .service-card-btn svg {
   background: linear-gradient(135deg, #e02a24 0%, #d31815 50%, #b30f0d 100%) !important;
-  border-color: #ff5a52 !important;
+  border-color: #e02a24 !important;
   color: #ffffff !important;
   stroke: #ffffff !important;
-  transform: translateX(4px) scale(1.08);
-  box-shadow: 0 4px 14px rgba(197, 18, 16, 0.65), 0 0 12px rgba(224, 42, 36, 0.45);
+  transform: translateX(4px) scale(1.06);
+  box-shadow: 0 4px 14px rgba(197, 18, 16, 0.52), 0 0 12px rgba(224, 42, 36, 0.35);
 } /* ==========================================================================
    Globally Synchronized Shimmer Beam Calibrated for All White Action Buttons
    Pearlescent ice-navy specular shimmer on crisp white surfaces
@@ -8518,12 +8533,7 @@ body.dark-theme .trust-item svg {
     font-size: 12.5px;
   }
   .service-card-content {
-    padding: 18px 14px 14px 14px;
-  }
-  .service-card-btn {
-    width: calc(100% + 28px) !important;
-    margin: 14px -14px -14px -14px !important;
-    padding: 11px 14px !important;
+    padding: 18px 14px;
   }
   .process-right-col {
     padding: 16px 12px;
@@ -8668,7 +8678,8 @@ body.dark-theme .trust-item svg {
     max-height: 32px;
   }
   .service-card-btn {
-    font-size: 11px;
+    padding: 2px 0;
+    font-size: 11.5px;
   }
   .about-stats-column {
     width: 112px;
@@ -9369,32 +9380,33 @@ body.dark-theme .service-card-desc {
   text-decoration: none !important;
 }
 body.dark-theme .service-card-btn {
-  background: #000000 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
-  color: #ffffff !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5) !important;
+  background: transparent !important;
+  border: none !important;
+  color: #e2e8f0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
 }
 body.dark-theme .service-card-btn span {
-  color: #ffffff !important;
+  color: #e2e8f0 !important;
   transition: color 0.25s ease, letter-spacing 0.25s ease;
 }
 body.dark-theme .service-card-btn:hover span,
 body.dark-theme .service-card-item:hover .service-card-btn span {
-  color: #ffffff !important;
-  letter-spacing: 0.1em;
+  color: #ff5a52 !important;
+  letter-spacing: 0.07em;
 }
 body.dark-theme .service-card-btn svg {
-  background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%) !important;
-  border: 1px solid rgba(255, 90, 82, 0.4) !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
+  background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
+  border: 1.5px solid rgba(255, 90, 82, 0.4);
+  color: #ffffff;
+  stroke: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .service-card-btn:hover,
 body.dark-theme .service-card-item:hover .service-card-btn {
-  background: #000000 !important;
-  border-top-color: #ff5a52 !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 14px rgba(255, 90, 82, 0.3) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   transform: none !important;
 }
 body.dark-theme .service-card-btn:hover svg,
@@ -9403,8 +9415,8 @@ body.dark-theme .service-card-item:hover .service-card-btn svg {
   border-color: #ff5a52 !important;
   color: #ffffff !important;
   stroke: #ffffff !important;
-  transform: translateX(4px) scale(1.08);
-  box-shadow: 0 4px 14px rgba(224, 42, 36, 0.5), 0 0 10px rgba(255, 90, 82, 0.4);
+  transform: translateX(4px) scale(1.06);
+  box-shadow: 0 4px 14px rgba(224, 42, 36, 0.4), 0 0 10px rgba(255, 90, 82, 0.4);
 }
 body.dark-theme .services-dispatch-bar {
   background-color: #121824;
@@ -14689,7 +14701,7 @@ body.dark-theme .expertise-card {
   }
   .service-card-content {
     margin: 5px;
-    padding: 10px 8px 8px 8px;
+    padding: 8px;
     border-radius: 8px;
   }
   .service-card-title {
@@ -14700,9 +14712,7 @@ body.dark-theme .expertise-card {
     line-height: 1.35;
   }
   .service-card-btn {
-    width: calc(100% + 16px) !important;
-    margin: 8px -8px -8px -8px !important;
-    padding: 7px 8px !important;
+    padding: 6px 8px;
     font-size: 10.5px;
   }
 } /* ==========================================================================   INDIVIDUAL SERVICE HERO SECTION (Centered Heading with Flanking Clipped Images)   Exact #main-hero-cut clip-path on Left and Right Images   ========================================================================== */
@@ -22160,7 +22170,8 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 .protocol-step-card,
 .compare-station-card,
 .mission-card-light,
-.expertise-card {
+.expertise-card,
+.service-card-content {
   position: relative;
 }
 .blog-card::before,
@@ -22185,12 +22196,25 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
   box-sizing: border-box;
   transition: clip-path 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.service-card-content::before,
+.service-card-content::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 3px solid #c51210;
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 10;
+  box-sizing: border-box;
+  transition: clip-path 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
 .blog-card::before,
 .service-why-card::before,
 .protocol-step-card::before,
 .compare-station-card::before,
 .mission-card-light::before,
-.expertise-card::before {
+.expertise-card::before,
+.service-card-content::before {
   clip-path: inset(0 100% 100% 0);
 }
 .blog-card::after,
@@ -22198,7 +22222,8 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 .protocol-step-card::after,
 .compare-station-card::after,
 .mission-card-light::after,
-.expertise-card::after {
+.expertise-card::after,
+.service-card-content::after {
   clip-path: inset(100% 0 0 100%);
 }
 .blog-card:hover::before,
@@ -22212,7 +22237,9 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 .mission-card-light:hover::before,
 .mission-card-light:hover::after,
 .expertise-card:hover::before,
-.expertise-card:hover::after {
+.expertise-card:hover::after,
+.service-card-item:hover .service-card-content::before,
+.service-card-item:hover .service-card-content::after {
   clip-path: inset(0 0 0 0);
 }
 body.dark-theme .blog-card::before,
@@ -22228,6 +22255,10 @@ body.dark-theme .mission-card-light::after,
 body.dark-theme .expertise-card::before,
 body.dark-theme .expertise-card::after {
   border-color: #3b82f6;
+}
+body.dark-theme .service-card-content::before,
+body.dark-theme .service-card-content::after {
+  border-color: #ff5a52;
 }
 
 /* ==========================================================================
