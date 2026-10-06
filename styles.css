@@ -1875,7 +1875,7 @@ a.service-card-item *,
   margin: 18px -20px -20px -20px !important;
   padding: 13px 20px !important;
   border-radius: 0 0 16px 16px !important;
-  background: #192023 !important;
+  background: #000000 !important;
   color: #ffffff !important;
   font-family: inherit;
   font-size: 12px;
@@ -1883,9 +1883,9 @@ a.service-card-item *,
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: none !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none !important;
   position: relative;
@@ -1922,12 +1922,12 @@ a.service-card-item *,
   transform: none !important;
 }
 
-/* Hover State: Black strip deepens with crimson accent glow and forward arrow glide */
+/* Hover State: Pure Jet Black strip with crimson accent top glow and forward arrow glide */
 .service-card-btn:hover,
 .service-card-item:hover .service-card-btn {
-  background: #111517 !important;
-  border-top-color: rgba(197, 18, 16, 0.35) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  background: #000000 !important;
+  border-top-color: #c51210 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 14px rgba(197, 18, 16, 0.3) !important;
   transform: none !important;
 }
 .service-card-btn:hover span,
@@ -8668,8 +8668,7 @@ body.dark-theme .trust-item svg {
     max-height: 32px;
   }
   .service-card-btn {
-    padding: 2px 0;
-    font-size: 11.5px;
+    font-size: 11px;
   }
   .about-stats-column {
     width: 112px;
@@ -9370,10 +9369,10 @@ body.dark-theme .service-card-desc {
   text-decoration: none !important;
 }
 body.dark-theme .service-card-btn {
-  background: #111517 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #000000 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5) !important;
 }
 body.dark-theme .service-card-btn span {
   color: #ffffff !important;
@@ -9393,9 +9392,9 @@ body.dark-theme .service-card-btn svg {
 }
 body.dark-theme .service-card-btn:hover,
 body.dark-theme .service-card-item:hover .service-card-btn {
-  background: #0b0e10 !important;
-  border-top-color: rgba(255, 90, 82, 0.4) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+  background: #000000 !important;
+  border-top-color: #ff5a52 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 14px rgba(255, 90, 82, 0.3) !important;
   transform: none !important;
 }
 body.dark-theme .service-card-btn:hover svg,
