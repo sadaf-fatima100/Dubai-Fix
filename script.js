@@ -692,9 +692,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setSplitPosition(50);
   }
 
-  // Auto-inject Uiverse animated expanding bubble circles for all red action buttons
-  function initRedButtonBubbleAnimation() {
-    const redBtnSelector = [
+  // Auto-inject Uiverse animated expanding bubble circles for all action buttons across the site
+  function initUniversalButtonBubbleAnimation() {
+    const allAnimatedBtnSelectors = [
+      // Primary Red Buttons (Obsidian Black bubbles)
       '.btn-hero-primary',
       '.btn-schedule',
       '.nav-menu-schedule-btn',
@@ -709,10 +710,45 @@ document.addEventListener('DOMContentLoaded', () => {
       '.btn-faq-call',
       '.btn-primary',
       '.btn-cta-navy',
-      '.btn-urgent-book'
+      '.btn-urgent-book',
+      '.btn-dispatch-call',
+      '.btn-dispatch-phone',
+      '.btn-contact-submit',
+      '.btn-cta-banner-primary',
+      '.mcard-featured-btn',
+      '.btn-filter-browse',
+      '.btn-read-article',
+      '.why-btn-pill',
+      '.empty-cta-btn',
+      '.sidebar-btn-call',
+
+      // Emerald Green Emergency & Call Buttons (Emerald Green bubbles)
+      '.btn-hero-secondary',
+      '.btn-about-secondary',
+      '.btn-emergency-call',
+      '.btn-urgent-call',
+      '.btn-cta-green',
+      '.btn-prefooter-call',
+      '.btn-faq-talk',
+      '.btn-lb-call',
+      '.btn-cta-banner-call',
+      '.process-phone-link',
+      '.standards-call-link',
+
+      // WhatsApp Action Buttons (Deep Forest Green bubbles)
+      '.btn-dispatch-wa',
+      '.btn-dispatch-whatsapp',
+      '.btn-simple-cta-whatsapp',
+      '.btn-lb-whatsapp',
+
+      // White / Elevated Light Card Buttons (Signature Crimson Red bubbles)
+      '.footer-book-btn',
+      '.sidebar-btn-book',
+      '.article-cta-book-btn',
+      '.compare-card-cta'
     ].join(',');
 
-    document.querySelectorAll(redBtnSelector).forEach(btn => {
+    document.querySelectorAll(allAnimatedBtnSelectors).forEach(btn => {
       if (!btn.querySelector('.btn-circle')) {
         for (let i = 1; i <= 5; i++) {
           const circle = document.createElement('span');
@@ -724,7 +760,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  initRedButtonBubbleAnimation();
+  initUniversalButtonBubbleAnimation();
 
   window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
   window.addEventListener('resize', updateNavbarOnScroll, { passive: true });
