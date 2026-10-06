@@ -12,17 +12,17 @@ This project follows strict engineering and visual standards. Every change must 
   - On sub-pages like `services.html`, Quick Links must reference `index.html#section` (e.g. `index.html#home`, `index.html#about`).
 
 ## 2. Brand Identity & Theme Palette
-- Primary Brand Accent: Vibrant Sapphire Royal `#1e4ab5` (`var(--brand-accent)`) with `#2563eb` on hover (`var(--brand-accent-hover)`)
-- Primary Action Gradient (Matching CTA Call Now button): `linear-gradient(135deg, #143877 0%, #1e4ab5 50%, #0f2b5c 100%)`
-- Primary Action Hover Gradient: `linear-gradient(135deg, #1e4ab5 0%, #2563eb 50%, #143877 100%)`
-- Secondary Call / Emergency: `#059669` / `#10b981`
-- Canvas Light: `#fbfbfe` / `#f3f4f8` with `#ffffff` card surfaces
-- Dark Theme (`body.dark-theme`): Canvas `#0c1017` / `#121217`, Cards `#181924`, Borders `rgba(255, 255, 255, 0.08)`
-- Theme Toggle: `#themeToggleBtn` storing in `localStorage.getItem('apexfix-theme')`
+- Primary Brand Accent: Brand Crimson Red `#c51210` (`var(--brand-accent)`) with `#a30f0d` on hover (`var(--brand-accent-hover)`)
+- Primary Action Gradient (CTA / Call Now button): `linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%)`
+- Primary Action Hover Gradient: `linear-gradient(135deg, #e02a24 0%, #d31815 50%, #b30f0d 100%)`
+- Secondary Call / Emergency: `#059669` / `#10b981` (Phone rings, WhatsApp pulse dot)
+- Canvas Light: Pure White `#ffffff` / Alt slate `#f4f5f5` with Charcoal `#192023` typography & headings
+- Dark Theme (`body.dark-theme`): Canvas `#0f1315`, Cards `#171c1f`, Raised `#1f2529`, Borders `#2a3136`
+- Theme Toggle: `#themeToggleBtn` storing in `localStorage.getItem('dubaifix-theme')`
 
 ## 3. UI Component Geometry & Full-Bleed Layout
-- Primary & Action Buttons: MUST use pill shape (`border-radius: var(--radius-pill);` or `9999px`) styled with the signature Call Now gradient.
-- Brand Grid: All 20 brand logo cards MUST have `1.5px solid #1e4ab5` sapphire navy border with `#2563eb` on hover.
+- Primary & Action Buttons: MUST use pill shape (`border-radius: var(--radius-pill);` or `9999px`) styled with the signature Call Now crimson gradient.
+- Brand Grid: All 20 brand logo cards MUST have `1.5px solid #e3e7e9` border with `#c51210` and soft elevation on hover.
 - Full-Bleed Architecture: Unified edge-to-edge canvas with zero outer frame border or grey gutters. Content centered inside 1360px container with clean internal padding. No outer floating card borders.
 
 ## 4. Typography Hierarchy & Consistency (Matching Home Page)
@@ -38,13 +38,13 @@ This project follows strict engineering and visual standards. Every change must 
   - **Section H2 (Major Titles across all pages)**: MUST use `var(--text-h2)` (`clamp(1.85rem, 2.8vw, 2.5rem)`) with `font-weight: 800; line-height: 1.22; letter-spacing: -0.025em;`. No arbitrary section title sizes allowed.
   - **Card Titles (H3)**: `18px` to `21px` (`font-weight: 700; line-height: 1.25;`).
   - **Eyebrow Tags / Badges**: `11px` to `12px` (`font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;`).
-  - **Body / Subtitles**: `15px` to `16px` (`font-weight: 500; line-height: 1.6; color: var(--text-sub, #5a5f70)`).
+  - **Body / Subtitles**: `15px` to `16px` (`font-weight: 500; line-height: 1.6; color: var(--text-sub, #475056)`).
   - **Micro-copy / Labels**: `10.5px` to `12.5px`.
 - **Dual-Color Section Headings Standard**:
   - **EVERY section heading across ALL pages (excluding hero sections) MUST use dual colors** matching `index.html`.
-  - Light mode: Base text in dark charcoal `var(--text-dark)` (`#121217`), emphasis text in `<span class="highlight-navy">` styled with signature Navy Blue gradient (`linear-gradient(135deg, #143877 0%, #1e4ab5 50%, #0f2b5c 100%)`) with text clip.
-  - Dark mode (`body.dark-theme`): Base text in `#ffffff`, emphasis text in `<span class="highlight-navy">` styled with signature Royal Blue gradient (`linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #93c5fd 100%)`) with text clip.
-  - Dark cards/banners: Base text in `#ffffff`, emphasis text in royal blue gradient or `#60a5fa`.
+  - Light mode: Base text in dark charcoal `var(--text-dark)` (`#192023`), emphasis text in `<span class="highlight-navy">` styled with signature Brand Crimson gradient (`linear-gradient(135deg, #c51210 0%, #e02a24 50%, #a30f0d 100%)`) with text clip.
+  - Dark mode (`body.dark-theme`): Base text in `#eceff1` / `#ffffff`, emphasis text in `<span class="highlight-navy">` styled with signature Coral Red gradient (`linear-gradient(135deg, #ff5a52 0%, #e02a24 50%, #ff837d 100%)`) with text clip.
+  - Dark cards/banners: Base text in `#ffffff`, emphasis text in Coral Red gradient (`#ff5a52`).
 
 ## 5. Spacing & Vertical Rhythm Standards (Matching Home Page)
 - **Section Spacing**:
