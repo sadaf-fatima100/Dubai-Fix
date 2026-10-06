@@ -607,7 +607,7 @@ body.dark-theme .dropdown-divider {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 22px -3px rgba(6, 18, 40, 0.45), 0 0 16px rgba(18, 48, 105, 0.3);
+  box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   white-space: nowrap;
@@ -615,9 +615,8 @@ body.dark-theme .dropdown-divider {
 }
 .btn-hero-primary:hover,
 .btn-get-started:hover {
-  background: var(--btn-gradient-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -3px rgba(6, 18, 40, 0.55), 0 0 20px rgba(22, 56, 120, 0.38);
+  box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.3);
 }
 .btn-hero-primary svg {
   transition: transform 0.25s ease;
@@ -950,36 +949,37 @@ button[id*="phone"] svg {
   border-radius: 50%;
   pointer-events: none;
   z-index: 1 !important;
+  background-color: #171717;
   transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
 .btn-circle-1 {
   transform: translate(-3.3em, -4em);
-  background-color: #e02a24;
+  background-color: #171717;
 }
 
 .btn-circle-2 {
   transform: translate(-6em, 1.3em);
-  background-color: #d31815;
+  background-color: #171717;
 }
 
 .btn-circle-3 {
   transform: translate(-0.2em, 1.8em);
-  background-color: #ff3b30;
+  background-color: #171717;
 }
 
 .btn-circle-4 {
   transform: translate(3.5em, 1.4em);
-  background-color: #c51210;
+  background-color: #171717;
 }
 
 .btn-circle-5 {
   transform: translate(3.5em, -3.8em);
-  background-color: #e02a24;
+  background-color: #171717;
 }
 
-/* On Hover: Circles zoom in from all 5 angles and expand 5.8x to flood the button */
+/* On Hover: Circles zoom in from all 5 angles and expand 5.8x to flood the button with black */
 .btn-primary:hover .btn-circle,
 .btn-schedule:hover .btn-circle,
 .nav-menu-schedule-btn:hover .btn-circle,
@@ -990,12 +990,14 @@ button[id*="phone"] svg {
 .btn-cta-navy:hover .btn-circle,
 .btn-urgent-book:hover .btn-circle,
 .cta-primary-btn:hover .btn-circle,
+.cta-showcase-btn:hover .btn-circle,
 .footer-book-btn:hover .btn-circle,
 .btn-dispatch-call:hover .btn-circle,
 .btn-dispatch-phone:hover .btn-circle,
 .btn-contact-submit:hover .btn-circle,
 .modal-submit-btn:hover .btn-circle,
 .sidebar-btn-book:hover .btn-circle,
+.btn-process-action:hover .btn-circle,
 .empty-cta-btn:hover .btn-circle,
 .btn-get-started:hover .btn-circle,
 .why-btn-pill:hover .btn-circle,
@@ -1012,12 +1014,14 @@ button[id*="phone"] svg {
   transition: transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Dark Theme Liquid Palette (Signature Coral Red Hues) */
-body.dark-theme .btn-circle-1 { background-color: #ff5a52; }
-body.dark-theme .btn-circle-2 { background-color: #e02a24; }
-body.dark-theme .btn-circle-3 { background-color: #ff6b63; }
-body.dark-theme .btn-circle-4 { background-color: #ff3b30; }
-body.dark-theme .btn-circle-5 { background-color: #ff5a52; }
+/* Dark Theme Liquid Palette (Deep Onyx / Charcoal Black) */
+body.dark-theme .btn-circle-1,
+body.dark-theme .btn-circle-2,
+body.dark-theme .btn-circle-3,
+body.dark-theme .btn-circle-4,
+body.dark-theme .btn-circle-5 {
+  background-color: #0b0e10;
+}
 
 @keyframes synchronizedButtonShine {
   0% {
@@ -1742,62 +1746,66 @@ a.service-card-item *,
   z-index: 2;
   margin: 14px;
   padding: 20px 20px 20px 20px;
-  background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1.5px solid rgba(227, 231, 233, 0.9);
   box-shadow:
-    0 14px 36px rgba(197, 18, 16, 0.38),
-    0 4px 14px rgba(163, 15, 13, 0.22),
-    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+    0 10px 28px rgba(25, 32, 35, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none !important;
 }
 .service-card-item:hover .service-card-content {
-  background: linear-gradient(135deg, #e02a24 0%, #d31815 50%, #b30f0d 100%);
-  border-color: rgba(255, 255, 255, 0.45);
+  background: #ffffff;
+  border-color: rgba(197, 18, 16, 0.45);
   box-shadow:
-    0 18px 44px rgba(197, 18, 16, 0.52),
-    0 6px 18px rgba(163, 15, 13, 0.35),
-    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+    0 18px 42px rgba(25, 32, 35, 0.12),
+    0 0 24px rgba(197, 18, 16, 0.14),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
   transform: translateY(-4px);
-} /* Icon Badge inside Luminous Crimson Card */
+} /* Icon Badge inside Light Card */
 .service-card-icon-badge {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  color: #ffffff;
+  background: #fdf2f2;
+  border: 1px solid rgba(197, 18, 16, 0.16);
+  color: var(--brand-accent, #c51210);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
   flex-shrink: 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(197, 18, 16, 0.08);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .service-card-item:hover .service-card-icon-badge {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: var(--brand-accent);
+  background: linear-gradient(135deg, #d31815 0%, #c51210 100%);
+  border-color: #c51210;
+  color: #ffffff;
   transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(197, 18, 16, 0.35);
 }
 .service-card-title {
-  color: #ffffff !important;
+  color: var(--text-dark, #192023) !important;
   font-size: 17.5px;
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1.25;
   margin-bottom: 7px;
   text-decoration: none !important;
+  transition: color 0.25s ease;
+}
+.service-card-item:hover .service-card-title {
+  color: var(--brand-accent, #c51210) !important;
 }
 .service-card-desc {
-  color: rgba(255, 255, 255, 0.92) !important;
+  color: var(--text-sub, #475056) !important;
   font-size: 12.5px;
   line-height: 1.55;
   font-weight: 500;
@@ -1823,7 +1831,7 @@ a.service-card-item *,
   padding: 4px 0;
   border-radius: 0;
   background: transparent !important;
-  color: #ffffff !important;
+  color: var(--text-dark, #192023) !important;
   font-family: inherit;
   font-size: 12.5px;
   font-weight: 800;
@@ -1840,7 +1848,7 @@ a.service-card-item *,
 }
 .service-card-btn span {
   text-decoration: none !important;
-  color: #ffffff !important;
+  color: var(--text-dark, #192023) !important;
   font-weight: 800;
   letter-spacing: 0.05em;
   font-size: 12.5px;
@@ -1853,12 +1861,12 @@ a.service-card-item *,
   box-sizing: border-box;
   padding: 6.5px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
   color: #ffffff;
   stroke: #ffffff;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(197, 18, 16, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 } /* Grounded Stable State for Service Action Buttons */
 .service-card-btn,
@@ -1871,24 +1879,24 @@ a.service-card-item *,
 .service-card-btn:hover,
 .service-card-item:hover .service-card-btn {
   background: transparent !important;
-  color: #ffffff !important;
+  color: var(--brand-accent, #c51210) !important;
   border: none !important;
   box-shadow: none !important;
   transform: none !important;
 }
 .service-card-btn:hover span,
 .service-card-item:hover .service-card-btn span {
-  color: #ffffff !important;
+  color: var(--brand-accent, #c51210) !important;
   letter-spacing: 0.07em;
 }
 .service-card-btn:hover svg,
 .service-card-item:hover .service-card-btn svg {
-  background: rgba(255, 255, 255, 0.28) !important;
-  border-color: #ffffff !important;
+  background: linear-gradient(135deg, #e02a24 0%, #d31815 50%, #b30f0d 100%) !important;
+  border-color: #e02a24 !important;
   color: #ffffff !important;
   stroke: #ffffff !important;
-  transform: translateX(4px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: translateX(4px) scale(1.06);
+  box-shadow: 0 4px 14px rgba(197, 18, 16, 0.52), 0 0 12px rgba(224, 42, 36, 0.35);
 } /* ==========================================================================
    Globally Synchronized Shimmer Beam Calibrated for All White Action Buttons
    Pearlescent ice-navy specular shimmer on crisp white surfaces
@@ -9269,66 +9277,69 @@ body.dark-theme .service-card-item * {
   text-decoration: none !important;
 }
 body.dark-theme .service-card-content {
-  background: linear-gradient(
-    135deg,
-    rgba(211, 24, 21, 0.95) 0%,
-    rgba(197, 18, 16, 0.92) 50%,
-    rgba(158, 14, 12, 0.96) 100%
-  );
+  background: rgba(23, 28, 31, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.6),
-    0 0 24px rgba(197, 18, 16, 0.32),
-    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+    0 14px 36px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
   text-decoration: none !important;
 }
 body.dark-theme .service-card-item:hover .service-card-content {
-  background: linear-gradient(
-    135deg,
-    rgba(224, 42, 36, 0.98) 0%,
-    rgba(211, 24, 21, 0.95) 50%,
-    rgba(163, 15, 13, 0.98) 100%
-  );
-  border-color: rgba(255, 90, 82, 0.7);
+  background: rgba(27, 34, 38, 0.96);
+  border-color: rgba(255, 90, 82, 0.55);
   box-shadow:
     0 18px 44px rgba(0, 0, 0, 0.7),
-    0 0 32px rgba(224, 42, 36, 0.5),
-    inset 0 1px 1px rgba(255, 255, 255, 0.55);
+    0 0 24px rgba(197, 18, 16, 0.22);
+  transform: translateY(-4px);
 }
 body.dark-theme .service-card-icon-badge {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.28);
-  color: #ffffff;
+  background: rgba(255, 90, 82, 0.12);
+  border-color: rgba(255, 90, 82, 0.25);
+  color: #ff5a52;
 }
 body.dark-theme .service-card-item:hover .service-card-icon-badge {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: var(--brand-accent);
+  background: linear-gradient(135deg, #e02a24 0%, #c51210 100%);
+  border-color: #ff5a52;
+  color: #ffffff;
   transform: scale(1.08);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 body.dark-theme .service-card-title {
   color: #ffffff !important;
   text-decoration: none !important;
+  transition: color 0.25s ease;
+}
+body.dark-theme .service-card-item:hover .service-card-title {
+  color: #ff5a52 !important;
 }
 body.dark-theme .service-card-desc {
-  color: #cbd5e1 !important;
+  color: #94a3b8 !important;
   text-decoration: none !important;
 }
 body.dark-theme .service-card-btn {
   background: transparent !important;
   border: none !important;
-  color: #ffffff !important;
+  color: #e2e8f0 !important;
   box-shadow: none !important;
   text-decoration: none !important;
 }
+body.dark-theme .service-card-btn span {
+  color: #e2e8f0 !important;
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+body.dark-theme .service-card-btn:hover span,
+body.dark-theme .service-card-item:hover .service-card-btn span {
+  color: #ff5a52 !important;
+  letter-spacing: 0.07em;
+}
 body.dark-theme .service-card-btn svg {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
+  border: 1.5px solid rgba(255, 90, 82, 0.4);
   color: #ffffff;
   stroke: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .service-card-btn:hover,
 body.dark-theme .service-card-item:hover .service-card-btn {
@@ -9339,12 +9350,12 @@ body.dark-theme .service-card-item:hover .service-card-btn {
 }
 body.dark-theme .service-card-btn:hover svg,
 body.dark-theme .service-card-item:hover .service-card-btn svg {
-  background: rgba(255, 255, 255, 0.28) !important;
-  border-color: #ffffff !important;
+  background: linear-gradient(135deg, #ff5a52 0%, #e02a24 100%) !important;
+  border-color: #ff5a52 !important;
   color: #ffffff !important;
   stroke: #ffffff !important;
-  transform: translateX(4px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: translateX(4px) scale(1.06);
+  box-shadow: 0 4px 14px rgba(224, 42, 36, 0.4), 0 0 10px rgba(255, 90, 82, 0.4);
 }
 body.dark-theme .services-dispatch-bar {
   background-color: #121824;
