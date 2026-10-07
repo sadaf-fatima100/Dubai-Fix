@@ -17559,6 +17559,15 @@ body.dark-theme .pf-proof-tag {
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.2;
   }
+  body.dark-theme .pf-mobile-cinematic-card {
+    border-color: #ff5a52;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+    background: #171c1f;
+  }
+  body.dark-theme .pf-mobile-badge-overlay {
+    background: rgba(15, 19, 21, 0.92);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
   /* Centered Responsive Pill Cloud Filter Bar on Mobile - Zero Cutoff, Zero Scrollbars */
   .portfolio-filter-bar {
     display: flex;
@@ -17722,30 +17731,21 @@ body.dark-theme .pf-proof-tag {
     overflow: visible !important;
     padding: 0 !important;
   }
-  .pf-collage-col.col-left {
-    transform: none !important;
+  .pf-mobile-cinematic-card {
+    height: 200px;
+    border-radius: 16px;
   }
-  .pf-collage-col.col-right .pf-collage-card:last-child {
-    display: none !important;
+  .pf-mobile-badge-overlay {
+    padding: 7px 11px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
   }
-  .pf-collage-card.card-lg {
-    height: 140px;
+  .pf-mb-title {
+    font-size: 11px;
   }
-  .col-right .pf-collage-card.card-lg {
-    height: 175px;
-  }
-  .pf-collage-card.card-md {
-    height: 95px;
-  }
-  .pf-collage-card.card-sm,
-  .pf-collage-card.pf-card-bottom-left {
-    height: 65px !important;
-  }
-  .pf-tag-badge {
+  .pf-mb-sub {
     font-size: 9.5px;
-  }
-  .pf-tag-sub {
-    font-size: 10px;
   }
   .portfolio-card {
     height: 370px;
@@ -17810,24 +17810,23 @@ body.dark-theme .pf-proof-tag {
     overflow: visible !important;
     padding: 0 !important;
   }
-  .pf-collage-col.col-left {
-    transform: none !important;
+  .pf-mobile-cinematic-card {
+    height: 175px;
+    border-radius: 14px;
+    border-width: 3px;
   }
-  .pf-collage-col.col-right .pf-collage-card:last-child {
-    display: none !important;
+  .pf-mobile-badge-overlay {
+    padding: 6px 10px;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    gap: 8px;
   }
-  .pf-collage-card.card-lg {
-    height: 120px;
+  .pf-mb-title {
+    font-size: 10.5px;
   }
-  .col-right .pf-collage-card.card-lg {
-    height: 155px;
-  }
-  .pf-collage-card.card-md {
-    height: 80px;
-  }
-  .pf-collage-card.card-sm,
-  .pf-collage-card.pf-card-bottom-left {
-    height: 55px !important;
+  .pf-mb-sub {
+    font-size: 9px;
   }
   .pf-filter-btn {
     padding: 7px 12px;
@@ -17901,24 +17900,23 @@ body.dark-theme .pf-proof-tag {
     overflow: visible !important;
     padding: 0 !important;
   }
-  .pf-collage-col.col-left {
-    transform: none !important;
+  .pf-mobile-cinematic-card {
+    height: 155px;
+    border-radius: 12px;
+    border-width: 2.5px;
   }
-  .pf-collage-col.col-right .pf-collage-card:last-child {
-    display: none !important;
+  .pf-mobile-badge-overlay {
+    padding: 5px 8px;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
+    gap: 6px;
   }
-  .pf-collage-card.card-lg {
-    height: 95px;
+  .pf-mb-title {
+    font-size: 9.5px;
   }
-  .col-right .pf-collage-card.card-lg {
-    height: 125px;
-  }
-  .pf-collage-card.card-md {
-    height: 65px;
-  }
-  .pf-collage-card.card-sm,
-  .pf-collage-card.pf-card-bottom-left {
-    height: 45px !important;
+  .pf-mb-sub {
+    display: none;
   }
   .pf-filter-btn {
     padding: 5px 9px;
