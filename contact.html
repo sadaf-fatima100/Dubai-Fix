@@ -1,16 +1,36 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Dubai Fix Appliances Dubai</title>
+  <title>Contact Dubai Fix Appliances | 24/7 Appliance Repair Dispatch</title>
+  <meta name="description" content="Contact Dubai Fix Appliances for 24/7 same-day home appliance repair in Dubai. Direct technician dispatch, emergency call, and WhatsApp booking.">
+  <meta name="keywords" content="contact appliance repair dubai, emergency appliance technician dubai, book appliance repair">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / SEO Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dubaifixappliances.com/contact.html">
+  <meta property="og:title" content="Contact Dubai Fix Appliances | 24/7 Appliance Repair Dispatch">
+  <meta property="og:description" content="Book 24/7 emergency appliance repair in Dubai. Direct phone dispatch, WhatsApp booking, and online scheduling.">
+  <meta property="og:image" content="assets/logo/favicon.png">
+  <meta property="og:locale" content="en_AE">
+  <meta property="og:site_name" content="Dubai Fix Appliances">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Dubai Fix Appliances | 24/7 Appliance Repair Dispatch">
+  <meta name="twitter:description" content="Book 24/7 emergency appliance repair in Dubai. Direct phone dispatch and WhatsApp booking.">
+  <meta name="twitter:image" content="assets/logo/favicon.png">
+  
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
 
   <!-- Google Fonts: Plus Jakarta Sans for exact typography match -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=5.4">
+  <link rel="stylesheet" href="styles.css?v=5.5">
 
   <style>
     /* ============================================================
@@ -1738,8 +1758,10 @@
           e.preventDefault();
           var toast = document.getElementById('toastMessage');
           if (toast) {
-            toast.classList.add('toast-visible');
-            setTimeout(function() { toast.classList.remove('toast-visible'); }, 4000);
+            toast.classList.add('show', 'toast-visible');
+            setTimeout(function() { 
+              toast.classList.remove('show', 'toast-visible'); 
+            }, 4500);
           }
           form.reset();
         });

@@ -3985,11 +3985,12 @@ body.dark-theme .why-card-content .why-card-desc {
   height: 100%;
   position: relative;
   z-index: 2;
-  gap: 20px;
+  gap: 22px;
 }
 .process-featured-top {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 .process-badge-tag {
   display: inline-flex;
@@ -4004,13 +4005,13 @@ body.dark-theme .why-card-content .why-card-desc {
   letter-spacing: var(--eyebrow-ls);
   text-transform: uppercase;
   line-height: 1;
-  padding: 6px 15px;
+  padding: 6px 14px;
   border-radius: var(--radius-pill);
   width: fit-content;
   white-space: nowrap;
   user-select: none;
   margin-top: 0;
-  margin-bottom: var(--eyebrow-gap, 14px);
+  margin-bottom: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -4031,19 +4032,19 @@ body.dark-theme .why-card-content .why-card-desc {
 }
 .process-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.65rem, 2.1vw, 2.05rem);
+  font-size: clamp(1.65rem, 2.05vw, 2.05rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.24;
   color: #ffffff;
-  margin-bottom: 12px;
+  margin: 0;
 }
 .process-main-desc {
   font-size: 15px;
   font-weight: 400;
-  line-height: var(--lh-subtitle);
-  color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
 }
 .process-featured-bottom {
   display: flex;
@@ -4127,21 +4128,20 @@ body.dark-theme .why-card-content .why-card-desc {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 480px;
   position: relative;
   overflow: visible;
   background: #fbfcfe;
   border: 1.5px solid #e3e7e9;
   border-radius: 28px;
-  padding: 34px 28px;
+  padding: 26px 24px 24px 24px;
   box-shadow: 0 16px 42px rgba(25, 32, 35, 0.04);
 } /* 2x2 Steps Grid Grouped on Left */
 .process-steps-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px 18px;
-  width: calc(100% - 310px);
-  max-width: 530px;
+  grid-template-columns: repeat(2, minmax(200px, 230px));
+  gap: 16px 16px;
+  width: fit-content;
+  max-width: 485px;
   position: relative;
   z-index: 2;
 }
@@ -4150,8 +4150,8 @@ body.dark-theme .why-card-content .why-card-desc {
   flex-direction: column;
   align-items: flex-start;
   background-color: #ffffff;
-  padding: 22px 20px 20px 20px;
-  min-height: 140px;
+  padding: 18px 18px 16px 18px;
+  min-height: 130px;
   border-radius: 20px;
   border: 1.5px solid #edf0f2;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
@@ -4169,17 +4169,17 @@ body.dark-theme .why-card-content .why-card-desc {
 /* Step Card Top: Medallion with Overlapping Number Badge */
 .step-card-top {
   position: relative;
-  width: 52px;
-  height: 52px;
-  margin-bottom: 14px;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 10px;
 }
 /* Circular Soft Red Medallion for Icon */
 .step-icon-box {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: #fdf2f2;
-  border: 1.5px solid rgba(215, 28, 27, 0.16);
+  background: #fff1f2;
+  border: 1.5px solid rgba(215, 28, 27, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4190,56 +4190,59 @@ body.dark-theme .why-card-content .why-card-desc {
   margin-top: 2px;
 }
 .step-icon-box svg {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   color: inherit;
+  stroke-width: 2.2;
   transition: transform 0.3s ease;
 }
 .process-step-item:hover .step-icon-box {
   background: var(--btn-gradient-primary);
   border-color: #d71c1b;
   color: #ffffff;
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 .process-step-item:hover .step-icon-box svg {
   transform: scale(1.05);
 }
-/* Red Circular Number Badge at Top-Left of Medallion */
-.step-num-badge {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--btn-gradient-primary);
-  color: #ffffff;
-  font-family: var(--font-family);
-  font-size: 10px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #ffffff;
-  z-index: 4;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-  transition: all 0.25s ease;
+/* Red Circular Number Badge - Round 50% circle at top-left */
+.process-step-num {
+  position: absolute !important;
+  top: -3px !important;
+  left: -3px !important;
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50% !important;
+  background: var(--btn-gradient-primary) !important;
+  color: #ffffff !important;
+  font-family: var(--font-family) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 2px solid #ffffff !important;
+  z-index: 4 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.14) !important;
+  margin-bottom: 0 !important;
+  flex-shrink: 0 !important;
+  transition: all 0.25s ease !important;
 }
-.process-step-item:hover .step-num-badge {
-  background: #192023;
-  color: #ffffff;
-  transform: scale(1.05);
+.process-step-item:hover .process-step-num {
+  background: #192023 !important;
+  color: #ffffff !important;
+  transform: scale(1.08) !important;
 }
 /* Step Typography */
 .step-text-col {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   width: 100%;
 }
 .step-title {
   font-family: var(--font-family);
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text-dark, #192023);
   letter-spacing: -0.015em;
@@ -4251,53 +4254,53 @@ body.dark-theme .why-card-content .why-card-desc {
   font-size: 12.5px;
   font-weight: 500;
   color: var(--text-sub, #475056);
-  line-height: 1.4;
+  line-height: 1.35;
   margin: 0;
 }
 /* ── Right Technician Showcase Figure ─────────────────── */
 .tech-right-showcase {
   position: absolute;
-  right: 0;
+  right: -8px;
   bottom: 0;
-  width: 320px;
-  height: calc(100% + 48px);
-  max-height: 540px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  width: 450px;
+  height: 505px;
   pointer-events: none;
   z-index: 5;
   overflow: visible;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 .tech-showcase-img {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
+  width: 450px;
+  height: 505px;
+  max-width: none !important;
   object-fit: contain;
   object-position: bottom right;
   position: relative;
   z-index: 5;
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.16));
+  filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.16));
   display: block;
   vertical-align: bottom;
+  margin-bottom: 0;
 }
 /* Floating Status Pill over Technician / Bottom Right */
 .tech-floating-status {
   position: absolute;
-  bottom: 22px;
-  right: 20px;
+  bottom: 20px;
+  right: 26px;
   z-index: 8;
   background: var(--btn-gradient-primary);
   color: #ffffff;
   font-family: var(--font-family);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  padding: 7px 16px;
+  padding: 7px 18px;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   white-space: nowrap;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
   border: 1.5px solid rgba(255, 255, 255, 0.28);
@@ -7446,7 +7449,8 @@ body.dark-theme .trust-item svg {
   pointer-events: none;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.toast.show {
+.toast.show,
+.toast.toast-visible {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
@@ -10313,11 +10317,13 @@ body.dark-theme .process-step-item:hover .step-icon-box {
   color: #ffffff;
   border-color: #ff5a52;
 }
+body.dark-theme .process-step-num,
 body.dark-theme .step-num-badge {
   background: var(--btn-gradient-primary);
   border-color: #171c1f;
   color: #ffffff;
 }
+body.dark-theme .process-step-item:hover .process-step-num,
 body.dark-theme .process-step-item:hover .step-num-badge {
   background: #ffffff !important;
   background-image: none !important;
