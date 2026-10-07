@@ -1124,8 +1124,6 @@ a:hover .btn-circle,
 .btn-contact-submit:hover .btn-circle,
 .modal-submit-btn:hover .btn-circle,
 .nav-menu-schedule-btn:hover .btn-circle,
-.btn-kitchen-quote:hover .btn-circle,
-.btn-process-action:hover .btn-circle,
 .empty-cta-btn:hover .btn-circle,
 .btn-modal-call:hover .btn-circle {
   transform: translate(-50%, -50%) scale(18) !important;
@@ -4000,7 +3998,7 @@ body.dark-theme .why-card-content .why-card-desc {
   letter-spacing: -0.01em;
   padding: 8px 10px 8px 22px;
   border-radius: var(--radius-pill);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border: 0;
   cursor: pointer;
   box-shadow:
     0 8px 24px rgba(25, 32, 35, 0.2),
@@ -5367,14 +5365,17 @@ body.dark-theme .kitchen-main-desc {
   color: #ffffff;
   transition: transform 0.25s ease, background-color 0.25s ease;
 }
+.btn-kitchen-quote .btn-circle {
+  background-color: #c51210 !important;
+}
 .btn-kitchen-quote:hover .btn-kitchen-arrow-circle {
   transform: translateX(3px);
-  background: var(--brand-accent-hover, #b00403);
-  color: #ffffff !important;
+  background: #ffffff;
+  color: #c51210 !important;
 }
 .btn-kitchen-quote:hover .btn-kitchen-arrow-circle svg {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
+  color: #c51210 !important;
+  stroke: #c51210 !important;
 }
 
 .btn-kitchen-call {
