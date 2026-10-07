@@ -4179,18 +4179,51 @@ body.dark-theme .why-card-content .why-card-desc {
   height: auto;
   line-height: 0;
 }
-.tech-glow-circle,
+.tech-glow-circle {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(253, 242, 242, 0.95) 0%,
+    rgba(254, 226, 226, 0.6) 50%,
+    rgba(253, 242, 242, 0) 72%
+  );
+  z-index: 1;
+}
 .tech-radar-ring {
-  display: none !important;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(215, 28, 27, 0.2);
+  z-index: 2;
+  animation: rotateRadarRing 30s linear infinite;
+}
+@keyframes rotateRadarRing {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 .tech-showcase-img {
-  height: 480px;
+  height: 420px;
+  max-width: 310px;
   width: auto;
   object-fit: contain;
   object-position: bottom center;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 14px 28px rgba(25, 32, 35, 0.18));
   flex-shrink: 0;
   display: block;
   vertical-align: bottom;
@@ -8297,7 +8330,7 @@ body.dark-theme .trust-item svg {
     justify-content: center;
   }
   :root {
-    --text-h2: clamp(1.45rem, 1.15rem + 1.6vw, 1.95rem);
+    --text-h2: clamp(1.48rem, 1.15rem + 1.8vw, 2.15rem);
   } /* Hero Section */
   .hero-section {
     gap: 22px;
@@ -8864,7 +8897,7 @@ body.dark-theme .trust-item svg {
     justify-content: center;
   }
   :root {
-    --text-h2: clamp(1.35rem, 1rem + 1.5vw, 1.7rem);
+    --text-h2: clamp(1.35rem, 1.05rem + 1.5vw, 1.75rem);
   }
   .hero-headline {
     font-size: clamp(2rem, 1.125rem + 4vw, 2.45rem);
@@ -9075,12 +9108,12 @@ body.dark-theme .trust-item svg {
   }
 } /* --- Compact Mobile Viewports (360px - iPhone SE, Galaxy A) --- */
 @media (max-width: 360px) {
-  :root {
-    --text-h2: clamp(1.22rem, 5.5vw, 1.45rem);
-  }
   .site-canvas {
     padding: 12px 8px 18px 8px;
     border-radius: 0 !important;
+  }
+  :root {
+    --text-h2: clamp(1.2rem, 0.95rem + 1.2vw, 1.45rem);
   }
   .hero-headline {
     font-size: clamp(1.85rem, 1.125rem + 4vw, 2.15rem);
@@ -9257,7 +9290,7 @@ body.dark-theme .trust-item svg {
     padding: 4px;
   }
   :root {
-    --text-h2: clamp(1.1rem, 5vw, 1.25rem);
+    --text-h2: clamp(1.05rem, 0.9rem + 1vw, 1.25rem);
   }
   .hero-headline {
     font-size: 1.5rem;
@@ -10193,9 +10226,16 @@ body.dark-theme .process-step-item:hover .step-num {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   transform: scale(1.08);
 }
-body.dark-theme .tech-glow-circle,
+body.dark-theme .tech-glow-circle {
+  background: radial-gradient(
+    circle,
+    rgba(215, 28, 27, 0.25) 0%,
+    rgba(224, 42, 36, 0.1) 50%,
+    transparent 72%
+  );
+}
 body.dark-theme .tech-radar-ring {
-  display: none !important;
+  border-color: rgba(224, 42, 36, 0.3);
 }
 body.dark-theme .tech-floating-status {
   background: var(--btn-gradient-primary);
@@ -10845,8 +10885,8 @@ body.dark-theme .status-icon.icon-clock {
   color: #ff5a52;
 }
 body.dark-theme .areas-map-img {
-  content: url("assets/world-map-dark.png");
-  opacity: 0.95;
+  content: url("assets/world-map-dark.png?v=2.0");
+  opacity: 0.92;
   filter: none;
 }
 body.dark-theme .hub-dispatch-pill {
@@ -15763,14 +15803,17 @@ body.dark-theme .hero-flank-card {
   }
   .hero-center-headline {
     font-size: clamp(2.05rem, 1.125rem + 4vw, 2.55rem);
-    line-height: 1.2;
+    line-height: 1.18;
     letter-spacing: -0.02em;
     word-break: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
   }
   .center-hl-line {
-    display: inline;
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-break: normal;
+    display: block;
   }
   .hero-center-description {
     font-size: 14px;
@@ -15878,6 +15921,7 @@ body.dark-theme .hero-flank-card {
   }
   .hero-center-headline {
     font-size: clamp(2rem, 1.125rem + 4vw, 2.45rem);
+    line-height: 1.2;
   }
 }
 
@@ -15891,12 +15935,16 @@ body.dark-theme .hero-flank-card {
   }
   .hero-center-headline {
     font-size: clamp(1.85rem, 1.125rem + 4vw, 2.15rem);
+    line-height: 1.2;
   }
 }
 
 @media (max-width: 300px) {
   .hero-center-headline {
     font-size: clamp(1.5rem, 5.5vw, 1.75rem);
+    line-height: 1.2;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 } 
 
@@ -21382,7 +21430,7 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
     border-radius: 20px;
   }
   .article-hero-split-row .article-post-title {
-    font-size: clamp(1.85rem, 5.5vw, 2.35rem);
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
     margin-bottom: 12px;
   }
   .article-hero-split-row .article-post-lead {
