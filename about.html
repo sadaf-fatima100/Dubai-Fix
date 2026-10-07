@@ -60,7 +60,7 @@
       border-radius: 9999px;
       border: 1px solid rgba(255, 255, 255, 0.15);
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(6, 18, 40, 0.38);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.38);
       transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       white-space: nowrap;
     }
@@ -68,7 +68,7 @@
       background: var(--btn-gradient-hover);
       border-color: rgba(255, 255, 255, 0.3);
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(6, 18, 40, 0.55);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
     }
 
     /* ═══════════════════════════════════════════════════════
@@ -510,7 +510,7 @@
       display: inline-block;
       flex-shrink: 0;
     }
-    .mosaic-navy-guarantee {
+    .mosaic-navy-pill {
       font-size: 10.5px;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.95);
@@ -748,7 +748,7 @@
       .mosaic-navy-brand {
         font-size: 10px;
       }
-      .mosaic-navy-guarantee {
+      .mosaic-navy-pill {
         font-size: 9.5px;
         padding: 2px 6px;
       }
@@ -966,7 +966,7 @@
       background: var(--btn-gradient-primary);
       color: #ffffff;
       transform: scale(1.05);
-      box-shadow: 0 4px 14px rgba(6, 18, 40, 0.35);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     }
     body.dark-theme .process-step-icon {
       background: rgba(255, 255, 255, 0.08);
@@ -975,7 +975,7 @@
     body.dark-theme .process-step-item:hover .process-step-icon {
       background: var(--btn-gradient-primary);
       color: #ffffff;
-      box-shadow: 0 4px 14px rgba(6, 18, 40, 0.5);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
     }
 
     /* Clean bold step numeral on top-right */
@@ -1358,7 +1358,7 @@
       overflow: hidden;
       background: #e2e8f0;
       box-sizing: border-box;
-      box-shadow: 0 16px 44px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.12);
       transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .why-acc-media-card::after {
@@ -1371,7 +1371,7 @@
     .why-acc-media-stage:hover .why-acc-media-card {
       transform: translateY(-3px);
       border-color: var(--brand-accent-hover, #b00403);
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
     }
     body.dark-theme .why-acc-media-card {
       border-color: #ff5a52;
@@ -1419,7 +1419,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 12px 30px rgba(6, 18, 40, 0.45);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
       z-index: 2;
       pointer-events: none;
     }
@@ -1449,7 +1449,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 16px 36px rgba(6, 18, 40, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
       z-index: 5;
       pointer-events: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1681,8 +1681,7 @@
     /* Card 1: Left Tall Feature Card */
     .bento-card-tall {
       background: 
-        radial-gradient(120% 85% at 15% 0%, rgba(26, 68, 142, 0.45) 0%, transparent 68%),
-        linear-gradient(145deg, #13366e 0%, #0a1f42 50%, #051022 100%);
+        radial-gradient(120% 85% at 15% 0%, rgba(215, 28, 27, 0.22) 0%, transparent 68%), linear-gradient(145deg, #1f2529 0%, #171c1f 50%, #0f1315 100%);
       border-radius: 24px;
       padding: clamp(32px, 3.5vw, 44px) clamp(24px, 3vw, 36px);
       display: flex;
@@ -1691,8 +1690,8 @@
       color: #ffffff;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 20px 50px -10px rgba(6, 18, 40, 0.45);
-      border: 1px solid rgba(125, 175, 245, 0.25);
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       min-height: 520px;
     }
     .bento-card-tall::before {
@@ -1703,7 +1702,7 @@
       width: 220px;
       height: 220px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(125, 175, 245, 0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(215, 28, 27, 0.18) 0%, transparent 70%);
       pointer-events: none;
     }
     .bento-card-tall::after {
@@ -1806,7 +1805,7 @@
       align-items: center;
       gap: 10px;
       background: #f59e0b;
-      color: #0b1a30;
+      color: #192023;
       font-family: var(--font-family);
       font-size: 14.5px;
       font-weight: 800;
@@ -1822,7 +1821,7 @@
       background: #fbbf24;
       transform: translateY(-2px);
       box-shadow: 0 12px 30px rgba(245, 158, 11, 0.5);
-      color: #051024;
+      color: #192023;
     }
 
     /* Right Bento Column: Sub-grid */
@@ -2927,7 +2926,7 @@
             </h1>
 
             <p class="hero-description">
-              Precision diagnostic and doorstep repair solutions across Greater Dubai. Specialized care for washing machines, refrigerators, dishwashers, dryers, stoves &amp; microwaves with certified master technicians, genuine OEM parts &amp; guaranteed warranty.
+              Precision diagnostic and doorstep repair solutions across Greater Dubai. Specialized care for washing machines, refrigerators, dishwashers, dryers, stoves &amp; microwaves with certified master technicians, genuine OEM parts &amp; verified quality service.
             </p>
 
             <!-- Hero CTA Button Group: 2 Dedicated Action Buttons -->
@@ -2970,7 +2969,7 @@
 
           <!-- Bottom Key Metrics Bar (Matching Blog & Contact Page Design) -->
           <div class="blog-hero-trust-bar">
-            <!-- Metric 1: 12+ Years of Excellence -->
+            <!-- Metric 1: 4+ Years of Excellence -->
             <div class="blog-trust-item">
               <div class="blog-trust-icon-box">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
@@ -2979,7 +2978,7 @@
                 </svg>
               </div>
               <div class="blog-trust-text">
-                <span class="blog-trust-title">12+</span>
+                <span class="blog-trust-title">4+</span>
                 <span class="blog-trust-sub">Years of Excellence</span>
               </div>
             </div>
@@ -2987,7 +2986,7 @@
             <!-- Vertical Separator 1 -->
             <div class="blog-trust-divider" aria-hidden="true"></div>
 
-            <!-- Metric 2: 50K+ Appliances Restored -->
+            <!-- Metric 2: 3,000+ Appliances Restored -->
             <div class="blog-trust-item">
               <div class="blog-trust-icon-box">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
@@ -2995,7 +2994,7 @@
                 </svg>
               </div>
               <div class="blog-trust-text">
-                <span class="blog-trust-title">50K+</span>
+                <span class="blog-trust-title">3,000+</span>
                 <span class="blog-trust-sub">Appliances Restored</span>
               </div>
             </div>
@@ -3118,7 +3117,7 @@
               </div>
               <h3 class="mcard-title">Dubai's Most Trusted Partner</h3>
               <p class="mcard-desc">
-                Setting the benchmark for excellence in major home appliance restoration through prompt dispatch, dedicated warranties, and trusted multi-brand mastery.
+                Setting the benchmark for excellence in major home appliance restoration through prompt dispatch, verified service standards, and trusted multi-brand mastery.
               </p>
             </div>
 
@@ -3342,11 +3341,11 @@
                       <div class="process-step-icon" aria-hidden="true">
                         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
                       </div>
-                      <h3 class="process-step-title">OEM Fix &amp; Warranty</h3>
+                      <h3 class="process-step-title">OEM Fix &amp; Testing</h3>
                     </div>
                     <span class="process-step-count">04</span>
                   </div>
-                  <p class="process-step-desc">Factory OEM parts installed on the spot with complete warranty coverage.</p>
+                  <p class="process-step-desc">Factory OEM parts installed on the spot with complete diagnostic testing.</p>
                 </div>
 
               </div><!-- /.process-steps-grid -->
@@ -3447,7 +3446,7 @@
                   </div>
                 </div>
 
-                <!-- Card 2: Transparent Costs & OEM Warranty (Soft Sapphire / Ice-Blue) -->
+                <!-- Card 2: Transparent Costs & Genuine Spares (Soft Sapphire / Ice-Blue) -->
                 <div class="why-feat-card card-blue">
                   <div>
                     <div class="why-fcard-top">
@@ -3458,12 +3457,12 @@
                         </svg>
                       </div>
                       <div class="why-fcard-title-wrap">
-                        <h3 class="why-fcard-title">Transparent Costs &amp;<br>OEM Warranty</h3>
+                        <h3 class="why-fcard-title">Transparent Costs &amp;<br>Genuine Spares</h3>
                         <span class="why-fcard-mini-line line-blue" aria-hidden="true"></span>
                       </div>
                     </div>
                     <p class="why-fcard-desc">
-                      Zero hidden callout fees. Restored strictly to manufacturer specs using 100% genuine factory-original OEM parts with our written 1-year warranty.
+                      Zero hidden callout fees. Restored strictly to manufacturer specs using 100% genuine factory-original OEM parts with an official itemized service invoice.
                     </p>
                   </div>
 
@@ -3477,7 +3476,7 @@
                       </svg>
                     </div>
                     <div class="why-fcard-meta">
-                      <strong>1-Year Warranty</strong>
+                      <strong>Official Invoice</strong>
                       <span>Zero Hidden Callout Fees</span>
                     </div>
                   </div>
@@ -3556,7 +3555,7 @@
               <div class="compare-card-stage">
                 <div class="stage-backdrop stage-backdrop-certified" aria-hidden="true"></div>
                 <img src="assets/compare-technician-certified.png" alt="Dubai Fix Certified Master Technician Holding Digital Diagnostic Tablet" class="compare-char-img">
-                <span class="stage-floating-badge badge-stage-certified">★ 100% Guaranteed &amp; Insured</span>
+                <span class="stage-floating-badge badge-stage-certified">★ 100% Quality Assured</span>
               </div>
 
               <div class="compare-card-content">
@@ -3649,100 +3648,111 @@
         <div class="prefooter-cta-container">
           <div class="prefooter-simple-card">
 
-            <!-- 100% Satisfaction Guaranteed Rosette Ribbon Badge (Top-Right Overlap matching reference) -->
-            <div class="prefooter-seal-badge" aria-label="100% Satisfaction Guaranteed">
-              <svg class="seal-svg" width="125" height="140" viewBox="0 0 125 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 100% Verified Quality Rosette Ribbon Badge (Top-Right Overlap matching reference) -->
+            <div class="prefooter-seal-badge" aria-label="100% Verified Quality">
+              <svg class="seal-svg" width="135" height="152" viewBox="0 0 125 140" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <!-- 3D Elevation Filters -->
                   <filter id="sealOuterShadow" x="-20%" y="-15%" width="140%" height="135%">
-                    <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="rgba(10, 28, 64, 0.35)"/>
+                    <feDropShadow dx="0" dy="5" stdDeviation="4.5" flood-color="rgba(0, 0, 0, 0.45)" />
                   </filter>
                   <filter id="sealBannerShadow" x="-10%" y="-15%" width="120%" height="140%">
-                    <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="rgba(0, 0, 0, 0.4)"/>
+                    <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="rgba(0, 0, 0, 0.65)" />
                   </filter>
                   <filter id="badgeTextShadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="1.2" stdDeviation="0.8" flood-color="rgba(2, 8, 20, 0.95)"/>
+                    <feDropShadow dx="0" dy="1.2" stdDeviation="0.8" flood-color="rgba(0, 0, 0, 0.95)" />
                   </filter>
 
                   <!-- Chrome / Metallic Beveled Outer Ring -->
                   <linearGradient id="chromeBevelGrad" x1="18" y1="6" x2="107" y2="90" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#ffffff"/>
-                    <stop offset="30%" stop-color="#cbd5e1"/>
-                    <stop offset="55%" stop-color="#64748b"/>
-                    <stop offset="80%" stop-color="#f8fafc"/>
-                    <stop offset="100%" stop-color="#475569"/>
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="28%" stop-color="#cbd5e1" />
+                    <stop offset="52%" stop-color="#64748b" />
+                    <stop offset="76%" stop-color="#f8fafc" />
+                    <stop offset="100%" stop-color="#334155" />
                   </linearGradient>
 
-                  <!-- Deep Navy Core Disc -->
-                  <radialGradient id="discNavyCoreGrad" cx="62.5" cy="46" r="38" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#d71c1b"/>
-                    <stop offset="45%" stop-color="#d71c1b"/>
-                    <stop offset="90%" stop-color="#0a1f44"/>
-                    <stop offset="100%" stop-color="#06132b"/>
+                  <!-- Jet Black Core Disc -->
+                  <radialGradient id="discNavyCoreGrad" cx="62.5" cy="45" r="39" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#2a2e33" />
+                    <stop offset="30%" stop-color="#181c1f" />
+                    <stop offset="70%" stop-color="#0e1012" />
+                    <stop offset="100%" stop-color="#020304" />
                   </radialGradient>
 
-                  <!-- Luminous Sapphire Ribbon Gradient -->
-                  <linearGradient id="ribbonSapphireGrad" x1="16" y1="56" x2="109" y2="76" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#e02a24"/>
-                    <stop offset="35%" stop-color="#d71c1b"/>
-                    <stop offset="70%" stop-color="#d71c1b"/>
-                    <stop offset="100%" stop-color="#b00403"/>
+                  <!-- Brand Crimson Red Ribbon Gradient -->
+                  <linearGradient id="ribbonSapphireGrad" x1="16" y1="56" x2="109" y2="76"
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#ff453a" />
+                    <stop offset="30%" stop-color="#e02a24" />
+                    <stop offset="70%" stop-color="#d71c1b" />
+                    <stop offset="100%" stop-color="#990d0b" />
                   </linearGradient>
 
-                  <!-- Ribbon Tails -->
+                  <!-- Brand Crimson Red Ribbon Tails with Deep 3D Contrast -->
                   <linearGradient id="tailGradLeftSeal" x1="24" y1="68" x2="56" y2="122" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#b00403"/>
-                    <stop offset="50%" stop-color="#d71c1b"/>
-                    <stop offset="100%" stop-color="#07152d"/>
+                    <stop offset="0%" stop-color="#e02a24" />
+                    <stop offset="50%" stop-color="#d71c1b" />
+                    <stop offset="100%" stop-color="#6b0807" />
                   </linearGradient>
-                  <linearGradient id="tailGradRightSeal" x1="101" y1="68" x2="69" y2="122" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#b00403"/>
-                    <stop offset="50%" stop-color="#d71c1b"/>
-                    <stop offset="100%" stop-color="#07152d"/>
+                  <linearGradient id="tailGradRightSeal" x1="101" y1="68" x2="69" y2="122"
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#e02a24" />
+                    <stop offset="50%" stop-color="#d71c1b" />
+                    <stop offset="100%" stop-color="#6b0807" />
                   </linearGradient>
                 </defs>
 
                 <!-- Ribbon Tails with Deep 3D Shadow -->
                 <g filter="url(#sealOuterShadow)">
-                  <path d="M 35 66 L 20 124 L 40 108 L 52 124 L 48 66 Z" fill="url(#tailGradLeftSeal)"/>
-                  <path d="M 35 66 L 20 124 L 40 108 Z" fill="rgba(255, 255, 255, 0.1)"/>
-                  <path d="M 90 66 L 105 124 L 85 108 L 73 124 L 77 66 Z" fill="url(#tailGradRightSeal)"/>
-                  <path d="M 90 66 L 105 124 L 85 108 Z" fill="rgba(0, 0, 0, 0.15)"/>
+                  <path d="M 35 66 L 20 124 L 40 108 L 52 124 L 48 66 Z" fill="url(#tailGradLeftSeal)" />
+                  <path d="M 35 66 L 20 124 L 40 108 Z" fill="rgba(255, 255, 255, 0.12)" />
+                  <path d="M 90 66 L 105 124 L 85 108 L 73 124 L 77 66 Z" fill="url(#tailGradRightSeal)" />
+                  <path d="M 90 66 L 105 124 L 85 108 Z" fill="rgba(0, 0, 0, 0.35)" />
                 </g>
 
-                <!-- Chrome Beveled Rim & Core Disc -->
+                <!-- Chrome Beveled Rim, Vibrant Crimson Accent Ring & Jet Black Core Disc -->
                 <g filter="url(#sealOuterShadow)">
-                  <circle cx="62.5" cy="48" r="44" fill="url(#chromeBevelGrad)"/>
-                  <circle cx="62.5" cy="48" r="41" fill="#0f254e"/>
-                  <circle cx="62.5" cy="48" r="39.5" fill="url(#discNavyCoreGrad)" stroke="#ffffff" stroke-width="1.8"/>
+                  <circle cx="62.5" cy="48" r="44" fill="url(#chromeBevelGrad)" />
+                  <circle cx="62.5" cy="48" r="41.5" fill="#d71c1b" stroke="#ff3b30" stroke-width="0.8" />
+                  <circle cx="62.5" cy="48" r="39.5" fill="url(#discNavyCoreGrad)" stroke="#ffffff"
+                    stroke-width="1.8" />
                 </g>
 
-                <!-- Inner Dotted Decorative Ring -->
-                <circle cx="62.5" cy="48" r="33.5" fill="none" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-dasharray="2 2.5"/>
+                <!-- Inner Dotted Decorative Ring (Coral Red Luster) -->
+                <circle cx="62.5" cy="48" r="33.5" fill="none" stroke="#ff5a52" stroke-width="1.2"
+                  stroke-dasharray="2 2.5" />
 
                 <!-- Top Arc Text: ★ SATISFACTION ★ -->
-                <path id="arcTopSeal" d="M 32 46 A 29 29 0 0 1 93 46" fill="none"/>
-                <text font-family="'Plus Jakarta Sans', sans-serif" font-size="6.2" font-weight="800" fill="#ffffff" letter-spacing="1.2" filter="url(#badgeTextShadow)">
+                <path id="arcTopSeal" d="M 32 46 A 29 29 0 0 1 93 46" fill="none" />
+                <text font-family="'Plus Jakarta Sans', sans-serif" font-size="6.2" font-weight="800" fill="#ffffff"
+                  letter-spacing="1.2" filter="url(#badgeTextShadow)">
                   <textPath href="#arcTopSeal" startOffset="50%" text-anchor="middle">★ SATISFACTION ★</textPath>
                 </text>
 
                 <!-- Center 100% Bold Trust Headline -->
-                <text x="62.5" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5" filter="url(#badgeTextShadow)">100%</text>
+                <text x="62.5" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="900"
+                  fill="#ffffff" text-anchor="middle" letter-spacing="-0.5" filter="url(#badgeTextShadow)">100%</text>
 
                 <!-- Draped Ribbon Banner Across Bottom of Disc -->
                 <g filter="url(#sealBannerShadow)">
                   <!-- 3D Fold Undersides -->
-                  <path d="M 16 58 L 9 66 L 21 76 Z" fill="#061226"/>
-                  <path d="M 109 58 L 116 66 L 104 76 Z" fill="#061226"/>
+                  <path d="M 16 58 L 9 66 L 21 76 Z" fill="#1f0302" stroke="#000000" stroke-width="0.5" />
+                  <path d="M 109 58 L 116 66 L 104 76 Z" fill="#1f0302" stroke="#000000" stroke-width="0.5" />
 
                   <!-- Main Front Ribbon with Crisp White Stroke -->
-                  <path d="M 16 58 Q 62.5 64 109 58 L 104 76 Q 62.5 82 21 76 Z" fill="url(#ribbonSapphireGrad)" stroke="#ffffff" stroke-width="1.8"/>
-                  <path d="M 18 59.5 Q 62.5 65.5 107 59.5" stroke="rgba(255, 255, 255, 0.4)" stroke-width="0.8" fill="none"/>
+                  <path d="M 16 58 Q 62.5 64 109 58 L 104 76 Q 62.5 82 21 76 Z" fill="url(#ribbonSapphireGrad)"
+                    stroke="#ffffff" stroke-width="1.8" />
+                  <path d="M 18 59.5 Q 62.5 65.5 107 59.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="0.8"
+                    fill="none" />
 
                   <!-- Curved Banner Text with High Legibility & Zero Spillage -->
-                  <path id="ribbonPathSeal" d="M 21 70.5 Q 62.5 76.5 104 70.5" fill="none"/>
-                  <text font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="900" fill="#ffffff" filter="url(#badgeTextShadow)">
-                    <textPath href="#ribbonPathSeal" startOffset="50%" text-anchor="middle" letter-spacing="1.4">GUARANTEED</textPath>
+                  <path id="ribbonPathSeal" d="M 21 70.5 Q 62.5 76.5 104 70.5" fill="none" />
+                  <text font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="900" fill="#ffffff"
+                    filter="url(#badgeTextShadow)">
+                    <textPath href="#ribbonPathSeal" startOffset="50%" text-anchor="middle" letter-spacing="1.5">
+                      VERIFIED</textPath>
                   </text>
                 </g>
               </svg>
@@ -3762,7 +3772,7 @@
 
             <!-- Centered Subtitle Description -->
             <p class="prefooter-simple-desc">
-              Get fast, reliable appliance repair from certified technicians anywhere in Dubai. Book your service now and enjoy same-day repair with guaranteed results.
+              Get fast, reliable appliance repair from certified technicians anywhere in Dubai. Book your service now and enjoy same-day repair with reliable results.
             </p>
 
             <!-- Centered 2 Action Buttons -->
@@ -3817,7 +3827,7 @@
 
           <!-- Brand Statement -->
           <p class="footer-brand-desc">
-            Dubai Fix Appliances offers certified same-day home appliance repair across Dubai. Fast diagnostics, genuine OEM factory parts, and guaranteed satisfaction.
+            Dubai Fix Appliances offers certified same-day home appliance repair across Dubai. Fast diagnostics, genuine OEM factory parts, and verified service quality.
           </p>
 
           <!-- Social Channels Row -->
@@ -3984,7 +3994,7 @@
             <span class="legal-dot">&bull;</span>
             <a href="#terms">Terms of Service</a>
             <span class="legal-dot">&bull;</span>
-            <a href="#warranty">Warranty Guarantee</a>
+            <a href="#quality-policy">Service Quality Policy</a>
           </div>
         </div>
 
@@ -4039,15 +4049,15 @@
       <div class="modal-trust-footer">
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          <span>Same-Day Guaranteed</span>
+          <span>Same-Day Dispatch</span>
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          <span>1-Year Warranty</span>
+          <span>Certified OEM Parts</span>
         </div>
         <div class="trust-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <span>Under 60 Min Arrival</span>
+          <span>60-Min Response Time</span>
         </div>
       </div>
     </div>
