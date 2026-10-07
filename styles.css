@@ -666,6 +666,7 @@ body.dark-theme .dropdown-divider {
   flex-shrink: 0;
 }
 .btn-hero-secondary:hover {
+  background-color: #25d366 !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2px);
