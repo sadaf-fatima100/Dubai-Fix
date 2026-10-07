@@ -766,6 +766,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Footer Legal Links Interactive Toast Notification
+  document.querySelectorAll('.footer-legal-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href === '#privacy') {
+        e.preventDefault();
+        showToast('🔒 Privacy Policy: Client data is strictly confidential & protected under UAE Federal Law.');
+      } else if (href === '#terms') {
+        e.preventDefault();
+        showToast('📋 Terms of Service: Upfront written quotes provided before work starts. Zero hidden fees.');
+      } else if (href === '#warranty' || href === '#quality-policy') {
+        e.preventDefault();
+        showToast('🛡️ Warranty Guarantee: 1-Year Official Written Warranty on all OEM spare parts & labor.');
+      }
+    });
+  });
+
   initUniversalButtonBubbleAnimation();
 
   window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
