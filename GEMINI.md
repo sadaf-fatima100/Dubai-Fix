@@ -1,4 +1,4 @@
-# ApexFix Project Architecture & Design Rules
+﻿# ApexFix Project Architecture & Design Rules
 
 This project follows strict engineering and visual standards. Every change must adhere to the following rules:
 
@@ -87,3 +87,4 @@ This project follows strict engineering and visual standards. Every change must 
 - **Clean Flat Geometry**: All card icon badges must use `box-shadow: none;` on both default and hover states. Interactive feedback must be driven by micro-scaling (`transform: scale(1.08)`) and gradient shift, never colored blur halos.
 
 
+- **Colour-Flip Sync**: Hover text/icon colour must flip only after bubbles cover the button (`transition: color 0.45s <same curve> 0.3s` on :hover), never instantly, and pill buttons must have no border ring (`border: 0`) so bubbles fill edge to edge. On dark cards use crimson bubbles, not black.
