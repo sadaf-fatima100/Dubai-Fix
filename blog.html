@@ -921,7 +921,7 @@
       // Open article modal
       function openArticleModal(id) {
         const article = articlesData[id];
-        if (!article) return;
+        if (!article || !articleModal || !articleModalBody) return;
 
         articleModalBody.innerHTML = `
           <div class="article-reader-header">

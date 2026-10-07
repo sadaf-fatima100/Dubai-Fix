@@ -1365,12 +1365,19 @@
         const category = data.category || '';
         const details = caseStudyDataMap[category] || {};
 
-        document.getElementById('pfLightboxImg').src = data.img;
-        document.getElementById('pfLightboxTitle').textContent = details.title || data.title;
-        document.getElementById('pfLightboxDesc').textContent = details.desc || data.desc;
-        document.getElementById('pfLightboxLocation').textContent = details.location || data.location;
-        document.getElementById('pfLightboxBrand').textContent = details.brand || data.brand;
-        document.getElementById('pfLightboxTime').textContent = details.time || data.time;
+        const imgEl = document.getElementById('pfLightboxImg');
+        const titleEl = document.getElementById('pfLightboxTitle');
+        const descEl = document.getElementById('pfLightboxDesc');
+        const locEl = document.getElementById('pfLightboxLocation');
+        const brandEl = document.getElementById('pfLightboxBrand');
+        const timeEl = document.getElementById('pfLightboxTime');
+
+        if (imgEl) imgEl.src = data.img || '';
+        if (titleEl) titleEl.textContent = details.title || data.title;
+        if (descEl) descEl.textContent = details.desc || data.desc;
+        if (locEl) locEl.textContent = details.location || data.location;
+        if (brandEl) brandEl.textContent = details.brand || data.brand;
+        if (timeEl) timeEl.textContent = details.time || data.time;
 
         const brand2El = document.getElementById('pfLightboxBrand2');
         const partsEl = document.getElementById('pfLightboxParts');
