@@ -1124,24 +1124,68 @@ a:hover .btn-circle,
               opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Wide / full-width form buttons: expand circles to scale 30 (960px)
-   so organic liquid bubbles flood the entire wide button edge-to-edge (covering up to 900px width),
-   completely eliminating exposed red caps or uncovered edges on desktop */
+/* Wide, full-width, card, and container action buttons:
+   Expand circles to scale(32) (1024px coverage) so organic liquid bubbles flood the entire
+   wide button edge-to-edge, completely eliminating exposed left/right caps or uncovered edges */
 .btn-bform-submit:hover .btn-circle,
 .btn-contact-submit:hover .btn-circle,
 .modal-submit-btn:hover .btn-circle,
 .nav-menu-schedule-btn:hover .btn-circle,
 .empty-cta-btn:hover .btn-circle,
-.btn-modal-call:hover .btn-circle {
-  transform: translate(-50%, -50%) scale(30) !important;
+.btn-modal-call:hover .btn-circle,
+.footer-book-btn:hover .btn-circle,
+.sidebar-btn-book:hover .btn-circle,
+.sidebar-btn-call:hover .btn-circle,
+.article-cta-book-btn:hover .btn-circle,
+.article-cta-call-btn:hover .btn-circle,
+.compare-card-cta:hover .btn-circle,
+.btn-process-action:hover .btn-circle,
+.btn-kitchen-quote:hover .btn-circle,
+.btn-dispatch-call:hover .btn-circle,
+.btn-dispatch-phone:hover .btn-circle,
+.btn-dispatch-wa:hover .btn-circle,
+.btn-dispatch-whatsapp:hover .btn-circle,
+.btn-simple-cta-call:hover .btn-circle,
+.btn-simple-cta-whatsapp:hover .btn-circle,
+.btn-cta-banner-primary:hover .btn-circle,
+.btn-cta-banner-call:hover .btn-circle,
+.btn-prefooter-primary:hover .btn-circle,
+.btn-prefooter-call:hover .btn-circle,
+.btn-emergency-primary:hover .btn-circle,
+.btn-emergency-call:hover .btn-circle,
+.btn-emergency-wa:hover .btn-circle,
+.btn-urgent-book:hover .btn-circle,
+.btn-urgent-call:hover .btn-circle,
+.btn-lb-call:hover .btn-circle,
+.btn-lb-whatsapp:hover .btn-circle,
+.areas-clear-btn:hover .btn-circle,
+.mcard-featured-btn:hover .btn-circle,
+.btn-filter-browse:hover .btn-circle {
+  transform: translate(-50%, -50%) scale(32) !important;
   opacity: 1 !important;
 }
 
-/* Staggered micro-timing — each circle arrives at a slightly different speed
-   for an organic liquid-collision look (exact match to the master navbar button .btn-schedule) */
+/* Responsive Edge-to-Edge Fill: on tablet & mobile screens, all buttons stretch to full container width,
+   so scale(32) ensures 100% full-width coverage with zero edge voids across all mobile viewports */
+@media (max-width: 992px) {
+  button:hover .btn-circle,
+  a:hover .btn-circle,
+  :hover > .btn-circle,
+  [class*="btn-"]:hover .btn-circle,
+  [class*="-btn"]:hover .btn-circle {
+    transform: translate(-50%, -50%) scale(32) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Staggered micro-timing — each circle arrives at a calibrated speed
+   for an organic liquid-collision look (matching the master navbar button .btn-schedule)
+   Applied universally to all buttons with opacity transition for silky smoothness */
 button:hover .btn-circle-1,
 a:hover .btn-circle-1,
 :hover > .btn-circle-1,
+[class*="btn-"]:hover .btn-circle-1,
+[class*="-btn"]:hover .btn-circle-1,
 .btn-primary:hover .btn-circle-1,
 .btn-schedule:hover .btn-circle-1,
 .nav-menu-schedule-btn:hover .btn-circle-1,
@@ -1165,12 +1209,15 @@ a:hover .btn-circle-1,
 .article-cta-call-btn:hover .btn-circle-1,
 .btn-read-full-guide:hover .btn-circle-1,
 .compare-card-cta:hover .btn-circle-1 {
-  transition: transform 1.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transition: transform 1.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 button:hover .btn-circle-2,
 a:hover .btn-circle-2,
 :hover > .btn-circle-2,
+[class*="btn-"]:hover .btn-circle-2,
+[class*="-btn"]:hover .btn-circle-2,
 .btn-primary:hover .btn-circle-2,
 .btn-schedule:hover .btn-circle-2,
 .nav-menu-schedule-btn:hover .btn-circle-2,
@@ -1194,12 +1241,15 @@ a:hover .btn-circle-2,
 .article-cta-call-btn:hover .btn-circle-2,
 .btn-read-full-guide:hover .btn-circle-2,
 .compare-card-cta:hover .btn-circle-2 {
-  transition: transform 2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transition: transform 2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 button:hover .btn-circle-3,
 a:hover .btn-circle-3,
 :hover > .btn-circle-3,
+[class*="btn-"]:hover .btn-circle-3,
+[class*="-btn"]:hover .btn-circle-3,
 .btn-primary:hover .btn-circle-3,
 .btn-schedule:hover .btn-circle-3,
 .nav-menu-schedule-btn:hover .btn-circle-3,
@@ -1223,12 +1273,15 @@ a:hover .btn-circle-3,
 .article-cta-call-btn:hover .btn-circle-3,
 .btn-read-full-guide:hover .btn-circle-3,
 .compare-card-cta:hover .btn-circle-3 {
-  transition: transform 1.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transition: transform 1.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 button:hover .btn-circle-4,
 a:hover .btn-circle-4,
 :hover > .btn-circle-4,
+[class*="btn-"]:hover .btn-circle-4,
+[class*="-btn"]:hover .btn-circle-4,
 .btn-primary:hover .btn-circle-4,
 .btn-schedule:hover .btn-circle-4,
 .nav-menu-schedule-btn:hover .btn-circle-4,
@@ -1252,12 +1305,15 @@ a:hover .btn-circle-4,
 .article-cta-call-btn:hover .btn-circle-4,
 .btn-read-full-guide:hover .btn-circle-4,
 .compare-card-cta:hover .btn-circle-4 {
-  transition: transform 2.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transition: transform 2.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 button:hover .btn-circle-5,
 a:hover .btn-circle-5,
 :hover > .btn-circle-5,
+[class*="btn-"]:hover .btn-circle-5,
+[class*="-btn"]:hover .btn-circle-5,
 .btn-primary:hover .btn-circle-5,
 .btn-schedule:hover .btn-circle-5,
 .nav-menu-schedule-btn:hover .btn-circle-5,
@@ -1281,7 +1337,8 @@ a:hover .btn-circle-5,
 .article-cta-call-btn:hover .btn-circle-5,
 .btn-read-full-guide:hover .btn-circle-5,
 .compare-card-cta:hover .btn-circle-5 {
-  transition: transform 1.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transition: transform 1.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 /* ==========================================================================
