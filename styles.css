@@ -2651,9 +2651,9 @@ a.service-card-item *,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--brand-accent-light);
-  color: var(--brand-accent);
-  border: 1.5px solid rgba(0, 0, 0, 0.16);
+  background-color: rgba(37, 211, 102, 0.06);
+  color: #15803d;
+  border: 1.5px solid #25d366;
   font-family: var(--font-family);
   font-size: 14.5px;
   font-weight: 700;
@@ -2662,7 +2662,7 @@ a.service-card-item *,
   border-radius: var(--radius-pill);
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15);
   transition:
     transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.25s ease,
@@ -2670,12 +2670,20 @@ a.service-card-item *,
     border-color 0.25s ease,
     color 0.25s ease;
 }
+.btn-dispatch-whatsapp svg {
+  color: #16a34a;
+  stroke: #16a34a;
+  transition: color 0.2s ease, stroke 0.2s ease;
+}
 .btn-dispatch-whatsapp:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
   background-color: #25d366 !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
-  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
+}
+.btn-dispatch-whatsapp:hover span {
+  color: #ffffff !important;
 }
 .btn-dispatch-whatsapp:hover svg {
   color: #ffffff !important;
@@ -2890,39 +2898,40 @@ a.service-card-item *,
     0 18px 42px rgba(25, 32, 35, 0.12),
     inset 0 1px 1px rgba(255, 255, 255, 1);
   transform: translateY(-4px);
-} /* Icon Badge inside Light Card */
+} /* Icon Badge inside Light Card - Default Red Brand Fill & White Icon */
 .why-card-icon-badge {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: #fdf2f2;
-  border: 1px solid rgba(197, 18, 16, 0.16);
-  color: var(--brand-accent, #c51210);
+  background: var(--btn-gradient-primary, linear-gradient(135deg, #d71c1b 0%, #c51210 50%, #b00403 100%));
+  border: 1px solid transparent;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 4px 14px rgba(215, 28, 27, 0.28);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .why-card-item:hover .why-card-icon-badge {
-  background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
+  background: var(--btn-gradient-hover, linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%));
   border-color: transparent;
   color: #ffffff;
   transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 6px 18px rgba(215, 28, 27, 0.42);
 }
 .why-card-content .why-card-title {
-  color: #192023 !important;
+  color: var(--brand-accent, #d71c1b) !important;
   font-size: 17.5px;
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1.25;
   margin-bottom: 7px;
+  transition: color 0.25s ease;
 }
 .why-card-item:hover .why-card-content .why-card-title {
-  color: #c51210 !important;
+  color: var(--brand-accent-hover, #b00403) !important;
 }
 .why-card-content .why-card-desc {
   color: #475056 !important;
@@ -2932,10 +2941,10 @@ a.service-card-item *,
   margin: 0;
 }
 body.dark-theme .why-card-content .why-card-title {
-  color: #ffffff !important;
+  color: #ff5a52 !important;
 }
 body.dark-theme .why-card-item:hover .why-card-content .why-card-title {
-  color: #ff5a52 !important;
+  color: #ff7872 !important;
 }
 body.dark-theme .why-card-content .why-card-desc {
   color: rgba(255, 255, 255, 0.75) !important;
@@ -3649,21 +3658,33 @@ body.dark-theme .why-card-content .why-card-desc {
   padding: 13px 26px;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+}
+.areas-cta-banner .btn-dispatch-call .btn-circle {
+  background-color: #25d366 !important;
+}
+.areas-cta-banner .btn-dispatch-call > span:not(.btn-circle),
+.areas-cta-banner .btn-dispatch-call > svg {
+  position: relative !important;
+  z-index: 3 !important;
+  transition: color 0.25s ease !important;
 }
 .areas-cta-banner .btn-dispatch-call .phone-vibe-icon,
 .areas-cta-banner .btn-dispatch-call svg {
   color: var(--brand-accent, #c51210) !important;
   fill: currentColor !important;
+  transition: color 0.25s ease, fill 0.25s ease;
 }
 .areas-cta-banner .btn-dispatch-call:hover {
-  background: #25d366 !important;
+  transform: translateY(-2px);
   color: #ffffff !important;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45) !important;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35) !important;
   border-color: transparent !important;
+}
+.areas-cta-banner .btn-dispatch-call:hover span {
+  color: #ffffff !important;
 }
 .areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon,
 .areas-cta-banner .btn-dispatch-call:hover svg {
@@ -4010,17 +4031,18 @@ body.dark-theme .why-card-content .why-card-desc {
   flex-shrink: 0;
 }
 .btn-process-action:hover {
-  background-color: #ffffff;
   transform: translateY(-2px) scale(1.015);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 .btn-process-action:hover span {
-  color: #c51210;
+  color: #ffffff !important;
 }
 .btn-process-action:hover svg {
   background-color: #c51210;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transform: translateX(2px);
 }
 .process-coverage-pill {
@@ -5907,11 +5929,11 @@ body.dark-theme .prefooter-simple-card {
   padding: 18px 8px 0 24px;
   border-radius: 27px 0 0 27px;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 62%, rgba(197, 18, 16, 0.08) 0%, rgba(197, 18, 16, 0.02) 56%, transparent 76%);
+  background: radial-gradient(circle at 50% 62%, rgba(25, 32, 35, 0.04) 0%, rgba(25, 32, 35, 0.01) 56%, transparent 76%);
 }
 
 body.dark-theme .prefooter-cta-visual {
-  background: radial-gradient(circle at 50% 62%, rgba(224, 42, 36, 0.15) 0%, rgba(197, 18, 16, 0.04) 56%, transparent 76%);
+  background: radial-gradient(circle at 50% 62%, rgba(255, 255, 255, 0.03) 0%, transparent 76%);
 }
 
 .prefooter-team-img {
@@ -10021,15 +10043,16 @@ body.dark-theme .btn-process-action svg {
   color: #c51210;
 }
 body.dark-theme .btn-process-action:hover {
-  background-color: #ffffff;
+  transform: translateY(-2px) scale(1.015);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
 }
 body.dark-theme .btn-process-action:hover span {
-  color: #c51210;
+  color: #ffffff !important;
 }
 body.dark-theme .btn-process-action:hover svg {
   background-color: #c51210;
-  color: #ffffff;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 body.dark-theme .process-right-col {
   background: #171c1f;
@@ -10116,15 +10139,16 @@ body.dark-theme .why-card-item:hover .why-card-content {
     inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 body.dark-theme .why-card-icon-badge {
-  background: rgba(255, 90, 82, 0.12);
-  border-color: rgba(255, 90, 82, 0.2);
-  color: #ff5a52;
-}
-body.dark-theme .why-card-item:hover .why-card-icon-badge {
-  background: linear-gradient(135deg, #e02a24 0%, #d31815 50%, #b30f0d 100%);
+  background: var(--btn-gradient-primary, linear-gradient(135deg, #d71c1b 0%, #c51210 50%, #b00403 100%));
   border-color: transparent;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+body.dark-theme .why-card-item:hover .why-card-icon-badge {
+  background: var(--btn-gradient-hover, linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%));
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(255, 90, 82, 0.45);
 }
 body.dark-theme .why-stats-strip {
   background-color: #171c1f;
@@ -10857,11 +10881,14 @@ body.dark-theme .areas-cta-banner:hover {
 body.dark-theme .areas-cta-banner .btn-dispatch-call {
   background: #ffffff !important;
   color: var(--brand-accent, #c51210) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+body.dark-theme .areas-cta-banner .btn-dispatch-call .btn-circle {
+  background-color: #25d366 !important;
 }
 body.dark-theme .areas-cta-banner .btn-dispatch-call:hover {
-  background: #25d366 !important;
   color: #ffffff !important;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5) !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45) !important;
 }
 body.dark-theme .areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon,
 body.dark-theme .areas-cta-banner .btn-dispatch-call:hover svg {
@@ -12584,22 +12611,7 @@ body.dark-theme .emergency-pillar-item:hover {
   margin-bottom: -48px;
 }
 .cta-tech-glow {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 420px;
-  height: 320px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(197, 18, 16, 0.12) 0%,
-    rgba(224, 42, 36, 0.05) 50%,
-    transparent 70%
-  );
-  filter: blur(24px);
-  pointer-events: none;
-  z-index: 1;
+  display: none !important;
 }
 .cta-tech-holder {
   position: relative;
@@ -15898,27 +15910,33 @@ body.dark-theme .hero-flank-card {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: rgba(0, 0, 0, 0.06);
-  color: var(--brand-accent);
+  background: var(--btn-gradient-primary, linear-gradient(135deg, #d71c1b 0%, #c51210 50%, #b00403 100%));
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(215, 28, 27, 0.28);
   transition: all 0.25s ease;
 }
 .service-why-card:hover .why-card-icon-box {
-  background: var(--btn-gradient-primary);
+  background: var(--btn-gradient-hover, linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%));
   color: #ffffff;
   transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(215, 28, 27, 0.42);
 }
 .service-why-card .why-card-title {
   font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--brand-accent, #d71c1b);
   margin: 0;
   line-height: 1.25;
   letter-spacing: -0.015em;
+  transition: color 0.25s ease;
+}
+.service-why-card:hover .why-card-title {
+  color: var(--brand-accent-hover, #b00403);
 }
 .service-why-card .why-card-desc {
   font-size: 13.5px;
@@ -16166,15 +16184,20 @@ body.dark-theme .service-why-card:hover {
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
 }
 body.dark-theme .why-card-icon-box {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ff5a52;
+  background: var(--btn-gradient-primary, linear-gradient(135deg, #d71c1b 0%, #c51210 50%, #b00403 100%));
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 body.dark-theme .service-why-card:hover .why-card-icon-box {
-  background: var(--btn-gradient-primary);
+  background: var(--btn-gradient-hover, linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%));
   color: #ffffff;
+  box-shadow: 0 6px 18px rgba(255, 90, 82, 0.45);
 }
 body.dark-theme .service-why-card .why-card-title {
-  color: #ffffff;
+  color: #ff5a52;
+}
+body.dark-theme .service-why-card:hover .why-card-title {
+  color: #ff7872;
 }
 body.dark-theme .service-why-card .why-card-desc {
   color: #94a3b8;
