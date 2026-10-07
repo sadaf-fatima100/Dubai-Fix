@@ -714,6 +714,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '.btn-dispatch-call',
       '.btn-dispatch-phone',
       '.btn-contact-submit',
+      '.btn-bform-submit',
+      '.btn-emergency-call',
       '.btn-cta-banner-primary',
       '.mcard-featured-btn',
       '.btn-filter-browse',
@@ -722,10 +724,9 @@ document.addEventListener('DOMContentLoaded', () => {
       '.empty-cta-btn',
       '.sidebar-btn-call',
 
-      // Emerald Green Emergency & Call Buttons (Emerald Green bubbles)
+      // Vibrant WhatsApp Green Emergency & Call Buttons (Vibrant Green bubbles)
       '.btn-hero-secondary',
       '.btn-about-secondary',
-      '.btn-emergency-call',
       '.btn-urgent-call',
       '.btn-cta-green',
       '.btn-prefooter-call',
@@ -735,11 +736,12 @@ document.addEventListener('DOMContentLoaded', () => {
       '.process-phone-link',
       '.standards-call-link',
 
-      // WhatsApp Action Buttons (Deep Forest Green bubbles)
+      // WhatsApp Action Buttons (Vibrant WhatsApp Green bubbles #25D366)
       '.btn-dispatch-wa',
       '.btn-dispatch-whatsapp',
       '.btn-simple-cta-whatsapp',
       '.btn-lb-whatsapp',
+      '.btn-emergency-wa',
 
       // White / Elevated Light Card Buttons (Signature Crimson Red bubbles)
       '.footer-book-btn',

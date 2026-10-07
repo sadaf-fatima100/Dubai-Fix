@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=2.4">
+  <link rel="stylesheet" href="styles.css?v=3.5">
 
   <style>
     /* ============================================================
@@ -47,14 +47,14 @@
     /* Card 1: Emergency Card */
     .contact-side-emergency-card {
       background: #ffffff;
-      border: 1.5px solid rgba(20, 56, 119, 0.10);
+      border: 1.5px solid rgba(197, 18, 16, 0.12);
       border-radius: 22px;
       padding: clamp(22px, 2.5vw, 28px);
-      box-shadow: 0 12px 32px rgba(15, 43, 92, 0.05), 0 3px 12px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04), 0 3px 12px rgba(0, 0, 0, 0.02);
       transition: all 0.3s ease;
     }
     body.dark-theme .contact-side-emergency-card {
-      background: #181924;
+      background: #171c1f;
       border-color: rgba(255, 255, 255, 0.08);
       box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
     }
@@ -65,16 +65,16 @@
       margin-bottom: 8px;
     }
     .emergency-bolt-icon {
-      color: var(--brand-accent, #143877);
+      color: var(--brand-accent, #c51210);
       flex-shrink: 0;
     }
     body.dark-theme .emergency-bolt-icon {
-      color: #60a5fa;
+      color: #ff5a52;
     }
     .emergency-card-title {
       font-size: 16.5px;
       font-weight: 800;
-      color: var(--text-dark, #121217);
+      color: var(--text-dark, #192023);
       margin: 0;
       letter-spacing: -0.015em;
     }
@@ -85,87 +85,120 @@
       font-size: 13.5px;
       font-weight: 500;
       line-height: 1.58;
-      color: var(--text-sub, #5a5f70);
+      color: var(--text-sub, #475056);
       margin: 0 0 18px;
     }
     body.dark-theme .emergency-card-desc {
-      color: rgba(255, 255, 255, 0.7);
+      color: #a9b2b8;
     }
     .emergency-card-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
+    .btn-emergency-call,
+    .btn-emergency-wa {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .btn-emergency-call .btn-content,
+    .btn-emergency-wa .btn-content {
+      position: relative !important;
+      z-index: 10 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      pointer-events: none !important;
+    }
     .btn-emergency-call {
       height: 46px;
-      background: var(--btn-gradient-primary, linear-gradient(135deg, #1d4ed8 0%, #0f2b5c 50%, #1e40af 100%));
-      color: #ffffff;
+      background: var(--btn-gradient-primary);
+      color: #ffffff !important;
       font-family: inherit;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
       border-radius: 9999px;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      box-shadow: 0 8px 20px -3px rgba(15, 43, 92, 0.45);
+      box-shadow: 0 8px 20px -3px rgba(197, 18, 16, 0.45);
       transition: all 0.25s ease;
     }
     .btn-emergency-call:hover {
-      background: var(--btn-gradient-hover, linear-gradient(135deg, #2563eb 0%, #183f80 50%, #0f2b5c 100%));
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px -3px rgba(15, 43, 92, 0.55);
+      box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.42);
+      color: #ffffff !important;
     }
+    .btn-emergency-call .btn-content,
+    .btn-emergency-call .btn-content * {
+      color: #ffffff !important;
+      fill: #ffffff !important;
+    }
+
     .btn-emergency-wa {
       height: 46px;
       background: #ffffff;
-      border: 1.5px solid var(--brand-accent, #143877);
-      color: var(--brand-accent, #143877);
+      border: 1.5px solid #25d366;
+      color: #059669 !important;
       font-family: inherit;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
       border-radius: 9999px;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      box-shadow: 0 4px 14px rgba(20, 56, 119, 0.08);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.12);
       transition: all 0.25s ease;
     }
+    .btn-emergency-wa .btn-content,
+    .btn-emergency-wa .btn-content * {
+      color: #059669 !important;
+      fill: #059669 !important;
+      transition: color 0.25s ease, fill 0.25s ease;
+    }
     .btn-emergency-wa:hover {
-      background: rgba(20, 56, 119, 0.06);
-      border-color: #1d4ed8;
-      color: #1d4ed8;
+      border-color: #25d366 !important;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(20, 56, 119, 0.16);
+      box-shadow: 0 10px 24px -2px rgba(37, 211, 102, 0.40);
+    }
+    .btn-emergency-wa:hover .btn-content,
+    .btn-emergency-wa:hover .btn-content * {
+      color: #ffffff !important;
+      fill: #ffffff !important;
     }
     body.dark-theme .btn-emergency-wa {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: #60a5fa;
-      color: #60a5fa;
+      background: #171c1f;
+      border-color: #25d366;
+      color: #25d366 !important;
       box-shadow: none;
     }
-    body.dark-theme .btn-emergency-wa:hover {
-      background: rgba(96, 165, 250, 0.14);
-      border-color: #93c5fd;
-      color: #93c5fd;
-      transform: translateY(-2px);
+    body.dark-theme .btn-emergency-wa .btn-content,
+    body.dark-theme .btn-emergency-wa .btn-content * {
+      color: #25d366 !important;
+      fill: #25d366 !important;
+    }
+    body.dark-theme .btn-emergency-wa:hover .btn-content,
+    body.dark-theme .btn-emergency-wa:hover .btn-content * {
+      color: #ffffff !important;
+      fill: #ffffff !important;
     }
 
     /* Card 2: Operations Hub & Map Card */
     .contact-side-hub-card {
       background: #ffffff;
-      border: 1.5px solid rgba(20, 56, 119, 0.10);
+      border: 1.5px solid rgba(197, 18, 16, 0.12);
       border-radius: 22px;
       padding: clamp(22px, 2.5vw, 28px);
-      box-shadow: 0 12px 32px rgba(15, 43, 92, 0.05), 0 3px 12px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04), 0 3px 12px rgba(0, 0, 0, 0.02);
       transition: all 0.3s ease;
     }
     body.dark-theme .contact-side-hub-card {
-      background: #181924;
+      background: #171c1f;
       border-color: rgba(255, 255, 255, 0.08);
       box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
     }
@@ -180,36 +213,36 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: rgba(20, 56, 119, 0.08);
-      border: 1px solid rgba(20, 56, 119, 0.16);
+      background: rgba(197, 18, 16, 0.08);
+      border: 1px solid rgba(197, 18, 16, 0.16);
       border-radius: 9999px;
       padding: 4px 12px;
       font-size: 10.5px;
       font-weight: 800;
       letter-spacing: 0.06em;
-      color: var(--brand-accent, #143877);
+      color: var(--brand-accent, #c51210);
       text-transform: uppercase;
     }
     body.dark-theme .hub-card-pill {
-      background: rgba(96, 165, 250, 0.12);
-      border-color: rgba(96, 165, 250, 0.25);
-      color: #93c5fd;
+      background: rgba(255, 90, 82, 0.12);
+      border-color: rgba(255, 90, 82, 0.25);
+      color: #ff837d;
     }
     .hub-pill-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--brand-accent, #143877);
+      background: var(--brand-accent, #c51210);
       animation: pulse-badge 1.8s infinite;
     }
     body.dark-theme .hub-pill-dot {
-      background: #60a5fa;
+      background: #ff5a52;
     }
     .btn-hub-open-maps {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--btn-gradient-primary, linear-gradient(135deg, #1d4ed8 0%, #0f2b5c 50%, #1e40af 100%));
+      background: var(--btn-gradient-primary);
       color: #ffffff;
       font-family: inherit;
       font-size: 12px;
@@ -218,18 +251,18 @@
       border-radius: 9999px;
       border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 7px 16px;
-      box-shadow: 0 6px 16px -2px rgba(15, 43, 92, 0.38);
+      box-shadow: 0 6px 16px -2px rgba(197, 18, 16, 0.38);
       transition: all 0.25s ease;
     }
     .btn-hub-open-maps:hover {
-      background: var(--btn-gradient-hover, linear-gradient(135deg, #2563eb 0%, #183f80 50%, #0f2b5c 100%));
+      background: var(--btn-gradient-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px -2px rgba(15, 43, 92, 0.48);
+      box-shadow: 0 8px 20px -2px rgba(197, 18, 16, 0.48);
     }
     .hub-card-title {
       font-size: clamp(1.2rem, 1.6vw, 1.45rem);
       font-weight: 800;
-      color: var(--text-dark, #121217);
+      color: var(--text-dark, #192023);
       margin: 0 0 16px;
       line-height: 1.28;
       letter-spacing: -0.015em;
@@ -243,13 +276,13 @@
       height: 215px;
       border-radius: 16px;
       overflow: hidden;
-      border: 1.5px solid rgba(20, 56, 119, 0.12);
-      background: #eef2f8;
+      border: 1.5px solid rgba(197, 18, 16, 0.14);
+      background: #f4f5f5;
       margin-bottom: 16px;
     }
     body.dark-theme .hub-map-stage {
       border-color: rgba(255, 255, 255, 0.1);
-      background: #181d28;
+      background: #111417;
     }
     .hub-map-iframe {
       width: 100%;
@@ -266,26 +299,26 @@
       gap: 6px;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(6px);
-      border: 1px solid rgba(20, 56, 119, 0.15);
+      border: 1px solid rgba(197, 18, 16, 0.16);
       border-radius: 8px;
       padding: 5px 10px;
       font-size: 11px;
       font-weight: 700;
-      color: var(--brand-accent, #143877);
+      color: var(--brand-accent, #c51210);
       text-decoration: none;
-      box-shadow: 0 3px 8px rgba(15, 43, 92, 0.12);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
       transition: all 0.2s ease;
       z-index: 5;
     }
     .hub-map-overlay-badge:hover {
       background: #ffffff;
-      color: #1d4ed8;
-      box-shadow: 0 4px 12px rgba(15, 43, 92, 0.2);
+      color: var(--brand-accent-hover, #a30f0d);
+      box-shadow: 0 4px 12px rgba(197, 18, 16, 0.18);
     }
     body.dark-theme .hub-map-overlay-badge {
-      background: rgba(24, 25, 36, 0.95);
-      border-color: rgba(255, 255, 255, 0.15);
-      color: #60a5fa;
+      background: rgba(23, 28, 31, 0.95);
+      border-color: rgba(255, 90, 82, 0.25);
+      color: #ff5a52;
     }
     .hub-location-details-row {
       display: flex;
@@ -296,16 +329,16 @@
       width: 42px;
       height: 42px;
       border-radius: 12px;
-      background: rgba(20, 56, 119, 0.08);
-      color: var(--brand-accent, #143877);
+      background: rgba(197, 18, 16, 0.08);
+      color: var(--brand-accent, #c51210);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
     body.dark-theme .hub-loc-icon-box {
-      background: rgba(96, 165, 250, 0.14);
-      color: #60a5fa;
+      background: rgba(255, 90, 82, 0.14);
+      color: #ff5a52;
     }
     .hub-loc-text {
       flex: 1;
@@ -313,7 +346,7 @@
     .hub-loc-name {
       font-size: 13.5px;
       font-weight: 800;
-      color: var(--text-dark, #121217);
+      color: var(--text-dark, #192023);
       margin: 0 0 3px;
       line-height: 1.35;
     }
@@ -356,15 +389,15 @@
     /* ── RIGHT COLUMN: BOOKING FORM CARD ── */
     .booking-form-card {
       background: #ffffff;
-      border: 1.5px solid rgba(20, 56, 119, 0.10);
+      border: 1.5px solid rgba(197, 18, 16, 0.12);
       border-radius: 24px;
       padding: clamp(26px, 3.5vw, 38px);
-      box-shadow: 0 14px 40px rgba(15, 43, 92, 0.05), 0 4px 18px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.04), 0 4px 18px rgba(0, 0, 0, 0.02);
       position: relative;
       transition: all 0.3s ease;
     }
     body.dark-theme .booking-form-card {
-      background: #181924;
+      background: #171c1f;
       border-color: rgba(255, 255, 255, 0.08);
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
     }
@@ -376,7 +409,7 @@
       font-weight: 800;
       line-height: 1.22;
       letter-spacing: -0.025em;
-      color: var(--text-dark, #121217);
+      color: var(--text-dark, #192023);
       margin: 0 0 10px;
     }
     body.dark-theme .booking-card-heading {
@@ -386,12 +419,12 @@
       font-size: 14px;
       font-weight: 500;
       line-height: 1.6;
-      color: var(--text-sub, #5a5f70);
+      color: var(--text-sub, #475056);
       margin: 0 0 24px;
       max-width: 580px;
     }
     body.dark-theme .booking-card-desc {
-      color: rgba(255, 255, 255, 0.7);
+      color: #a9b2b8;
     }
 
     /* Form Fields */
@@ -412,7 +445,7 @@
     .bform-label {
       font-size: 12.5px;
       font-weight: 700;
-      color: var(--text-dark, #1e293b);
+      color: var(--text-dark, #192023);
       margin-bottom: 7px;
       display: flex;
       align-items: center;
@@ -437,7 +470,7 @@
       font-family: inherit;
       font-size: 14px;
       font-weight: 500;
-      color: var(--text-dark, #121217);
+      color: var(--text-dark, #192023);
       outline: none;
       transition: all 0.2s ease;
       box-sizing: border-box;
@@ -451,22 +484,22 @@
     .bform-select:focus,
     .bform-textarea:focus {
       background: #ffffff;
-      border-color: var(--brand-accent, #143877);
-      box-shadow: 0 0 0 3px rgba(20, 56, 119, 0.12);
+      border-color: var(--brand-accent, #c51210);
+      box-shadow: 0 0 0 3px rgba(197, 18, 16, 0.12);
     }
     body.dark-theme .bform-input,
     body.dark-theme .bform-select,
     body.dark-theme .bform-textarea {
-      background: #11141c;
+      background: #111417;
       border-color: rgba(255, 255, 255, 0.12);
       color: #ffffff;
     }
     body.dark-theme .bform-input:focus,
     body.dark-theme .bform-select:focus,
     body.dark-theme .bform-textarea:focus {
-      background: #141822;
-      border-color: #60a5fa;
-      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+      background: #171c1f;
+      border-color: #ff5a52;
+      box-shadow: 0 0 0 3px rgba(255, 90, 82, 0.2);
     }
     .bform-select-wrap {
       position: relative;
@@ -494,27 +527,43 @@
       resize: vertical;
     }
     .btn-bform-submit {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
       width: 100%;
       height: 52px;
-      background: var(--btn-gradient-primary, linear-gradient(135deg, #1d4ed8 0%, #0f2b5c 50%, #1e40af 100%));
-      color: #ffffff;
+      background: var(--btn-gradient-primary);
+      color: #ffffff !important;
       font-family: inherit;
       font-size: 15px;
       font-weight: 700;
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 9999px;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      box-shadow: 0 10px 24px -3px rgba(15, 43, 92, 0.45);
+      box-shadow: 0 10px 24px -3px rgba(197, 18, 16, 0.45);
       transition: all 0.25s ease;
     }
     .btn-bform-submit:hover {
-      background: var(--btn-gradient-hover, linear-gradient(135deg, #2563eb 0%, #183f80 50%, #0f2b5c 100%));
       transform: translateY(-2px);
-      box-shadow: 0 14px 28px -3px rgba(15, 43, 92, 0.55);
+      box-shadow: 0 14px 30px -3px rgba(0, 0, 0, 0.45);
+      color: #ffffff !important;
+    }
+    .btn-bform-submit .btn-content {
+      position: relative !important;
+      z-index: 10 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      pointer-events: none !important;
+    }
+    .btn-bform-submit .btn-content,
+    .btn-bform-submit .btn-content * {
+      color: #ffffff !important;
+      stroke: #ffffff !important;
     }
 
     @keyframes pulse-badge {
@@ -535,17 +584,17 @@
       -webkit-backdrop-filter: blur(16px);
       border-radius: 20px;
       border: 1.5px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 16px 36px rgba(15, 43, 92, 0.16), 0 3px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.05);
       padding: 11px 18px;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       pointer-events: auto;
     }
     .contact-trust-sticker:hover {
       transform: translateY(-3px);
-      box-shadow: 0 20px 44px rgba(15, 43, 92, 0.24);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.18);
     }
     body.dark-theme .contact-trust-sticker {
-      background: rgba(20, 23, 34, 0.94);
+      background: rgba(23, 28, 31, 0.94);
       border-color: rgba(255, 255, 255, 0.14);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 3px 10px rgba(0, 0, 0, 0.3);
     }
@@ -575,26 +624,26 @@
       animation: pulse-badge 1.8s infinite;
     }
 
-    /* Sticker Bottom-Left (Official Sapphire Seal) */
+    /* Sticker Bottom-Left (Official Jet Black Seal with Crimson Border) */
     .contact-trust-sticker.sticker-bottom {
       bottom: 22px;
       left: 22px;
-      background: linear-gradient(145deg, rgba(15, 43, 92, 0.95) 0%, rgba(10, 28, 64, 0.98) 100%);
-      border-color: rgba(255, 255, 255, 0.16);
-      box-shadow: 0 20px 48px rgba(10, 24, 52, 0.38), 0 4px 14px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(145deg, #192023 0%, #111518 100%);
+      border: 1.5px solid rgba(197, 18, 16, 0.45);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 4px 14px rgba(0, 0, 0, 0.2);
     }
     body.dark-theme .contact-trust-sticker.sticker-bottom {
-      background: linear-gradient(145deg, rgba(16, 26, 46, 0.96) 0%, rgba(10, 16, 30, 0.98) 100%);
-      border-color: rgba(96, 165, 250, 0.25);
+      background: linear-gradient(145deg, #171c1f 0%, #0b0e10 100%);
+      border-color: rgba(255, 90, 82, 0.5);
     }
 
     .sticker-icon-badge {
       width: 40px;
       height: 40px;
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(96, 165, 250, 0.25), rgba(30, 64, 175, 0.45));
-      border: 1px solid rgba(96, 165, 250, 0.4);
-      color: #60a5fa;
+      background: linear-gradient(135deg, rgba(197, 18, 16, 0.25), rgba(163, 15, 13, 0.45));
+      border: 1px solid rgba(255, 90, 82, 0.4);
+      color: #ff5a52;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -997,17 +1046,31 @@
             <!-- Hero CTA Button Group: 2 Dedicated Action Buttons -->
             <div class="hero-cta-group">
               <a href="#bookingCard" class="btn-hero-primary" id="contactBookBtn">
-                <span>Book a Repair</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
+                <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
+                <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
+                <span class="btn-circle btn-circle-4" aria-hidden="true"></span>
+                <span class="btn-circle btn-circle-5" aria-hidden="true"></span>
+                <span class="btn-content">
+                  <span>Book a Repair</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
               </a>
               <a href="tel:+923143110259" class="btn-hero-secondary" id="contactCallBtn">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                <span>Emergency Call 24/7</span>
+                <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
+                <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
+                <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
+                <span class="btn-circle btn-circle-4" aria-hidden="true"></span>
+                <span class="btn-circle btn-circle-5" aria-hidden="true"></span>
+                <span class="btn-content">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                  <span>Emergency Call 24/7</span>
+                </span>
               </a>
             </div>
 
@@ -1022,7 +1085,7 @@
             </div>
           </div>
 
-          <!-- Center-Aligned Trust Highlights Bar (Navy Blue Theme Matching Services/About Page) -->
+          <!-- Center-Aligned Trust Highlights Bar (Theme Matching Index Page) -->
           <div class="hero-trust-bar">
             <!-- Item 1: Instant Response -->
             <div class="hero-trust-item">
@@ -1200,16 +1263,30 @@
                 </p>
                 <div class="emergency-card-actions">
                   <a href="tel:+923143110259" class="btn-emergency-call" aria-label="Call Now: +92 314 3110259">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    <span>Call Now</span>
+                    <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
+                    <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
+                    <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
+                    <span class="btn-circle btn-circle-4" aria-hidden="true"></span>
+                    <span class="btn-circle btn-circle-5" aria-hidden="true"></span>
+                    <span class="btn-content">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+                      </svg>
+                      <span>Call Now</span>
+                    </span>
                   </a>
                   <a href="https://wa.me/923143110259?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20need%20urgent%20emergency%20appliance%20assistance" target="_blank" rel="noopener noreferrer" class="btn-emergency-wa" aria-label="WhatsApp Us">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                    </svg>
-                    <span>WhatsApp</span>
+                    <span class="btn-circle btn-circle-green btn-circle-1" aria-hidden="true"></span>
+                    <span class="btn-circle btn-circle-green btn-circle-2" aria-hidden="true"></span>
+                    <span class="btn-circle btn-circle-green btn-circle-3" aria-hidden="true"></span>
+                    <span class="btn-circle btn-circle-green btn-circle-4" aria-hidden="true"></span>
+                    <span class="btn-circle btn-circle-green btn-circle-5" aria-hidden="true"></span>
+                    <span class="btn-content">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                      </svg>
+                      <span>WhatsApp</span>
+                    </span>
                   </a>
                 </div>
               </div>
@@ -1351,11 +1428,18 @@
 
                 <!-- Submit Button with Paper Plane Icon and Brand Signature Gradient -->
                 <button type="submit" class="btn-bform-submit" aria-label="Confirm Doorstep Booking">
-                  <span>Confirm Doorstep Booking</span>
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
+                  <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
+                  <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
+                  <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
+                  <span class="btn-circle btn-circle-4" aria-hidden="true"></span>
+                  <span class="btn-circle btn-circle-5" aria-hidden="true"></span>
+                  <span class="btn-content">
+                    <span>Confirm Doorstep Booking</span>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </span>
                 </button>
               </form>
 
