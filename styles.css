@@ -1084,18 +1084,19 @@ a:hover .btn-circle,
 .btn-simple-cta-whatsapp:hover .btn-circle,
 .btn-lb-whatsapp:hover .btn-circle,
 .btn-emergency-wa:hover .btn-circle,
-.btn-bform-submit:hover .btn-circle,
 .article-cta-book-btn:hover .btn-circle,
 .compare-card-cta:hover .btn-circle {
-  transform: translate(-50%, -50%) scale(9);
+  transform: translate(-50%, -50%) scale(12);
   transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Wide / full-width booking submit buttons: expand circles to scale 18 (576px) to completely engulf full-width canvas smoothly */
+/* Wide / full-width booking submit buttons: expand circles to scale 42 (1344px)
+   so the organic liquid bubbles completely flood 100% of the canvas with zero edge bleed,
+   delivering the exact same silky liquid smoothness as the navbar button .btn-schedule */
 .btn-bform-submit:hover .btn-circle,
 .btn-contact-submit:hover .btn-circle,
 .modal-submit-btn:hover .btn-circle {
-  transform: translate(-50%, -50%) scale(18) !important;
+  transform: translate(-50%, -50%) scale(42) !important;
 }
 
 /* Staggered micro-timing — each circle arrives at a slightly different speed
@@ -6690,12 +6691,12 @@ body.dark-theme .prefooter-cta-overlay {
   width: 100%;
   max-width: 100%;
   margin: 0 auto 34px auto;
-  background: linear-gradient(135deg, #07080a 0%, #0d0f12 50%, #040506 100%);
+  background: linear-gradient(145deg, #07080a 0%, #0e1013 45%, #030405 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.14);
   clip-path: url(#dubai-trust-cut);
-  filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.55));
   padding: 56px 65px 54px 65px;
   position: relative;
   transition:
@@ -6706,9 +6707,9 @@ body.dark-theme .prefooter-cta-overlay {
   color: #ffffff;
 }
 .footer-card-container:hover {
-  background: linear-gradient(135deg, #0a0c0e 0%, #121418 50%, #060708 100%);
-  border-color: rgba(197, 18, 16, 0.5);
-  filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.65));
+  background: linear-gradient(145deg, #0a0b0e 0%, #121418 45%, #050607 100%);
+  border-color: rgba(197, 18, 16, 0.55);
+  filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.75));
   transform: translateY(-2px);
 }
 .footer-card-grid {
@@ -9813,12 +9814,12 @@ body.dark-theme .footer-social-btn.btn-whatsapp:hover {
   border-color: #25d366 !important;
 }
 body.dark-theme .footer-card-container {
-  background: linear-gradient(135deg, #040506 0%, #090a0c 50%, #020203 100%);
+  background: linear-gradient(145deg, #040506 0%, #0a0b0d 45%, #020203 100%);
   border: 1px solid rgba(224, 42, 36, 0.35);
   filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.85));
 }
 body.dark-theme .footer-card-container:hover {
-  background: linear-gradient(135deg, #07080a 0%, #0d0e11 50%, #040506 100%);
+  background: linear-gradient(145deg, #07080a 0%, #0d0e11 45%, #040506 100%);
   border-color: rgba(255, 90, 82, 0.6);
   filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.95));
 }
