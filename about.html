@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4.9">
+  <link rel="stylesheet" href="styles.css?v=5.1">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -15,7 +15,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=4.9 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=5.1 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* ═══════════════════════════════════════════════════════
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -79,6 +79,7 @@
       padding: clamp(48px, 5vw, 72px) 0;
       background: transparent;
       position: relative;
+      scroll-margin-top: 100px;
     }
     body.dark-theme .about-mission { background: transparent; }
 
@@ -99,6 +100,23 @@
       margin: 0 0 16px;
     }
     body.dark-theme .about-mission-h2 { color: #ffffff; }
+    .about-mission-h2 .highlight-navy {
+      background: linear-gradient(135deg, #d71c1b 0%, #e02a24 50%, #b00403 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      color: #d71c1b;
+      display: inline;
+    }
+    body.dark-theme .about-mission-h2 .highlight-navy {
+      background: linear-gradient(135deg, #ff6b65 0%, #ff5248 50%, #ff837d 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: #ff6b65 !important;
+    }
     .about-mission-lead {
       font-size: 1.05rem;
       font-weight: 500;
@@ -106,7 +124,7 @@
       color: var(--text-sub, #5a5f70);
       margin: 0;
     }
-    body.dark-theme .about-mission-lead { color: #94a3b8; }
+    body.dark-theme .about-mission-lead { color: #cbd5e1; }
 
     /* 3-Card Grid Container */
     .mission-cards-grid {
@@ -133,7 +151,7 @@
       transform: translateY(-5px);
     }
 
-    /* Card 1 & Card 3: Light Clean Surface */
+    /* Card 1 & Card 3: Light Clean Surface (Deep Charcoal in Dark Theme) */
     .mission-card-light {
       background: #ffffff;
       border: 1.5px solid rgba(15, 43, 92, 0.08);
@@ -144,12 +162,12 @@
       border-color: rgba(20, 56, 119, 0.22);
     }
     body.dark-theme .mission-card-light {
-      background: #181924;
-      border-color: rgba(255, 255, 255, 0.08);
+      background: #171c1f;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
     }
     body.dark-theme .mission-card-light:hover {
-      border-color: rgba(96, 165, 250, 0.35);
+      border-color: rgba(215, 28, 27, 0.45);
       box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
     }
 
@@ -179,7 +197,7 @@
       transform: translateY(-4px);
     }
 
-    /* Top Left Squarish Icon Box (Reference media_1790832483982.png) */
+    /* Top Left Squarish Icon Box */
     .mcard-icon-box {
       width: 48px;
       height: 48px;
@@ -203,13 +221,16 @@
       box-shadow: 0 6px 16px rgba(20, 56, 119, 0.25);
     }
     body.dark-theme .mcard-icon-light {
-      background: rgba(96, 165, 250, 0.12);
+      background: rgba(215, 28, 27, 0.12);
       color: #ff5a52;
-      border-color: rgba(96, 165, 250, 0.22);
+      border: 1px solid rgba(255, 90, 82, 0.25);
     }
     body.dark-theme .mission-card-light:hover .mcard-icon-light {
-      background: #e02a24;
+      background: var(--btn-gradient-primary);
       color: #ffffff;
+      border-color: transparent;
+      transform: scale(1.05);
+      box-shadow: none;
     }
 
     .mcard-icon-featured {
@@ -237,11 +258,13 @@
       margin: 0 0 12px 0;
     }
     body.dark-theme .mcard-title { color: #ffffff; }
-    .mcard-title-dark {
-      color: #ffffff;
+    .mcard-title-dark,
+    .mission-card-featured .mcard-title,
+    body.dark-theme .mission-card-featured .mcard-title {
+      color: #ffffff !important;
     }
 
-    /* Card Paragraphs */
+    /* Card Paragraphs - Ensure Crisp Contrast */
     .mcard-desc {
       font-size: 14.5px;
       font-weight: 500;
@@ -249,9 +272,13 @@
       color: var(--text-sub, #5a5f70);
       margin: 0;
     }
-    body.dark-theme .mcard-desc { color: #94a3b8; }
-    .mcard-desc-dark {
-      color: rgba(255, 255, 255, 0.88);
+    body.dark-theme .mcard-desc { color: #cbd5e1; }
+    body.dark-theme .mission-card-light .mcard-desc { color: #cbd5e1; }
+    .mcard-desc-dark,
+    .mission-card-featured .mcard-desc,
+    body.dark-theme .mission-card-featured .mcard-desc {
+      color: #ffffff !important;
+      opacity: 0.96;
     }
 
 
@@ -313,8 +340,8 @@
       box-sizing: border-box;
     }
     body.dark-theme .mosaic-img-box {
-      border-color: rgba(255, 255, 255, 0.08);
-      background: #181924;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      background: #171c1f;
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     }
     .mosaic-img {
@@ -503,8 +530,8 @@
       box-sizing: border-box;
     }
     body.dark-theme .mosaic-img-tall-box {
-      border-color: rgba(255, 255, 255, 0.08);
-      background: #181924;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      background: #171c1f;
       box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
     }
 
@@ -548,7 +575,7 @@
       margin: 0 0 20px 0;
     }
     body.dark-theme .heritage-sub-p {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     /* 3 Core Heritage Trust Checkpoints */
@@ -585,9 +612,9 @@
       flex-shrink: 0;
     }
     body.dark-theme .pillar-bullet-check {
-      background: rgba(96, 165, 250, 0.15);
+      background: rgba(215, 28, 27, 0.12);
       color: #ff5a52;
-      border-color: rgba(96, 165, 250, 0.3);
+      border: 1.5px solid rgba(255, 90, 82, 0.28);
     }
 
     /* Action Buttons Wrap */
@@ -818,8 +845,8 @@
       white-space: nowrap;
     }
     body.dark-theme .process-float-badge {
-      background: rgba(24, 25, 36, 0.94);
-      border-color: rgba(96, 165, 250, 0.3);
+      background: rgba(23, 28, 31, 0.94);
+      border-color: rgba(255, 255, 255, 0.12);
       color: #ffffff;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     }
@@ -859,7 +886,7 @@
       max-width: 600px;
     }
     body.dark-theme .about-process-lead {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     /* 2x2 Steps Grid - TIGHT GAP AS REQUESTED */
@@ -890,12 +917,12 @@
       box-shadow: 0 10px 26px rgba(15, 43, 92, 0.08);
     }
     body.dark-theme .process-step-item {
-      background: #181924;
-      border-color: rgba(255, 255, 255, 0.08);
+      background: #171c1f;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     }
     body.dark-theme .process-step-item:hover {
-      border-color: rgba(96, 165, 250, 0.35);
+      border-color: rgba(215, 28, 27, 0.45);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
     }
 
@@ -1004,7 +1031,7 @@
       z-index: 1;
     }
     body.dark-theme .process-step-desc {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     /* Bottom Action Row */
@@ -1103,7 +1130,7 @@
       max-width: 660px;
     }
     body.dark-theme .why-choose-lead {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     /* 2-Card Side-by-Side Feature Grid (Exact Match to media_1791008231275.png) */
@@ -1226,7 +1253,7 @@
       margin: 0 0 20px 0;
     }
     body.dark-theme .why-fcard-desc {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     /* Card Bottom Trust Footer */
@@ -1254,7 +1281,7 @@
       margin-left: 0;
     }
     body.dark-theme .why-fcard-avatar {
-      border-color: #181924;
+      border-color: #171c1f;
     }
 
     .why-fcard-footer-icon {
@@ -1312,9 +1339,8 @@
       width: 100%;
       flex: 1;
       height: 100%;
-      min-height: 465px;
+      min-height: 480px;
       display: flex;
-      gap: 14px;
       align-items: stretch;
     }
     .why-acc-media-card {
@@ -1322,53 +1348,44 @@
       flex: 1;
       width: 100%;
       height: 100%;
-      clip-path: url(#why-media-flipped-cut);
-      -webkit-clip-path: url(#why-media-flipped-cut);
+      min-height: 100%;
+      margin: 0;
+      clip-path: none !important;
+      -webkit-clip-path: none !important;
+      border: 3.5px solid var(--brand-accent, #d71c1b);
+      border-radius: 28px;
       overflow: hidden;
-      border: none;
-      background: transparent;
+      background: #e2e8f0;
       box-sizing: border-box;
-      filter: drop-shadow(0 20px 42px rgba(15, 43, 92, 0.16));
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 16px 44px rgba(15, 23, 42, 0.12);
+      transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .why-acc-media-card::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(15, 43, 92, 0) 55%, rgba(15, 43, 92, 0.45) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65%, rgba(25, 32, 35, 0.32) 100%);
       pointer-events: none;
     }
     .why-acc-media-stage:hover .why-acc-media-card {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
+      border-color: var(--brand-accent-hover, #b00403);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
     }
     body.dark-theme .why-acc-media-card {
-      background: transparent;
-      filter: drop-shadow(0 20px 48px rgba(0, 0, 0, 0.65));
+      border-color: #ff5a52;
+      background: #171c1f;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65);
+    }
+    body.dark-theme .why-acc-media-card:hover {
+      border-color: #ff837d;
+      box-shadow: 0 22px 54px rgba(0, 0, 0, 0.75);
     }
     body.dark-theme .why-acc-media-card::after {
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.65) 100%);
     }
     .why-right-accent-line {
-      flex: 0 0 15px;
-      width: 15px;
-      height: 64%;
-      align-self: flex-end;
-      border-radius: 9999px;
-      background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #d71c1b 100%);
-      border: 1px solid rgba(255, 255, 255, 0.32);
-      box-shadow: none !important;
-      position: relative;
-      z-index: 10;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .why-acc-media-stage:hover .why-right-accent-line {
-      background: var(--btn-gradient-hover);
-      box-shadow: none !important;
-    }
-    body.dark-theme .why-right-accent-line {
-      background: linear-gradient(180deg, #ff5a52 0%, #e02a24 50%, #d71c1b 100%) !important;
-      border-color: rgba(255, 255, 255, 0.18) !important;
-      box-shadow: none !important;
+      display: none !important;
     }
     .why-acc-media-img {
       width: 100%;
@@ -1376,10 +1393,11 @@
       object-fit: cover;
       object-position: center;
       display: block;
+      border-radius: inherit;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .why-acc-media-card:hover .why-acc-media-img {
-      transform: scale(1.025);
+      transform: scale(1.035);
     }
 
     /* Floating Bottom-Right Brand Seal (Matching Reference Mr. Appliance Seal) */
@@ -1439,8 +1457,8 @@
       width: 38px;
       height: 38px;
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.35) 0%, rgba(15, 43, 92, 0.6) 100%);
-      border: 1px solid rgba(96, 165, 250, 0.4);
+      background: rgba(215, 28, 27, 0.14);
+      border: 1px solid rgba(255, 90, 82, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1524,11 +1542,11 @@
 
     /* Dark theme overrides for media badges */
     body.dark-theme .why-media-top-badge {
-      background: rgba(18, 25, 40, 0.94);
-      border-color: rgba(96, 165, 250, 0.35);
+      background: rgba(23, 28, 31, 0.94);
+      border-color: rgba(255, 255, 255, 0.14);
     }
     body.dark-theme .why-media-dispatch-chip {
-      background: rgba(24, 25, 36, 0.94);
+      background: rgba(23, 28, 31, 0.94);
       color: #f1f5f9;
       border-color: rgba(255, 255, 255, 0.14);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
@@ -1924,8 +1942,8 @@
       background: #ffffff;
     }
     body.dark-theme .bento-card-trust {
-      background: #181924;
-      border-color: rgba(255, 255, 255, 0.08);
+      background: #171c1f;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
     }
     .bento-card-trust:hover {
       transform: translateY(-3px);
@@ -1978,6 +1996,7 @@
       font-weight: 600;
       color: var(--text-sub, #5a5f70);
     }
+    body.dark-theme .bento-google-sub { color: #cbd5e1; }
 
     /* Active Completed Repairs */
     .bento-repairs-count {
@@ -1997,7 +2016,7 @@
       flex-shrink: 0;
     }
     body.dark-theme .bento-repairs-icon {
-      background: rgba(96, 165, 250, 0.15);
+      background: rgba(215, 28, 27, 0.12);
       color: #ff5a52;
     }
     .bento-repairs-num {
@@ -2015,6 +2034,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
+    body.dark-theme .bento-repairs-label { color: #cbd5e1; }
 
     /* WhatsApp Live Booking Pill inside Card 4 */
     .bento-wa-pill {
@@ -2109,7 +2129,7 @@
       max-width: 680px;
     }
     body.dark-theme .compare-lead {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     /* 2-Column Comparison Grid */
@@ -2143,7 +2163,7 @@
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03);
     }
     body.dark-theme .compare-card-generic {
-      background: #181924;
+      background: #171c1f;
       border-color: rgba(239, 68, 68, 0.25);
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
     }
@@ -2174,9 +2194,9 @@
       transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
     }
     body.dark-theme .compare-card-certified {
-      background: #181924;
-      border-color: rgba(96, 165, 250, 0.28);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 20px rgba(20, 56, 119, 0.25);
+      background: #171c1f;
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
     }
     body.dark-theme .compare-card-certified::before {
       background: linear-gradient(90deg, #d71c1b 0%, #d71c1b 50%, #b00403 100%);
@@ -2190,7 +2210,7 @@
       opacity: 1;
     }
     body.dark-theme .compare-card-certified:hover {
-      border-color: #ff5a52;
+      border-color: rgba(215, 28, 27, 0.45);
     }
 
     /* Character Visual Stage (Top of Card) */
@@ -2224,8 +2244,8 @@
       border: 1.5px solid rgba(30, 74, 181, 0.26);
     }
     body.dark-theme .stage-backdrop-certified {
-      background: radial-gradient(circle, rgba(96, 165, 250, 0.18) 0%, rgba(20, 56, 119, 0.05) 70%, transparent 100%);
-      border-color: rgba(96, 165, 250, 0.35);
+      background: radial-gradient(circle, rgba(215, 28, 27, 0.16) 0%, rgba(215, 28, 27, 0.03) 70%, transparent 100%);
+      border-color: rgba(215, 28, 27, 0.3);
     }
 
     .compare-char-img {
@@ -2277,9 +2297,9 @@
       border: 1px solid rgba(30, 74, 181, 0.28);
     }
     body.dark-theme .badge-stage-certified {
-      background: #172136;
-      color: #ff5a52;
-      border-color: rgba(96, 165, 250, 0.45);
+      background: rgba(215, 28, 27, 0.15);
+      color: #ff837d;
+      border-color: rgba(255, 90, 82, 0.35);
     }
 
     /* Card Content Body (Compact & Clean) */
@@ -2309,7 +2329,7 @@
       flex-grow: 1;
     }
     body.dark-theme .compare-summary-desc {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     /* Balance Warning Note on Left Card Matching CTA Height */
@@ -2390,8 +2410,8 @@
       transition: all 0.25s ease;
     }
     body.dark-theme .compare-station-card {
-      background: #181924;
-      border-color: rgba(96, 165, 250, 0.22);
+      background: #171c1f;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
     }
     .compare-station-card:hover {
@@ -2400,7 +2420,7 @@
       box-shadow: 0 14px 30px rgba(30, 74, 181, 0.14);
     }
     body.dark-theme .compare-station-card:hover {
-      border-color: #ff5a52;
+      border-color: rgba(215, 28, 27, 0.45);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
     }
 
@@ -2424,7 +2444,7 @@
       transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
     }
     body.dark-theme .station-icon {
-      background: rgba(96, 165, 250, 0.12);
+      background: rgba(215, 28, 27, 0.12);
       color: #ff5a52;
     }
     .compare-station-card:hover .station-icon {
@@ -2456,7 +2476,7 @@
       margin: 0;
     }
     body.dark-theme .station-desc {
-      color: #94a3b8;
+      color: #cbd5e1;
     }
 
     /* ═══════════════════════════════════════════════════════
@@ -2602,6 +2622,17 @@
       .standards-stats-row { grid-template-columns: 1fr; gap: 12px; }
       .about-stats-strip { grid-template-columns: 1fr; }
       .about-stats-strip-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+      }
+
+      /* Fixed Navbar Anchor Scroll Offset */
+      #home,
+      #about,
+      #heritage,
+      #process,
+      #standards,
+      #certified-edge,
+      #prefooterCta {
+        scroll-margin-top: 105px;
       }
     </style>
 </head>
@@ -3451,13 +3482,12 @@
 
             </div><!-- /.why-choose-left-col -->
 
-            <!-- Right Column: Clipped Media Card + Right Vertical Accent Line -->
+            <!-- Right Column: Framed Media Card (Matching Hero Section Shape & Border) -->
             <div class="why-choose-right-col">
               <div class="why-acc-media-stage">
                 <div class="why-acc-media-card">
                   <img src="assets/why-choose-us.jpg" alt="Dubai Fix Certified Master Technician Restoring Luxury Kitchen Appliance in Dubai" class="why-acc-media-img">
                 </div>
-                <div class="why-right-accent-line" aria-hidden="true"></div>
               </div>
             </div><!-- /.why-choose-right-col -->
 
