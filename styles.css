@@ -17217,6 +17217,9 @@ body.dark-theme .portfolio-hero-row .hero-description {
 .pf-collage-fade-top,
 .pf-collage-fade-bottom {
   display: none !important;
+}
+.portfolio-hero-mobile-stage {
+  display: none !important;
 } /* 2-Column Staggered Collage Grid */
 .portfolio-hero-collage-grid {
   display: grid;
@@ -17489,25 +17492,72 @@ body.dark-theme .pf-proof-tag {
     max-height: none !important;
     overflow: visible !important;
     padding: 0 !important;
+    width: 100% !important;
   }
-  .pf-collage-col.col-left {
-    transform: none !important;
-  }
-  .pf-collage-col.col-right .pf-collage-card:last-child {
+  .portfolio-hero-collage-grid {
     display: none !important;
   }
-  .pf-collage-card.card-lg {
-    height: 165px;
+  .portfolio-hero-mobile-stage {
+    display: block !important;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 8px;
   }
-  .col-right .pf-collage-card.card-lg {
-    height: 200px;
+  .pf-mobile-cinematic-card {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3.5px solid var(--brand-accent, #d71c1b);
+    box-shadow: 0 12px 32px rgba(25, 32, 35, 0.12);
+    background: #192023;
   }
-  .pf-collage-card.card-md {
-    height: 115px;
+  .pf-mobile-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    display: block;
+    transition: transform 0.6s ease;
   }
-  .pf-collage-card.card-sm,
-  .pf-collage-card.pf-card-bottom-left {
-    height: 75px !important;
+  .pf-mobile-cinematic-card:hover .pf-mobile-hero-img {
+    transform: scale(1.04);
+  }
+  .pf-mobile-badge-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: rgba(25, 32, 35, 0.90);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 14px;
+    padding: 9px 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+  }
+  .pf-mobile-badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pf-mb-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  .pf-mb-sub {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.2;
   }
   /* Centered Responsive Pill Cloud Filter Bar on Mobile - Zero Cutoff, Zero Scrollbars */
   .portfolio-filter-bar {
@@ -17603,34 +17653,9 @@ body.dark-theme .pf-proof-tag {
   .portfolio-hero-row .stat-number-brand {
     font-size: 28px;
   }
-  .portfolio-hero-collage-wrap {
-    height: auto !important;
-    min-height: auto !important;
-    max-height: none !important;
-    overflow: visible !important;
-    padding: 0 !important;
-  }
-  .portfolio-hero-collage-grid {
-    gap: 10px;
-  }
-  .pf-collage-col.col-left {
-    transform: none !important;
-  }
-  .pf-collage-col.col-right .pf-collage-card:last-child {
-    display: none !important;
-  }
-  .pf-collage-card.card-lg {
-    height: 150px;
-  }
-  .col-right .pf-collage-card.card-lg {
-    height: 185px;
-  }
-  .pf-collage-card.card-md {
-    height: 105px;
-  }
-  .pf-collage-card.card-sm,
-  .pf-collage-card.pf-card-bottom-left {
-    height: 70px !important;
+  .pf-mobile-cinematic-card {
+    height: 220px;
+    border-radius: 18px;
   }
   .portfolio-card {
     height: 390px;
