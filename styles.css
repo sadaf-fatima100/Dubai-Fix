@@ -1117,13 +1117,50 @@ a:hover .btn-circle,
   transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Wide / full-width booking submit buttons: expand circles to scale 42 (1344px)
+/* Wide / full-width buttons: expand circles to scale 42 (1344px)
    so the organic liquid bubbles completely flood 100% of the canvas with zero edge bleed,
    delivering the exact same silky liquid smoothness as the navbar button .btn-schedule */
 .btn-bform-submit:hover .btn-circle,
 .btn-contact-submit:hover .btn-circle,
-.modal-submit-btn:hover .btn-circle {
+.modal-submit-btn:hover .btn-circle,
+.nav-menu-schedule-btn:hover .btn-circle,
+.cta-primary-btn:hover .btn-circle,
+.btn-kitchen-quote:hover .btn-circle,
+.btn-process-action:hover .btn-circle,
+.empty-cta-btn:hover .btn-circle,
+.footer-book-btn:hover .btn-circle,
+.article-cta-book-btn:hover .btn-circle,
+.compare-card-cta:hover .btn-circle,
+.btn-cta-banner-primary:hover .btn-circle,
+.btn-cta-banner-call:hover .btn-circle,
+.btn-read-full-guide:hover .btn-circle,
+.btn-hero-action-primary:hover .btn-circle,
+.btn-hero-action-call:hover .btn-circle,
+.sidebar-btn-book:hover .btn-circle,
+.sidebar-btn-call:hover .btn-circle,
+.article-cta-call-btn:hover .btn-circle,
+.btn-filter-browse:hover .btn-circle,
+.btn-service-why-action:hover .btn-circle,
+.btn-modal-call:hover .btn-circle {
   transform: translate(-50%, -50%) scale(42) !important;
+}
+
+/* Mobile responsive full-width buttons (<= 768px): all buttons stretch to full width,
+   so all circles expand to scale 42 for 100% edge coverage without any edge bleed */
+@media (max-width: 768px) {
+  button:hover .btn-circle,
+  a:hover .btn-circle,
+  .btn-primary:hover .btn-circle,
+  .btn-hero-primary:hover .btn-circle,
+  .btn-hero-secondary:hover .btn-circle,
+  .btn-about-primary:hover .btn-circle,
+  .btn-about-secondary:hover .btn-circle,
+  .btn-emergency-call:hover .btn-circle,
+  .btn-emergency-wa:hover .btn-circle,
+  .btn-simple-cta-call:hover .btn-circle,
+  .btn-simple-cta-whatsapp:hover .btn-circle {
+    transform: translate(-50%, -50%) scale(42) !important;
+  }
 }
 
 /* Staggered micro-timing — each circle arrives at a slightly different speed
@@ -7285,12 +7322,12 @@ body.dark-theme .trust-item svg {
   font-weight: 700;
   cursor: pointer;
   margin-top: 6px;
-  box-shadow: 0 8px 22px -3px rgba(6, 18, 40, 0.45), 0 0 16px rgba(197, 18, 16, 0.3);
+  box-shadow: 0 8px 22px -3px rgba(0, 0, 0, 0.22);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .modal-submit-btn:hover {
   background: var(--btn-gradient-hover);
-  box-shadow: 0 12px 28px -3px rgba(6, 18, 40, 0.55), 0 0 20px rgba(197, 18, 16, 0.38);
+  box-shadow: 0 12px 28px -3px rgba(0, 0, 0, 0.32);
   transform: translateY(-2px);
 } /* --- Toast Notification --- */
 .toast {
@@ -14104,13 +14141,13 @@ body.dark-theme .blog-trust-divider {
   font-weight: 700;
   font-family: var(--font-family);
   cursor: pointer;
-  box-shadow: 0 8px 22px -3px rgba(6, 18, 40, 0.45), 0 0 16px rgba(197, 18, 16, 0.3);
+  box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
   transition: all 0.2s ease;
   flex-shrink: 0;
 }
 .btn-filter-browse:hover {
   background: var(--btn-gradient-hover);
-  box-shadow: 0 12px 28px -3px rgba(6, 18, 40, 0.55), 0 0 20px rgba(197, 18, 16, 0.38);
+  box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.32);
   transform: translateY(-2px);
 } /* Right Action Callout Banner Card: Brand Accent Navy */
 .service-cta-banner-card {
@@ -15401,7 +15438,7 @@ body.dark-theme .expertise-card {
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35), 0 0 14px rgba(197, 18, 16, 0.22);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   border: 1.5px solid rgba(255, 255, 255, 0.32);
   z-index: 5;
   white-space: nowrap;
@@ -15805,14 +15842,14 @@ body.dark-theme .hero-flank-card {
   font-weight: 700;
   border: 1px solid rgba(255, 255, 255, 0.22);
   cursor: pointer;
-  box-shadow: 0 8px 22px -3px rgba(6, 18, 40, 0.45), 0 0 16px rgba(197, 18, 16, 0.3);
+  box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 .btn-service-why-action:hover {
   background: var(--btn-gradient-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -3px rgba(6, 18, 40, 0.55), 0 0 20px rgba(197, 18, 16, 0.38);
+  box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.32);
 }
 
 /* 4-Column Bento Grid */
@@ -15970,7 +16007,7 @@ body.dark-theme .service-why-feature-card:hover {
   border-radius: 50%;
   background-color: #eef4ff;
   color: var(--brand-accent, #c51210);
-  box-shadow: 0 2px 6px rgba(197, 18, 16, 0.12);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
 }
@@ -15989,7 +16026,7 @@ body.dark-theme .service-why-feature-card:hover {
 .btn-why-feature-cta:hover svg {
   background-color: var(--brand-accent, #c51210);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(197, 18, 16, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: translateX(2px);
 }
 .btn-why-feature-cta:active {
@@ -18142,13 +18179,13 @@ body.dark-theme .pf-lb-chip-time svg {
   gap: 6px;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 8px 22px -3px rgba(6, 18, 40, 0.45), 0 0 16px rgba(197, 18, 16, 0.3);
+  box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-modal-call:hover {
   background: var(--btn-gradient-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -3px rgba(6, 18, 40, 0.55), 0 0 20px rgba(197, 18, 16, 0.38);
+  box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.32);
 }
 .btn-modal-wa {
   background: #25d366;
@@ -19891,10 +19928,10 @@ body.dark-theme .blog-section-subtitle-tag {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-hero-action-call:hover {
-  background: #ffffff;
-  color: var(--brand-accent, #c51210);
+  color: #ffffff !important;
   transform: translateY(-2px);
   border-color: var(--brand-accent, #c51210);
+  box-shadow: 0 8px 22px rgba(197, 18, 16, 0.25);
 }
 
 .article-hero-trust-pills {
@@ -20896,23 +20933,23 @@ body.dark-theme .btn-hero-action-call {
   border-color: rgba(255, 255, 255, 0.15);
 }
 body.dark-theme .btn-hero-action-call:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  border-color: #ff5a52;
+  color: #ffffff !important;
 }
 body.dark-theme .article-trust-tag {
-  background: rgba(96, 165, 250, 0.08);
+  background: rgba(197, 18, 16, 0.08);
   color: #cbd5e1;
-  border-color: rgba(96, 165, 250, 0.2);
+  border-color: rgba(255, 90, 82, 0.25);
 }
 body.dark-theme .article-trust-tag svg {
   color: #34d399;
 }
 body.dark-theme .article-footer-engagement-card {
-  border-top-color: rgba(255, 255, 255, 0.08);
+  border-top-color: #2a3136;
 }
 body.dark-theme .article-share-bar-bottom {
-  background: #141622;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #171c1f;
+  border-color: #2a3136;
 }
 body.dark-theme .share-bar-heading {
   color: #f1f5f9;
@@ -21055,8 +21092,8 @@ body.dark-theme .nav-target-title {
   color: #f8fafc;
 }
 body.dark-theme .blog-tag-pill {
-  background: rgba(96, 165, 250, 0.08);
-  border-color: rgba(96, 165, 250, 0.2);
+  background: rgba(197, 18, 16, 0.08);
+  border-color: rgba(255, 90, 82, 0.25);
   color: #ff837d;
 }
 body.dark-theme .blog-tag-pill::before {
@@ -21066,10 +21103,10 @@ body.dark-theme .blog-tag-pill:hover {
   background: linear-gradient(135deg, #d31815 0%, #c51210 50%, #9e0e0c 100%);
   color: #ffffff;
   border-color: transparent;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 14px rgba(197, 18, 16, 0.35);
 }
 body.dark-theme .sidebar-areas-dispatch-footer {
-  border-top-color: rgba(255, 255, 255, 0.08);
+  border-top-color: #2a3136;
 }
 body.dark-theme .areas-dispatch-live,
 body.dark-theme .areas-dispatch-link {
