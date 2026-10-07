@@ -70,3 +70,15 @@ This project follows strict engineering and visual standards. Every change must 
   - Desktop ($\ge 993px$): Uses diagonal SVG clip-path `#main-hero-cut` with secondary sub-card.
   - Tablet & Mobile ($\le 992px$): `clip-path: none !important;`, full width 100%, sub-card hidden, social proof card centered at bottom. **No white voids.**
 - Touch targets $\ge 44 \times 44\text{px}$, inputs $\ge 16\text{px}$ on mobile.
+
+## 7. Button Animation Smoothness & Micro-Timing Standard (Mandatory Rule)
+- **Smoothness is a Tier-1 Non-Negotiable Standard**: All buttons across all pages MUST match the silky, organic liquid-collision smoothness of the Master Navbar Button (`.btn-schedule`). Abrupt, fast, or uncalibrated animations are strictly prohibited.
+- **Micro-Timing & Curve Calibration**:
+  - Ease curve: `cubic-bezier(0.25, 0.46, 0.45, 0.94)` (easeOutQuad).
+  - Staggered circle arrival times: Circle 1 (`1.75s`), Circle 2 (`2.0s`), Circle 3 (`1.65s`), Circle 4 (`2.1s`), Circle 5 (`1.9s`).
+- **Expansion Scale Calibration**:
+  - Standard & Pill Action Buttons: MUST use `scale(12)` (384px coverage) matching `.btn-schedule`. NEVER apply excessive scales like `scale(42)` (1344px) to pill buttons.
+  - Extra-wide full-width desktop form submit buttons: Capped at `scale(18)` (576px).
+- **Idle Restoration**: Mouse leave transitions smoothly over `0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94)`.
+- **Text & Icon Protection**: Button text and SVG children must always be protected via `> span:not(.btn-circle)` with `position: relative !important; z-index: 3 !important;`. Never apply `> span` without `:not(.btn-circle)`.
+

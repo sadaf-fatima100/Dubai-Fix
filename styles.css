@@ -1117,59 +1117,28 @@ a:hover .btn-circle,
   transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Wide / full-width buttons: expand circles to scale 42 (1344px)
-   so the organic liquid bubbles completely flood 100% of the canvas with zero edge bleed,
+/* Wide / full-width form buttons: expand circles to scale 18 (576px)
+   so organic liquid bubbles flood the wide card smoothly without warp-speed snapping,
    delivering the exact same silky liquid smoothness as the navbar button .btn-schedule */
 .btn-bform-submit:hover .btn-circle,
 .btn-contact-submit:hover .btn-circle,
 .modal-submit-btn:hover .btn-circle,
 .nav-menu-schedule-btn:hover .btn-circle,
-.cta-primary-btn:hover .btn-circle,
 .btn-kitchen-quote:hover .btn-circle,
 .btn-process-action:hover .btn-circle,
 .empty-cta-btn:hover .btn-circle,
-.footer-book-btn:hover .btn-circle,
-.article-cta-book-btn:hover .btn-circle,
-.compare-card-cta:hover .btn-circle,
-.btn-cta-banner-primary:hover .btn-circle,
-.btn-cta-banner-call:hover .btn-circle,
-.btn-read-full-guide:hover .btn-circle,
-.btn-hero-action-primary:hover .btn-circle,
-.btn-hero-action-call:hover .btn-circle,
-.sidebar-btn-book:hover .btn-circle,
-.sidebar-btn-call:hover .btn-circle,
-.article-cta-call-btn:hover .btn-circle,
-.btn-filter-browse:hover .btn-circle,
-.btn-service-why-action:hover .btn-circle,
 .btn-modal-call:hover .btn-circle {
-  transform: translate(-50%, -50%) scale(42) !important;
-}
-
-/* Mobile responsive full-width buttons (<= 768px): all buttons stretch to full width,
-   so all circles expand to scale 42 for 100% edge coverage without any edge bleed */
-@media (max-width: 768px) {
-  button:hover .btn-circle,
-  a:hover .btn-circle,
-  .btn-primary:hover .btn-circle,
-  .btn-hero-primary:hover .btn-circle,
-  .btn-hero-secondary:hover .btn-circle,
-  .btn-about-primary:hover .btn-circle,
-  .btn-about-secondary:hover .btn-circle,
-  .btn-emergency-call:hover .btn-circle,
-  .btn-emergency-wa:hover .btn-circle,
-  .btn-simple-cta-call:hover .btn-circle,
-  .btn-simple-cta-whatsapp:hover .btn-circle {
-    transform: translate(-50%, -50%) scale(42) !important;
-  }
+  transform: translate(-50%, -50%) scale(18) !important;
 }
 
 /* Staggered micro-timing — each circle arrives at a slightly different speed
-   for an organic liquid-collision look (exact match to the navbar button .btn-schedule) */
+   for an organic liquid-collision look (exact match to the master navbar button .btn-schedule) */
 button:hover .btn-circle-1,
 a:hover .btn-circle-1,
 :hover > .btn-circle-1,
 .btn-primary:hover .btn-circle-1,
 .btn-schedule:hover .btn-circle-1,
+.nav-menu-schedule-btn:hover .btn-circle-1,
 .btn-hero-primary:hover .btn-circle-1,
 .btn-about-primary:hover .btn-circle-1,
 .btn-hero-secondary:hover .btn-circle-1,
@@ -1181,7 +1150,15 @@ a:hover .btn-circle-1,
 .btn-dispatch-wa:hover .btn-circle-1,
 .btn-simple-cta-whatsapp:hover .btn-circle-1,
 .btn-urgent-call:hover .btn-circle-1,
-.footer-book-btn:hover .btn-circle-1 {
+.footer-book-btn:hover .btn-circle-1,
+.btn-hero-action-primary:hover .btn-circle-1,
+.btn-hero-action-call:hover .btn-circle-1,
+.sidebar-btn-book:hover .btn-circle-1,
+.sidebar-btn-call:hover .btn-circle-1,
+.article-cta-book-btn:hover .btn-circle-1,
+.article-cta-call-btn:hover .btn-circle-1,
+.btn-read-full-guide:hover .btn-circle-1,
+.compare-card-cta:hover .btn-circle-1 {
   transition: transform 1.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
@@ -1190,6 +1167,7 @@ a:hover .btn-circle-2,
 :hover > .btn-circle-2,
 .btn-primary:hover .btn-circle-2,
 .btn-schedule:hover .btn-circle-2,
+.nav-menu-schedule-btn:hover .btn-circle-2,
 .btn-hero-primary:hover .btn-circle-2,
 .btn-about-primary:hover .btn-circle-2,
 .btn-hero-secondary:hover .btn-circle-2,
@@ -1201,7 +1179,15 @@ a:hover .btn-circle-2,
 .btn-dispatch-wa:hover .btn-circle-2,
 .btn-simple-cta-whatsapp:hover .btn-circle-2,
 .btn-urgent-call:hover .btn-circle-2,
-.footer-book-btn:hover .btn-circle-2 {
+.footer-book-btn:hover .btn-circle-2,
+.btn-hero-action-primary:hover .btn-circle-2,
+.btn-hero-action-call:hover .btn-circle-2,
+.sidebar-btn-book:hover .btn-circle-2,
+.sidebar-btn-call:hover .btn-circle-2,
+.article-cta-book-btn:hover .btn-circle-2,
+.article-cta-call-btn:hover .btn-circle-2,
+.btn-read-full-guide:hover .btn-circle-2,
+.compare-card-cta:hover .btn-circle-2 {
   transition: transform 2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
@@ -1210,6 +1196,7 @@ a:hover .btn-circle-3,
 :hover > .btn-circle-3,
 .btn-primary:hover .btn-circle-3,
 .btn-schedule:hover .btn-circle-3,
+.nav-menu-schedule-btn:hover .btn-circle-3,
 .btn-hero-primary:hover .btn-circle-3,
 .btn-about-primary:hover .btn-circle-3,
 .btn-hero-secondary:hover .btn-circle-3,
@@ -1221,7 +1208,15 @@ a:hover .btn-circle-3,
 .btn-dispatch-wa:hover .btn-circle-3,
 .btn-simple-cta-whatsapp:hover .btn-circle-3,
 .btn-urgent-call:hover .btn-circle-3,
-.footer-book-btn:hover .btn-circle-3 {
+.footer-book-btn:hover .btn-circle-3,
+.btn-hero-action-primary:hover .btn-circle-3,
+.btn-hero-action-call:hover .btn-circle-3,
+.sidebar-btn-book:hover .btn-circle-3,
+.sidebar-btn-call:hover .btn-circle-3,
+.article-cta-book-btn:hover .btn-circle-3,
+.article-cta-call-btn:hover .btn-circle-3,
+.btn-read-full-guide:hover .btn-circle-3,
+.compare-card-cta:hover .btn-circle-3 {
   transition: transform 1.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
@@ -1230,6 +1225,7 @@ a:hover .btn-circle-4,
 :hover > .btn-circle-4,
 .btn-primary:hover .btn-circle-4,
 .btn-schedule:hover .btn-circle-4,
+.nav-menu-schedule-btn:hover .btn-circle-4,
 .btn-hero-primary:hover .btn-circle-4,
 .btn-about-primary:hover .btn-circle-4,
 .btn-hero-secondary:hover .btn-circle-4,
@@ -1241,7 +1237,15 @@ a:hover .btn-circle-4,
 .btn-dispatch-wa:hover .btn-circle-4,
 .btn-simple-cta-whatsapp:hover .btn-circle-4,
 .btn-urgent-call:hover .btn-circle-4,
-.footer-book-btn:hover .btn-circle-4 {
+.footer-book-btn:hover .btn-circle-4,
+.btn-hero-action-primary:hover .btn-circle-4,
+.btn-hero-action-call:hover .btn-circle-4,
+.sidebar-btn-book:hover .btn-circle-4,
+.sidebar-btn-call:hover .btn-circle-4,
+.article-cta-book-btn:hover .btn-circle-4,
+.article-cta-call-btn:hover .btn-circle-4,
+.btn-read-full-guide:hover .btn-circle-4,
+.compare-card-cta:hover .btn-circle-4 {
   transition: transform 2.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
@@ -1250,6 +1254,7 @@ a:hover .btn-circle-5,
 :hover > .btn-circle-5,
 .btn-primary:hover .btn-circle-5,
 .btn-schedule:hover .btn-circle-5,
+.nav-menu-schedule-btn:hover .btn-circle-5,
 .btn-hero-primary:hover .btn-circle-5,
 .btn-about-primary:hover .btn-circle-5,
 .btn-hero-secondary:hover .btn-circle-5,
@@ -1261,7 +1266,15 @@ a:hover .btn-circle-5,
 .btn-dispatch-wa:hover .btn-circle-5,
 .btn-simple-cta-whatsapp:hover .btn-circle-5,
 .btn-urgent-call:hover .btn-circle-5,
-.footer-book-btn:hover .btn-circle-5 {
+.footer-book-btn:hover .btn-circle-5,
+.btn-hero-action-primary:hover .btn-circle-5,
+.btn-hero-action-call:hover .btn-circle-5,
+.sidebar-btn-book:hover .btn-circle-5,
+.sidebar-btn-call:hover .btn-circle-5,
+.article-cta-book-btn:hover .btn-circle-5,
+.article-cta-call-btn:hover .btn-circle-5,
+.btn-read-full-guide:hover .btn-circle-5,
+.compare-card-cta:hover .btn-circle-5 {
   transition: transform 1.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
