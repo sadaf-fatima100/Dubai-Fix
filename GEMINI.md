@@ -82,3 +82,8 @@ This project follows strict engineering and visual standards. Every change must 
 - **Idle Restoration**: Mouse leave transitions smoothly over `0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94)`.
 - **Text & Icon Protection**: Button text and SVG children must always be protected via `> span:not(.btn-circle)` with `position: relative !important; z-index: 3 !important;`. Never apply `> span` without `:not(.btn-circle)`.
 
+## 8. Zero Red Glow / Zero Messy Icon Shadows Standard (Mandatory Rule)
+- **Zero Red Shadows on Icons**: Never apply red-tinted box-shadows or glows (`rgba(215, 28, 27, ...)`, `rgba(197, 18, 16, ...)`, `rgba(255, 90, 82, ...)`) to icons, icon badges, or medallions (`.why-card-icon-badge`, `.why-card-icon-box`, `.why-stat-icon-wrap`) on white or light backgrounds. Red shadows against white surfaces look messy, smudged, and dirty.
+- **Clean Flat Geometry**: All card icon badges must use `box-shadow: none;` on both default and hover states. Interactive feedback must be driven by micro-scaling (`transform: scale(1.08)`) and gradient shift, never colored blur halos.
+
+
