@@ -2159,7 +2159,7 @@ a.service-card-item:active,
 a.service-card-item:focus,
 .service-card-item {
   position: relative;
-  height: 450px;
+  height: 430px;
   border-radius: 22px;
   overflow: hidden;
   box-shadow:
@@ -2214,16 +2214,16 @@ a.service-card-item *,
   z-index: 1;
   pointer-events: none;
 } /* ==========================================================================
-   Compact Service Text Card Docked at Bottom (Matching User Reference Image)
-   Two-column horizontal flex: Eyebrow + Title on left, White squircle > button on right
+   Balanced Symmetrical Service Text Card Docked at Bottom (Option A Standard)
+   Left: 44px Appliance Squircle Icon | Center: Eyebrow + Title + Meta-Pill | Right: 44px Chevron Button
    Alternating Theme: Brand Red vs Deep Charcoal
    ========================================================================== */
 .service-card-content {
   position: relative;
   z-index: 2;
   margin: 16px;
-  padding: 16px 20px;
-  border-radius: 16px;
+  padding: 16px 18px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2238,18 +2238,39 @@ a.service-card-item *,
   transform: translateY(-3px);
 }
 
-/* Left Column: Eyebrow & Title */
+/* Left Column: Appliance Squircle Icon */
+.service-card-app-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none !important;
+}
+
+.service-card-app-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  stroke: currentColor;
+}
+
+/* Center Column: Eyebrow, Title & Micro-Benefit */
 .service-card-text {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   min-width: 0;
   flex: 1;
   text-decoration: none !important;
 }
 
 .service-card-eyebrow {
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2259,7 +2280,7 @@ a.service-card-item *,
 
 .service-card-title {
   color: #ffffff !important;
-  font-size: 17.5px;
+  font-size: 16.5px;
   font-weight: 800;
   letter-spacing: -0.015em;
   line-height: 1.22;
@@ -2268,10 +2289,27 @@ a.service-card-item *,
   text-decoration: none !important;
 }
 
+.service-card-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 3px;
+  text-decoration: none !important;
+}
+
+.meta-pulse-icon {
+  font-size: 11px;
+  line-height: 1;
+}
+
 /* Right Column: Squircle Action Button with Right Chevron */
 .service-card-arrow-btn {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   flex-shrink: 0;
   border-radius: 12px;
   background: #ffffff;
@@ -2302,9 +2340,21 @@ a.service-card-item *,
   box-shadow: 0 12px 30px rgba(176, 4, 3, 0.32), 0 4px 10px rgba(0, 0, 0, 0.14);
 }
 
+.service-card-content.card-theme-red .service-card-app-icon,
+.services-grid .service-card-item:nth-child(odd) .service-card-app-icon {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}
+
 .service-card-content.card-theme-red .service-card-eyebrow,
 .services-grid .service-card-item:nth-child(odd) .service-card-eyebrow {
   color: #ffdad6;
+}
+
+.service-card-content.card-theme-red .service-card-meta-pill,
+.services-grid .service-card-item:nth-child(odd) .service-card-meta-pill {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .service-card-content.card-theme-red .service-card-arrow-btn,
@@ -2319,6 +2369,14 @@ a.service-card-item *,
   border-color: rgba(255, 255, 255, 0.35);
 }
 
+.service-card-item:hover .service-card-content.card-theme-red .service-card-app-icon,
+.services-grid .service-card-item:hover:nth-child(odd) .service-card-app-icon {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #d71c1b;
+  transform: scale(1.06);
+}
+
 /* --- THEME VARIANT 2: Deep Charcoal (Cards 2, 4, 6) --- */
 .service-card-content.card-theme-charcoal,
 .services-grid .service-card-item:nth-child(even) .service-card-content {
@@ -2327,9 +2385,21 @@ a.service-card-item *,
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.18);
 }
 
+.service-card-content.card-theme-charcoal .service-card-app-icon,
+.services-grid .service-card-item:nth-child(even) .service-card-app-icon {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--brand-accent, #d71c1b);
+}
+
 .service-card-content.card-theme-charcoal .service-card-eyebrow,
 .services-grid .service-card-item:nth-child(even) .service-card-eyebrow {
   color: var(--brand-accent, #d71c1b);
+}
+
+.service-card-content.card-theme-charcoal .service-card-meta-pill,
+.services-grid .service-card-item:nth-child(even) .service-card-meta-pill {
+  color: #cbd5e1;
 }
 
 .service-card-content.card-theme-charcoal .service-card-arrow-btn,
@@ -2344,6 +2414,14 @@ a.service-card-item *,
   border-color: rgba(255, 255, 255, 0.24);
 }
 
+.service-card-item:hover .service-card-content.card-theme-charcoal .service-card-app-icon,
+.services-grid .service-card-item:hover:nth-child(even) .service-card-app-icon {
+  background: #d71c1b;
+  border-color: #d71c1b;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
 .service-card-item:hover .service-card-content.card-theme-charcoal .service-card-arrow-btn,
 .services-grid .service-card-item:hover:nth-child(even) .service-card-arrow-btn {
   background: #d71c1b;
@@ -2354,35 +2432,50 @@ a.service-card-item *,
 @media (max-width: 992px) {
   .service-card-content {
     margin: 14px;
-    padding: 14px 18px;
-    border-radius: 14px;
+    padding: 14px 14px;
+    border-radius: 16px;
+    gap: 10px;
+  }
+  .service-card-app-icon,
+  .service-card-arrow-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
   }
   .service-card-title {
-    font-size: 16.5px !important;
+    font-size: 15.5px !important;
+  }
+  .service-card-meta-pill {
+    font-size: 11px;
   }
 }
 
 @media (max-width: 768px) {
   .service-card-content {
     margin: 12px;
-    padding: 13px 16px;
-    border-radius: 13px;
-    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    gap: 10px;
   }
-  .service-card-title {
-    font-size: 15.5px !important;
-  }
-  .service-card-eyebrow {
-    font-size: 10.5px;
-  }
+  .service-card-app-icon,
   .service-card-arrow-btn {
     width: 38px;
     height: 38px;
+    min-width: 38px;
     border-radius: 10px;
   }
-  .service-card-arrow-btn svg {
-    width: 16px;
-    height: 16px;
+  .service-card-app-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .service-card-title {
+    font-size: 15px !important;
+  }
+  .service-card-eyebrow {
+    font-size: 10px;
+  }
+  .service-card-meta-pill {
+    font-size: 10.5px;
   }
 }
 
@@ -9113,19 +9206,33 @@ body.dark-theme .trust-item svg {
   }
   .service-card-content {
     margin: 10px;
-    padding: 12px 14px;
-    border-radius: 12px;
-    gap: 10px;
+    padding: 11px 12px;
+    border-radius: 14px;
+    gap: 8px;
+  }
+  .service-card-app-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 9px;
+  }
+  .service-card-app-icon svg {
+    width: 17px;
+    height: 17px;
   }
   .service-card-title {
-    font-size: 14.5px !important;
+    font-size: 14px !important;
   }
   .service-card-eyebrow {
+    font-size: 9.5px;
+  }
+  .service-card-meta-pill {
     font-size: 10px;
   }
   .service-card-arrow-btn {
     width: 34px;
     height: 34px;
+    min-width: 34px;
     border-radius: 9px;
   }
   .service-card-arrow-btn svg {
@@ -9979,9 +10086,21 @@ body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-c
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(176, 4, 3, 0.35);
 }
 
+body.dark-theme .service-card-content.card-theme-red .service-card-app-icon,
+body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-app-icon {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+}
+
 body.dark-theme .service-card-content.card-theme-red .service-card-eyebrow,
 body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-eyebrow {
   color: #ffdad6;
+}
+
+body.dark-theme .service-card-content.card-theme-red .service-card-meta-pill,
+body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-meta-pill {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 body.dark-theme .service-card-content.card-theme-red .service-card-arrow-btn,
@@ -9997,15 +10116,34 @@ body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
+body.dark-theme .service-card-content.card-theme-charcoal .service-card-app-icon,
+body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-app-icon {
+  background: rgba(255, 90, 82, 0.12);
+  border-color: rgba(255, 90, 82, 0.24);
+  color: #ff5a52;
+}
+
 body.dark-theme .service-card-content.card-theme-charcoal .service-card-eyebrow,
 body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-eyebrow {
   color: #ff5a52;
+}
+
+body.dark-theme .service-card-content.card-theme-charcoal .service-card-meta-pill,
+body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-meta-pill {
+  color: #94a3b8;
 }
 
 body.dark-theme .service-card-content.card-theme-charcoal .service-card-arrow-btn,
 body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-arrow-btn {
   background: #ffffff;
   color: #111518;
+}
+
+body.dark-theme .service-card-item:hover .service-card-content.card-theme-charcoal .service-card-app-icon,
+body.dark-theme .services-grid .service-card-item:hover:nth-child(even) .service-card-app-icon {
+  background: #ff5a52;
+  border-color: #ff5a52;
+  color: #ffffff;
 }
 
 body.dark-theme .service-card-item:hover .service-card-content.card-theme-charcoal .service-card-arrow-btn,
@@ -15319,19 +15457,33 @@ body.dark-theme .expertise-card {
   }
   .service-card-content {
     margin: 6px;
-    padding: 8px 10px;
+    padding: 8px 8px;
     border-radius: 10px;
-    gap: 8px;
+    gap: 6px;
+  }
+  .service-card-app-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 7px;
+  }
+  .service-card-app-icon svg {
+    width: 14px;
+    height: 14px;
   }
   .service-card-title {
-    font-size: 12.5px !important;
+    font-size: 12px !important;
   }
   .service-card-eyebrow {
-    font-size: 8.5px;
+    font-size: 8px;
+  }
+  .service-card-meta-pill {
+    display: none !important;
   }
   .service-card-arrow-btn {
     width: 28px;
     height: 28px;
+    min-width: 28px;
     border-radius: 7px;
   }
   .service-card-arrow-btn svg {
