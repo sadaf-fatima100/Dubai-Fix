@@ -64,6 +64,24 @@ html {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
 }
+
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY & FONT ENFORCEMENT (Strict Plus Jakarta Sans Standard)
+   Ensures 100% of buttons, inputs, selects, and text render in Plus Jakarta Sans
+   matching the Homepage exactly without browser default sans-serif fallback.
+   ========================================================================== */
+html,
+body,
+button,
+input,
+select,
+textarea,
+optgroup {
+  font-family: var(--font-family) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--bg-canvas);
@@ -839,6 +857,9 @@ button[id*="phone"] svg {
 .article-cta-book-btn,
 .sidebar-btn-call,
 .compare-card-cta,
+  .btn-hero-action-primary,
+  .btn-hero-action-call,
+  .btn-read-full-guide,
 .btn-hero-secondary,
 .btn-about-secondary,
 .btn-emergency-call,
@@ -946,6 +967,9 @@ button[id*="phone"] svg {
 .btn-simple-cta-call > *:not(.btn-circle),
 .article-cta-call-btn > *:not(.btn-circle),
 .article-cta-book-btn > *:not(.btn-circle),
+  .btn-hero-action-primary > *:not(.btn-circle),
+  .btn-hero-action-call > *:not(.btn-circle),
+  .btn-read-full-guide > *:not(.btn-circle),
 .sidebar-btn-call > *:not(.btn-circle),
 .compare-card-cta > *:not(.btn-circle),
 .btn-hero-secondary > *:not(.btn-circle),
@@ -1085,6 +1109,9 @@ a:hover .btn-circle,
 .btn-lb-whatsapp:hover .btn-circle,
 .btn-emergency-wa:hover .btn-circle,
 .article-cta-book-btn:hover .btn-circle,
+  .btn-hero-action-primary:hover .btn-circle,
+  .btn-hero-action-call:hover .btn-circle,
+  .btn-read-full-guide:hover .btn-circle,
 .compare-card-cta:hover .btn-circle {
   transform: translate(-50%, -50%) scale(12);
   transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -13168,18 +13195,29 @@ body.dark-theme .hf-card-caption {
 }
 
 .hf-card-icon-wrap {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.28);
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  background: #0f1315;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-floating-service-card:hover .hf-card-icon-wrap {
+  background: #000000;
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.65),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .hf-card-meta-text {
@@ -19810,6 +19848,9 @@ body.dark-theme .blog-section-subtitle-tag {
 }
 
 .btn-hero-action-primary {
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: var(--font-family) !important;
   background: var(--btn-gradient-primary);
   color: #ffffff;
   padding: 12px 24px;
@@ -19833,6 +19874,9 @@ body.dark-theme .blog-section-subtitle-tag {
 }
 
 .btn-hero-action-call {
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: var(--font-family) !important;
   background: rgba(25, 32, 35, 0.06);
   color: var(--text-dark, #192023);
   padding: 12px 22px;
@@ -20844,6 +20888,9 @@ body.dark-theme .article-hero-action-strip {
   border-top-color: #2a3136;
 }
 body.dark-theme .btn-hero-action-call {
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: var(--font-family) !important;
   background: rgba(255, 255, 255, 0.06);
   color: #ff837d;
   border-color: rgba(255, 255, 255, 0.15);
@@ -21108,6 +21155,9 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
   }
   .btn-hero-action-primary,
   .btn-hero-action-call {
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: var(--font-family) !important;
     width: 100%;
     max-width: 100%;
     min-height: 44px;
@@ -23142,4 +23192,87 @@ body.dark-theme .service-quote-glyph {
     font-size: 10px;
     padding: 3px 8px;
   }
+}
+
+
+/* Individual Blog Pages: Hero Call Button Expanding Bubbles */
+.btn-hero-action-call .btn-circle {
+  background-color: #c51210 !important;
+}
+body.dark-theme .btn-hero-action-call .btn-circle {
+  background-color: #d31815 !important;
+}
+
+/* Individual Blog Pages: Hero Call Button Text & SVG Stay Crisp White on Hover */
+.btn-hero-action-call:hover,
+.btn-hero-action-call:hover span {
+  color: #ffffff !important;
+}
+.btn-hero-action-call:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+body.dark-theme .btn-hero-action-call:hover,
+body.dark-theme .btn-hero-action-call:hover span {
+  color: #ffffff !important;
+}
+body.dark-theme .btn-hero-action-call:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Individual Blog Pages: Primary Action Button Text & Arrow Stay Crisp White */
+.btn-hero-action-primary:hover,
+.btn-hero-action-primary:hover span {
+  color: #ffffff !important;
+}
+.btn-hero-action-primary:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Individual Blog Pages: White Card Buttons (Article CTA & Sidebar Book) Text & SVG */
+.article-cta-book-btn:hover,
+.article-cta-book-btn:hover span,
+.sidebar-btn-book:hover,
+.sidebar-btn-book:hover span {
+  color: #ffffff !important;
+}
+.article-cta-book-btn:hover svg,
+.sidebar-btn-book:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+body.dark-theme .article-cta-book-btn:hover,
+body.dark-theme .article-cta-book-btn:hover span,
+body.dark-theme .sidebar-btn-book:hover,
+body.dark-theme .sidebar-btn-book:hover span {
+  color: #ffffff !important;
+}
+body.dark-theme .article-cta-book-btn:hover svg,
+body.dark-theme .sidebar-btn-book:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Individual Blog Pages: Sidebar Call Button Text & SVG */
+.sidebar-btn-call:hover,
+.sidebar-btn-call:hover span {
+  color: #ffffff !important;
+}
+.sidebar-btn-call:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Universal Button Child Text Protection: Ensures span and text nodes are always above bubbles */
+.btn-hero-action-primary > span,
+.btn-hero-action-call > span,
+.article-cta-book-btn > span,
+.sidebar-btn-book > span,
+.sidebar-btn-call > span,
+.article-cta-call-btn > span {
+  position: relative !important;
+  z-index: 3 !important;
+  transition: color 0.25s ease !important;
 }

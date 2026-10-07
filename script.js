@@ -720,9 +720,12 @@ document.addEventListener('DOMContentLoaded', () => {
       '.mcard-featured-btn',
       '.btn-filter-browse',
       '.btn-read-article',
+      '.btn-read-full-guide',
       '.why-btn-pill',
       '.empty-cta-btn',
       '.sidebar-btn-call',
+      '.btn-hero-action-primary',
+      '.article-cta-call-btn',
 
       // Vibrant WhatsApp Green Emergency & Call Buttons (Vibrant Green bubbles)
       '.btn-hero-secondary',
@@ -735,6 +738,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.btn-cta-banner-call',
       '.process-phone-link',
       '.standards-call-link',
+      '.btn-hero-action-call',
 
       // WhatsApp Action Buttons (Vibrant WhatsApp Green bubbles #25D366)
       '.btn-dispatch-wa',
