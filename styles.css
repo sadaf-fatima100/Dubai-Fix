@@ -3923,7 +3923,7 @@ body.dark-theme .why-card-content .why-card-desc {
 }
 .process-layout {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 340px 1fr;
   gap: 24px;
   align-items: stretch;
   width: 100%;
@@ -3931,7 +3931,7 @@ body.dark-theme .why-card-content .why-card-desc {
 }
 @media (min-width: 1280px) {
   .process-layout {
-    grid-template-columns: 375px 1fr;
+    grid-template-columns: 350px 1fr;
     gap: 26px;
   }
 } /* Left Featured Card */
@@ -4139,7 +4139,7 @@ body.dark-theme .why-card-content .why-card-desc {
 .process-steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px clamp(230px, 20vw, 270px);
+  gap: 16px clamp(280px, 22vw, 340px);
   align-content: center;
   flex: 1;
   position: relative;
@@ -4150,27 +4150,27 @@ body.dark-theme .why-card-content .why-card-desc {
   align-items: center;
   gap: 12px;
   background-color: #ffffff;
-  padding: 14px 16px;
+  padding: 12px 14px;
   min-height: 80px;
   border-radius: 18px;
   border: 1.5px solid #e3e7e9;
   box-shadow: 0 4px 14px rgba(25, 32, 35, 0.04);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  z-index: 7;
+  z-index: 2;
 }
 .process-step-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
   border-color: var(--brand-accent);
-  z-index: 8;
+  z-index: 3;
 } /* ── Center Technician Showcase Figure ─────────────────── */
 .tech-center-showcase {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4189,7 +4189,7 @@ body.dark-theme .why-card-content .why-card-desc {
   object-fit: contain;
   object-position: bottom center;
   position: relative;
-  z-index: 2;
+  z-index: 5;
   filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.3));
   flex-shrink: 0;
   display: block;
@@ -4200,7 +4200,7 @@ body.dark-theme .why-card-content .why-card-desc {
   bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9;
+  z-index: 8;
   background: var(--btn-gradient-primary);
   color: #ffffff;
   font-size: 11px;
@@ -7804,19 +7804,26 @@ body.dark-theme .trust-item svg {
   .hero-google-badge {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     flex-shrink: 0;
   }
   .google-g-icon svg {
     width: 34px !important;
     height: 34px !important;
   }
+  .google-badge-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+  }
   .google-brand-title {
     font-size: 16px;
-    line-height: 1.1;
+    line-height: 1.15;
+    font-weight: 800;
   }
   .rating-score {
     font-size: 13px;
+    font-weight: 800;
   }
   .google-stars-row svg {
     width: 12px;
@@ -7828,7 +7835,7 @@ body.dark-theme .trust-item svg {
   .hero-trust-divider {
     display: block;
     width: 1px;
-    height: 48px;
+    height: 50px;
     background: rgba(0, 0, 0, 0.12);
     margin: 0 2px;
     flex-shrink: 0;
@@ -7836,7 +7843,7 @@ body.dark-theme .trust-item svg {
   .hero-trust-bullets {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 7px;
     align-items: flex-start;
     justify-content: center;
     width: auto;
@@ -7848,18 +7855,18 @@ body.dark-theme .trust-item svg {
     white-space: nowrap;
     justify-content: flex-start;
     text-align: left;
-    gap: 7px;
+    gap: 8px;
     line-height: 1.25;
     color: var(--text-dark);
   }
   .bullet-tick-box {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
     flex-shrink: 0;
   }
   .bullet-tick-box svg {
-    width: 9px;
-    height: 9px;
+    width: 9.5px;
+    height: 9.5px;
   } /* Hero Visual Stage: Edge-to-Edge Technician Photo with Centered Proof (Zero Void) */
   .visual-stage {
     position: relative;
@@ -8347,33 +8354,40 @@ body.dark-theme .trust-item svg {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 14px;
     width: 100%;
     max-width: 440px;
     margin: 0 auto 22px auto;
-    padding: 10px 14px;
+    padding: 12px 18px;
     background: #ffffff;
-    border-radius: 16px;
+    border-radius: 18px;
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   }
   .hero-google-badge {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
     flex-shrink: 0;
   }
   .google-g-icon svg {
     width: 32px !important;
     height: 32px !important;
   }
+  .google-badge-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
   .google-brand-title {
     font-size: 15px;
-    line-height: 1.1;
+    line-height: 1.15;
+    font-weight: 800;
   }
   .rating-score {
     font-size: 12.5px;
+    font-weight: 800;
   }
   .google-stars-row svg {
     width: 11px;
@@ -8393,7 +8407,7 @@ body.dark-theme .trust-item svg {
   .hero-trust-bullets {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6.5px;
     align-items: flex-start;
     justify-content: center;
     width: auto;
@@ -8405,13 +8419,13 @@ body.dark-theme .trust-item svg {
     white-space: nowrap;
     justify-content: flex-start;
     text-align: left;
-    gap: 6px;
+    gap: 7.5px;
     line-height: 1.25;
     color: var(--text-dark);
   }
   .bullet-tick-box {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     flex-shrink: 0;
   }
   .bullet-tick-box svg {
@@ -8873,78 +8887,86 @@ body.dark-theme .trust-item svg {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
-    padding: 8px 10px;
-    max-width: 375px;
+    padding: 12px 14px;
+    max-width: 360px;
     width: 100%;
     margin: 0 auto 20px auto;
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
   }
   .hero-google-badge {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     flex-shrink: 0;
     width: auto;
     justify-content: flex-start;
   }
   .google-g-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
   }
   .google-g-icon svg {
-    width: 25px !important;
-    height: 25px !important;
+    width: 28px !important;
+    height: 28px !important;
   }
   .google-badge-info {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 2px;
   }
   .google-brand-title {
-    font-size: 13.5px;
-    line-height: 1.1;
+    font-size: 14px;
+    line-height: 1.15;
     font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.01em;
   }
   .google-rating-line {
     display: flex;
     align-items: center;
-    gap: 3.5px;
+    gap: 4px;
+    line-height: 1;
   }
   .rating-score {
-    font-size: 11px;
+    font-size: 11.5px;
     font-weight: 800;
+    color: #0f172a;
   }
   .google-stars-row {
     display: inline-flex;
     align-items: center;
-    gap: 1px;
+    gap: 1.5px;
   }
   .google-stars-row svg {
-    width: 8.5px;
-    height: 8.5px;
+    width: 9.5px;
+    height: 9.5px;
   }
   .google-verified-label {
-    font-size: 8.5px;
-    line-height: 1.1;
+    font-size: 9px;
+    line-height: 1.15;
+    font-weight: 600;
     color: #64748b;
   }
   .hero-trust-divider {
     display: block;
     width: 1px;
-    height: 42px;
-    background: rgba(0, 0, 0, 0.12);
+    height: 48px;
+    background: rgba(0, 0, 0, 0.1);
     margin: 0;
     flex-shrink: 0;
   }
   .hero-trust-bullets {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 6.5px;
     align-items: flex-start;
     justify-content: center;
     width: auto;
@@ -8953,23 +8975,23 @@ body.dark-theme .trust-item svg {
     margin: 0;
   }
   .trust-bullet-item {
-    font-size: 9.5px;
+    font-size: 10px;
     font-weight: 700;
     white-space: nowrap;
     justify-content: flex-start;
     text-align: left;
-    gap: 4.5px;
+    gap: 7px;
     line-height: 1.25;
-    color: var(--text-dark);
+    color: #1e293b;
   }
   .bullet-tick-box {
-    width: 13px;
-    height: 13px;
+    width: 15px;
+    height: 15px;
     flex-shrink: 0;
   }
   .bullet-tick-box svg {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
   }
   .visual-stage {
     height: auto;
@@ -9091,45 +9113,49 @@ body.dark-theme .trust-item svg {
     font-size: 13.5px;
   }
   .hero-trust-proof-row {
-    padding: 7px 8px;
-    gap: 6px;
+    padding: 10px 10px;
+    gap: 8px;
     max-width: 100%;
+    justify-content: space-between;
   }
   .hero-google-badge {
-    gap: 5px;
+    gap: 6px;
   }
   .google-g-icon svg {
-    width: 22px !important;
-    height: 22px !important;
+    width: 25px !important;
+    height: 25px !important;
   }
   .google-brand-title {
-    font-size: 12.5px;
+    font-size: 13px;
   }
   .rating-score {
-    font-size: 10px;
+    font-size: 10.5px;
   }
   .google-stars-row svg {
-    width: 7.5px;
-    height: 7.5px;
+    width: 8px;
+    height: 8px;
   }
   .google-verified-label {
-    font-size: 8px;
+    font-size: 8.5px;
   }
   .hero-trust-divider {
-    height: 38px;
+    height: 44px;
     margin: 0;
   }
+  .hero-trust-bullets {
+    gap: 5px;
+  }
   .trust-bullet-item {
-    font-size: 8.5px;
-    gap: 3.5px;
+    font-size: 9px;
+    gap: 5.5px;
   }
   .bullet-tick-box {
-    width: 11.5px;
-    height: 11.5px;
+    width: 13.5px;
+    height: 13.5px;
   }
   .bullet-tick-box svg {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
   }
   .main-image-card {
     height: 220px;
@@ -9293,20 +9319,29 @@ body.dark-theme .trust-item svg {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 4px !important;
-    padding: 6px 6px !important;
+    gap: 6px !important;
+    padding: 8px 6px !important;
   }
   .hero-trust-divider {
     width: 1px !important;
-    height: 38px !important;
+    height: 40px !important;
     margin: 0 !important;
   }
   .hero-trust-bullets {
     align-items: flex-start !important;
+    gap: 4.5px !important;
   }
   .trust-bullet-item {
-    font-size: 9px !important;
-    gap: 3px !important;
+    font-size: 8.5px !important;
+    gap: 4px !important;
+  }
+  .bullet-tick-box {
+    width: 12.5px !important;
+    height: 12.5px !important;
+  }
+  .bullet-tick-box svg {
+    width: 6.5px !important;
+    height: 6.5px !important;
   }
   .visual-stage {
     height: auto;
@@ -9950,6 +9985,29 @@ body.dark-theme .hero-trust-proof-row {
   border: none !important;
   box-shadow: none !important;
   padding: 6px 0 !important;
+}
+@media (max-width: 992px) {
+  body.dark-theme .hero-trust-proof-row {
+    background: #171c1f !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4) !important;
+    padding: 12px 18px !important;
+  }
+}
+@media (max-width: 480px) {
+  body.dark-theme .hero-trust-proof-row {
+    padding: 12px 14px !important;
+  }
+}
+@media (max-width: 360px) {
+  body.dark-theme .hero-trust-proof-row {
+    padding: 10px 10px !important;
+  }
+}
+@media (max-width: 300px) {
+  body.dark-theme .hero-trust-proof-row {
+    padding: 8px 6px !important;
+  }
 }
 body.dark-theme .google-brand-title,
 body.dark-theme .rating-score,
