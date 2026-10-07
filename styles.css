@@ -23384,3 +23384,36 @@ body.dark-theme .sidebar-btn-book:hover svg {
   z-index: 3 !important;
   transition: color 0.25s ease !important;
 }
+
+/* ==========================================================================
+   Liquid-synced text/icon colour flip (smoothness rule)
+   Text turns white only when the expanding bubbles have actually covered the
+   button, so white text never sits on a white/pale base (invisible text) and
+   the colour change feels part of the same silky liquid motion.
+   ========================================================================== */
+.btn-process-action > span:not(.btn-circle),
+.btn-process-action > svg,
+.btn-kitchen-quote > span:not(.btn-circle),
+.btn-kitchen-arrow-circle,
+.btn-kitchen-arrow-circle svg,
+.btn-simple-cta-whatsapp > span:not(.btn-circle),
+.btn-simple-cta-whatsapp svg {
+  transition:
+    color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.btn-process-action:hover > span:not(.btn-circle),
+.btn-process-action:hover > svg,
+.btn-kitchen-quote:hover > span:not(.btn-circle),
+.btn-kitchen-quote:hover .btn-kitchen-arrow-circle,
+.btn-kitchen-quote:hover .btn-kitchen-arrow-circle svg,
+.btn-simple-cta-whatsapp:hover > span:not(.btn-circle),
+.btn-simple-cta-whatsapp:hover svg {
+  transition:
+    color 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s,
+    background-color 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s,
+    stroke 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s,
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
