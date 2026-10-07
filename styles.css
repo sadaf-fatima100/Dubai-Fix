@@ -19762,6 +19762,10 @@ body.dark-theme .blog-section-subtitle-tag {
   }
 }
 @media (max-width: 360px) {
+  .blog-section-title {
+    font-size: clamp(1.25rem, 6vw, 1.45rem);
+    line-height: 1.22;
+  }
   .blog-toolbar-card {
     padding: 0 !important;
     gap: 10px;
@@ -19797,6 +19801,11 @@ body.dark-theme .blog-section-subtitle-tag {
   }
 }
 @media (max-width: 300px) {
+  .blog-section-title {
+    font-size: clamp(1.1rem, 5.5vw, 1.25rem);
+    line-height: 1.22;
+    word-break: break-word;
+  }
   .blog-filter-pills {
     grid-template-columns: 1fr;
     gap: 6px;
