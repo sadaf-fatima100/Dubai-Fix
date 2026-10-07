@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4.6">
+  <link rel="stylesheet" href="styles.css?v=4.7">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -15,7 +15,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=4.6 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=4.7 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* ═══════════════════════════════════════════════════════
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -1312,8 +1312,8 @@
       flex: 1;
       width: 100%;
       height: 100%;
-      clip-path: url(#main-hero-cut);
-      -webkit-clip-path: url(#main-hero-cut);
+      clip-path: url(#why-media-flipped-cut);
+      -webkit-clip-path: url(#why-media-flipped-cut);
       overflow: hidden;
       border: none;
       background: transparent;
@@ -1342,7 +1342,7 @@
       flex: 0 0 15px;
       width: 15px;
       height: 64%;
-      align-self: flex-start;
+      align-self: flex-end;
       border-radius: 9999px;
       background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #d71c1b 100%);
       border: 1px solid rgba(255, 255, 255, 0.32);
@@ -2618,6 +2618,27 @@
                  H 0.12 Q 0.00,1.00 0.00,0.88 
                  V 0.36 Q 0.00,0.32 0.04,0.28 
                  L 0.28,0.04 Q 0.32,0.00 0.36,0.00 Z" />
+      </clipPath>
+
+      <!-- Why Choose Media Inverted Hero Cut: Top-Right Diagonal Chamfer, Bottom-Right Straight Edge along Accent Line, Bottom-Left Diagonal Chamfer -->
+      <clipPath id="why-media-flipped-cut" clipPathUnits="objectBoundingBox">
+        <path d="M 0.12,0.00 
+                 H 0.64 Q 0.68,0.00 0.72,0.04 
+                 L 0.96,0.28 Q 1.00,0.32 1.00,0.36 
+                 V 0.88 Q 1.00,1.00 0.88,1.00 
+                 H 0.36 Q 0.32,1.00 0.28,0.96 
+                 L 0.04,0.72 Q 0.00,0.68 0.00,0.64 
+                 V 0.12 Q 0.00,0.00 0.12,0.00 Z" />
+      </clipPath>
+
+      <!-- Single Cut Top-Right Only: Top-Right Diagonal Chamfer, Bottom Flat/Straight along Accent Line -->
+      <clipPath id="single-cut-topright" clipPathUnits="objectBoundingBox">
+        <path d="M 0.08,0.00 
+                 H 0.64 Q 0.68,0.00 0.72,0.04 
+                 L 0.96,0.28 Q 1.00,0.32 1.00,0.36 
+                 V 0.92 Q 1.00,1.00 0.92,1.00 
+                 H 0.08 Q 0.00,1.00 0.00,0.92 
+                 V 0.08 Q 0.00,0.00 0.08,0.00 Z" />
       </clipPath>
 
       <!-- Top-Left Only Asymmetric Chamfer Cut (Matching Services Hero) -->

@@ -16941,9 +16941,18 @@ body.dark-theme .tag-location svg {
   overflow: hidden;
   height: 100%;
   min-height: 190px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  border: 1.5px solid #e3e7e9;
-  background: #0f172a;
+  box-shadow: 0 10px 28px rgba(25, 32, 35, 0.08);
+  border: 3.5px solid var(--brand-accent, #d71c1b);
+  background: #192023;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+.protocol-img-card:hover {
+  border-color: var(--brand-accent-hover, #b00403);
+  box-shadow: 0 18px 40px rgba(25, 32, 35, 0.18);
+  transform: translateY(-3px);
 }
 .protocol-img {
   width: 100%;
@@ -17070,7 +17079,7 @@ body.dark-theme .tag-location svg {
 
 /* Dark Theme for Protocol Section */
 body.dark-theme .protocol-step-card {
-  background: #181924;
+  background: #171c1f;
   border-color: #2a3136;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
@@ -17088,7 +17097,7 @@ body.dark-theme .step-card-deliverables {
   border-top-color: rgba(255, 255, 255, 0.08);
 }
 body.dark-theme .step-deliverable-icon {
-  background: rgba(37, 99, 235, 0.18);
+  background: rgba(255, 90, 82, 0.15);
   color: #ff5a52;
 }
 body.dark-theme .protocol-step-card:hover .step-deliverable-icon {
@@ -17102,7 +17111,13 @@ body.dark-theme .step-deliverable-text strong {
   color: #cbd5e1;
 }
 body.dark-theme .protocol-img-card {
-  border-color: #2a3136;
+  border-color: #ff5a52;
+  background: #171c1f;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+body.dark-theme .protocol-img-card:hover {
+  border-color: #ff7872;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
 } /* Protocol Section Responsive Queries */
 @media (max-width: 992px) {
   .protocol-bento-grid {

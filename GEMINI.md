@@ -1,4 +1,4 @@
-﻿# ApexFix Project Architecture & Design Rules
+# ApexFix Project Architecture & Design Rules
 
 This project follows strict engineering and visual standards. Every change must adhere to the following rules:
 
@@ -78,7 +78,7 @@ This project follows strict engineering and visual standards. Every change must 
   - Staggered circle arrival times: Circle 1 (`1.75s`), Circle 2 (`2.0s`), Circle 3 (`1.65s`), Circle 4 (`2.1s`), Circle 5 (`1.9s`).
 - **Expansion Scale Calibration**:
   - Standard & Pill Action Buttons: MUST use `scale(12)` (384px coverage) matching `.btn-schedule`. NEVER apply excessive scales like `scale(42)` (1344px) to pill buttons.
-  - Extra-wide full-width desktop form submit buttons: Capped at `scale(18)` (576px).
+  - Extra-Wide & Full-Width Form Buttons (.btn-bform-submit, .btn-contact-submit, .modal-submit-btn, etc.): MUST use `scale(30)` (960px coverage) so expanding liquid bubbles 100% cover the entire wide button edge-to-edge across all desktop widths (650px–850px), completely preventing exposed red caps or uncovered edges on hover.
 - **Idle Restoration**: Mouse leave transitions smoothly over `0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94)`.
 - **Text & Icon Protection**: Button text and SVG children must always be protected via `> span:not(.btn-circle)` with `position: relative !important; z-index: 3 !important;`. Never apply `> span` without `:not(.btn-circle)`.
 
