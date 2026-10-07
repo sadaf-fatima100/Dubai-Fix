@@ -13584,8 +13584,8 @@ body.dark-theme .pill-dot-navy {
   overflow: hidden;
 }
 body.dark-theme .service-hero-copy-card {
-  background: #181924;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #171c1f;
+  border-color: #2a3136;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 .hero-copy-main {
@@ -14425,7 +14425,7 @@ body.dark-theme .expertise-subtitle {
   position: relative;
 }
 body.dark-theme .expertise-card {
-  background: #181924;
+  background: #171c1f;
   border-color: #2a3136;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
@@ -14580,7 +14580,7 @@ body.dark-theme .service-expertise-section {
   box-shadow: none;
 }
 body.dark-theme .expertise-card {
-  background: #181924;
+  background: #171c1f;
   border-color: #2a3136;
 } /* ==========================================================================   RESPONSIVE DESIGN FOR 3-TIER SERVICE PAGE LAYOUT (Exact Match to Homepage)   Full Breakpoint Hierarchy: 992px -> 768px -> 576px -> 480px -> 360px -> 300px/250px   ========================================================================== */ /* --- Tablet Breakpoint (1080px & Below) --- */
 @media (max-width: 1080px) {
@@ -15687,8 +15687,8 @@ body.dark-theme .center-trust-divider {
 }
 body.dark-theme .hero-flank-card {
   border-color: #ff5a52;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(37, 99, 235, 0.3);
-  background: #181924;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(215, 28, 27, 0.3);
+  background: #171c1f;
 } /* Responsive Rules for Single Service Hero */
 @media (max-width: 1180px) {
   .single-service-hero-container {
@@ -16303,8 +16303,8 @@ body.dark-theme .service-why-card .why-card-desc {
   color: #94a3b8;
 }
 body.dark-theme .service-why-stats-bar {
-  background: #181924;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #171c1f;
+  border-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 body.dark-theme .stat-number-val {
@@ -19433,13 +19433,13 @@ body.dark-theme .blog-toolbar-card {
   padding: 0 !important;
 }
 body.dark-theme .blog-search-input {
-  background: #181924;
+  background: #171c1f;
   border-color: rgba(255, 255, 255, 0.1);
   color: #f1f5f9;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 body.dark-theme .blog-search-input:focus {
-  background: #1c1e2b;
+  background: #1f2529;
   border-color: #ff5a52;
   box-shadow: 0 0 0 3px rgba(215, 28, 27, 0.2), 0 4px 14px rgba(0, 0, 0, 0.4);
 }
@@ -19447,13 +19447,13 @@ body.dark-theme .blog-search-box:focus-within .blog-search-icon {
   color: #ff5a52;
 }
 body.dark-theme .blog-filter-pill {
-  background: #181924;
+  background: #171c1f;
   border-color: rgba(255, 255, 255, 0.1);
   color: #94a3b8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 body.dark-theme .blog-filter-pill:hover {
-  background: #222434;
+  background: #1f2529;
   color: #ffffff;
   border-color: #ff5a52;
 }
@@ -19482,7 +19482,7 @@ body.dark-theme .blog-section-lead {
   color: #94a3b8;
 }
 body.dark-theme .blog-header-status-pill {
-  background: #181924;
+  background: #171c1f;
   border-color: rgba(255, 255, 255, 0.12);
   color: #f8fafc;
 }
@@ -19552,7 +19552,7 @@ body.dark-theme .btn-read-article:hover .btn-read-circle svg {
   stroke: #ffffff;
 }
 body.dark-theme .article-reader-window {
-  background: #181924;
+  background: #171c1f;
   color: #e2e8f0;
 }
 body.dark-theme .article-reader-header {
@@ -21789,7 +21789,7 @@ body.dark-theme .wm-perf-img-frame {
 }
 
 body.dark-theme .wm-perf-float-card {
-  background: #181924;
+  background: #171c1f;
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
 }
@@ -23093,7 +23093,7 @@ body.dark-theme .service-testimonials-header .section-desc {
   margin-top: 4px;
 }
 body.dark-theme .service-trust-summary-pill {
-  background: #181924;
+  background: #171c1f;
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: none;
 }

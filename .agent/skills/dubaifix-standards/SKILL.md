@@ -173,4 +173,29 @@ To prevent the common mistake of "fire-alarm / danger" visual fatigue associated
 3. **Hover Interaction**:
    - Interactive feedback is achieved via subtle organic scale (`transform: scale(1.08)`) and gradient shift to `var(--btn-gradient-hover)`, NEVER by projecting a fuzzy red halo or colored blur onto the white canvas.
 
+---
+
+## 8. Responsive Typography Hierarchy & Strict H1 > H2 Dominance Standard (Mandatory Rule)
+
+> [!IMPORTANT]
+> **Strict H1 > H2 Visual Dominance Scale Across All Viewports (Down to 250px)**
+> Hero H1 headlines must ALWAYS remain visually authoritative and distinctly larger than Section H2 headings across all viewports (maintaining a ~1.25x to 1.35x dominance ratio).
+> Under NO circumstances should Section H2 ever have a larger computed font size than the page's Hero H1 on mobile, tablet, or compact screens.
+
+### 1. Calibrated Multi-Breakpoint Type Scale Matrix
+| Viewport / Breakpoint | Hero H1 (Display Title) | Section H2 (`var(--text-h2)`) | Card Title (H3) | Dominance Ratio (H1 : H2) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Desktop ($\ge 993px$)** | `clamp(2.45rem, 3.5vw, 3.45rem)` | `var(--text-h2, clamp(1.85rem, 2.8vw, 2.5rem))` | `18px` – `21px` | **~1.30 : 1** |
+| **Tablet ($\le 992px$)** | `clamp(2.25rem, 4.6vw, 2.95rem)` | `clamp(1.75rem, 2.6vw, 2.25rem)` | `17px` – `19px` | **~1.30 : 1** |
+| **Mobile ($\le 768px$)** | `clamp(2.00rem, 5.8vw, 2.55rem)` | `clamp(1.50rem, 3.8vw, 1.85rem)` | `16px` – `18px` | **~1.35 : 1** |
+| **Small Mobile ($\le 576px$)** | `clamp(1.85rem, 6.2vw, 2.25rem)` | `clamp(1.35rem, 4.2vw, 1.65rem)` | `15.5px` – `17px` | **~1.35 : 1** |
+| **Compact ($\le 480px$)** | `clamp(1.72rem, 6.4vw, 2.05rem)` | `clamp(1.25rem, 4.4vw, 1.48rem)` | `15px` – `16.5px` | **~1.38 : 1** |
+| **Extra Small ($\le 360px$)** | `clamp(1.52rem, 6.5vw, 1.78rem)` | `clamp(1.15rem, 4.5vw, 1.32rem)` | `14px` – `15px` | **~1.35 : 1** |
+| **Ultra-Compact ($\le 300px$–$250px$)** | `clamp(1.32rem, 5.8vw, 1.48rem)` | `clamp(1.02rem, 4.2vw, 1.18rem)` | `13px` – `14px` | **~1.30 : 1** |
+
+### 2. Dual-Color & Text-Wrap Discipline
+- Section H2 must use `text-wrap: balance;` to eliminate awkward single-word typographic orphans.
+- H2 emphasis keywords MUST be wrapped in `<span class="highlight-navy">` with signature Brand Crimson gradient (`#d71c1b` $\rightarrow$ `#b00403`) in light mode and Coral Red gradient (`#ff5a52` $\rightarrow$ `#ff837d`) in dark mode.
+
+
 

@@ -36,6 +36,7 @@ This project follows strict engineering and visual standards. Every change must 
 - **Headings & Type Sizes**:
   - **Hero H1**: Desktop `clamp(2.5rem, 3.6vw, 3.75rem)` $\rightarrow$ Tablet `clamp(2rem, 4.5vw, 2.9rem)` $\rightarrow$ Mobile `clamp(1.85rem, 6.2vw, 2.5rem)`. Line-height: `1.14` to `1.2`. Letter-spacing: `-0.02em`.
   - **Section H2 (Major Titles across all pages)**: MUST use `var(--text-h2)` (`clamp(1.85rem, 2.8vw, 2.5rem)`) with `font-weight: 800; line-height: 1.22; letter-spacing: -0.025em;`. No arbitrary section title sizes allowed.
+  - **Strict H1 > H2 Dominance Scale across All Viewports (Mandatory)**: Hero H1 MUST ALWAYS remain visually authoritative and distinctly larger than Section H2 across all viewports down to 250px (maintaining a ~1.25x to 1.35x ratio). Under no circumstances should Section H2 ever have a larger computed font size than the page's Hero H1 on mobile or compact screens.
   - **Card Titles (H3)**: `18px` to `21px` (`font-weight: 700; line-height: 1.25;`).
   - **Eyebrow Tags / Badges**: `11px` to `12px` (`font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;`).
   - **Body / Subtitles**: `15px` to `16px` (`font-weight: 500; line-height: 1.6; color: var(--text-sub, #475056)`).
