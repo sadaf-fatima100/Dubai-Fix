@@ -23386,10 +23386,7 @@ body.dark-theme .sidebar-btn-book:hover svg {
 }
 
 /* ==========================================================================
-   Liquid-synced text/icon colour flip (smoothness rule)
-   Text turns white only when the expanding bubbles have actually covered the
-   button, so white text never sits on a white/pale base (invisible text) and
-   the colour change feels part of the same silky liquid motion.
+   Smooth Instant Text/Icon Color Response (Zero Delay / Ultra-Snappy)
    ========================================================================== */
 .btn-process-action > span:not(.btn-circle),
 .btn-process-action > svg,
@@ -23399,10 +23396,10 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .btn-simple-cta-whatsapp > span:not(.btn-circle),
 .btn-simple-cta-whatsapp svg {
   transition:
-    color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    stroke 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    color 0.2s ease,
+    background-color 0.2s ease,
+    stroke 0.2s ease,
+    transform 0.2s ease !important;
 }
 .btn-process-action:hover > span:not(.btn-circle),
 .btn-process-action:hover > svg,
@@ -23412,8 +23409,8 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .btn-simple-cta-whatsapp:hover > span:not(.btn-circle),
 .btn-simple-cta-whatsapp:hover svg {
   transition:
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s,
-    background-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s,
-    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s,
-    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    color 0.15s ease,
+    background-color 0.2s ease,
+    stroke 0.15s ease,
+    transform 0.2s ease !important;
 }
