@@ -913,6 +913,7 @@ button[id*="phone"] svg {
 .article-cta-call-btn::before,
 .article-cta-book-btn::before,
 .sidebar-btn-call::before,
+.btn-lb-call::before,
 .compare-card-cta::before {
   content: "";
   position: absolute;

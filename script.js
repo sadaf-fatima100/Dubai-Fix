@@ -726,6 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.sidebar-btn-call',
       '.btn-hero-action-primary',
       '.article-cta-call-btn',
+      '.btn-lb-call',
 
       // Vibrant WhatsApp Green Emergency & Call Buttons (Vibrant Green bubbles)
       '.btn-hero-secondary',
@@ -734,7 +735,6 @@ document.addEventListener('DOMContentLoaded', () => {
       '.btn-cta-green',
       '.btn-prefooter-call',
       '.btn-faq-talk',
-      '.btn-lb-call',
       '.btn-cta-banner-call',
       '.process-phone-link',
       '.standards-call-link',
