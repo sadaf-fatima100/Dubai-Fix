@@ -4836,15 +4836,12 @@ h2 .highlight-navy,
   transform-origin: center center;
 }
 .btn-about-secondary:hover {
-  animation: none !important;
-  background-color: #25d366 !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
 }
 .btn-about-secondary:hover svg {
-  animation: none !important;
   color: #ffffff !important;
   fill: currentColor !important;
 }
@@ -17309,24 +17306,24 @@ body.dark-theme .portfolio-hero-row .hero-description {
   overflow: hidden;
   background: #ffffff !important;
   box-shadow: none !important;
-  border: 3px solid var(--brand-accent, #d71c1b);
+  border: 2px solid var(--brand-accent, #d71c1b);
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
 .pf-collage-card:hover {
   border-color: var(--brand-accent-hover, #b00403);
-  box-shadow: 0 0 0 4px rgba(215, 28, 27, 0.22) !important;
+  box-shadow: 0 0 0 3px rgba(215, 28, 27, 0.22) !important;
   z-index: 4;
 }
 body.dark-theme .pf-collage-card {
   background: #171c1f !important;
-  border: 3px solid #ff5a52 !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+  border-color: #2a3136 !important;
+  box-shadow: none !important;
 }
 body.dark-theme .pf-collage-card:hover {
-  border-color: #ff837d !important;
-  box-shadow: 0 0 0 4px rgba(255, 90, 82, 0.25) !important;
+  border-color: #ff5a52 !important;
+  box-shadow: 0 0 0 3px rgba(255, 90, 82, 0.2) !important;
 }
 .pf-collage-img {
   width: 100%;
@@ -17380,10 +17377,7 @@ body.dark-theme .pf-collage-card:hover {
   color: rgba(255, 255, 255, 0.9);
 } /* Text Banner Card Overlay ("VERIFIED REPAIR") */
 .pf-collage-card.highlight-card {
-  border: 3px solid var(--brand-accent, #d71c1b);
-}
-body.dark-theme .pf-collage-card.highlight-card {
-  border-color: #ff5a52 !important;
+  border: 2px solid var(--brand-accent, #d71c1b);
 }
 .pf-collage-text-banner {
   position: absolute;
@@ -23524,85 +23518,44 @@ body.dark-theme .sidebar-btn-book:hover svg {
   fill: #ffffff !important;
 }
 
-/* Universal Button Child Text & Icon Protection & Synchronized Instant Transition
-   Guarantees that all text labels and SVG icons stay sharp above liquid bubbles
-   and transition their text/fill/stroke colors simultaneously with zero lag */
-button > *:not(.btn-circle),
-a > *:not(.btn-circle),
-[class*="btn-"] > *:not(.btn-circle),
-[class*="-btn"] > *:not(.btn-circle),
-.btn-primary > *:not(.btn-circle),
-.btn-schedule > *:not(.btn-circle),
-.btn-hero-primary > *:not(.btn-circle),
-.btn-hero-secondary > *:not(.btn-circle),
-.btn-about-primary > *:not(.btn-circle),
-.btn-about-secondary > *:not(.btn-circle),
-.btn-process-action > *:not(.btn-circle),
-.btn-kitchen-quote > *:not(.btn-circle),
-.btn-simple-cta-whatsapp > *:not(.btn-circle),
-.btn-simple-cta-call > *:not(.btn-circle),
-.btn-dispatch-wa > *:not(.btn-circle),
-.btn-dispatch-whatsapp > *:not(.btn-circle),
-.btn-dispatch-call > *:not(.btn-circle),
-.btn-dispatch-phone > *:not(.btn-circle),
-.footer-book-btn > *:not(.btn-circle),
-.sidebar-btn-book > *:not(.btn-circle),
-.sidebar-btn-call > *:not(.btn-circle),
-.article-cta-book-btn > *:not(.btn-circle),
-.article-cta-call-btn > *:not(.btn-circle),
-.compare-card-cta > *:not(.btn-circle),
-.btn-lb-call > *:not(.btn-circle),
-.btn-lb-whatsapp > *:not(.btn-circle),
-.btn-urgent-call > *:not(.btn-circle),
-.btn-urgent-book > *:not(.btn-circle),
-.btn-cta-green > *:not(.btn-circle),
-.btn-cta-navy > *:not(.btn-circle),
-.btn-prefooter-call > *:not(.btn-circle),
-.btn-prefooter-primary > *:not(.btn-circle),
-.btn-emergency-call > *:not(.btn-circle),
-.btn-emergency-wa > *:not(.btn-circle),
-.btn-emergency-primary > *:not(.btn-circle),
-.btn-faq-talk > *:not(.btn-circle),
-.btn-faq-call > *:not(.btn-circle),
-.btn-kitchen-arrow-circle,
-.btn-kitchen-arrow-circle svg {
+/* Universal Button Child Text Protection: Ensures text spans and icons are strictly above bubbles without turning bubbles into flex items */
+.btn-hero-action-primary > span:not(.btn-circle),
+.btn-hero-action-call > span:not(.btn-circle),
+.article-cta-book-btn > span:not(.btn-circle),
+.sidebar-btn-book > span:not(.btn-circle),
+.sidebar-btn-call > span:not(.btn-circle),
+.article-cta-call-btn > span:not(.btn-circle) {
   position: relative !important;
   z-index: 3 !important;
-  transition:
-    color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
-    stroke 0.18s cubic-bezier(0.16, 1, 0.3, 1),
-    fill 0.18s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: color 0.25s ease !important;
 }
 
-button:hover > *:not(.btn-circle),
-a:hover > *:not(.btn-circle),
-[class*="btn-"]:hover > *:not(.btn-circle),
-[class*="-btn"]:hover > *:not(.btn-circle),
-.btn-hero-secondary:hover > *:not(.btn-circle),
-.btn-about-secondary:hover > *:not(.btn-circle),
-.btn-urgent-call:hover > *:not(.btn-circle),
-.btn-cta-green:hover > *:not(.btn-circle),
-.btn-prefooter-call:hover > *:not(.btn-circle),
-.btn-faq-talk:hover > *:not(.btn-circle),
-.btn-dispatch-wa:hover > *:not(.btn-circle),
-.btn-dispatch-whatsapp:hover > *:not(.btn-circle),
-.btn-simple-cta-whatsapp:hover > *:not(.btn-circle),
-.btn-lb-whatsapp:hover > *:not(.btn-circle),
-.btn-emergency-wa:hover > *:not(.btn-circle),
-.footer-book-btn:hover > *:not(.btn-circle),
-.sidebar-btn-book:hover > *:not(.btn-circle),
-.article-cta-book-btn:hover > *:not(.btn-circle),
-.compare-card-cta:hover > *:not(.btn-circle),
-.btn-process-action:hover > *:not(.btn-circle),
-.btn-kitchen-quote:hover > *:not(.btn-circle),
-.btn-kitchen-quote:hover .btn-kitchen-arrow-circle,
-.btn-kitchen-quote:hover .btn-kitchen-arrow-circle svg {
+/* ==========================================================================
+   Smooth Instant Text/Icon Color Response (Zero Delay / Ultra-Snappy)
+   ========================================================================== */
+.btn-process-action > span:not(.btn-circle),
+.btn-process-action > svg,
+.btn-kitchen-quote > span:not(.btn-circle),
+.btn-kitchen-arrow-circle,
+.btn-kitchen-arrow-circle svg,
+.btn-simple-cta-whatsapp > span:not(.btn-circle),
+.btn-simple-cta-whatsapp svg {
   transition:
-    color 0.12s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.15s cubic-bezier(0.16, 1, 0.3, 1),
-    stroke 0.12s cubic-bezier(0.16, 1, 0.3, 1),
-    fill 0.12s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    color 0.2s ease,
+    background-color 0.2s ease,
+    stroke 0.2s ease,
+    transform 0.2s ease !important;
+}
+.btn-process-action:hover > span:not(.btn-circle),
+.btn-process-action:hover > svg,
+.btn-kitchen-quote:hover > span:not(.btn-circle),
+.btn-kitchen-quote:hover .btn-kitchen-arrow-circle,
+.btn-kitchen-quote:hover .btn-kitchen-arrow-circle svg,
+.btn-simple-cta-whatsapp:hover > span:not(.btn-circle),
+.btn-simple-cta-whatsapp:hover svg {
+  transition:
+    color 0.15s ease,
+    background-color 0.2s ease,
+    stroke 0.15s ease,
+    transform 0.2s ease !important;
 }
