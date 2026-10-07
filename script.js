@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (isEmergency && urgencySelect) {
-      urgencySelect.value = 'Emergency Same-Day (Under 2 hrs)';
+      urgencySelect.value = 'Emergency Same-Day (60-Min Response)';
     }
 
     bookingModal.classList.add('open');
@@ -778,7 +778,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast('📋 Terms of Service: Upfront written quotes provided before work starts. Zero hidden fees.');
       } else if (href === '#warranty' || href === '#quality-policy') {
         e.preventDefault();
-        showToast('🛡️ Warranty Guarantee: 1-Year Official Written Warranty on all OEM spare parts & labor.');
+        showToast('🛡️ Service Quality Policy: Certified OEM Quality Service on all OEM spare parts & labor.');
       }
     });
   });

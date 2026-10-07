@@ -2213,163 +2213,184 @@ a.service-card-item *,
   );
   z-index: 1;
   pointer-events: none;
-} /* Vibrant Brand Crimson Overlay Text Card (Default Red Background matching User Direction) */
+} /* ==========================================================================
+   Compact Service Text Card Docked at Bottom (Matching User Reference Image)
+   Two-column horizontal flex: Eyebrow + Title on left, White squircle > button on right
+   Alternating Theme: Brand Red vs Deep Charcoal
+   ========================================================================== */
 .service-card-content {
   position: relative;
   z-index: 2;
-  margin: 14px;
-  padding: 20px 20px 20px 20px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 18px;
-  border: 3px solid #d71c1b;
-  box-shadow:
-    0 10px 28px rgba(25, 32, 35, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  margin: 16px;
+  padding: 16px 20px;
+  border-radius: 16px;
   display: flex;
-  flex-direction: column;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  box-sizing: border-box;
   text-decoration: none !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: visible;
 }
+
 .service-card-item:hover .service-card-content {
+  transform: translateY(-3px);
+}
+
+/* Left Column: Eyebrow & Title */
+.service-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+  text-decoration: none !important;
+}
+
+.service-card-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-decoration: none !important;
+}
+
+.service-card-title {
+  color: #ffffff !important;
+  font-size: 17.5px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.22;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+}
+
+/* Right Column: Squircle Action Button with Right Chevron */
+.service-card-arrow-btn {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
   background: #ffffff;
-  border-color: #d71c1b;
-  box-shadow:
-    0 18px 42px rgba(25, 32, 35, 0.12),
-    inset 0 1px 1px rgba(255, 255, 255, 1);
-  transform: translateY(-4px);
-} /* Icon Badge inside Light Card */
-.service-card-icon-badge {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: #fdf2f2;
-  border: 1px solid rgba(215, 28, 27, 0.16);
-  color: var(--brand-accent, #d71c1b);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.service-card-item:hover .service-card-icon-badge {
-  background: linear-gradient(135deg, #d71c1b 0%, #b00403 100%);
-  border-color: #d71c1b;
-  color: #ffffff;
-  transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-}
-.service-card-title {
-  color: var(--text-dark, #192023) !important;
-  font-size: 17.5px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  margin-bottom: 7px;
-  text-decoration: none !important;
-  transition: color 0.25s ease;
-}
-.service-card-item:hover .service-card-title {
-  color: var(--brand-accent, #d71c1b) !important;
-}
-.service-card-desc {
-  color: var(--text-sub, #475056) !important;
-  font-size: 12.5px;
-  line-height: 1.55;
-  font-weight: 500;
-  margin: 0 0 14px 0;
-  min-height: 38.75px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-decoration: none !important;
-} /* High-Converting Attention-Grabbing Action Button */
-/* Left-Aligned Compact Service Action (No Full-Width Capsule, Inline Link with Circular Arrow) */
-.service-card-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  width: fit-content;
-  max-width: max-content;
-  height: auto;
-  margin-top: auto;
-  margin-right: auto;
-  padding: 4px 0;
-  border-radius: 0;
-  background: transparent !important;
-  color: var(--text-dark, #192023) !important;
-  font-family: inherit;
-  font-size: 12.5px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: none !important;
-  cursor: pointer;
-  box-shadow: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none !important;
-  position: relative;
-  overflow: visible;
-  box-sizing: border-box;
-}
-.service-card-btn span {
-  text-decoration: none !important;
-  color: var(--text-dark, #192023) !important;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  font-size: 12.5px;
-  line-height: 1;
-  transition: color 0.25s ease, letter-spacing 0.25s ease;
-} /* Eye-Catching Circular Arrow Badge directly beside text */
-.service-card-btn svg {
-  width: 28px;
-  height: 28px;
-  box-sizing: border-box;
-  padding: 6.5px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-  stroke: #ffffff;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-} /* Grounded Stable State for Service Action Buttons */
-.service-card-btn,
-.antigravity-btn {
-  animation: none !important;
-  transform: none !important;
 }
 
-/* Hover State: Arrow shifts right, subtle glow, no capsule */
-.service-card-btn:hover,
-.service-card-item:hover .service-card-btn {
-  background: transparent !important;
-  color: var(--brand-accent, #d71c1b) !important;
-  border: none !important;
-  box-shadow: none !important;
-  transform: none !important;
+.service-card-arrow-btn svg {
+  display: block;
+  stroke: currentColor;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.service-card-btn:hover span,
-.service-card-item:hover .service-card-btn span {
-  color: var(--brand-accent, #d71c1b) !important;
-  letter-spacing: 0.07em;
+
+.service-card-item:hover .service-card-arrow-btn {
+  transform: translateX(3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
 }
-.service-card-btn:hover svg,
-.service-card-item:hover .service-card-btn svg {
-  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
-  border-color: #e02a24 !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  transform: translateX(4px) scale(1.06);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+
+/* --- THEME VARIANT 1: Brand Action Red (Cards 1, 3, 5) --- */
+.service-card-content.card-theme-red,
+.services-grid .service-card-item:nth-child(odd) .service-card-content {
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 12px 30px rgba(176, 4, 3, 0.32), 0 4px 10px rgba(0, 0, 0, 0.14);
+}
+
+.service-card-content.card-theme-red .service-card-eyebrow,
+.services-grid .service-card-item:nth-child(odd) .service-card-eyebrow {
+  color: #ffdad6;
+}
+
+.service-card-content.card-theme-red .service-card-arrow-btn,
+.services-grid .service-card-item:nth-child(odd) .service-card-arrow-btn {
+  background: #ffffff;
+  color: #d71c1b;
+}
+
+.service-card-item:hover .service-card-content.card-theme-red,
+.services-grid .service-card-item:hover:nth-child(odd) .service-card-content {
+  box-shadow: 0 16px 36px rgba(176, 4, 3, 0.42), 0 6px 14px rgba(0, 0, 0, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* --- THEME VARIANT 2: Deep Charcoal (Cards 2, 4, 6) --- */
+.service-card-content.card-theme-charcoal,
+.services-grid .service-card-item:nth-child(even) .service-card-content {
+  background: #171c1f;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.service-card-content.card-theme-charcoal .service-card-eyebrow,
+.services-grid .service-card-item:nth-child(even) .service-card-eyebrow {
+  color: var(--brand-accent, #d71c1b);
+}
+
+.service-card-content.card-theme-charcoal .service-card-arrow-btn,
+.services-grid .service-card-item:nth-child(even) .service-card-arrow-btn {
+  background: #ffffff;
+  color: #192023;
+}
+
+.service-card-item:hover .service-card-content.card-theme-charcoal,
+.services-grid .service-card-item:hover:nth-child(even) .service-card-content {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 6px 14px rgba(0, 0, 0, 0.22);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.service-card-item:hover .service-card-content.card-theme-charcoal .service-card-arrow-btn,
+.services-grid .service-card-item:hover:nth-child(even) .service-card-arrow-btn {
+  background: #d71c1b;
+  color: #ffffff;
+}
+
+/* Responsive Scaling for Service Text Cards */
+@media (max-width: 992px) {
+  .service-card-content {
+    margin: 14px;
+    padding: 14px 18px;
+    border-radius: 14px;
+  }
+  .service-card-title {
+    font-size: 16.5px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card-content {
+    margin: 12px;
+    padding: 13px 16px;
+    border-radius: 13px;
+    gap: 12px;
+  }
+  .service-card-title {
+    font-size: 15.5px !important;
+  }
+  .service-card-eyebrow {
+    font-size: 10.5px;
+  }
+  .service-card-arrow-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+  .service-card-arrow-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Safety overrides to clean up any legacy elements */
+.service-card-icon-badge,
+.service-card-desc,
+.service-card-btn {
+  display: none !important;
 } /* ==========================================================================
    Globally Synchronized Shimmer Beam Calibrated for All White Action Buttons
    Pearlescent ice-navy specular shimmer on crisp white surfaces
@@ -9091,7 +9112,25 @@ body.dark-theme .trust-item svg {
     font-size: 12.5px;
   }
   .service-card-content {
-    padding: 18px 14px;
+    margin: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    gap: 10px;
+  }
+  .service-card-title {
+    font-size: 14.5px !important;
+  }
+  .service-card-eyebrow {
+    font-size: 10px;
+  }
+  .service-card-arrow-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+  .service-card-arrow-btn svg {
+    width: 15px;
+    height: 15px;
   }
   .process-right-col {
     padding: 16px 12px;
@@ -9933,85 +9972,46 @@ body.dark-theme a.service-card-item *,
 body.dark-theme .service-card-item * {
   text-decoration: none !important;
 }
-body.dark-theme .service-card-content {
-  background: rgba(23, 28, 31, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 3px solid #ff5a52;
-  box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1px rgba(255, 255, 255, 0.08);
-  text-decoration: none !important;
-}
-body.dark-theme .service-card-item:hover .service-card-content {
-  background: rgba(27, 34, 38, 0.96);
-  border-color: #ff5a52;
-  box-shadow:
-    0 18px 44px rgba(0, 0, 0, 0.7);
-  transform: translateY(-4px);
-}
-body.dark-theme .service-card-icon-badge {
-  background: rgba(255, 90, 82, 0.12);
-  border-color: rgba(255, 90, 82, 0.25);
-  color: #ff5a52;
-}
-body.dark-theme .service-card-item:hover .service-card-icon-badge {
-  background: linear-gradient(135deg, #e02a24 0%, #d71c1b 100%);
-  border-color: #ff5a52;
-  color: #ffffff;
-  transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-}
-body.dark-theme .service-card-title {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  transition: color 0.25s ease;
-}
-body.dark-theme .service-card-item:hover .service-card-title {
-  color: #ff5a52 !important;
-}
-body.dark-theme .service-card-desc {
-  color: #94a3b8 !important;
-  text-decoration: none !important;
-}
-body.dark-theme .service-card-btn {
-  background: transparent !important;
-  border: none !important;
-  color: #e2e8f0 !important;
-  box-shadow: none !important;
-  text-decoration: none !important;
-}
-body.dark-theme .service-card-btn span {
-  color: #e2e8f0 !important;
-  transition: color 0.25s ease, letter-spacing 0.25s ease;
-}
-body.dark-theme .service-card-btn:hover span,
-body.dark-theme .service-card-item:hover .service-card-btn span {
-  color: #ff5a52 !important;
-  letter-spacing: 0.07em;
-}
-body.dark-theme .service-card-btn svg {
+body.dark-theme .service-card-content.card-theme-red,
+body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-content {
   background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
   border: 1.5px solid rgba(255, 90, 82, 0.4);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(176, 4, 3, 0.35);
+}
+
+body.dark-theme .service-card-content.card-theme-red .service-card-eyebrow,
+body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-eyebrow {
+  color: #ffdad6;
+}
+
+body.dark-theme .service-card-content.card-theme-red .service-card-arrow-btn,
+body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-arrow-btn {
+  background: #ffffff;
+  color: #d71c1b;
+}
+
+body.dark-theme .service-card-content.card-theme-charcoal,
+body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-content {
+  background: #111518;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .service-card-content.card-theme-charcoal .service-card-eyebrow,
+body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-eyebrow {
+  color: #ff5a52;
+}
+
+body.dark-theme .service-card-content.card-theme-charcoal .service-card-arrow-btn,
+body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-arrow-btn {
+  background: #ffffff;
+  color: #111518;
+}
+
+body.dark-theme .service-card-item:hover .service-card-content.card-theme-charcoal .service-card-arrow-btn,
+body.dark-theme .services-grid .service-card-item:hover:nth-child(even) .service-card-arrow-btn {
+  background: #ff5a52;
   color: #ffffff;
-  stroke: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-body.dark-theme .service-card-btn:hover,
-body.dark-theme .service-card-item:hover .service-card-btn {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  transform: none !important;
-}
-body.dark-theme .service-card-btn:hover svg,
-body.dark-theme .service-card-item:hover .service-card-btn svg {
-  background: linear-gradient(135deg, #ff5a52 0%, #e02a24 100%) !important;
-  border-color: #ff5a52 !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  transform: translateX(4px) scale(1.06);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .services-dispatch-bar {
   background-color: #171c1f;
@@ -15318,20 +15318,25 @@ body.dark-theme .expertise-card {
     min-height: 290px;
   }
   .service-card-content {
-    margin: 5px;
-    padding: 8px;
-    border-radius: 8px;
+    margin: 6px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    gap: 8px;
   }
   .service-card-title {
-    font-size: 14px;
+    font-size: 12.5px !important;
   }
-  .service-card-desc {
-    font-size: 10.5px;
-    line-height: 1.35;
+  .service-card-eyebrow {
+    font-size: 8.5px;
   }
-  .service-card-btn {
-    padding: 6px 8px;
-    font-size: 10.5px;
+  .service-card-arrow-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+  }
+  .service-card-arrow-btn svg {
+    width: 13px;
+    height: 13px;
   }
 } /* ==========================================================================   INDIVIDUAL SERVICE HERO SECTION (Centered Heading with Flanking Clipped Images)   Exact #main-hero-cut clip-path on Left and Right Images   ========================================================================== */
 .single-service-hero-section {
