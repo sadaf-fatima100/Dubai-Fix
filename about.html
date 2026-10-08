@@ -975,8 +975,8 @@
       box-shadow: 0 4px 16px rgba(25, 32, 35, 0.04);
     }
     .about-process .process-step-item:hover {
+      background: #ffffff !important;
       transform: translateY(-2px);
-      border-color: var(--brand-accent, #d71c1b);
       box-shadow: 0 10px 26px rgba(25, 32, 35, 0.1);
     }
     body.dark-theme .about-process .process-step-item {
@@ -985,7 +985,7 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     }
     body.dark-theme .about-process .process-step-item:hover {
-      border-color: rgba(215, 28, 27, 0.45);
+      background: #171c1f !important;
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
     }
 
@@ -1017,19 +1017,21 @@
       flex-shrink: 0;
     }
     .process-step-item:hover .process-step-icon {
-      background: var(--btn-gradient-primary);
-      color: #ffffff;
+      background: #fdf2f2 !important;
+      color: var(--brand-accent, #d71c1b) !important;
+      border-color: rgba(215, 28, 27, 0.28) !important;
       transform: scale(1.05);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      box-shadow: none !important;
     }
     body.dark-theme .process-step-icon {
       background: rgba(255, 255, 255, 0.08);
       color: #ff837d;
     }
     body.dark-theme .process-step-item:hover .process-step-icon {
-      background: var(--btn-gradient-primary);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.08) !important;
+      color: #ff837d !important;
+      border-color: rgba(255, 90, 82, 0.35) !important;
+      box-shadow: none !important;
     }
 
     /* Clean bold step numeral on top-right */

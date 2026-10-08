@@ -4168,39 +4168,46 @@ body.dark-theme .why-card-content .why-card-desc {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #ffffff;
+  background: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  color: var(--brand-accent, #d71c1b) !important;
   font-family: var(--font-family);
-  font-size: var(--eyebrow-fs);
-  font-weight: var(--eyebrow-fw);
-  letter-spacing: var(--eyebrow-ls);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1;
-  padding: 6px 14px;
+  padding: 6.5px 14px;
   border-radius: var(--radius-pill);
   width: fit-content;
   white-space: nowrap;
   user-select: none;
   margin-top: 0;
   margin-bottom: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16) !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .process-badge-tag:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.35);
+  background: #ffffff !important;
+  border-color: #ffffff !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22) !important;
 }
 .process-badge-tag .badge-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: #10b981;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+  background-color: #059669 !important;
+  box-shadow: 0 0 6px rgba(5, 150, 105, 0.6) !important;
+  flex-shrink: 0;
+}
+body.dark-theme .process-badge-tag {
+  background: #ffffff !important;
+  color: #d71c1b !important;
+  border-color: rgba(255, 255, 255, 0.95) !important;
+}
+body.dark-theme .process-badge-tag .badge-dot {
+  background-color: #059669 !important;
 }
 .process-main-title {
   font-family: var(--font-heading);
@@ -4333,9 +4340,10 @@ body.dark-theme .why-card-content .why-card-desc {
   box-sizing: border-box;
 }
 .process-step-item:hover {
+  background-color: #ffffff !important;
   transform: translateY(-3px);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
-  border-color: rgba(215, 28, 27, 0.3);
+  border-color: #edf0f2;
   z-index: 3;
 }
 /* Step Card Top: Medallion with Overlapping Number Badge */
@@ -4369,13 +4377,14 @@ body.dark-theme .why-card-content .why-card-desc {
   transition: transform 0.3s ease;
 }
 .process-step-item:hover .step-icon-box {
-  background: var(--btn-gradient-primary);
-  border-color: #d71c1b;
-  color: #ffffff;
+  background: #fff1f2 !important;
+  border-color: rgba(215, 28, 27, 0.28) !important;
+  color: #d71c1b !important;
   transform: scale(1.05);
 }
 .process-step-item:hover .step-icon-box svg {
   transform: scale(1.05);
+  color: #d71c1b !important;
 }
 /* Red Circular Number Badge - Round 50% circle at top-left */
 .process-step-num {
@@ -4401,9 +4410,9 @@ body.dark-theme .why-card-content .why-card-desc {
   transition: all 0.25s ease !important;
 }
 .process-step-item:hover .process-step-num {
-  background: #192023 !important;
+  background: var(--btn-gradient-primary) !important;
   color: #ffffff !important;
-  transform: scale(1.08) !important;
+  transform: scale(1.06) !important;
 }
 /* Step Typography */
 .step-text-col {
@@ -10454,13 +10463,12 @@ body.dark-theme .process-grid-title {
   color: #ffffff;
 }
 body.dark-theme .process-step-item {
-  background-color: #1f2529;
+  background-color: #1f2529 !important;
   border: 1.5px solid rgba(255, 255, 255, 0.14) !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .process-step-item:hover {
-  background-color: #242b30;
-  border-color: #ff5a52 !important;
+  background-color: #1f2529 !important;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
 }
 body.dark-theme .step-title {
@@ -10478,9 +10486,11 @@ body.dark-theme .step-icon-box {
   color: #ff5a52;
 }
 body.dark-theme .process-step-item:hover .step-icon-box {
-  background: var(--btn-gradient-primary);
-  color: #ffffff;
-  border-color: #ff5a52;
+  background: #171c1f !important;
+  background-color: #171c1f !important;
+  color: #ff5a52 !important;
+  border-color: rgba(255, 90, 82, 0.45) !important;
+  transform: scale(1.05);
 }
 body.dark-theme .process-step-num,
 body.dark-theme .step-num-badge {
@@ -10490,12 +10500,10 @@ body.dark-theme .step-num-badge {
 }
 body.dark-theme .process-step-item:hover .process-step-num,
 body.dark-theme .process-step-item:hover .step-num-badge {
-  background: #ffffff !important;
-  background-image: none !important;
-  color: #d71c1b !important;
-  border-color: #ff5a52 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  transform: scale(1.08);
+  background: var(--btn-gradient-primary) !important;
+  color: #ffffff !important;
+  border-color: #171c1f !important;
+  transform: scale(1.06);
 }
 body.dark-theme .tech-glow-circle,
 body.dark-theme .tech-radar-ring {
@@ -23529,7 +23537,8 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 .mission-card-light,
 .expertise-card,
 .service-card-content,
-.why-card-content {
+.why-card-content,
+.process-step-item {
   position: relative;
 }
 .blog-card::before,
@@ -23543,7 +23552,9 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 .mission-card-light::before,
 .mission-card-light::after,
 .expertise-card::before,
-.expertise-card::after {
+.expertise-card::after,
+.process-step-item::before,
+.process-step-item::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -23559,7 +23570,8 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 .protocol-step-card::before,
 .compare-station-card::before,
 .mission-card-light::before,
-.expertise-card::before {
+.expertise-card::before,
+.process-step-item::before {
   clip-path: inset(0 100% 100% 0);
 }
 .blog-card::after,
@@ -23567,7 +23579,8 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 .protocol-step-card::after,
 .compare-station-card::after,
 .mission-card-light::after,
-.expertise-card::after {
+.expertise-card::after,
+.process-step-item::after {
   clip-path: inset(100% 0 0 100%);
 }
 .blog-card:hover::before,
@@ -23581,7 +23594,9 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 .mission-card-light:hover::before,
 .mission-card-light:hover::after,
 .expertise-card:hover::before,
-.expertise-card:hover::after {
+.expertise-card:hover::after,
+.process-step-item:hover::before,
+.process-step-item:hover::after {
   clip-path: inset(0 0 0 0);
 }
 body.dark-theme .blog-card::before,
@@ -23595,7 +23610,9 @@ body.dark-theme .compare-station-card::after,
 body.dark-theme .mission-card-light::before,
 body.dark-theme .mission-card-light::after,
 body.dark-theme .expertise-card::before,
-body.dark-theme .expertise-card::after {
+body.dark-theme .expertise-card::after,
+body.dark-theme .process-step-item::before,
+body.dark-theme .process-step-item::after {
   border-color: #ff5a52;
 }
 
