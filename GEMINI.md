@@ -89,3 +89,11 @@ This project follows strict engineering and visual standards. Every change must 
 
 
 - **Colour-Flip Sync**: Hover text/icon colour must flip only after bubbles cover the button (`transition: color 0.45s <same curve> 0.3s` on :hover), never instantly, and pill buttons must have no border ring (`border: 0`) so bubbles fill edge to edge. On dark cards use crimson bubbles, not black.
+
+## 9. Target Areas: Dubai Exclusively (Strict Non-Negotiable Rule)
+- **Strict Dubai-Only Geographic Scope**: The entire business, service areas, descriptions, and operations are strictly targeted to **Dubai Only**. Under NO circumstances should any other emirates (Sharjah, Abu Dhabi, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain, Al Ain) ever be added or reintroduced.
+- **Localized Technical Context**: All environmental and regulatory references must remain localized to Dubai (e.g., *Dubai climate defense protocols*, *50°C Dubai Summer Heat*, *Dubai water calcification*, *Dubai Municipality food safety guidelines*).
+- **Synchronized Core Trust Metrics**: Keep all metrics uniform across all 17 HTML pages:
+  - `4+ Yrs` / `4+ Years of Experience`
+  - `3,000+ Appliances Restored` / `3,000+ Happy Clients`
+  - `60-Min Doorstep Response` / `60-Min Dispatch`

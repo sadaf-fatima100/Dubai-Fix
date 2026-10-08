@@ -659,30 +659,42 @@ body.dark-theme .dropdown-divider {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   white-space: nowrap;
   animation: callButtonGreenPulseLoop 3.2s infinite ease-in-out;
   flex-shrink: 0;
 }
 .btn-hero-secondary:hover {
-  background-color: #25d366 !important;
+  animation: none !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+              border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 .btn-hero-secondary svg {
   color: #16a34a;
   transition:
     transform 0.2s ease,
-    color 0.2s ease;
+    color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   animation: phoneRingVibrantLoop 3.2s infinite ease-in-out;
   transform-origin: center center;
 }
 .btn-hero-secondary:hover svg {
+  animation: none !important;
   color: #ffffff !important;
   fill: currentColor !important;
+  transition:
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    fill 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 } /* ==========================================================================   Universal Button Animation & Interaction Suite (Hero-Quality Everywhere)   ========================================================================== */ /* Keyframes: Primary Vibrant Navy Pulse Loop */
 @keyframes primaryButtonPulseLoop {
   0%,
@@ -1378,8 +1390,10 @@ a:hover .btn-circle-5,
 .footer-book-btn .btn-circle,
 .sidebar-btn-book .btn-circle,
 .article-cta-book-btn .btn-circle,
-.compare-card-cta .btn-circle {
-  background-color: #d71c1b;
+.compare-card-cta .btn-circle,
+.btn-process-action .btn-circle,
+.btn-why-feature-cta .btn-circle {
+  background-color: #d71c1b !important;
 }
 
 /* ==========================================================================
@@ -1388,8 +1402,8 @@ a:hover .btn-circle-5,
 
 /* Vibrant Green Call & WhatsApp Buttons:
    1. Stop idle pulse keyframe loops on hover so hover transform & box-shadow are 100% silky without animation collision
-   2. Background smoothly fills with vibrant green
-   3. Text & SVG become crisp white above vibrant green bubbles with synchronized transition */
+   2. Expanding bubbles provide 100% of the liquid green fill without abrupt background color jumps
+   3. Text & SVG transition smoothly to crisp white above vibrant green bubbles with calibrated 0.15s delay */
 .btn-hero-secondary:hover,
 .btn-about-secondary:hover,
 .btn-urgent-call:hover,
@@ -1405,11 +1419,15 @@ a:hover .btn-circle-5,
 .btn-lb-whatsapp:hover,
 .btn-emergency-wa:hover {
   animation: none !important;
-  background-color: #25d366 !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 
 .btn-hero-secondary:hover svg,
@@ -1430,28 +1448,43 @@ a:hover .btn-circle-5,
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
+  transition:
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    fill 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 .btn-emergency-wa:hover .btn-content,
 .btn-emergency-wa:hover .btn-content * {
   color: #ffffff !important;
   fill: #ffffff !important;
+  transition: color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 
-/* White Elevated Card Buttons: Text & SVG become crisp white above crimson bubbles */
+/* White Elevated Card Buttons: Text & SVG become crisp white above crimson bubbles with smooth transition */
 .footer-book-btn:hover,
 .sidebar-btn-book:hover,
 .article-cta-book-btn:hover,
-.compare-card-cta:hover {
+.compare-card-cta:hover,
+.btn-process-action:hover,
+.btn-why-feature-cta:hover {
   color: #ffffff !important;
   border-color: #d71c1b !important;
+  transition:
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 
 .footer-book-btn:hover svg,
 .sidebar-btn-book:hover svg,
 .article-cta-book-btn:hover svg,
-.compare-card-cta:hover svg {
+.compare-card-cta:hover svg,
+.btn-process-action:hover svg,
+.btn-why-feature-cta:hover svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
+  transition:
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 
 /* ==========================================================================
@@ -1597,6 +1630,9 @@ body.dark-theme .compare-card-cta .btn-circle {
   color: var(--text-dark, #192023);
   letter-spacing: -0.02em;
   line-height: 1.15;
+}
+.google-g-mobile-icon {
+  display: none !important;
 }
 .google-rating-line {
   display: flex;
@@ -2159,7 +2195,7 @@ a.service-card-item:active,
 a.service-card-item:focus,
 .service-card-item {
   position: relative;
-  height: 430px;
+  height: 450px;
   border-radius: 22px;
   overflow: hidden;
   box-shadow:
@@ -2213,277 +2249,149 @@ a.service-card-item *,
   );
   z-index: 1;
   pointer-events: none;
-} /* ==========================================================================
-   Balanced Symmetrical Service Text Card Docked at Bottom (Option A Standard)
-   Left: 44px Appliance Squircle Icon | Center: Eyebrow + Title + Meta-Pill | Right: 44px Chevron Button
-   Alternating Theme: Brand Red vs Deep Charcoal
-   ========================================================================== */
+} /* Vibrant Brand Crimson Overlay Text Card (Default Red Background matching User Direction) */
 .service-card-content {
   position: relative;
   z-index: 2;
   margin: 16px;
-  padding: 16px 18px;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  box-sizing: border-box;
-  text-decoration: none !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: visible;
-}
-
-.service-card-item:hover .service-card-content {
-  transform: translateY(-3px);
-}
-
-/* Left Column: Appliance Squircle Icon */
-.service-card-app-icon {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none !important;
-}
-
-.service-card-app-icon svg {
-  width: 22px;
-  height: 22px;
-  display: block;
-  stroke: currentColor;
-}
-
-/* Center Column: Eyebrow, Title & Micro-Benefit */
-.service-card-text {
+  padding: 36px 20px 20px 20px;
+  background: #ffffff;
+  border-radius: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-  flex: 1;
-  text-decoration: none !important;
-}
-
-.service-card-eyebrow {
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-decoration: none !important;
-}
-
-.service-card-title {
-  color: #ffffff !important;
-  font-size: 16.5px;
-  font-weight: 800;
-  letter-spacing: -0.015em;
-  line-height: 1.22;
-  margin: 0 !important;
-  padding: 0 !important;
-  text-decoration: none !important;
-}
-
-.service-card-meta-pill {
-  display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 11.5px;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-top: 3px;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none !important;
+  overflow: visible;
 }
-
-.meta-pulse-icon {
-  font-size: 11px;
-  line-height: 1;
-}
-
-/* Right Column: Squircle Action Button with Right Chevron */
-.service-card-arrow-btn {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  flex-shrink: 0;
-  border-radius: 12px;
+.service-card-item:hover .service-card-content {
   background: #ffffff;
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+} /* Centered Top-Overlapping Circular Red Icon Badge (Exact Reference Match) */
+.service-card-icon-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
+  border: 4px solid #ffffff;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  box-shadow:
+    0 6px 18px rgba(215, 28, 27, 0.32),
+    0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+.service-card-icon-badge svg {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+  stroke: #ffffff;
+  display: block;
+}
+.service-card-item:hover .service-card-icon-badge {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  box-shadow:
+    0 8px 24px rgba(215, 28, 27, 0.45),
+    0 4px 10px rgba(0, 0, 0, 0.16);
+}
+.service-card-title {
+  color: var(--text-dark, #192023) !important;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 0 0 8px 0;
+  text-align: center;
+  text-decoration: none !important;
+  transition: color 0.25s ease;
+}
+.service-card-item:hover .service-card-title {
+  color: var(--brand-accent, #d71c1b) !important;
+}
+.service-card-desc {
+  color: var(--text-sub, #475056) !important;
+  font-size: 13.5px;
+  line-height: 1.55;
+  font-weight: 500;
+  margin: 0 0 18px 0;
+  text-align: center;
+  text-decoration: none !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+} /* Full-Width Pill Crimson Action Button (Exact Reference Match) */
+.service-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
+  color: #ffffff !important;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none !important;
+  cursor: pointer;
+  box-shadow:
+    0 4px 14px rgba(215, 28, 27, 0.28),
+    0 2px 6px rgba(0, 0, 0, 0.08) !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none !important;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-
-.service-card-arrow-btn svg {
-  display: block;
-  stroke: currentColor;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.service-card-btn span {
+  text-decoration: none !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 12.5px;
+  line-height: 1;
 }
-
-.service-card-item:hover .service-card-arrow-btn {
-  transform: translateX(3px) scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-}
-
-/* --- THEME VARIANT 1: Brand Action Red (Cards 1, 3, 5) --- */
-.service-card-content.card-theme-red,
-.services-grid .service-card-item:nth-child(odd) .service-card-content {
-  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 12px 30px rgba(176, 4, 3, 0.32), 0 4px 10px rgba(0, 0, 0, 0.14);
-}
-
-.service-card-content.card-theme-red .service-card-app-icon,
-.services-grid .service-card-item:nth-child(odd) .service-card-app-icon {
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+.service-card-btn svg {
+  width: 15px;
+  height: 15px;
   color: #ffffff;
+  stroke: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
 }
-
-.service-card-content.card-theme-red .service-card-eyebrow,
-.services-grid .service-card-item:nth-child(odd) .service-card-eyebrow {
-  color: #ffdad6;
+.service-card-btn:hover,
+.service-card-item:hover .service-card-btn {
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 22px rgba(215, 28, 27, 0.4),
+    0 4px 10px rgba(0, 0, 0, 0.12) !important;
 }
-
-.service-card-content.card-theme-red .service-card-meta-pill,
-.services-grid .service-card-item:nth-child(odd) .service-card-meta-pill {
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.service-card-content.card-theme-red .service-card-arrow-btn,
-.services-grid .service-card-item:nth-child(odd) .service-card-arrow-btn {
-  background: #ffffff;
-  color: #d71c1b;
-}
-
-.service-card-item:hover .service-card-content.card-theme-red,
-.services-grid .service-card-item:hover:nth-child(odd) .service-card-content {
-  box-shadow: 0 16px 36px rgba(176, 4, 3, 0.42), 0 6px 14px rgba(0, 0, 0, 0.18);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.service-card-item:hover .service-card-content.card-theme-red .service-card-app-icon,
-.services-grid .service-card-item:hover:nth-child(odd) .service-card-app-icon {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: #d71c1b;
-  transform: scale(1.06);
-}
-
-/* --- THEME VARIANT 2: Deep Charcoal (Cards 2, 4, 6) --- */
-.service-card-content.card-theme-charcoal,
-.services-grid .service-card-item:nth-child(even) .service-card-content {
-  background: #171c1f;
-  border: 1.5px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.18);
-}
-
-.service-card-content.card-theme-charcoal .service-card-app-icon,
-.services-grid .service-card-item:nth-child(even) .service-card-app-icon {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: var(--brand-accent, #d71c1b);
-}
-
-.service-card-content.card-theme-charcoal .service-card-eyebrow,
-.services-grid .service-card-item:nth-child(even) .service-card-eyebrow {
-  color: var(--brand-accent, #d71c1b);
-}
-
-.service-card-content.card-theme-charcoal .service-card-meta-pill,
-.services-grid .service-card-item:nth-child(even) .service-card-meta-pill {
-  color: #cbd5e1;
-}
-
-.service-card-content.card-theme-charcoal .service-card-arrow-btn,
-.services-grid .service-card-item:nth-child(even) .service-card-arrow-btn {
-  background: #ffffff;
-  color: #192023;
-}
-
-.service-card-item:hover .service-card-content.card-theme-charcoal,
-.services-grid .service-card-item:hover:nth-child(even) .service-card-content {
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 6px 14px rgba(0, 0, 0, 0.22);
-  border-color: rgba(255, 255, 255, 0.24);
-}
-
-.service-card-item:hover .service-card-content.card-theme-charcoal .service-card-app-icon,
-.services-grid .service-card-item:hover:nth-child(even) .service-card-app-icon {
-  background: #d71c1b;
-  border-color: #d71c1b;
-  color: #ffffff;
-  transform: scale(1.06);
-}
-
-.service-card-item:hover .service-card-content.card-theme-charcoal .service-card-arrow-btn,
-.services-grid .service-card-item:hover:nth-child(even) .service-card-arrow-btn {
-  background: #d71c1b;
-  color: #ffffff;
-}
-
-/* Responsive Scaling for Service Text Cards */
-@media (max-width: 992px) {
-  .service-card-content {
-    margin: 14px;
-    padding: 14px 14px;
-    border-radius: 16px;
-    gap: 10px;
-  }
-  .service-card-app-icon,
-  .service-card-arrow-btn {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-  }
-  .service-card-title {
-    font-size: 15.5px !important;
-  }
-  .service-card-meta-pill {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 768px) {
-  .service-card-content {
-    margin: 12px;
-    padding: 12px 14px;
-    border-radius: 14px;
-    gap: 10px;
-  }
-  .service-card-app-icon,
-  .service-card-arrow-btn {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    border-radius: 10px;
-  }
-  .service-card-app-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-  .service-card-title {
-    font-size: 15px !important;
-  }
-  .service-card-eyebrow {
-    font-size: 10px;
-  }
-  .service-card-meta-pill {
-    font-size: 10.5px;
-  }
-}
-
-/* Safety overrides to clean up any legacy elements */
-.service-card-icon-badge,
-.service-card-desc,
-.service-card-btn {
-  display: none !important;
+.service-card-btn:hover svg,
+.service-card-item:hover .service-card-btn svg {
+  transform: translateX(4px);
 } /* ==========================================================================
    Globally Synchronized Shimmer Beam Calibrated for All White Action Buttons
    Pearlescent ice-navy specular shimmer on crisp white surfaces
@@ -2853,17 +2761,28 @@ a.service-card-item *,
 }
 .btn-dispatch-whatsapp:hover {
   transform: translateY(-2px);
-  background-color: #25d366 !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 .btn-dispatch-whatsapp:hover span {
   color: #ffffff !important;
+  transition: color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 .btn-dispatch-whatsapp:hover svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
+  fill: currentColor !important;
+  transition:
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    fill 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+}
   fill: currentColor !important;
 } /* Responsive Breakpoints for Services Dispatch Bar */
 @media (max-width: 900px) {
@@ -9205,39 +9124,7 @@ body.dark-theme .trust-item svg {
     font-size: 12.5px;
   }
   .service-card-content {
-    margin: 10px;
-    padding: 11px 12px;
-    border-radius: 14px;
-    gap: 8px;
-  }
-  .service-card-app-icon {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-    border-radius: 9px;
-  }
-  .service-card-app-icon svg {
-    width: 17px;
-    height: 17px;
-  }
-  .service-card-title {
-    font-size: 14px !important;
-  }
-  .service-card-eyebrow {
-    font-size: 9.5px;
-  }
-  .service-card-meta-pill {
-    font-size: 10px;
-  }
-  .service-card-arrow-btn {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-    border-radius: 9px;
-  }
-  .service-card-arrow-btn svg {
-    width: 15px;
-    height: 15px;
+    padding: 18px 14px;
   }
   .process-right-col {
     padding: 16px 12px;
@@ -9941,7 +9828,6 @@ body.dark-theme .cta-primary-btn:hover,
 body.dark-theme .empty-cta-btn:hover,
 body.dark-theme .btn-dispatch-phone:hover,
 body.dark-theme .btn-filter-browse:hover {
-  background: linear-gradient(135deg, #ff5a52 0%, #e02a24 50%, #d71c1b 100%) !important;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6) !important;
   transform: translateY(-2px);
 }
@@ -9961,10 +9847,14 @@ body.dark-theme .btn-about-secondary svg {
 }
 body.dark-theme .btn-hero-secondary:hover,
 body.dark-theme .btn-about-secondary:hover {
-  background-color: #25d366 !important;
   border-color: #25d366 !important;
   color: #ffffff !important;
   box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 body.dark-theme .btn-hero-secondary:hover svg,
 body.dark-theme .btn-about-secondary:hover svg {
@@ -10079,77 +9969,85 @@ body.dark-theme a.service-card-item *,
 body.dark-theme .service-card-item * {
   text-decoration: none !important;
 }
-body.dark-theme .service-card-content.card-theme-red,
-body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-content {
-  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
-  border: 1.5px solid rgba(255, 90, 82, 0.4);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(176, 4, 3, 0.35);
+body.dark-theme .service-card-content {
+  background: rgba(23, 28, 31, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 3px solid #ff5a52;
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  text-decoration: none !important;
 }
-
-body.dark-theme .service-card-content.card-theme-red .service-card-app-icon,
-body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-app-icon {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.32);
-  color: #ffffff;
+body.dark-theme .service-card-item:hover .service-card-content {
+  background: rgba(27, 34, 38, 0.96);
+  border-color: #ff5a52;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.7);
+  transform: translateY(-4px);
 }
-
-body.dark-theme .service-card-content.card-theme-red .service-card-eyebrow,
-body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-eyebrow {
-  color: #ffdad6;
-}
-
-body.dark-theme .service-card-content.card-theme-red .service-card-meta-pill,
-body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-meta-pill {
-  color: rgba(255, 255, 255, 0.95);
-}
-
-body.dark-theme .service-card-content.card-theme-red .service-card-arrow-btn,
-body.dark-theme .services-grid .service-card-item:nth-child(odd) .service-card-arrow-btn {
-  background: #ffffff;
-  color: #d71c1b;
-}
-
-body.dark-theme .service-card-content.card-theme-charcoal,
-body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-content {
-  background: #111518;
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.35);
-}
-
-body.dark-theme .service-card-content.card-theme-charcoal .service-card-app-icon,
-body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-app-icon {
+body.dark-theme .service-card-icon-badge {
   background: rgba(255, 90, 82, 0.12);
-  border-color: rgba(255, 90, 82, 0.24);
+  border-color: rgba(255, 90, 82, 0.25);
   color: #ff5a52;
 }
-
-body.dark-theme .service-card-content.card-theme-charcoal .service-card-eyebrow,
-body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-eyebrow {
-  color: #ff5a52;
-}
-
-body.dark-theme .service-card-content.card-theme-charcoal .service-card-meta-pill,
-body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-meta-pill {
-  color: #94a3b8;
-}
-
-body.dark-theme .service-card-content.card-theme-charcoal .service-card-arrow-btn,
-body.dark-theme .services-grid .service-card-item:nth-child(even) .service-card-arrow-btn {
-  background: #ffffff;
-  color: #111518;
-}
-
-body.dark-theme .service-card-item:hover .service-card-content.card-theme-charcoal .service-card-app-icon,
-body.dark-theme .services-grid .service-card-item:hover:nth-child(even) .service-card-app-icon {
-  background: #ff5a52;
+body.dark-theme .service-card-item:hover .service-card-icon-badge {
+  background: linear-gradient(135deg, #e02a24 0%, #d71c1b 100%);
   border-color: #ff5a52;
   color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
-
-body.dark-theme .service-card-item:hover .service-card-content.card-theme-charcoal .service-card-arrow-btn,
-body.dark-theme .services-grid .service-card-item:hover:nth-child(even) .service-card-arrow-btn {
-  background: #ff5a52;
+body.dark-theme .service-card-title {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: color 0.25s ease;
+}
+body.dark-theme .service-card-item:hover .service-card-title {
+  color: #ff5a52 !important;
+}
+body.dark-theme .service-card-desc {
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+}
+body.dark-theme .service-card-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #e2e8f0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+body.dark-theme .service-card-btn span {
+  color: #e2e8f0 !important;
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+body.dark-theme .service-card-btn:hover span,
+body.dark-theme .service-card-item:hover .service-card-btn span {
+  color: #ff5a52 !important;
+  letter-spacing: 0.07em;
+}
+body.dark-theme .service-card-btn svg {
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
+  border: 1.5px solid rgba(255, 90, 82, 0.4);
   color: #ffffff;
+  stroke: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+body.dark-theme .service-card-btn:hover,
+body.dark-theme .service-card-item:hover .service-card-btn {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.dark-theme .service-card-btn:hover svg,
+body.dark-theme .service-card-item:hover .service-card-btn svg {
+  background: linear-gradient(135deg, #ff5a52 0%, #e02a24 100%) !important;
+  border-color: #ff5a52 !important;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  transform: translateX(4px) scale(1.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .services-dispatch-bar {
   background-color: #171c1f;
@@ -10192,10 +10090,14 @@ body.dark-theme .btn-dispatch-whatsapp {
   border-color: rgba(37, 211, 102, 0.35);
 }
 body.dark-theme .btn-dispatch-whatsapp:hover {
-  background-color: #25d366 !important;
   border-color: #25d366 !important;
   color: #ffffff !important;
   box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
 body.dark-theme .hero-trust-proof-row {
   background: transparent !important;
@@ -15456,39 +15358,20 @@ body.dark-theme .expertise-card {
     min-height: 290px;
   }
   .service-card-content {
-    margin: 6px;
-    padding: 8px 8px;
-    border-radius: 10px;
-    gap: 6px;
-  }
-  .service-card-app-icon {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    border-radius: 7px;
-  }
-  .service-card-app-icon svg {
-    width: 14px;
-    height: 14px;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 8px;
   }
   .service-card-title {
-    font-size: 12px !important;
+    font-size: 14px;
   }
-  .service-card-eyebrow {
-    font-size: 8px;
+  .service-card-desc {
+    font-size: 10.5px;
+    line-height: 1.35;
   }
-  .service-card-meta-pill {
-    display: none !important;
-  }
-  .service-card-arrow-btn {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    border-radius: 7px;
-  }
-  .service-card-arrow-btn svg {
-    width: 13px;
-    height: 13px;
+  .service-card-btn {
+    padding: 6px 8px;
+    font-size: 10.5px;
   }
 } /* ==========================================================================   INDIVIDUAL SERVICE HERO SECTION (Centered Heading with Flanking Clipped Images)   Exact #main-hero-cut clip-path on Left and Right Images   ========================================================================== */
 .single-service-hero-section {
@@ -19621,7 +19504,6 @@ body.dark-theme .btn-read-article:hover {
   transition: all 0.25s ease;
 }
 .btn-urgent-call:hover {
-  background: #25d366 !important;
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(37, 211, 102, 0.45);
 } /* Interactive Article Reader Modal Window */
@@ -24305,7 +24187,8 @@ body.dark-theme .sidebar-btn-book:hover svg {
 }
 
 /* ==========================================================================
-   Smooth Instant Text/Icon Color Response (Zero Delay / Ultra-Snappy)
+   Master Synced Color-Flip & Child Element Protection Suite
+   Enforces GEMINI.md Rule 7: Silky organic liquid-collision smoothness matching .btn-schedule
    ========================================================================== */
 .btn-process-action > span:not(.btn-circle),
 .btn-process-action > svg,
@@ -24315,10 +24198,10 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .btn-simple-cta-whatsapp > span:not(.btn-circle),
 .btn-simple-cta-whatsapp svg {
   transition:
-    color 0.2s ease,
-    background-color 0.2s ease,
-    stroke 0.2s ease,
-    transform 0.2s ease !important;
+    color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 .btn-process-action:hover > span:not(.btn-circle),
 .btn-process-action:hover > svg,
@@ -24328,8 +24211,65 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .btn-simple-cta-whatsapp:hover > span:not(.btn-circle),
 .btn-simple-cta-whatsapp:hover svg {
   transition:
-    color 0.15s ease,
-    background-color 0.2s ease,
-    stroke 0.15s ease,
-    transform 0.2s ease !important;
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    background-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Master Universal Enforcer for all buttons containing bubbles:
+   1. Overflow hidden & relative positioning
+   2. Children protected at z-index 3 with pointer-events: none to avoid hover stutter
+   3. Stable background gradient on hover matching .btn-schedule */
+:has(> .btn-circle),
+button:has(.btn-circle),
+a:has(.btn-circle) {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+:has(> .btn-circle) > *:not(.btn-circle),
+button:has(.btn-circle) > *:not(.btn-circle),
+a:has(.btn-circle) > *:not(.btn-circle) {
+  position: relative !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure primary red buttons containing .btn-circle retain their signature background gradient on hover
+   without abrupt gradient-swap snapping, matching the silky organic collision of .btn-schedule */
+.btn-schedule:hover,
+.nav-menu-schedule-btn:hover,
+.btn-hero-primary:hover,
+.btn-about-primary:hover,
+.cta-primary-btn:hover,
+.btn-faq-call:hover,
+.btn-filter-browse:hover,
+.btn-service-why-action:hover,
+.btn-hero-action-primary:hover,
+.modal-submit-btn:hover,
+.btn-bform-submit:hover,
+.empty-cta-btn:hover,
+.btn-dispatch-call:hover,
+.btn-simple-cta-call:hover,
+.btn-kitchen-quote:hover {
+  background: var(--btn-gradient-primary) !important;
+}
+
+body.dark-theme .btn-schedule:hover,
+body.dark-theme .nav-menu-schedule-btn:hover,
+body.dark-theme .btn-hero-primary:hover,
+body.dark-theme .btn-about-primary:hover,
+body.dark-theme .cta-primary-btn:hover,
+body.dark-theme .btn-faq-call:hover,
+body.dark-theme .btn-filter-browse:hover,
+body.dark-theme .btn-service-why-action:hover,
+body.dark-theme .btn-hero-action-primary:hover,
+body.dark-theme .modal-submit-btn:hover,
+body.dark-theme .btn-bform-submit:hover,
+body.dark-theme .empty-cta-btn:hover,
+body.dark-theme .btn-dispatch-call:hover,
+body.dark-theme .btn-simple-cta-call:hover,
+body.dark-theme .btn-kitchen-quote:hover {
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
 }

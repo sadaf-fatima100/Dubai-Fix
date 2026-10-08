@@ -693,77 +693,72 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Auto-inject Uiverse animated expanding bubble circles for all action buttons across the site
+  // Enforces GEMINI.md Rule 7: Silky liquid-collision smoothness matching the master navbar button (.btn-schedule)
   function initUniversalButtonBubbleAnimation() {
-    const allAnimatedBtnSelectors = [
-      // Primary Red Buttons (Obsidian Black bubbles)
-      '.btn-hero-primary',
-      '.btn-schedule',
-      '.nav-menu-schedule-btn',
-      '.btn-about-primary',
-      '.btn-process-action',
-      '.cta-primary-btn',
-      '.cta-showcase-btn',
-      '.btn-kitchen-quote',
-      '.btn-simple-cta-call',
-      '.modal-submit-btn',
-      '.btn-get-started',
-      '.btn-faq-call',
-      '.btn-primary',
-      '.btn-cta-navy',
-      '.btn-urgent-book',
-      '.btn-dispatch-call',
-      '.btn-dispatch-phone',
-      '.btn-contact-submit',
-      '.btn-bform-submit',
-      '.btn-emergency-call',
-      '.btn-cta-banner-primary',
-      '.mcard-featured-btn',
-      '.btn-filter-browse',
-      '.btn-read-article',
-      '.btn-read-full-guide',
-      '.why-btn-pill',
-      '.empty-cta-btn',
-      '.sidebar-btn-call',
-      '.btn-hero-action-primary',
-      '.article-cta-call-btn',
-      '.btn-lb-call',
-
-      // Vibrant WhatsApp Green Emergency & Call Buttons (Vibrant Green bubbles)
-      '.btn-hero-secondary',
-      '.btn-about-secondary',
-      '.btn-urgent-call',
-      '.btn-cta-green',
-      '.btn-prefooter-call',
-      '.btn-faq-talk',
-      '.btn-cta-banner-call',
-      '.process-phone-link',
-      '.standards-call-link',
-      '.btn-hero-action-call',
-
-      // WhatsApp Action Buttons (Vibrant WhatsApp Green bubbles #25D366)
-      '.btn-dispatch-wa',
-      '.btn-dispatch-whatsapp',
-      '.btn-simple-cta-whatsapp',
-      '.btn-lb-whatsapp',
-      '.btn-emergency-wa',
-
-      // White / Elevated Light Card Buttons (Signature Crimson Red bubbles)
-      '.footer-book-btn',
-      '.sidebar-btn-book',
-      '.article-cta-book-btn',
-      '.compare-card-cta'
+    const btnSelector = [
+      'button',
+      'a[class*="btn-"]',
+      'a[class*="cta-"]',
+      'a[class*="-btn"]',
+      'a[role="button"]'
     ].join(',');
 
-    document.querySelectorAll(allAnimatedBtnSelectors).forEach(btn => {
-      if (!btn.querySelector('.btn-circle')) {
-        for (let i = 1; i <= 5; i++) {
-          const circle = document.createElement('span');
-          circle.className = `btn-circle btn-circle-${i}`;
-          circle.setAttribute('aria-hidden', 'true');
-          btn.prepend(circle);
+    const excludedSelectors = [
+      '.btn-theme-toggle',
+      '.mobile-toggle',
+      '.stories-nav-btn',
+      '.modal-close-btn',
+      '.filter-btn',
+      '.faq-toggle-btn',
+      '.footer-social-btn',
+      '.share-btn-pill'
+    ].join(',');
+
+    function injectBubbles() {
+      document.querySelectorAll(btnSelector).forEach(btn => {
+        if (btn.matches(excludedSelectors)) return;
+
+        // Wrap bare text nodes into protected <span> elements so they sit at z-index: 3
+        Array.from(btn.childNodes).forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
+            const span = document.createElement('span');
+            span.textContent = node.textContent;
+            btn.replaceChild(span, node);
+          }
+        });
+
+        // Inject the 5 liquid circles in strict 1..5 order before button content
+        if (!btn.querySelector('.btn-circle')) {
+          const fragment = document.createDocumentFragment();
+          for (let i = 1; i <= 5; i++) {
+            const circle = document.createElement('span');
+            circle.className = `btn-circle btn-circle-${i}`;
+            circle.setAttribute('aria-hidden', 'true');
+            fragment.appendChild(circle);
+          }
+          btn.insertBefore(fragment, btn.firstChild);
         }
-      }
-    });
+      });
+    }
+
+    injectBubbles();
+
+    // Auto-heal any dynamically injected buttons, modals, or cloned elements
+    if (typeof MutationObserver !== 'undefined' && document.body) {
+      const observer = new MutationObserver(mutations => {
+        let hasNewNodes = false;
+        for (let i = 0; i < mutations.length; i++) {
+          if (mutations[i].addedNodes.length > 0) {
+            hasNewNodes = true;
+            break;
+          }
+        }
+        if (hasNewNodes) {
+          injectBubbles();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
   }
 
   // Footer Legal Links Interactive Toast Notification
