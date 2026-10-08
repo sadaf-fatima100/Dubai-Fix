@@ -821,6 +821,9 @@
       background: transparent;
       position: relative;
       border: none;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
     }
     body.dark-theme .about-process {
       background: transparent;
@@ -828,16 +831,21 @@
     }
 
     .about-process .section-container-inner {
+      width: 100%;
       max-width: 100%;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     .about-process-layout {
       display: grid;
-      grid-template-columns: clamp(380px, 34vw, 480px) 1fr;
-      gap: clamp(24px, 3vw, 48px);
+      grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+      gap: clamp(24px, 3.2vw, 44px);
       align-items: center;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     /* Left Column: Cutout Technicians (Transparent PNG) */
@@ -848,6 +856,8 @@
       align-items: flex-start;
       justify-content: flex-end;
       width: 100%;
+      max-width: 100%;
+      min-width: 0;
       overflow: visible;
     }
 
@@ -858,15 +868,13 @@
 
     .process-technicians-img {
       width: 100%;
-      max-width: 500px;
+      max-width: 440px;
       height: auto;
       display: block;
       position: relative;
       z-index: 1;
-      margin-left: -6px; /* Exactly aligns leftmost technician pixel with navbar left curve at x=69 */
+      margin-left: 0;
       filter: none !important; /* Zero background shadow on image as requested */
-      /* mask removed */
-      /* mask removed */
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .about-process-visual:hover .process-technicians-img {
@@ -914,6 +922,10 @@
     .about-process-content {
       position: relative;
       z-index: 2;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
 
     .about-process-h2 {
@@ -944,16 +956,19 @@
     /* 2x2 Steps Grid - TIGHT GAP AS REQUESTED */
     .process-steps-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
       margin-bottom: 20px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .process-step-item {
       background: #ffffff;
       border: 1.5px solid #e3e7e9;
       border-radius: 18px;
-      padding: 16px 18px 18px 18px;
+      padding: 16px 16px 18px 16px;
       position: relative;
       overflow: hidden;
       transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
@@ -962,6 +977,8 @@
       align-items: stretch;
       text-align: left;
       box-shadow: 0 3px 14px rgba(25, 32, 35, 0.04);
+      min-width: 0;
+      box-sizing: border-box;
     }
     .process-step-item:hover {
       transform: translateY(-2px);
@@ -1055,7 +1072,7 @@
     }
 
     .process-step-title {
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 800;
       line-height: 1.25;
       letter-spacing: -0.015em;
@@ -1063,15 +1080,27 @@
       margin: 0;
       position: relative;
       z-index: 1;
-      white-space: nowrap;
-    }
-    @media (max-width: 1200px) {
-      .process-step-title {
-        white-space: normal;
-      }
+      white-space: normal;
+      word-break: normal;
     }
     body.dark-theme .process-step-title {
       color: #f1f5f9;
+    }
+
+    @media (max-width: 1200px) and (min-width: 993px) {
+      .about-process-layout {
+        grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
+        gap: 24px;
+      }
+      .process-step-item {
+        padding: 14px 12px 16px 12px;
+      }
+      .process-step-title {
+        font-size: 14px;
+      }
+      .process-step-desc {
+        font-size: 12px;
+      }
     }
 
     .process-step-desc {
