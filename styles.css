@@ -1051,11 +1051,11 @@ button[id*="phone"] svg {
 .btn-kitchen-call,
 .btn-service-why-action,
 .areas-clear-btn,
-.pf-action-btn,
 .btn-hero-secondary,
 .btn-hero-action-call,
 .btn-about-secondary,
 .btn-emergency-call,
+.btn-hub-open-maps,
 .btn-urgent-call,
 .btn-cta-green,
 .btn-prefooter-call,
@@ -1125,7 +1125,6 @@ button[id*="phone"] svg {
 .btn-lb-call:hover,
 .btn-service-why-action:hover,
 .areas-clear-btn:hover,
-.pf-action-btn:hover,
 :not(.areas-cta-banner) > .btn-dispatch-call:hover {
   animation: none !important;
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
@@ -1141,7 +1140,7 @@ button[id*="phone"] svg {
     0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Zero Black Text Standard: All children of Red Buttons guaranteed crisp white on hover */
+/* Zero Black Text Standard: All children of Red Buttons verified crisp white on hover */
 .btn-schedule:hover > span,
 .btn-schedule:hover strong,
 .nav-menu-schedule-btn:hover > span,
@@ -1152,6 +1151,10 @@ button[id*="phone"] svg {
 .btn-about-primary:hover > span,
 .btn-prefooter-primary:hover > span,
 .btn-emergency-primary:hover > span,
+.btn-emergency-call:hover > span,
+.btn-emergency-call:hover .btn-content,
+.btn-emergency-call:hover .btn-content *,
+.btn-hub-open-maps:hover > span,
 .btn-cta-navy:hover > span,
 .btn-urgent-book:hover > span,
 .cta-primary-btn:hover > span,
@@ -1177,7 +1180,6 @@ button[id*="phone"] svg {
 .sidebar-btn-call:hover > span,
 .btn-lb-call:hover > span,
 .btn-service-why-action:hover > span,
-.pf-action-btn:hover > span,
 :not(.areas-cta-banner) > .btn-dispatch-call:hover > span,
 .btn-dispatch-option.btn-dispatch-call:hover > *,
 .btn-dispatch-option.btn-dispatch-call:hover .dispatch-label,
@@ -1194,6 +1196,8 @@ button[id*="phone"] svg {
 .btn-about-primary:hover svg,
 .btn-prefooter-primary:hover svg,
 .btn-emergency-primary:hover svg,
+.btn-emergency-call:hover svg,
+.btn-hub-open-maps:hover svg,
 .btn-cta-navy:hover svg,
 .btn-urgent-book:hover svg,
 .cta-primary-btn:hover svg,
@@ -1220,7 +1224,6 @@ button[id*="phone"] svg {
 .btn-lb-call:hover svg,
 .btn-service-why-action:hover svg,
 .areas-clear-btn:hover svg,
-.pf-action-btn:hover svg,
 :not(.areas-cta-banner) > .btn-dispatch-call:hover svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
@@ -1236,7 +1239,6 @@ button[id*="phone"] svg {
 .btn-hero-secondary:hover,
 .btn-hero-action-call:hover,
 .btn-about-secondary:hover,
-.btn-emergency-call:hover,
 .btn-urgent-call:hover,
 .btn-cta-green:hover,
 .btn-prefooter-call:hover,
@@ -1264,11 +1266,10 @@ button[id*="phone"] svg {
     0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Zero Black Text Standard: All children of Green Buttons guaranteed crisp white on hover */
+/* Zero Black Text Standard: All children of Green Buttons verified crisp white on hover */
 .btn-hero-secondary:hover > span,
 .btn-hero-action-call:hover > span,
 .btn-about-secondary:hover > span,
-.btn-emergency-call:hover > span,
 .btn-urgent-call:hover > span,
 .btn-cta-green:hover > span,
 .btn-prefooter-call:hover > span,
@@ -1290,7 +1291,6 @@ button[id*="phone"] svg {
 .btn-hero-secondary:hover svg,
 .btn-hero-action-call:hover svg,
 .btn-about-secondary:hover svg,
-.btn-emergency-call:hover svg,
 .btn-urgent-call:hover svg,
 .btn-cta-green:hover svg,
 .btn-prefooter-call:hover svg,
@@ -1553,6 +1553,8 @@ body.dark-theme .btn-get-started:hover,
 body.dark-theme .btn-about-primary:hover,
 body.dark-theme .btn-prefooter-primary:hover,
 body.dark-theme .btn-emergency-primary:hover,
+body.dark-theme .btn-emergency-call:hover,
+body.dark-theme .btn-hub-open-maps:hover,
 body.dark-theme .btn-cta-navy:hover,
 body.dark-theme .btn-urgent-book:hover,
 body.dark-theme .cta-primary-btn:hover,
@@ -1578,7 +1580,6 @@ body.dark-theme .sidebar-btn-call:hover,
 body.dark-theme .btn-lb-call:hover,
 body.dark-theme .btn-service-why-action:hover,
 body.dark-theme .areas-clear-btn:hover,
-body.dark-theme .pf-action-btn:hover,
 body.dark-theme .footer-book-btn:hover,
 body.dark-theme .sidebar-btn-book:hover,
 body.dark-theme .article-cta-book-btn:hover,
@@ -1613,7 +1614,6 @@ body.dark-theme .btn-kitchen-quote:hover {
 body.dark-theme .btn-hero-secondary:hover,
 body.dark-theme .btn-hero-action-call:hover,
 body.dark-theme .btn-about-secondary:hover,
-body.dark-theme .btn-emergency-call:hover,
 body.dark-theme .btn-urgent-call:hover,
 body.dark-theme .btn-cta-green:hover,
 body.dark-theme .btn-prefooter-call:hover,
@@ -2488,10 +2488,9 @@ a.service-card-item *,
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  border: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  box-shadow: none !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   text-decoration: none !important;
   position: relative;
   overflow: hidden;
@@ -10145,7 +10144,7 @@ body.dark-theme .service-card-btn {
   background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
   border: none !important;
   color: #ffffff !important;
-  box-shadow: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
   text-decoration: none !important;
 }
 body.dark-theme .service-card-btn span {
@@ -12970,7 +12969,6 @@ body.dark-theme .emergency-pillar-item:hover {
   box-shadow:
     0 6px 18px rgba(0, 0, 0, 0.45),
     0 2px 6px rgba(0, 0, 0, 0.25);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .cta-primary-btn svg {
   flex-shrink: 0;
