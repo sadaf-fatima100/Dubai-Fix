@@ -2178,9 +2178,7 @@ a.service-card-item *,
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow:
-    0 6px 18px rgba(215, 28, 27, 0.32),
-    0 2px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: none !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 3;
 }
@@ -2194,9 +2192,7 @@ a.service-card-item *,
 .service-card-item:hover .service-card-icon-badge {
   transform: translate(-50%, -50%) scale(1.08);
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
-  box-shadow:
-    0 8px 24px rgba(215, 28, 27, 0.45),
-    0 4px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: none !important;
 }
 .service-card-title {
   color: var(--text-dark, #192023) !important;
@@ -2242,9 +2238,7 @@ a.service-card-item *,
   text-transform: uppercase;
   border: none !important;
   cursor: pointer;
-  box-shadow:
-    0 4px 14px rgba(215, 28, 27, 0.28),
-    0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none !important;
   position: relative;
@@ -2272,9 +2266,7 @@ a.service-card-item *,
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow:
-    0 8px 22px rgba(215, 28, 27, 0.4),
-    0 4px 10px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: none !important;
 }
 .service-card-btn:hover svg,
 .service-card-item:hover .service-card-btn svg {
@@ -5380,7 +5372,8 @@ body.dark-theme .btn-kitchen-call:hover {
   color: #ffffff;
 }
 
-/* Warranty Seal Badge (Clean Trust Indicator without Button Box Boundary) */
+/* Certified Seal Badge (Clean Trust Indicator without Button Box Boundary) */
+.kitchen-certified-seal,
 .kitchen-warranty-seal {
   display: inline-flex;
   align-items: center;
@@ -5401,20 +5394,24 @@ body.dark-theme .btn-kitchen-call:hover {
   transform: none;
   opacity: 0.9;
 }
+.certified-seal-icon,
 .warranty-seal-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ff5a52;
 }
+.certified-seal-icon svg,
 .warranty-seal-icon svg {
   stroke: #ff5a52;
 }
+.certified-seal-text,
 .warranty-seal-text {
   display: flex;
   flex-direction: column;
   line-height: 1.15;
 }
+.certified-seal-title,
 .warranty-seal-title {
   font-family: var(--font-family);
   font-size: 12.5px;
@@ -5422,6 +5419,7 @@ body.dark-theme .btn-kitchen-call:hover {
   color: #ffffff;
   letter-spacing: -0.01em;
 }
+.certified-seal-sub,
 .warranty-seal-sub {
   font-family: var(--font-family);
   font-size: 9.5px;
@@ -5501,6 +5499,7 @@ body.dark-theme .btn-kitchen-call:hover {
   .kitchen-main-heading {
     font-size: 1.45rem;
   }
+  .kitchen-certified-seal,
   .kitchen-warranty-seal {
     margin-left: 0;
     width: fit-content;
@@ -5537,6 +5536,7 @@ body.dark-theme .btn-kitchen-call:hover {
     justify-content: center;
     box-sizing: border-box;
   }
+  .kitchen-certified-seal,
   .kitchen-warranty-seal {
     width: 100%;
     justify-content: center;
@@ -9876,14 +9876,14 @@ body.dark-theme .service-card-icon-badge {
   background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
   border: 4px solid #171c1f;
   color: #ffffff;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: none !important;
 }
 body.dark-theme .service-card-item:hover .service-card-icon-badge {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
   border-color: #1c2226;
   color: #ffffff;
   transform: translate(-50%, -50%) scale(1.08);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: none !important;
 }
 body.dark-theme .service-card-title {
   color: #ffffff !important;
@@ -9901,9 +9901,7 @@ body.dark-theme .service-card-btn {
   background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
   border: none !important;
   color: #ffffff !important;
-  box-shadow:
-    0 4px 14px rgba(215, 28, 27, 0.35),
-    0 2px 6px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: none !important;
   text-decoration: none !important;
 }
 body.dark-theme .service-card-btn span {
@@ -9918,9 +9916,7 @@ body.dark-theme .service-card-item:hover .service-card-btn {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   border: none !important;
   color: #ffffff !important;
-  box-shadow:
-    0 8px 22px rgba(215, 28, 27, 0.5),
-    0 4px 10px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: none !important;
   transform: translateY(-2px);
 }
 body.dark-theme .service-card-btn:hover svg,
