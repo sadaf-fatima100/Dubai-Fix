@@ -97,3 +97,9 @@ This project follows strict engineering and visual standards. Every change must 
   - `4+ Yrs` / `4+ Years of Experience`
   - `3,000+ Appliances Restored` / `3,000+ Happy Clients`
   - `60-Min Doorstep Response` / `60-Min Dispatch`
+
+## 10. Strict Permanent Freeze on Core Figures & Banned Keywords (Zero Tolerance Rule)
+- **4+ Years Experience Lock**: Under NO circumstances should any other experience number (10+, 12+, 15+, etc.) ever be reintroduced or changed.
+- **60-Min Response Time Lock**: Under NO circumstances should any other response time (30-min, 2-hour, 90-min, 1-hr, etc.) ever be used. Must always remain strictly `60-Min` (or `60m` in compact badges).
+- **3,000+ Modest Figures Lock**: Under NO circumstances should inflated figures (50,000+, 25,000+, 15K+, 18k+, 22k+, 14k+, 9,500+) ever be reintroduced. All volume repair metrics must remain modestly unified at `3,000+`.
+- **Absolute Ban on 'Warranty', 'Guarantee', and 'Greentree'**: The words `Warranty`, `Guarantee`, `Guaranteed`, `Written Guarantee`, and `Greentree` are strictly banned across all page copy, HTML text, IDs, attributes, and comments. Always use certified equivalents: `Verified Standards`, `Certified OEM Quality`, `Official Invoice`, `100% Satisfaction`, `Same-Day Priority`.
