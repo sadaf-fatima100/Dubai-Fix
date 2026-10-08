@@ -673,8 +673,8 @@ body.dark-theme .dropdown-divider {
   color: #ffffff !important;
   fill: currentColor !important;
   transition:
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    fill 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+    color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 } /* ==========================================================================   Universal Button Animation & Interaction Suite (Hero-Quality Everywhere)   ========================================================================== */ /* Keyframes: Primary Vibrant Navy Pulse Loop */
 @keyframes primaryButtonPulseLoop {
   0%,
@@ -1137,10 +1137,8 @@ button[id*="phone"] svg {
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.20),
-    0 0 0 2px #ffffff,
-    0 0 0 3.5px rgba(25, 32, 35, 0.14),
-    0 8px 20px -3px rgba(15, 23, 42, 0.16),
-    0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    0 12px 28px rgba(0, 0, 0, 0.22),
+    0 4px 10px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Zero Black Text Standard: All children of Red Buttons verified crisp white on hover */
@@ -1352,12 +1350,9 @@ button[id*="phone"] svg {
   border-color: #ffffff !important;
   transform: translateY(-2px) scale(1.015) !important;
   box-shadow:
-    inset 0 1px 1.5px rgba(255, 255, 255, 1),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.08),
-    0 0 0 2px rgba(0, 0, 0, 0.14),
-    0 0 0 3.5px rgba(255, 255, 255, 0.85),
-    0 8px 22px -3px rgba(0, 0, 0, 0.30),
-    0 2px 6px rgba(0, 0, 0, 0.12) !important;
+    0 12px 28px rgba(0, 0, 0, 0.24),
+    0 4px 10px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
 .btn-process-action:hover > span,
@@ -1410,12 +1405,9 @@ body.dark-theme .btn-why-feature-cta:hover {
   color: #d71c1b !important;
   transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1px 1.5px rgba(255, 255, 255, 1),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.12),
-    0 0 0 2px rgba(0, 0, 0, 0.25),
-    0 0 0 3.5px rgba(255, 255, 255, 0.85),
-    0 10px 24px -3px rgba(0, 0, 0, 0.50),
-    0 2px 6px rgba(0, 0, 0, 0.25) !important;
+    0 14px 32px rgba(0, 0, 0, 0.50),
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
 }
 
 body.dark-theme .btn-process-action:hover > span,
@@ -1426,12 +1418,44 @@ body.dark-theme .btn-why-feature-cta:hover > span {
 
 /* --------------------------------------------------------------------------
    5. White Elevated Card Buttons on Dark Containers (Footer & Sidebar)
+   Silky GPU-accelerated gradient cross-fade via ::after opacity
    -------------------------------------------------------------------------- */
+.footer-book-btn,
+.sidebar-btn-book,
+.article-cta-book-btn {
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.footer-book-btn::after,
+.sidebar-btn-book::after,
+.article-cta-book-btn::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  opacity: 0 !important;
+  z-index: 1 !important;
+  transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  pointer-events: none !important;
+}
+
+.footer-book-btn:hover::after,
+.sidebar-btn-book:hover::after,
+.article-cta-book-btn:hover::after {
+  opacity: 1 !important;
+}
+
 .footer-book-btn:hover,
 .sidebar-btn-book:hover,
 .article-cta-book-btn:hover {
   animation: none !important;
-  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   border-color: #d71c1b !important;
   transform: translateY(-2px) !important;
@@ -1442,10 +1466,29 @@ body.dark-theme .btn-why-feature-cta:hover > span {
     0 4px 10px rgba(0, 0, 0, 0.20) !important;
 }
 
+.footer-book-btn > span,
+.sidebar-btn-book > span,
+.article-cta-book-btn > span {
+  position: relative !important;
+  z-index: 3 !important;
+  transition: color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
 .footer-book-btn:hover > span,
 .sidebar-btn-book:hover > span,
 .article-cta-book-btn:hover > span {
   color: #ffffff !important;
+}
+
+.footer-book-btn svg,
+.sidebar-btn-book svg,
+.article-cta-book-btn svg {
+  position: relative !important;
+  z-index: 3 !important;
+  transition:
+    color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.3s ease !important;
 }
 
 .footer-book-btn:hover svg,
@@ -1454,7 +1497,7 @@ body.dark-theme .btn-why-feature-cta:hover > span {
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
-  transition: color 0.3s ease, stroke 0.3s ease !important;
+  transform: translateX(3px);
 }
 
 /* --------------------------------------------------------------------------
@@ -1537,10 +1580,8 @@ body.dark-theme .btn-why-feature-cta:hover > span {
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 0 0 2px #192023,
-    0 0 0 3.5px rgba(255, 255, 255, 0.20),
-    0 8px 22px -3px rgba(0, 0, 0, 0.50),
-    0 2px 6px rgba(0, 0, 0, 0.25) !important;
+    0 14px 32px rgba(0, 0, 0, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.25) !important;
 }
 
 .site-footer-master .btn-hero-secondary:hover,
@@ -1594,9 +1635,6 @@ body.dark-theme .sidebar-btn-call:hover,
 body.dark-theme .btn-lb-call:hover,
 body.dark-theme .btn-service-why-action:hover,
 body.dark-theme .areas-clear-btn:hover,
-body.dark-theme .footer-book-btn:hover,
-body.dark-theme .sidebar-btn-book:hover,
-body.dark-theme .article-cta-book-btn:hover,
 body.dark-theme .compare-card-cta:hover,
 body.dark-theme :not(.areas-cta-banner) > .btn-dispatch-call:hover {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
@@ -1606,14 +1644,25 @@ body.dark-theme :not(.areas-cta-banner) > .btn-dispatch-call:hover {
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 0 0 2px #0f1315,
-    0 0 0 3.5px rgba(255, 255, 255, 0.20),
-    0 8px 24px -3px rgba(0, 0, 0, 0.60),
-    0 2px 6px rgba(0, 0, 0, 0.35) !important;
+    0 14px 32px rgba(0, 0, 0, 0.60),
+    0 4px 12px rgba(0, 0, 0, 0.35) !important;
 }
 
 body.dark-theme .btn-kitchen-quote:hover {
   color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow:
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
+    0 14px 32px rgba(0, 0, 0, 0.60),
+    0 4px 12px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.dark-theme .footer-book-btn:hover,
+body.dark-theme .sidebar-btn-book:hover,
+body.dark-theme .article-cta-book-btn:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
   transform: translateY(-2px) !important;
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
@@ -2530,10 +2579,8 @@ a.service-card-item *,
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.20),
-    0 0 0 2px #ffffff,
-    0 0 0 3.5px rgba(25, 32, 35, 0.14),
-    0 8px 20px -3px rgba(15, 23, 42, 0.16),
-    0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    0 12px 28px rgba(0, 0, 0, 0.22),
+    0 4px 10px rgba(0, 0, 0, 0.08) !important;
 }
 .service-card-btn:hover svg,
 .service-card-item:hover .service-card-btn svg {
@@ -2911,22 +2958,22 @@ a.service-card-item *,
   border-color: #25d366 !important;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
   transition:
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .btn-dispatch-whatsapp:hover span {
   color: #ffffff !important;
-  transition: color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+  transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .btn-dispatch-whatsapp:hover svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
   transition:
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 /* Responsive Breakpoints for Services Dispatch Bar */
@@ -3209,7 +3256,7 @@ body.dark-theme .why-card-content .why-card-desc {
   background-color: #ffffff;
   border: 1.5px solid #edf0f2;
   border-radius: var(--radius-pill, 9999px);
-  padding: 8px 22px 8px 16px;
+  padding: 8px 18px 8px 14px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
@@ -3258,7 +3305,7 @@ body.dark-theme .why-card-content .why-card-desc {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-left: 14px;
+  margin-left: 12px;
   min-width: 0;
 }
 .why-stat-number {
@@ -3274,13 +3321,12 @@ body.dark-theme .why-card-content .why-card-desc {
   font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: var(--text-sub, #475056);
   text-transform: uppercase;
-  line-height: 1.25;
+  line-height: 1.2;
   margin: 2px 0 0 0;
-  max-width: 125px;
-  white-space: normal;
+  white-space: nowrap;
 }
 .why-stat-divider {
   display: none !important;
@@ -10356,10 +10402,10 @@ body.dark-theme .btn-about-secondary:hover {
   color: #ffffff !important;
   box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
   transition:
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 body.dark-theme .btn-hero-secondary:hover svg,
 body.dark-theme .btn-about-secondary:hover svg {
@@ -10537,10 +10583,8 @@ body.dark-theme .service-card-item:hover .service-card-btn {
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 0 0 2px #171c1f,
-    0 0 0 3.5px rgba(255, 255, 255, 0.20),
-    0 8px 24px -3px rgba(0, 0, 0, 0.60),
-    0 2px 6px rgba(0, 0, 0, 0.35) !important;
+    0 14px 32px rgba(0, 0, 0, 0.60),
+    0 4px 12px rgba(0, 0, 0, 0.35) !important;
 }
 body.dark-theme .service-card-btn:hover svg,
 body.dark-theme .service-card-item:hover .service-card-btn svg {
@@ -10593,10 +10637,10 @@ body.dark-theme .btn-dispatch-whatsapp:hover {
   color: #ffffff !important;
   box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
   transition:
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 body.dark-theme .hero-trust-proof-row {
   background: transparent !important;
