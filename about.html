@@ -648,16 +648,19 @@
     /* ─── RESPONSIVE BREAKPOINTS ─── */
     @media (max-width: 992px) {
       .heritage-layout-wrap {
-        grid-template-columns: 1fr;
-        gap: 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
       }
-      .heritage-mosaic-stage {
-        max-width: 520px;
+      .heritage-content-col {
+        order: 1;
+        max-width: 600px;
         margin: 0 auto;
         width: 100%;
       }
-      .heritage-content-col {
-        max-width: 600px;
+      .heritage-mosaic-stage {
+        order: 2;
+        max-width: 520px;
         margin: 0 auto;
         width: 100%;
       }
@@ -678,43 +681,72 @@
       }
     }
     @media (max-width: 576px) {
+      .heritage-mosaic-stage {
+        gap: 12px;
+      }
+      .mosaic-col {
+        gap: 12px;
+      }
       .mosaic-img-box {
-        height: 240px;
+        height: 185px;
+        border-radius: 16px;
       }
       .mosaic-navy-card {
+        border-radius: 16px;
+        padding: 13px 12px;
         height: auto;
-        min-height: 135px;
-        padding: 14px 14px;
+        min-height: 125px;
       }
       .mosaic-navy-title {
-        font-size: 13.5px;
+        font-size: 13px;
+        line-height: 1.25;
       }
       .mosaic-navy-desc {
         font-size: 11px;
+        line-height: 1.35;
       }
       .mosaic-navy-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
         margin-top: 8px;
-        padding-top: 8px;
+        padding-top: 6px;
+      }
+      .mosaic-navy-brand {
+        font-size: 10.5px;
+      }
+      .mosaic-navy-priority {
+        font-size: 10px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.95);
       }
       .mosaic-stat-card {
-        height: 100px;
-        padding: 12px 14px;
-        gap: 12px;
+        height: auto;
+        min-height: 72px;
+        padding: 10px 12px;
+        gap: 10px;
+        border-radius: 16px;
       }
       .mosaic-stat-icon-wrap {
-        width: 38px;
-        height: 38px;
-        min-width: 38px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
         border-radius: 10px;
       }
+      .mosaic-stat-icon-wrap svg {
+        width: 18px;
+        height: 18px;
+      }
       .mosaic-stat-number {
-        font-size: 22px;
+        font-size: 20px;
       }
       .mosaic-stat-label {
         font-size: 11px;
+        line-height: 1.2;
       }
       .mosaic-img-tall-box {
-        height: 260px;
+        height: 200px;
+        border-radius: 16px;
       }
       .heritage-action-wrap {
         flex-direction: column;
