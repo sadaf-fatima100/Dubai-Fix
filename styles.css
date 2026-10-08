@@ -178,13 +178,16 @@ body.dark-theme .navbar.is-scrolled {
   text-decoration: none;
   color: var(--text-dark);
   user-select: none;
+  flex-shrink: 0;
+  min-width: 0;
 }
 .nav-brand-img {
-  height: 42px;
+  height: clamp(30px, 4.5vw, 42px);
   width: auto;
-  max-width: 185px;
+  max-width: clamp(110px, 30vw, 185px);
   object-fit: contain;
   display: block;
+  flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .nav-logo:hover .nav-brand-img {
@@ -200,9 +203,9 @@ body.dark-theme .brand-logo-dark {
   display: block !important;
 }
 .footer-brand-img {
-  height: 48px;
+  height: clamp(32px, 4.8vw, 48px);
   width: auto;
-  max-width: 210px;
+  max-width: clamp(130px, 32vw, 210px);
   object-fit: contain;
   display: block;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -3905,16 +3908,16 @@ body.dark-theme .why-card-content .why-card-desc {
 }
 .areas-cta-banner .btn-dispatch-call:hover {
   transform: translateY(-2px);
-  color: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
   box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35) !important;
   border-color: transparent !important;
 }
 .areas-cta-banner .btn-dispatch-call:hover span {
-  color: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
 }
 .areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon,
 .areas-cta-banner .btn-dispatch-call:hover svg {
-  color: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
   fill: currentColor !important;
 }
 .areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon {
@@ -4270,7 +4273,7 @@ body.dark-theme .process-badge-tag .badge-dot {
   border-color: rgba(255, 255, 255, 0.35);
 }
 .btn-process-action:hover span {
-  color: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
 }
 .btn-process-action:hover svg {
   background-color: #d71c1b;
@@ -7899,6 +7902,10 @@ body.dark-theme .trust-item svg {
   .mobile-toggle {
     display: flex;
   }
+  .nav-brand-img {
+    height: 36px;
+    max-width: 155px;
+  }
   body.dark-theme .nav-menu {
     background-color: #171c1f !important;
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
@@ -8327,6 +8334,10 @@ body.dark-theme .trust-item svg {
     margin-right: 0;
     border-radius: 18px;
     margin-bottom: 12px;
+  }
+  .nav-brand-img {
+    height: 34px;
+    max-width: 145px;
   }
   .nav-menu {
     position: absolute;
@@ -8953,6 +8964,10 @@ body.dark-theme .trust-item svg {
     padding: 16px 12px 24px 12px;
     border-radius: 0 !important;
   }
+  .nav-brand-img {
+    height: 33px;
+    max-width: 136px;
+  }
   .hero-headline {
     font-size: clamp(2.05rem, 1.125rem + 4vw, 2.55rem);
   }
@@ -9068,15 +9083,20 @@ body.dark-theme .trust-item svg {
     margin-bottom: 18px;
   }
   .nav-logo {
-    gap: 7px;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .nav-brand-img {
+    height: 32px;
+    max-width: 130px;
   }
   .logo-icon-svg,
   .logo-icon-img {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
   .logo-brand-row {
-    font-size: 16.5px;
+    font-size: 16px;
   }
   .btn-schedule span {
     display: none;
@@ -9399,6 +9419,43 @@ body.dark-theme .trust-item svg {
     padding: 12px 8px 18px 8px;
     border-radius: 0 !important;
   }
+  .navbar {
+    padding: 6px 8px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+  .nav-brand-img {
+    height: 28px;
+    max-width: 115px;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
+  .btn-theme-toggle {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .btn-schedule {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+    padding: 7px;
+  }
+  .mobile-toggle {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+  }
   :root {
     --text-h2: clamp(1.2rem, 0.95rem + 1.2vw, 1.45rem);
   }
@@ -9566,6 +9623,10 @@ body.dark-theme .trust-item svg {
   }
   .btn-schedule {
     display: none !important;
+  }
+  .nav-brand-img {
+    height: 25px;
+    max-width: 98px;
   }
   .logo-icon-svg,
   .logo-icon-img {
@@ -10508,7 +10569,7 @@ body.dark-theme .btn-process-action:hover {
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
 }
 body.dark-theme .btn-process-action:hover span {
-  color: #ffffff !important;
+  color: #d71c1b !important;
 }
 body.dark-theme .btn-process-action:hover svg {
   background-color: #d71c1b;
@@ -11344,12 +11405,12 @@ body.dark-theme .areas-cta-banner .btn-dispatch-call .btn-circle {
   background-color: #25d366 !important;
 }
 body.dark-theme .areas-cta-banner .btn-dispatch-call:hover {
-  color: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45) !important;
 }
 body.dark-theme .areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon,
 body.dark-theme .areas-cta-banner .btn-dispatch-call:hover svg {
-  color: #ffffff !important;
+  color: #d71c1b !important;
   fill: currentColor !important;
 } /* ==========================================================================   MAJOR BRANDS WE SERVICE & REPAIR (Replicating media_1790161239392.png)   ========================================================================== */
 .brands-section {
