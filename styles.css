@@ -10755,36 +10755,39 @@ body.dark-theme .why-card-item:hover .why-card-icon-badge {
   box-shadow: none;
 }
 body.dark-theme .why-stats-strip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+body.dark-theme .why-stat-item {
   background-color: #171c1f;
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+body.dark-theme .why-stat-item:hover {
+  border-color: #ff5a52;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
 }
 body.dark-theme .why-stat-icon-wrap {
-  background: linear-gradient(
-    135deg,
-    rgba(224, 42, 36, 0.16) 0%,
-    rgba(215, 28, 27, 0.06) 100%
-  );
-  border-color: rgba(224, 42, 36, 0.3);
-  color: #ff5a52;
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.35),
-    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
+  color: #ffffff;
+  box-shadow: none !important;
+}
+body.dark-theme .why-stat-icon-wrap svg {
+  color: #ffffff;
+  stroke: #ffffff;
 }
 body.dark-theme .why-stat-item:hover .why-stat-icon-wrap {
-  background: #ff5a52;
-  border-color: #ff5a52;
-  color: #171c1f;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: scale(1.06);
 }
 body.dark-theme .why-stat-number {
-  color: #ff5a52;
+  color: #ffffff;
 }
 body.dark-theme .why-stat-label {
   color: #94a3b8;
 }
 body.dark-theme .why-stat-divider {
-  background-color: rgba(255, 255, 255, 0.1);
+  display: none !important;
 } /* About Us Section - Dark Theme */
 body.dark-theme .about-image-card {
   background: transparent;
