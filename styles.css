@@ -3179,79 +3179,98 @@ body.dark-theme .why-card-item:hover .why-card-content .why-card-title {
 }
 body.dark-theme .why-card-content .why-card-desc {
   color: rgba(255, 255, 255, 0.75) !important;
-} /* 4 Stats / Metrics Strip (Compact Executive Ribbon) */
+} /* 4 Stats / Metrics Pill Cards (Matching User Reference Image) */
 .why-stats-strip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 18px;
-  padding: 16px 36px;
-  box-shadow: 0 10px 28px rgba(25, 32, 35, 0.06);
-  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-top: 36px;
 }
 .why-stat-item {
-  flex: 1;
-  text-align: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2px;
+  background-color: #ffffff;
+  border: 1.5px solid #edf0f2;
+  border-radius: var(--radius-pill, 9999px);
+  padding: 8px 22px 8px 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
-} /* Premium Stat Icon Medallion Badge */
+  min-height: 58px;
+  box-sizing: border-box;
+}
+.why-stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(25, 32, 35, 0.08);
+  border-color: rgba(215, 28, 27, 0.3);
+}
+/* Solid Brand Red Rounded Icon Squircle */
 .why-stat-icon-wrap {
-  width: 38px;
-  height: 38px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, #fdf2f2 0%, #fae8e8 100%);
-  border: 1.5px solid rgba(215, 28, 27, 0.18);
-  color: var(--brand-accent);
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #ffffff;
+  border: none;
+  box-shadow: none !important;
   flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .why-stat-icon-wrap svg {
-  width: 18px;
-  height: 18px;
-  color: inherit;
-  stroke: currentColor;
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+  stroke: #ffffff;
+  fill: none;
   display: block;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease;
 }
 .why-stat-item:hover .why-stat-icon-wrap {
-  background: var(--btn-gradient-primary);
-  border-color: #d71c1b;
-  color: #ffffff;
-  transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.06);
 }
 .why-stat-item:hover .why-stat-icon-wrap svg {
   transform: scale(1.08);
 }
+/* Right Text Column */
+.why-stat-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 12px;
+  min-width: 0;
+}
 .why-stat-number {
-  font-size: 28px;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 20px;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--brand-accent);
+  letter-spacing: -0.025em;
+  color: var(--text-dark, #192023);
   line-height: 1.15;
+  margin: 0;
 }
 .why-stat-label {
-  font-size: 11px;
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.07em;
-  color: var(--text-sub);
+  letter-spacing: 0.06em;
+  color: var(--text-sub, #475056);
   text-transform: uppercase;
+  line-height: 1.2;
+  margin: 1px 0 0 0;
+  white-space: nowrap;
 }
 .why-stat-divider {
-  width: 1px;
-  height: 32px;
-  background-color: rgba(0, 0, 0, 0.08);
-  flex-shrink: 0;
+  display: none !important;
 } /* ==========================================================================   Areas We Proudly Serve Across Dubai Section (Enclosed in Elegant Boxed Container)   ========================================================================== */
 .areas-serve-section {
   width: 100%;
@@ -9521,6 +9540,21 @@ body.dark-theme .trust-item svg {
     gap: 8px 6px;
     padding: 10px 8px;
   }
+  .emergency-pillar-item {
+    min-width: 0;
+  }
+  .pillar-text-group {
+    min-width: 0;
+    flex: 1;
+  }
+  .pillar-title {
+    font-size: 11.5px;
+    white-space: normal;
+  }
+  .pillar-desc {
+    font-size: 9.5px;
+    white-space: normal;
+  }
   .why-stats-strip {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 22px;
@@ -9788,14 +9822,65 @@ body.dark-theme .trust-item svg {
   .emergency-call-card {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 10px 8px;
+    padding: 11px 10px !important;
+    gap: 10px !important;
     box-sizing: border-box;
   }
+  .emergency-phone-badge {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+  }
+  .emergency-phone-icon {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .emergency-phone-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .emergency-eyebrow {
+    font-size: 9.5px !important;
+  }
   .emergency-number {
-    font-size: 14px;
+    font-size: 14px !important;
+    white-space: nowrap !important;
   }
   .emergency-subtext {
-    font-size: 10px;
+    font-size: 9.5px !important;
+    white-space: normal !important;
+  }
+  .emergency-pillars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 10px 8px !important;
+  }
+  .emergency-pillar-item {
+    padding: 7px 8px !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+  }
+  body.dark-theme .emergency-pillar-item {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .pillar-icon-box {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+  }
+  .pillar-icon-box svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .pillar-title {
+    font-size: 11.5px !important;
+    white-space: normal !important;
+  }
+  .pillar-desc {
+    font-size: 9.5px !important;
+    white-space: normal !important;
   } /* Mid-CTA Showcase */
   .cta-showcase-title {
     font-size: 1.2rem;
@@ -12990,6 +13075,7 @@ body.dark-theme .emergency-pillar-item:hover {
   }
   .emergency-subtext {
     font-size: 10.5px;
+    white-space: normal;
   }
   .emergency-pillars-grid {
     display: grid;
@@ -13000,23 +13086,85 @@ body.dark-theme .emergency-pillar-item:hover {
   .emergency-pillar-item {
     padding: 8px 8px;
     gap: 8px;
+    min-width: 0;
   }
   .pillar-icon-box {
     width: 32px;
     height: 32px;
     min-width: 32px;
+    flex-shrink: 0;
   }
   .pillar-icon-box svg {
     width: 15px;
     height: 15px;
   }
+  .pillar-text-group {
+    min-width: 0;
+    flex: 1;
+  }
   .pillar-title {
     font-size: 12px;
     line-height: 1.25;
+    white-space: normal;
   }
   .pillar-desc {
     font-size: 10px;
     line-height: 1.2;
+    white-space: normal;
+  }
+}
+@media (max-width: 340px) {
+  .emergency-pillars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+    padding: 10px 8px !important;
+  }
+  .emergency-pillar-item {
+    padding: 8px 10px !important;
+    gap: 10px !important;
+    justify-content: flex-start !important;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+  }
+  body.dark-theme .emergency-pillar-item {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .pillar-icon-box {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+  }
+  .pillar-title {
+    font-size: 12px !important;
+    white-space: normal !important;
+  }
+  .pillar-desc {
+    font-size: 10px !important;
+    white-space: normal !important;
+  }
+  .emergency-call-card {
+    padding: 12px 10px !important;
+    gap: 10px !important;
+  }
+  .emergency-phone-badge {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+  }
+  .emergency-phone-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .emergency-eyebrow {
+    font-size: 10px !important;
+  }
+  .emergency-number {
+    font-size: 15px !important;
+    white-space: nowrap !important;
+  }
+  .emergency-subtext {
+    font-size: 9.5px !important;
+    white-space: normal !important;
   }
 } /* ==========================================================================   MID-PAGE CONVERSION CTA SECTION (Appliance Repair Minimal & High-Converting)   ========================================================================== */
 .cta-showcase-section {
