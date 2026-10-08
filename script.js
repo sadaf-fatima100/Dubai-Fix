@@ -437,22 +437,6 @@ document.addEventListener('DOMContentLoaded', () => {
         areaSearchInput.focus();
       });
     }
-
-    // Card click triggers booking modal with district feedback
-    areaCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const districtName = card.getAttribute('data-district');
-        showToast(`📍 Direct dispatch available in ${districtName}!`);
-        openModal();
-      });
-
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
-        }
-      });
-    });
   }
 
   // Interactive Dubai Dispatch Hub Pinpoint
