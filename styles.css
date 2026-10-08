@@ -502,11 +502,6 @@ body.dark-theme .dropdown-divider {
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.btn-schedule:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.32);
 }
 .btn-schedule svg {
   flex-shrink: 0;
@@ -631,16 +626,8 @@ body.dark-theme .dropdown-divider {
   animation: primaryButtonPulseLoop 3.2s infinite ease-in-out;
   flex-shrink: 0;
 }
-.btn-hero-primary:hover,
-.btn-get-started:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.3);
-}
 .btn-hero-primary svg {
   transition: transform 0.25s ease;
-}
-.btn-hero-primary:hover svg {
-  transform: translateX(4px);
 } /* Secondary Button: Emergency Call 24/7 (Professional Reassuring Vibrant Green) */
 .btn-hero-secondary {
   display: inline-flex;
