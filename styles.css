@@ -9283,7 +9283,7 @@ body.dark-theme .trust-item svg {
     max-height: 32px;
   }
   .service-card-btn {
-    padding: 2px 0;
+    padding: 10px 14px;
     font-size: 11.5px;
   }
   .about-stats-column {
@@ -15349,20 +15349,29 @@ body.dark-theme .expertise-card {
     min-height: 290px;
   }
   .service-card-content {
-    margin: 5px;
-    padding: 8px;
-    border-radius: 8px;
+    margin: 6px;
+    padding: 30px 10px 14px 10px;
+    border-radius: 16px;
+  }
+  .service-card-icon-badge {
+    width: 44px;
+    height: 44px;
+  }
+  .service-card-icon-badge svg {
+    width: 18px;
+    height: 18px;
   }
   .service-card-title {
-    font-size: 14px;
+    font-size: 15px;
   }
   .service-card-desc {
-    font-size: 10.5px;
-    line-height: 1.35;
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 12px;
   }
   .service-card-btn {
-    padding: 6px 8px;
-    font-size: 10.5px;
+    padding: 9px 12px;
+    font-size: 11px;
   }
 } /* ==========================================================================   INDIVIDUAL SERVICE HERO SECTION (Centered Heading with Flanking Clipped Images)   Exact #main-hero-cut clip-path on Left and Right Images   ========================================================================== */
 .single-service-hero-section {
