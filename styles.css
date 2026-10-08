@@ -9102,6 +9102,10 @@ body.dark-theme .trust-item svg {
   .emergency-call-card {
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+    height: auto !important;
+    min-height: unset !important;
     clip-path: none !important;
     border-radius: 18px 18px 0 0 !important;
     box-sizing: border-box;
@@ -9928,6 +9932,10 @@ body.dark-theme .trust-item svg {
   .emergency-call-card {
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+    height: auto !important;
+    min-height: unset !important;
     padding: 11px 10px !important;
     gap: 10px !important;
     box-sizing: border-box;
@@ -12847,10 +12855,6 @@ body.dark-theme .faq-card-body {
   padding: 16px 36px 16px 22px;
   position: relative;
   z-index: 2;
-  flex: 0 0 340px;
-  width: 340px;
-  min-width: 340px;
-  max-width: 340px;
   box-sizing: border-box;
   clip-path: polygon(
     0 0,
@@ -12862,6 +12866,14 @@ body.dark-theme .faq-card-body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: all 0.35s ease;
   cursor: pointer;
+}
+@media (min-width: 1081px) {
+  .emergency-call-card {
+    flex: 0 0 340px;
+    width: 340px;
+    min-width: 340px;
+    max-width: 340px;
+  }
 }
 @media (min-width: 1280px) {
   .emergency-call-card {
@@ -13171,9 +13183,13 @@ body.dark-theme .emergency-pillar-item:hover {
   .emergency-call-card {
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+    height: auto !important;
+    min-height: unset !important;
     clip-path: none !important;
     border-radius: 18px 18px 0 0 !important;
-    padding: 18px 20px;
+    padding: 16px 20px;
     justify-content: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-sizing: border-box;
@@ -13201,10 +13217,14 @@ body.dark-theme .emergency-pillar-item:hover {
   .emergency-call-card {
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+    height: auto !important;
+    min-height: unset !important;
     clip-path: none !important;
     flex-direction: row;
     gap: 14px;
-    padding: 16px 14px;
+    padding: 14px 14px;
     box-sizing: border-box;
   }
   .emergency-phone-badge {
@@ -15990,28 +16010,30 @@ body.dark-theme .expertise-card {
 }
 .hero-center-cta-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 22px;
   width: 100%;
-  max-width: 270px;
+  max-width: 460px;
   margin-left: auto;
   margin-right: auto;
+  flex-wrap: nowrap;
 }
 .hero-center-cta-group .btn-hero-primary,
 .hero-center-cta-group .btn-hero-secondary {
-  width: 100%;
-  min-height: 46px;
-  padding: 12px 20px;
+  width: auto;
+  min-height: 44px;
+  padding: 11px 22px;
   font-size: 13.5px;
   font-weight: 700;
-  gap: 9px;
+  gap: 8px;
   justify-content: center;
   text-align: center;
   white-space: nowrap;
   box-sizing: border-box;
+  flex: 0 0 auto;
 }
 .hero-center-cta-group .btn-hero-secondary {
   background: #ffffff !important;
