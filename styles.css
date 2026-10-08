@@ -1017,395 +1017,198 @@ button[id*="phone"] svg {
 }
 
 /* ==========================================================================
-   Multi-Bubble Expanding Liquid Hover Animation (KINGFRESS / Uiverse Style)
-   Customized for Dubai Fix Appliances signature Crimson Action Buttons
-   Default (Idle): Circles parked OUTSIDE button boundary (verified safe coordinates)
-                   so ZERO black visible on button before hover.
-   Hover: Circles swoop in from all 5 corners → expand 8.5x → full liquid fill.
+   Tactile Concentric Outer-Loop Bezel & Fluid Elevation Animation Suite
+   Precision-engineered to match reference design (media_1791435479075_7bed316d.png)
+   1. Red Action Buttons: Background STAYS rich Crimson Red (never turns black /
+      never merges into dark-theme backgrounds). Hover creates a sculpted outer
+      concentric loop bezel with soft ambient elevation.
+   2. Green Call / WhatsApp Buttons: Background fills with solid vibrant emerald
+      green on hover with silky-smooth cubic-bezier transition & concentric bezel.
+   3. Decommissions legacy black expanding bubble collision (.btn-circle).
    ========================================================================== */
 
-/* Base: circles start INVISIBLE (opacity 0) and positioned at their IDLE offset.
-   opacity: 0 guarantees zero circle leakage at button edges before hover,
-   regardless of button size, font-size, or border-radius clipping. */
+/* Decommission expanding bubbles completely: zero black leakage, zero clipping jitter */
 .btn-circle {
-  position: absolute !important;
-  left: 50% !important;
-  top: 50% !important;
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 50% !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
   pointer-events: none !important;
-  z-index: 1 !important;
-  background-color: #171717;
-  opacity: 0;
-  transition: transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform, opacity;
+  width: 0 !important;
+  height: 0 !important;
 }
 
-/* Idle positions — verified to be OUTSIDE the button at 14px font-size.
-   Minimum clearance: 11px. No pixel of any circle touches the button. */
-.btn-circle-1 {
-  /* Top-left: Y = -56px, circle bottom = -56+16 = -40px. Button top = -22px. Clear by 18px. */
-  transform: translate(-3.6em, -4.0em);
-  background-color: #171717;
+/* --------------------------------------------------------------------------
+   1. Universal Base Transition Configuration for All Interactive Buttons
+   -------------------------------------------------------------------------- */
+.btn-schedule,
+.nav-menu-schedule-btn,
+.btn-primary,
+.btn-hero-primary,
+.btn-hero-action-primary,
+.btn-get-started,
+.btn-about-primary,
+.btn-prefooter-primary,
+.btn-emergency-primary,
+.btn-cta-navy,
+.btn-urgent-book,
+.cta-primary-btn,
+.cta-showcase-btn,
+.btn-dispatch-call,
+.btn-dispatch-phone,
+.btn-contact-submit,
+.modal-submit-btn,
+.btn-bform-submit,
+.empty-cta-btn,
+.why-btn-pill,
+.btn-cta-banner-primary,
+.mcard-featured-btn,
+.btn-filter-browse,
+.btn-read-article,
+.btn-read-full-guide,
+.btn-faq-call,
+.btn-kitchen-quote,
+.btn-simple-cta-call,
+.article-cta-call-btn,
+.sidebar-btn-call,
+.btn-lb-call,
+.btn-kitchen-call,
+.btn-service-why-action,
+.areas-clear-btn,
+.pf-action-btn,
+.btn-hero-secondary,
+.btn-hero-action-call,
+.btn-about-secondary,
+.btn-emergency-call,
+.btn-urgent-call,
+.btn-cta-green,
+.btn-prefooter-call,
+.btn-faq-talk,
+.btn-cta-banner-call,
+.process-phone-link,
+.standards-call-link,
+.btn-dispatch-wa,
+.btn-dispatch-whatsapp,
+.btn-simple-cta-whatsapp,
+.btn-lb-whatsapp,
+.btn-emergency-wa,
+.footer-book-btn,
+.sidebar-btn-book,
+.article-cta-book-btn,
+.compare-card-cta,
+.btn-process-action,
+.btn-why-feature-cta {
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.3s ease !important;
+  will-change: transform, box-shadow;
 }
 
-.btn-circle-2 {
-  /* Bottom-left: Y = +49px, circle top = 49-16 = +33px. Button bottom = +22px. Clear by 11px. */
-  transform: translate(-6.5em, 3.5em);
-  background-color: #171717;
+/* --------------------------------------------------------------------------
+   2. Red Primary Action Buttons: Concentric Outer-Loop Bezel & Elevation
+   (Background STAYS vivid Crimson Red; outer concentric loop frames the pill)
+   -------------------------------------------------------------------------- */
+.btn-schedule:hover,
+.nav-menu-schedule-btn:hover,
+.btn-primary:hover,
+.btn-hero-primary:hover,
+.btn-hero-action-primary:hover,
+.btn-get-started:hover,
+.btn-about-primary:hover,
+.btn-prefooter-primary:hover,
+.btn-emergency-primary:hover,
+.btn-cta-navy:hover,
+.btn-urgent-book:hover,
+.cta-primary-btn:hover,
+.cta-showcase-btn:hover,
+.btn-dispatch-call:hover,
+.btn-dispatch-phone:hover,
+.btn-contact-submit:hover,
+.modal-submit-btn:hover,
+.btn-bform-submit:hover,
+.empty-cta-btn:hover,
+.why-btn-pill:hover,
+.btn-cta-banner-primary:hover,
+.mcard-featured-btn:hover,
+.btn-filter-browse:hover,
+.btn-read-article:hover,
+.btn-read-full-guide:hover,
+.btn-faq-call:hover,
+.btn-kitchen-quote:hover,
+.btn-simple-cta-call:hover,
+.article-cta-call-btn:hover,
+.sidebar-btn-call:hover,
+.btn-lb-call:hover,
+.btn-kitchen-call:hover,
+.btn-service-why-action:hover,
+.areas-clear-btn:hover,
+.pf-action-btn:hover {
+  animation: none !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2.5px) !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.18),
+    0 0 0 3.5px #ffffff,
+    0 0 0 7px rgba(215, 28, 27, 0.38),
+    0 12px 28px -4px rgba(215, 28, 27, 0.42),
+    0 4px 10px rgba(0, 0, 0, 0.10) !important;
 }
 
-.btn-circle-3 {
-  /* Bottom-center: Y = +49px, circle top = 33px. Button bottom = +22px. Clear by 11px. */
-  transform: translate(-0.2em, 3.5em);
-  background-color: #171717;
+.btn-schedule:hover svg,
+.nav-menu-schedule-btn:hover svg,
+.btn-primary:hover svg,
+.btn-hero-primary:hover svg,
+.btn-hero-action-primary:hover svg,
+.btn-get-started:hover svg,
+.btn-about-primary:hover svg,
+.btn-prefooter-primary:hover svg,
+.btn-emergency-primary:hover svg,
+.btn-cta-navy:hover svg,
+.btn-urgent-book:hover svg,
+.cta-primary-btn:hover svg,
+.cta-showcase-btn:hover svg,
+.btn-dispatch-call:hover svg,
+.btn-dispatch-phone:hover svg,
+.btn-contact-submit:hover svg,
+.modal-submit-btn:hover svg,
+.btn-bform-submit:hover svg,
+.empty-cta-btn:hover svg,
+.why-btn-pill:hover svg,
+.btn-cta-banner-primary:hover svg,
+.mcard-featured-btn:hover svg,
+.btn-filter-browse:hover svg,
+.btn-read-article:hover svg,
+.btn-read-full-guide:hover svg,
+.btn-faq-call:hover svg,
+.btn-kitchen-quote:hover svg,
+.btn-simple-cta-call:hover svg,
+.article-cta-call-btn:hover svg,
+.sidebar-btn-call:hover svg,
+.btn-lb-call:hover svg,
+.btn-kitchen-call:hover svg,
+.btn-service-why-action:hover svg,
+.areas-clear-btn:hover svg,
+.pf-action-btn:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: currentColor !important;
+  transform: translateX(3px);
+  transition: transform 0.3s ease, color 0.3s ease !important;
 }
 
-.btn-circle-4 {
-  /* Bottom-right: Y = +49px, circle top = 33px. Button bottom = +22px. Clear by 11px. */
-  transform: translate(5.0em, 3.5em);
-  background-color: #171717;
-}
-
-.btn-circle-5 {
-  /* Top-right: Y = -56px, circle bottom = -40px. Button top = -22px. Clear by 18px. */
-  transform: translate(4.0em, -4.0em);
-  background-color: #171717;
-}
-
-/* On Hover: All circles sweep to center and expand to 8.5×.
-   Universal expansion: triggers smoothly across any button or link containing .btn-circle */
-button:hover .btn-circle,
-a:hover .btn-circle,
-.btn-primary:hover .btn-circle,
-.btn-schedule:hover .btn-circle,
-.nav-menu-schedule-btn:hover .btn-circle,
-.btn-hero-primary:hover .btn-circle,
-.btn-about-primary:hover .btn-circle,
-.btn-prefooter-primary:hover .btn-circle,
-.btn-emergency-primary:hover .btn-circle,
-.btn-cta-navy:hover .btn-circle,
-.btn-urgent-book:hover .btn-circle,
-.cta-primary-btn:hover .btn-circle,
-.cta-showcase-btn:hover .btn-circle,
-.footer-book-btn:hover .btn-circle,
-.btn-dispatch-call:hover .btn-circle,
-.btn-dispatch-phone:hover .btn-circle,
-.btn-contact-submit:hover .btn-circle,
-.modal-submit-btn:hover .btn-circle,
-.sidebar-btn-book:hover .btn-circle,
-.btn-process-action:hover .btn-circle,
-.empty-cta-btn:hover .btn-circle,
-.btn-get-started:hover .btn-circle,
-.why-btn-pill:hover .btn-circle,
-.btn-cta-banner-primary:hover .btn-circle,
-.mcard-featured-btn:hover .btn-circle,
-.btn-filter-browse:hover .btn-circle,
-.btn-read-article:hover .btn-circle,
-.btn-faq-call:hover .btn-circle,
-.btn-kitchen-quote:hover .btn-circle,
-.btn-simple-cta-call:hover .btn-circle,
-.article-cta-call-btn:hover .btn-circle,
-.sidebar-btn-call:hover .btn-circle,
-.btn-hero-secondary:hover .btn-circle,
-.btn-about-secondary:hover .btn-circle,
-.btn-emergency-call:hover .btn-circle,
-.btn-urgent-call:hover .btn-circle,
-.btn-cta-green:hover .btn-circle,
-.btn-prefooter-call:hover .btn-circle,
-.btn-faq-talk:hover .btn-circle,
-.btn-lb-call:hover .btn-circle,
-.btn-cta-banner-call:hover .btn-circle,
-.process-phone-link:hover .btn-circle,
-.standards-call-link:hover .btn-circle,
-.btn-dispatch-wa:hover .btn-circle,
-.btn-dispatch-whatsapp:hover .btn-circle,
-.btn-simple-cta-whatsapp:hover .btn-circle,
-.btn-lb-whatsapp:hover .btn-circle,
-.btn-emergency-wa:hover .btn-circle,
-.article-cta-book-btn:hover .btn-circle,
-  .btn-hero-action-primary:hover .btn-circle,
-  .btn-hero-action-call:hover .btn-circle,
-  .btn-read-full-guide:hover .btn-circle,
-.compare-card-cta:hover .btn-circle {
-  transform: translate(-50%, -50%) scale(12);
-  opacity: 1;
-  transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* Wide, full-width, card, and container action buttons:
-   Expand circles to scale(32) (1024px coverage) so organic liquid bubbles flood the entire
-   wide button edge-to-edge, completely eliminating exposed left/right caps or uncovered edges */
-.btn-bform-submit:hover .btn-circle,
-.btn-contact-submit:hover .btn-circle,
-.modal-submit-btn:hover .btn-circle,
-.nav-menu-schedule-btn:hover .btn-circle,
-.empty-cta-btn:hover .btn-circle,
-.btn-modal-call:hover .btn-circle,
-.footer-book-btn:hover .btn-circle,
-.sidebar-btn-book:hover .btn-circle,
-.sidebar-btn-call:hover .btn-circle,
-.article-cta-book-btn:hover .btn-circle,
-.article-cta-call-btn:hover .btn-circle,
-.compare-card-cta:hover .btn-circle,
-.btn-process-action:hover .btn-circle,
-.btn-kitchen-quote:hover .btn-circle,
-.btn-dispatch-call:hover .btn-circle,
-.btn-dispatch-phone:hover .btn-circle,
-.btn-dispatch-wa:hover .btn-circle,
-.btn-dispatch-whatsapp:hover .btn-circle,
-.btn-simple-cta-call:hover .btn-circle,
-.btn-simple-cta-whatsapp:hover .btn-circle,
-.btn-cta-banner-primary:hover .btn-circle,
-.btn-cta-banner-call:hover .btn-circle,
-.btn-prefooter-primary:hover .btn-circle,
-.btn-prefooter-call:hover .btn-circle,
-.btn-emergency-primary:hover .btn-circle,
-.btn-emergency-call:hover .btn-circle,
-.btn-emergency-wa:hover .btn-circle,
-.btn-urgent-book:hover .btn-circle,
-.btn-urgent-call:hover .btn-circle,
-.btn-lb-call:hover .btn-circle,
-.btn-lb-whatsapp:hover .btn-circle,
-.areas-clear-btn:hover .btn-circle,
-.mcard-featured-btn:hover .btn-circle,
-.btn-filter-browse:hover .btn-circle {
-  transform: translate(-50%, -50%) scale(32) !important;
-  opacity: 1 !important;
-}
-
-/* Responsive Edge-to-Edge Fill: on tablet & mobile screens, all buttons stretch to full container width,
-   so scale(32) ensures 100% full-width coverage with zero edge voids across all mobile viewports */
-@media (max-width: 992px) {
-  button:hover .btn-circle,
-  a:hover .btn-circle,
-  :hover > .btn-circle,
-  [class*="btn-"]:hover .btn-circle,
-  [class*="-btn"]:hover .btn-circle {
-    transform: translate(-50%, -50%) scale(32) !important;
-    opacity: 1 !important;
-  }
-}
-
-/* Staggered micro-timing — each circle arrives at a calibrated speed
-   for an organic liquid-collision look (matching the master navbar button .btn-schedule)
-   Applied universally to all buttons with opacity transition for silky smoothness */
-button:hover .btn-circle-1,
-a:hover .btn-circle-1,
-:hover > .btn-circle-1,
-[class*="btn-"]:hover .btn-circle-1,
-[class*="-btn"]:hover .btn-circle-1,
-.btn-primary:hover .btn-circle-1,
-.btn-schedule:hover .btn-circle-1,
-.nav-menu-schedule-btn:hover .btn-circle-1,
-.btn-hero-primary:hover .btn-circle-1,
-.btn-about-primary:hover .btn-circle-1,
-.btn-hero-secondary:hover .btn-circle-1,
-.btn-about-secondary:hover .btn-circle-1,
-.btn-emergency-call:hover .btn-circle-1,
-.btn-emergency-wa:hover .btn-circle-1,
-.btn-bform-submit:hover .btn-circle-1,
-.btn-dispatch-whatsapp:hover .btn-circle-1,
-.btn-dispatch-wa:hover .btn-circle-1,
-.btn-simple-cta-whatsapp:hover .btn-circle-1,
-.btn-urgent-call:hover .btn-circle-1,
-.footer-book-btn:hover .btn-circle-1,
-.btn-hero-action-primary:hover .btn-circle-1,
-.btn-hero-action-call:hover .btn-circle-1,
-.sidebar-btn-book:hover .btn-circle-1,
-.sidebar-btn-call:hover .btn-circle-1,
-.article-cta-book-btn:hover .btn-circle-1,
-.article-cta-call-btn:hover .btn-circle-1,
-.btn-read-full-guide:hover .btn-circle-1,
-.compare-card-cta:hover .btn-circle-1 {
-  transition: transform 1.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-button:hover .btn-circle-2,
-a:hover .btn-circle-2,
-:hover > .btn-circle-2,
-[class*="btn-"]:hover .btn-circle-2,
-[class*="-btn"]:hover .btn-circle-2,
-.btn-primary:hover .btn-circle-2,
-.btn-schedule:hover .btn-circle-2,
-.nav-menu-schedule-btn:hover .btn-circle-2,
-.btn-hero-primary:hover .btn-circle-2,
-.btn-about-primary:hover .btn-circle-2,
-.btn-hero-secondary:hover .btn-circle-2,
-.btn-about-secondary:hover .btn-circle-2,
-.btn-emergency-call:hover .btn-circle-2,
-.btn-emergency-wa:hover .btn-circle-2,
-.btn-bform-submit:hover .btn-circle-2,
-.btn-dispatch-whatsapp:hover .btn-circle-2,
-.btn-dispatch-wa:hover .btn-circle-2,
-.btn-simple-cta-whatsapp:hover .btn-circle-2,
-.btn-urgent-call:hover .btn-circle-2,
-.footer-book-btn:hover .btn-circle-2,
-.btn-hero-action-primary:hover .btn-circle-2,
-.btn-hero-action-call:hover .btn-circle-2,
-.sidebar-btn-book:hover .btn-circle-2,
-.sidebar-btn-call:hover .btn-circle-2,
-.article-cta-book-btn:hover .btn-circle-2,
-.article-cta-call-btn:hover .btn-circle-2,
-.btn-read-full-guide:hover .btn-circle-2,
-.compare-card-cta:hover .btn-circle-2 {
-  transition: transform 2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-button:hover .btn-circle-3,
-a:hover .btn-circle-3,
-:hover > .btn-circle-3,
-[class*="btn-"]:hover .btn-circle-3,
-[class*="-btn"]:hover .btn-circle-3,
-.btn-primary:hover .btn-circle-3,
-.btn-schedule:hover .btn-circle-3,
-.nav-menu-schedule-btn:hover .btn-circle-3,
-.btn-hero-primary:hover .btn-circle-3,
-.btn-about-primary:hover .btn-circle-3,
-.btn-hero-secondary:hover .btn-circle-3,
-.btn-about-secondary:hover .btn-circle-3,
-.btn-emergency-call:hover .btn-circle-3,
-.btn-emergency-wa:hover .btn-circle-3,
-.btn-bform-submit:hover .btn-circle-3,
-.btn-dispatch-whatsapp:hover .btn-circle-3,
-.btn-dispatch-wa:hover .btn-circle-3,
-.btn-simple-cta-whatsapp:hover .btn-circle-3,
-.btn-urgent-call:hover .btn-circle-3,
-.footer-book-btn:hover .btn-circle-3,
-.btn-hero-action-primary:hover .btn-circle-3,
-.btn-hero-action-call:hover .btn-circle-3,
-.sidebar-btn-book:hover .btn-circle-3,
-.sidebar-btn-call:hover .btn-circle-3,
-.article-cta-book-btn:hover .btn-circle-3,
-.article-cta-call-btn:hover .btn-circle-3,
-.btn-read-full-guide:hover .btn-circle-3,
-.compare-card-cta:hover .btn-circle-3 {
-  transition: transform 1.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-button:hover .btn-circle-4,
-a:hover .btn-circle-4,
-:hover > .btn-circle-4,
-[class*="btn-"]:hover .btn-circle-4,
-[class*="-btn"]:hover .btn-circle-4,
-.btn-primary:hover .btn-circle-4,
-.btn-schedule:hover .btn-circle-4,
-.nav-menu-schedule-btn:hover .btn-circle-4,
-.btn-hero-primary:hover .btn-circle-4,
-.btn-about-primary:hover .btn-circle-4,
-.btn-hero-secondary:hover .btn-circle-4,
-.btn-about-secondary:hover .btn-circle-4,
-.btn-emergency-call:hover .btn-circle-4,
-.btn-emergency-wa:hover .btn-circle-4,
-.btn-bform-submit:hover .btn-circle-4,
-.btn-dispatch-whatsapp:hover .btn-circle-4,
-.btn-dispatch-wa:hover .btn-circle-4,
-.btn-simple-cta-whatsapp:hover .btn-circle-4,
-.btn-urgent-call:hover .btn-circle-4,
-.footer-book-btn:hover .btn-circle-4,
-.btn-hero-action-primary:hover .btn-circle-4,
-.btn-hero-action-call:hover .btn-circle-4,
-.sidebar-btn-book:hover .btn-circle-4,
-.sidebar-btn-call:hover .btn-circle-4,
-.article-cta-book-btn:hover .btn-circle-4,
-.article-cta-call-btn:hover .btn-circle-4,
-.btn-read-full-guide:hover .btn-circle-4,
-.compare-card-cta:hover .btn-circle-4 {
-  transition: transform 2.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-button:hover .btn-circle-5,
-a:hover .btn-circle-5,
-:hover > .btn-circle-5,
-[class*="btn-"]:hover .btn-circle-5,
-[class*="-btn"]:hover .btn-circle-5,
-.btn-primary:hover .btn-circle-5,
-.btn-schedule:hover .btn-circle-5,
-.nav-menu-schedule-btn:hover .btn-circle-5,
-.btn-hero-primary:hover .btn-circle-5,
-.btn-about-primary:hover .btn-circle-5,
-.btn-hero-secondary:hover .btn-circle-5,
-.btn-about-secondary:hover .btn-circle-5,
-.btn-emergency-call:hover .btn-circle-5,
-.btn-emergency-wa:hover .btn-circle-5,
-.btn-bform-submit:hover .btn-circle-5,
-.btn-dispatch-whatsapp:hover .btn-circle-5,
-.btn-dispatch-wa:hover .btn-circle-5,
-.btn-simple-cta-whatsapp:hover .btn-circle-5,
-.btn-urgent-call:hover .btn-circle-5,
-.footer-book-btn:hover .btn-circle-5,
-.btn-hero-action-primary:hover .btn-circle-5,
-.btn-hero-action-call:hover .btn-circle-5,
-.sidebar-btn-book:hover .btn-circle-5,
-.sidebar-btn-call:hover .btn-circle-5,
-.article-cta-book-btn:hover .btn-circle-5,
-.article-cta-call-btn:hover .btn-circle-5,
-.btn-read-full-guide:hover .btn-circle-5,
-.compare-card-cta:hover .btn-circle-5 {
-  transition: transform 1.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-/* ==========================================================================
-   Multi-Bubble Color Combinations by Button Category
-   ========================================================================== */
-
-/* Category 1: Red Primary Action Buttons (Obsidian Black Liquid)
-   Base: Crimson Red (#d71c1b) -> Bubbles: #171717 (Default .btn-circle) */
-
-/* Category 2: Vibrant Green Emergency / Call Action Buttons
-   Base: Light Tint -> Bubbles: Vibrant WhatsApp Green (#25d366) */
-.btn-hero-secondary .btn-circle,
-.btn-about-secondary .btn-circle,
-.btn-urgent-call .btn-circle,
-.btn-cta-green .btn-circle,
-.btn-prefooter-call .btn-circle,
-.btn-faq-talk .btn-circle,
-.btn-cta-banner-call .btn-circle,
-.process-phone-link .btn-circle,
-.standards-call-link .btn-circle {
-  background-color: #25d366 !important;
-}
-
-/* Category 3: WhatsApp Action Buttons
-   Base: WhatsApp Tint -> Bubbles: Vibrant WhatsApp Green (#25d366) */
-.btn-dispatch-wa .btn-circle,
-.btn-dispatch-whatsapp .btn-circle,
-.btn-simple-cta-whatsapp .btn-circle,
-.btn-lb-whatsapp .btn-circle,
-.btn-emergency-wa .btn-circle,
-.btn-circle-green {
-  background-color: #25d366 !important;
-}
-
-/* Category 4: White / Light Elevated Card Action Buttons
-   Base: Crisp White (#ffffff) -> Bubbles: Signature Brand Crimson Red (#d71c1b) */
-.footer-book-btn .btn-circle,
-.sidebar-btn-book .btn-circle,
-.article-cta-book-btn .btn-circle,
-.compare-card-cta .btn-circle,
-.btn-process-action .btn-circle,
-.btn-why-feature-cta .btn-circle {
-  background-color: #d71c1b !important;
-}
-
-/* ==========================================================================
-   Hover Text & Icon State Management for Colored Bubble Categories
-   ========================================================================== */
-
-/* Vibrant Green Call & WhatsApp Buttons:
-   1. Stop idle pulse keyframe loops on hover so hover transform & box-shadow are 100% silky without animation collision
-   2. Expanding bubbles provide 100% of the liquid green fill without abrupt background color jumps
-   3. Text & SVG transition smoothly to crisp white above vibrant green bubbles with calibrated 0.15s delay */
+/* --------------------------------------------------------------------------
+   3. Green Call & WhatsApp Action Buttons: Fluid Green Fill & Emerald Bezel
+   (Background smoothly sweeps to solid vibrant green on hover)
+   -------------------------------------------------------------------------- */
 .btn-hero-secondary:hover,
+.btn-hero-action-call:hover,
 .btn-about-secondary:hover,
+.btn-emergency-call:hover,
 .btn-urgent-call:hover,
 .btn-cta-green:hover,
 .btn-prefooter-call:hover,
@@ -1419,19 +1222,23 @@ a:hover .btn-circle-5,
 .btn-lb-whatsapp:hover,
 .btn-emergency-wa:hover {
   animation: none !important;
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
-  border-color: #25d366 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
-  transition:
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+  border-color: #22c55e !important;
+  transform: translateY(-2.5px) !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.48),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.16),
+    0 0 0 3.5px #ffffff,
+    0 0 0 7px rgba(37, 211, 102, 0.45),
+    0 12px 28px -4px rgba(37, 211, 102, 0.45),
+    0 4px 10px rgba(0, 0, 0, 0.10) !important;
 }
 
 .btn-hero-secondary:hover svg,
+.btn-hero-action-call:hover svg,
 .btn-about-secondary:hover svg,
+.btn-emergency-call:hover svg,
 .btn-urgent-call:hover svg,
 .btn-cta-green:hover svg,
 .btn-prefooter-call:hover svg,
@@ -1448,30 +1255,38 @@ a:hover .btn-circle-5,
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
-  transition:
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    fill 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+  transform: scale(1.08);
+  transition: transform 0.3s ease, color 0.3s ease, stroke 0.3s ease, fill 0.3s ease !important;
 }
+
 .btn-emergency-wa:hover .btn-content,
 .btn-emergency-wa:hover .btn-content * {
   color: #ffffff !important;
   fill: #ffffff !important;
-  transition: color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+  transition: color 0.3s ease !important;
 }
 
-/* White Elevated Card Buttons: Text & SVG become crisp white above crimson bubbles with smooth transition */
+/* --------------------------------------------------------------------------
+   4. White Elevated Card Buttons: Smooth Red Fill & Crimson Bezel on Hover
+   -------------------------------------------------------------------------- */
 .footer-book-btn:hover,
 .sidebar-btn-book:hover,
 .article-cta-book-btn:hover,
 .compare-card-cta:hover,
 .btn-process-action:hover,
 .btn-why-feature-cta:hover {
+  animation: none !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   border-color: #d71c1b !important;
-  transition:
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+  transform: translateY(-2.5px) !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.18),
+    0 0 0 3.5px #192023,
+    0 0 0 7px rgba(255, 90, 82, 0.65),
+    0 12px 28px -4px rgba(215, 28, 27, 0.45),
+    0 4px 10px rgba(0, 0, 0, 0.12) !important;
 }
 
 .footer-book-btn:hover svg,
@@ -1482,43 +1297,138 @@ a:hover .btn-circle-5,
 .btn-why-feature-cta:hover svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
-  transition:
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
+  fill: currentColor !important;
+  transition: color 0.3s ease, stroke 0.3s ease !important;
 }
 
-/* ==========================================================================
-   Dark Theme Liquid Palettes
-   ========================================================================== */
-body.dark-theme .btn-circle {
-  background-color: #0b0e10;
+/* --------------------------------------------------------------------------
+   5. Dark Surface Adaptations in Light Mode (Footer, Dark CTA Banners)
+   -------------------------------------------------------------------------- */
+.site-footer-master .btn-schedule:hover,
+.footer-card-container button:hover,
+.footer-card-container a[class*="btn-"]:hover,
+.footer-card-container a[class*="cta-"]:hover,
+.cta-banner .btn-cta-banner-primary:hover,
+.cta-banner-navy a:hover,
+.emergency-strip-container .btn-urgent-book:hover {
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.28),
+    0 0 0 3.5px #192023,
+    0 0 0 7px rgba(255, 90, 82, 0.65),
+    0 12px 30px -4px rgba(255, 90, 82, 0.45),
+    0 0 20px rgba(215, 28, 27, 0.35) !important;
 }
 
-body.dark-theme .btn-hero-secondary .btn-circle,
-body.dark-theme .btn-about-secondary .btn-circle,
-body.dark-theme .btn-urgent-call .btn-circle,
-body.dark-theme .btn-faq-talk .btn-circle,
-body.dark-theme .btn-cta-green .btn-circle,
-body.dark-theme .btn-prefooter-call .btn-circle,
-body.dark-theme .btn-cta-banner-call .btn-circle,
-body.dark-theme .process-phone-link .btn-circle,
-body.dark-theme .standards-call-link .btn-circle {
-  background-color: #25d366 !important;
+.site-footer-master .btn-hero-secondary:hover,
+.site-footer-master .btn-dispatch-wa:hover,
+.footer-card-container .btn-dispatch-wa:hover,
+.cta-banner .btn-cta-banner-call:hover {
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.22),
+    0 0 0 3.5px #192023,
+    0 0 0 7px rgba(37, 211, 102, 0.68),
+    0 12px 30px -4px rgba(37, 211, 102, 0.50),
+    0 0 18px rgba(37, 211, 102, 0.35) !important;
 }
 
-body.dark-theme .btn-dispatch-wa .btn-circle,
-body.dark-theme .btn-dispatch-whatsapp .btn-circle,
-body.dark-theme .btn-simple-cta-whatsapp .btn-circle,
-body.dark-theme .btn-lb-whatsapp .btn-circle,
-body.dark-theme .btn-emergency-wa .btn-circle {
-  background-color: #25d366 !important;
+/* --------------------------------------------------------------------------
+   6. Dark Theme Concentric Outer-Loop Bezel & Glow Suite (body.dark-theme)
+   (High-contrast luminous outer loop - NEVER merges into dark background)
+   -------------------------------------------------------------------------- */
+body.dark-theme .btn-schedule:hover,
+body.dark-theme .nav-menu-schedule-btn:hover,
+body.dark-theme .btn-primary:hover,
+body.dark-theme .btn-hero-primary:hover,
+body.dark-theme .btn-hero-action-primary:hover,
+body.dark-theme .btn-get-started:hover,
+body.dark-theme .btn-about-primary:hover,
+body.dark-theme .btn-prefooter-primary:hover,
+body.dark-theme .btn-emergency-primary:hover,
+body.dark-theme .btn-cta-navy:hover,
+body.dark-theme .btn-urgent-book:hover,
+body.dark-theme .cta-primary-btn:hover,
+body.dark-theme .cta-showcase-btn:hover,
+body.dark-theme .btn-dispatch-call:hover,
+body.dark-theme .btn-dispatch-phone:hover,
+body.dark-theme .btn-contact-submit:hover,
+body.dark-theme .modal-submit-btn:hover,
+body.dark-theme .btn-bform-submit:hover,
+body.dark-theme .empty-cta-btn:hover,
+body.dark-theme .why-btn-pill:hover,
+body.dark-theme .btn-cta-banner-primary:hover,
+body.dark-theme .mcard-featured-btn:hover,
+body.dark-theme .btn-filter-browse:hover,
+body.dark-theme .btn-read-article:hover,
+body.dark-theme .btn-read-full-guide:hover,
+body.dark-theme .btn-faq-call:hover,
+body.dark-theme .btn-kitchen-quote:hover,
+body.dark-theme .btn-simple-cta-call:hover,
+body.dark-theme .article-cta-call-btn:hover,
+body.dark-theme .sidebar-btn-call:hover,
+body.dark-theme .btn-lb-call:hover,
+body.dark-theme .btn-kitchen-call:hover,
+body.dark-theme .btn-service-why-action:hover,
+body.dark-theme .areas-clear-btn:hover,
+body.dark-theme .pf-action-btn:hover,
+body.dark-theme .footer-book-btn:hover,
+body.dark-theme .sidebar-btn-book:hover,
+body.dark-theme .article-cta-book-btn:hover,
+body.dark-theme .compare-card-cta:hover,
+body.dark-theme .btn-process-action:hover,
+body.dark-theme .btn-why-feature-cta:hover {
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.28),
+    0 0 0 3.5px #171c1f,
+    0 0 0 7px rgba(255, 90, 82, 0.65),
+    0 12px 30px -4px rgba(255, 90, 82, 0.45),
+    0 0 20px rgba(215, 28, 27, 0.35) !important;
 }
 
-body.dark-theme .footer-book-btn .btn-circle,
-body.dark-theme .sidebar-btn-book .btn-circle,
-body.dark-theme .article-cta-book-btn .btn-circle,
-body.dark-theme .compare-card-cta .btn-circle {
-  background-color: #d71c1b;
+body.dark-theme .btn-hero-secondary:hover,
+body.dark-theme .btn-hero-action-call:hover,
+body.dark-theme .btn-about-secondary:hover,
+body.dark-theme .btn-emergency-call:hover,
+body.dark-theme .btn-urgent-call:hover,
+body.dark-theme .btn-cta-green:hover,
+body.dark-theme .btn-prefooter-call:hover,
+body.dark-theme .btn-faq-talk:hover,
+body.dark-theme .btn-cta-banner-call:hover,
+body.dark-theme .process-phone-link:hover,
+body.dark-theme .standards-call-link:hover,
+body.dark-theme .btn-dispatch-wa:hover,
+body.dark-theme .btn-dispatch-whatsapp:hover,
+body.dark-theme .btn-simple-cta-whatsapp:hover,
+body.dark-theme .btn-lb-whatsapp:hover,
+body.dark-theme .btn-emergency-wa:hover {
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
+  color: #ffffff !important;
+  border-color: #22c55e !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.22),
+    0 0 0 3.5px #171c1f,
+    0 0 0 7px rgba(37, 211, 102, 0.68),
+    0 12px 30px -4px rgba(37, 211, 102, 0.50),
+    0 0 18px rgba(37, 211, 102, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Tactile Press Feedback (:active state)
+   -------------------------------------------------------------------------- */
+.btn-schedule:active,
+.btn-primary:active,
+.btn-hero-primary:active,
+.btn-hero-secondary:active,
+[class*="btn-"]:active,
+[class*="cta-"]:active,
+[class*="-btn"]:active {
+  transform: translateY(0px) scale(0.98) !important;
 }
 
 @keyframes synchronizedButtonShine {
