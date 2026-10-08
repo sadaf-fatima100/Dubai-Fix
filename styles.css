@@ -9124,7 +9124,8 @@ body.dark-theme .trust-item svg {
     font-size: 12.5px;
   }
   .service-card-content {
-    padding: 18px 14px;
+    margin: 12px;
+    padding: 34px 16px 18px 16px;
   }
   .process-right-col {
     padding: 16px 12px;
@@ -9970,33 +9971,32 @@ body.dark-theme .service-card-item * {
   text-decoration: none !important;
 }
 body.dark-theme .service-card-content {
-  background: rgba(23, 28, 31, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 3px solid #ff5a52;
+  background: #171c1f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
     0 14px 36px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    inset 0 1px 1px rgba(255, 255, 255, 0.04);
   text-decoration: none !important;
 }
 body.dark-theme .service-card-item:hover .service-card-content {
-  background: rgba(27, 34, 38, 0.96);
-  border-color: #ff5a52;
+  background: #1c2226;
+  border-color: rgba(255, 90, 82, 0.35);
   box-shadow:
-    0 18px 44px rgba(0, 0, 0, 0.7);
-  transform: translateY(-4px);
+    0 20px 48px rgba(0, 0, 0, 0.7);
+  transform: translateY(-3px);
 }
 body.dark-theme .service-card-icon-badge {
-  background: rgba(255, 90, 82, 0.12);
-  border-color: rgba(255, 90, 82, 0.25);
-  color: #ff5a52;
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
+  border: 4px solid #171c1f;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .service-card-item:hover .service-card-icon-badge {
-  background: linear-gradient(135deg, #e02a24 0%, #d71c1b 100%);
-  border-color: #ff5a52;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  border-color: #1c2226;
   color: #ffffff;
-  transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 body.dark-theme .service-card-title {
   color: #ffffff !important;
@@ -10011,43 +10011,34 @@ body.dark-theme .service-card-desc {
   text-decoration: none !important;
 }
 body.dark-theme .service-card-btn {
-  background: transparent !important;
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
   border: none !important;
-  color: #e2e8f0 !important;
-  box-shadow: none !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 4px 14px rgba(215, 28, 27, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.2) !important;
   text-decoration: none !important;
 }
 body.dark-theme .service-card-btn span {
-  color: #e2e8f0 !important;
-  transition: color 0.25s ease, letter-spacing 0.25s ease;
-}
-body.dark-theme .service-card-btn:hover span,
-body.dark-theme .service-card-item:hover .service-card-btn span {
-  color: #ff5a52 !important;
-  letter-spacing: 0.07em;
+  color: #ffffff !important;
 }
 body.dark-theme .service-card-btn svg {
-  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
-  border: 1.5px solid rgba(255, 90, 82, 0.4);
-  color: #ffffff;
-  stroke: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 body.dark-theme .service-card-btn:hover,
 body.dark-theme .service-card-item:hover .service-card-btn {
-  background: transparent !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   border: none !important;
-  box-shadow: none !important;
-  transform: none !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 8px 22px rgba(215, 28, 27, 0.5),
+    0 4px 10px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(-2px);
 }
 body.dark-theme .service-card-btn:hover svg,
 body.dark-theme .service-card-item:hover .service-card-btn svg {
-  background: linear-gradient(135deg, #ff5a52 0%, #e02a24 100%) !important;
-  border-color: #ff5a52 !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  transform: translateX(4px) scale(1.06);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transform: translateX(4px);
 }
 body.dark-theme .services-dispatch-bar {
   background-color: #171c1f;
