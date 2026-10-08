@@ -1100,7 +1100,6 @@ button[id*="phone"] svg {
 .btn-urgent-book:hover,
 .cta-primary-btn:hover,
 .cta-showcase-btn:hover,
-.btn-dispatch-call:hover,
 .btn-dispatch-phone:hover,
 .btn-contact-submit:hover,
 .modal-submit-btn:hover,
@@ -1113,15 +1112,14 @@ button[id*="phone"] svg {
 .btn-read-article:hover,
 .btn-read-full-guide:hover,
 .btn-faq-call:hover,
-.btn-kitchen-quote:hover,
 .btn-simple-cta-call:hover,
 .article-cta-call-btn:hover,
 .sidebar-btn-call:hover,
 .btn-lb-call:hover,
-.btn-kitchen-call:hover,
 .btn-service-why-action:hover,
 .areas-clear-btn:hover,
-.pf-action-btn:hover {
+.pf-action-btn:hover,
+:not(.areas-cta-banner) > .btn-dispatch-call:hover {
   animation: none !important;
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
@@ -1134,6 +1132,46 @@ button[id*="phone"] svg {
     0 0 0 7px rgba(215, 28, 27, 0.38),
     0 12px 28px -4px rgba(215, 28, 27, 0.42),
     0 4px 10px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* Zero Black Text Standard: All children of Red Buttons guaranteed crisp white on hover */
+.btn-schedule:hover > span,
+.btn-schedule:hover strong,
+.nav-menu-schedule-btn:hover > span,
+.btn-primary:hover > span,
+.btn-hero-primary:hover > span,
+.btn-hero-action-primary:hover > span,
+.btn-get-started:hover > span,
+.btn-about-primary:hover > span,
+.btn-prefooter-primary:hover > span,
+.btn-emergency-primary:hover > span,
+.btn-cta-navy:hover > span,
+.btn-urgent-book:hover > span,
+.cta-primary-btn:hover > span,
+.cta-showcase-btn:hover > span,
+.btn-dispatch-phone:hover > span,
+.btn-contact-submit:hover > span,
+.modal-submit-btn:hover > span,
+.btn-bform-submit:hover > span,
+.empty-cta-btn:hover > span,
+.why-btn-pill:hover > span,
+.btn-cta-banner-primary:hover > span,
+.mcard-featured-btn:hover > span,
+.btn-filter-browse:hover > span,
+.btn-read-article:hover > span,
+.btn-read-full-guide:hover > span,
+.btn-faq-call:hover > span,
+.btn-simple-cta-call:hover > span,
+.article-cta-call-btn:hover > span,
+.sidebar-btn-call:hover > span,
+.btn-lb-call:hover > span,
+.btn-service-why-action:hover > span,
+.pf-action-btn:hover > span,
+:not(.areas-cta-banner) > .btn-dispatch-call:hover > span,
+.btn-dispatch-option.btn-dispatch-call:hover > *,
+.btn-dispatch-option.btn-dispatch-call:hover .dispatch-label,
+.btn-dispatch-option.btn-dispatch-call:hover .dispatch-val {
+  color: #ffffff !important;
 }
 
 .btn-schedule:hover svg,
@@ -1149,7 +1187,6 @@ button[id*="phone"] svg {
 .btn-urgent-book:hover svg,
 .cta-primary-btn:hover svg,
 .cta-showcase-btn:hover svg,
-.btn-dispatch-call:hover svg,
 .btn-dispatch-phone:hover svg,
 .btn-contact-submit:hover svg,
 .modal-submit-btn:hover svg,
@@ -1162,15 +1199,14 @@ button[id*="phone"] svg {
 .btn-read-article:hover svg,
 .btn-read-full-guide:hover svg,
 .btn-faq-call:hover svg,
-.btn-kitchen-quote:hover svg,
 .btn-simple-cta-call:hover svg,
 .article-cta-call-btn:hover svg,
 .sidebar-btn-call:hover svg,
 .btn-lb-call:hover svg,
-.btn-kitchen-call:hover svg,
 .btn-service-why-action:hover svg,
 .areas-clear-btn:hover svg,
-.pf-action-btn:hover svg {
+.pf-action-btn:hover svg,
+:not(.areas-cta-banner) > .btn-dispatch-call:hover svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
@@ -1197,7 +1233,8 @@ button[id*="phone"] svg {
 .btn-dispatch-whatsapp:hover,
 .btn-simple-cta-whatsapp:hover,
 .btn-lb-whatsapp:hover,
-.btn-emergency-wa:hover {
+.btn-emergency-wa:hover,
+.btn-dispatch-option.btn-dispatch-wa:hover {
   animation: none !important;
   background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
@@ -1210,6 +1247,29 @@ button[id*="phone"] svg {
     0 0 0 7px rgba(37, 211, 102, 0.45),
     0 12px 28px -4px rgba(37, 211, 102, 0.45),
     0 4px 10px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* Zero Black Text Standard: All children of Green Buttons guaranteed crisp white on hover */
+.btn-hero-secondary:hover > span,
+.btn-hero-action-call:hover > span,
+.btn-about-secondary:hover > span,
+.btn-emergency-call:hover > span,
+.btn-urgent-call:hover > span,
+.btn-cta-green:hover > span,
+.btn-prefooter-call:hover > span,
+.btn-faq-talk:hover > span,
+.btn-cta-banner-call:hover > span,
+.process-phone-link:hover > span,
+.standards-call-link:hover > span,
+.btn-dispatch-wa:hover > span,
+.btn-dispatch-whatsapp:hover > span,
+.btn-simple-cta-whatsapp:hover > span,
+.btn-lb-whatsapp:hover > span,
+.btn-emergency-wa:hover > span,
+.btn-dispatch-option.btn-dispatch-wa:hover > *,
+.btn-dispatch-option.btn-dispatch-wa:hover .dispatch-label,
+.btn-dispatch-option.btn-dispatch-wa:hover .dispatch-val {
+  color: #ffffff !important;
 }
 
 .btn-hero-secondary:hover svg,
@@ -1227,7 +1287,8 @@ button[id*="phone"] svg {
 .btn-dispatch-whatsapp:hover svg,
 .btn-simple-cta-whatsapp:hover svg,
 .btn-lb-whatsapp:hover svg,
-.btn-emergency-wa:hover svg {
+.btn-emergency-wa:hover svg,
+.btn-dispatch-option.btn-dispatch-wa:hover svg {
   animation: none !important;
   color: #ffffff !important;
   stroke: #ffffff !important;
@@ -1244,14 +1305,113 @@ button[id*="phone"] svg {
 }
 
 /* --------------------------------------------------------------------------
-   4. White Elevated Card Buttons: Smooth Red Fill & Crimson Bezel on Hover
+   4. WHITE BUTTONS ON RED CONTAINERS (CRITICAL CONTRAST FIX - NEVER MERGE!)
+   Applies to:
+   - .btn-process-action inside .process-featured-card (Process Section)
+   - .areas-cta-banner .btn-dispatch-call inside .areas-cta-banner (Areas Banner)
+   - .btn-why-feature-cta inside .service-why-feature-card (Service Pages)
+   -------------------------------------------------------------------------- */
+.btn-process-action,
+.areas-cta-banner .btn-dispatch-call,
+.btn-why-feature-cta {
+  background: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), inset 0 1px 0 #ffffff !important;
+}
+
+.btn-process-action > span,
+.areas-cta-banner .btn-dispatch-call > span,
+.btn-why-feature-cta > span {
+  color: var(--brand-accent, #d71c1b) !important;
+  transition: color 0.25s ease !important;
+}
+
+.btn-process-action:hover,
+.areas-cta-banner .btn-dispatch-call:hover,
+.btn-why-feature-cta:hover {
+  animation: none !important;
+  background: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2.5px) scale(1.02) !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 1),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.08),
+    0 0 0 3.5px rgba(255, 255, 255, 0.35),
+    0 0 0 7px rgba(255, 255, 255, 0.65),
+    0 16px 36px rgba(0, 0, 0, 0.40),
+    0 0 24px rgba(255, 255, 255, 0.45) !important;
+}
+
+.btn-process-action:hover > span,
+.btn-process-action:hover strong,
+.areas-cta-banner .btn-dispatch-call:hover > span,
+.areas-cta-banner .btn-dispatch-call:hover strong,
+.btn-why-feature-cta:hover > span,
+.btn-why-feature-cta:hover strong {
+  color: var(--brand-accent, #d71c1b) !important;
+}
+
+.btn-process-action:hover svg,
+.btn-why-feature-cta:hover svg {
+  background-color: var(--brand-accent, #d71c1b) !important;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: currentColor !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+  transform: translateX(3px) !important;
+}
+
+.areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon,
+.areas-cta-banner .btn-dispatch-call:hover svg {
+  color: var(--brand-accent, #d71c1b) !important;
+  fill: currentColor !important;
+  animation: phoneRing 0.5s ease infinite alternate !important;
+}
+
+/* Dark Theme variant for white buttons on red containers */
+body.dark-theme .btn-process-action,
+body.dark-theme .areas-cta-banner .btn-dispatch-call,
+body.dark-theme .btn-why-feature-cta {
+  background: #ffffff !important;
+  color: #192023 !important;
+  border-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.dark-theme .btn-process-action > span,
+body.dark-theme .areas-cta-banner .btn-dispatch-call > span,
+body.dark-theme .btn-why-feature-cta > span {
+  color: #192023 !important;
+}
+
+body.dark-theme .btn-process-action:hover,
+body.dark-theme .areas-cta-banner .btn-dispatch-call:hover,
+body.dark-theme .btn-why-feature-cta:hover {
+  background: #ffffff !important;
+  color: #d71c1b !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 1),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.12),
+    0 0 0 3.5px rgba(255, 255, 255, 0.40),
+    0 0 0 7px rgba(255, 255, 255, 0.70),
+    0 18px 40px rgba(0, 0, 0, 0.60),
+    0 0 28px rgba(255, 255, 255, 0.50) !important;
+}
+
+body.dark-theme .btn-process-action:hover > span,
+body.dark-theme .areas-cta-banner .btn-dispatch-call:hover > span,
+body.dark-theme .btn-why-feature-cta:hover > span {
+  color: #d71c1b !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. White Elevated Card Buttons on Dark Containers (Footer & Sidebar)
    -------------------------------------------------------------------------- */
 .footer-book-btn:hover,
 .sidebar-btn-book:hover,
 .article-cta-book-btn:hover,
-.compare-card-cta:hover,
-.btn-process-action:hover,
-.btn-why-feature-cta:hover {
+.compare-card-cta:hover {
   animation: none !important;
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
@@ -1266,12 +1426,17 @@ button[id*="phone"] svg {
     0 4px 10px rgba(0, 0, 0, 0.12) !important;
 }
 
+.footer-book-btn:hover > span,
+.sidebar-btn-book:hover > span,
+.article-cta-book-btn:hover > span,
+.compare-card-cta:hover > span {
+  color: #ffffff !important;
+}
+
 .footer-book-btn:hover svg,
 .sidebar-btn-book:hover svg,
 .article-cta-book-btn:hover svg,
-.compare-card-cta:hover svg,
-.btn-process-action:hover svg,
-.btn-why-feature-cta:hover svg {
+.compare-card-cta:hover svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
@@ -1279,7 +1444,57 @@ button[id*="phone"] svg {
 }
 
 /* --------------------------------------------------------------------------
-   5. Dark Surface Adaptations in Light Mode (Footer, Dark CTA Banners)
+   6. Kitchen Showcase Interactive Buttons (High Contrast in Dark Bay)
+   -------------------------------------------------------------------------- */
+.btn-kitchen-quote:hover {
+  animation: none !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  transform: translateY(-2.5px) !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.18),
+    0 0 0 3.5px #1b2226,
+    0 0 0 7px rgba(255, 90, 82, 0.65),
+    0 12px 28px -4px rgba(215, 28, 27, 0.45),
+    0 4px 10px rgba(0, 0, 0, 0.12) !important;
+}
+
+.btn-kitchen-quote:hover > span {
+  color: #ffffff !important;
+}
+
+.btn-kitchen-quote:hover .btn-kitchen-arrow-circle {
+  background: #ffffff !important;
+  color: #d71c1b !important;
+  transform: translateX(3px) !important;
+}
+
+.btn-kitchen-quote:hover .btn-kitchen-arrow-circle svg {
+  color: #d71c1b !important;
+  stroke: #d71c1b !important;
+}
+
+.btn-kitchen-call:hover {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  transform: translateY(-2.5px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.btn-kitchen-call:hover > span {
+  color: #ffffff !important;
+}
+
+.btn-kitchen-call:hover svg {
+  color: #34d399 !important;
+  stroke: #34d399 !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Dark Surface Adaptations in Light Mode (Footer, Dark CTA Banners)
    -------------------------------------------------------------------------- */
 .site-footer-master .btn-schedule:hover,
 .footer-card-container button:hover,
@@ -1287,7 +1502,8 @@ button[id*="phone"] svg {
 .footer-card-container a[class*="cta-"]:hover,
 .cta-banner .btn-cta-banner-primary:hover,
 .cta-banner-navy a:hover,
-.emergency-strip-container .btn-urgent-book:hover {
+.emergency-strip-container .btn-urgent-book:hover,
+.cta-showcase-container .cta-primary-btn:hover {
   box-shadow:
     inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
     inset 0 -1.5px 2px rgba(0, 0, 0, 0.28),
@@ -1311,7 +1527,7 @@ button[id*="phone"] svg {
 }
 
 /* --------------------------------------------------------------------------
-   6. Dark Theme Concentric Outer-Loop Bezel & Glow Suite (body.dark-theme)
+   8. Dark Theme Concentric Outer-Loop Bezel & Glow Suite (body.dark-theme)
    (High-contrast luminous outer loop - NEVER merges into dark background)
    -------------------------------------------------------------------------- */
 body.dark-theme .btn-schedule:hover,
@@ -1327,7 +1543,6 @@ body.dark-theme .btn-cta-navy:hover,
 body.dark-theme .btn-urgent-book:hover,
 body.dark-theme .cta-primary-btn:hover,
 body.dark-theme .cta-showcase-btn:hover,
-body.dark-theme .btn-dispatch-call:hover,
 body.dark-theme .btn-dispatch-phone:hover,
 body.dark-theme .btn-contact-submit:hover,
 body.dark-theme .modal-submit-btn:hover,
@@ -1340,12 +1555,10 @@ body.dark-theme .btn-filter-browse:hover,
 body.dark-theme .btn-read-article:hover,
 body.dark-theme .btn-read-full-guide:hover,
 body.dark-theme .btn-faq-call:hover,
-body.dark-theme .btn-kitchen-quote:hover,
 body.dark-theme .btn-simple-cta-call:hover,
 body.dark-theme .article-cta-call-btn:hover,
 body.dark-theme .sidebar-btn-call:hover,
 body.dark-theme .btn-lb-call:hover,
-body.dark-theme .btn-kitchen-call:hover,
 body.dark-theme .btn-service-why-action:hover,
 body.dark-theme .areas-clear-btn:hover,
 body.dark-theme .pf-action-btn:hover,
@@ -1353,8 +1566,7 @@ body.dark-theme .footer-book-btn:hover,
 body.dark-theme .sidebar-btn-book:hover,
 body.dark-theme .article-cta-book-btn:hover,
 body.dark-theme .compare-card-cta:hover,
-body.dark-theme .btn-process-action:hover,
-body.dark-theme .btn-why-feature-cta:hover {
+body.dark-theme :not(.areas-cta-banner) > .btn-dispatch-call:hover {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.45) !important;
@@ -1362,6 +1574,18 @@ body.dark-theme .btn-why-feature-cta:hover {
     inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
     inset 0 -1.5px 2px rgba(0, 0, 0, 0.28),
     0 0 0 3.5px #171c1f,
+    0 0 0 7px rgba(255, 90, 82, 0.65),
+    0 12px 30px -4px rgba(255, 90, 82, 0.45),
+    0 0 20px rgba(215, 28, 27, 0.35) !important;
+}
+
+body.dark-theme .btn-kitchen-quote:hover {
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  color: #ffffff !important;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.28),
+    0 0 0 3.5px #12171a,
     0 0 0 7px rgba(255, 90, 82, 0.65),
     0 12px 30px -4px rgba(255, 90, 82, 0.45),
     0 0 20px rgba(215, 28, 27, 0.35) !important;
@@ -1382,7 +1606,8 @@ body.dark-theme .btn-dispatch-wa:hover,
 body.dark-theme .btn-dispatch-whatsapp:hover,
 body.dark-theme .btn-simple-cta-whatsapp:hover,
 body.dark-theme .btn-lb-whatsapp:hover,
-body.dark-theme .btn-emergency-wa:hover {
+body.dark-theme .btn-emergency-wa:hover,
+body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
   background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #22c55e !important;
@@ -1396,7 +1621,7 @@ body.dark-theme .btn-emergency-wa:hover {
 }
 
 /* --------------------------------------------------------------------------
-   7. Tactile Press Feedback (:active state)
+   9. Tactile Press Feedback (:active state)
    -------------------------------------------------------------------------- */
 .btn-schedule:active,
 .btn-primary:active,
@@ -2660,27 +2885,29 @@ a.service-card-item *,
   transition:
     color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
     stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    fill 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s !important;
 }
-  fill: currentColor !important;
-} /* Responsive Breakpoints for Services Dispatch Bar */
+
+/* Responsive Breakpoints for Services Dispatch Bar */
 @media (max-width: 900px) {
   .services-dispatch-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 18px 20px;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 18px 20px !important;
+  }
+  .services-dispatch-left {
+    width: 100% !important;
   }
   .services-dispatch-actions {
-    width: auto;
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
   }
   .btn-dispatch-phone,
   .btn-dispatch-whatsapp {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     width: auto;
     min-height: 44px;
     padding: 10px 20px;
@@ -2691,20 +2918,20 @@ a.service-card-item *,
 }
 @media (max-width: 520px) {
   .services-dispatch-actions {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    gap: 10px;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    gap: 10px !important;
   }
   .btn-dispatch-phone,
   .btn-dispatch-whatsapp {
-    width: 100%;
-    max-width: 100%;
-    min-height: 44px;
-    justify-content: center;
-    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
   }
 } /* ==========================================================================   Why Choose Us Section (Exact Design Replicated from media_1790252135064.png)   ========================================================================== */
 .why-choose-section {
@@ -13397,25 +13624,28 @@ body.dark-theme .hf-card-caption {
   height: 38px;
   min-width: 38px;
   border-radius: 50%;
-  background: #0f1315;
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.45),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--brand-accent, #d71c1b);
   flex-shrink: 0;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hero-floating-service-card:hover .hf-card-icon-wrap {
-  background: #000000;
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: scale(1.1);
-  box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.65),
-    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--brand-accent-hover, #b00403);
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.hf-card-icon-wrap svg {
+  display: block;
+  stroke: currentColor;
+  flex-shrink: 0;
 }
 
 .hf-card-meta-text {
@@ -24119,40 +24349,3 @@ a:has(.btn-circle) > *:not(.btn-circle) {
   pointer-events: none !important;
 }
 
-/* Ensure primary red buttons containing .btn-circle retain their signature background gradient on hover
-   without abrupt gradient-swap snapping, matching the silky organic collision of .btn-schedule */
-.btn-schedule:hover,
-.nav-menu-schedule-btn:hover,
-.btn-hero-primary:hover,
-.btn-about-primary:hover,
-.cta-primary-btn:hover,
-.btn-faq-call:hover,
-.btn-filter-browse:hover,
-.btn-service-why-action:hover,
-.btn-hero-action-primary:hover,
-.modal-submit-btn:hover,
-.btn-bform-submit:hover,
-.empty-cta-btn:hover,
-.btn-dispatch-call:hover,
-.btn-simple-cta-call:hover,
-.btn-kitchen-quote:hover {
-  background: var(--btn-gradient-primary) !important;
-}
-
-body.dark-theme .btn-schedule:hover,
-body.dark-theme .nav-menu-schedule-btn:hover,
-body.dark-theme .btn-hero-primary:hover,
-body.dark-theme .btn-about-primary:hover,
-body.dark-theme .cta-primary-btn:hover,
-body.dark-theme .btn-faq-call:hover,
-body.dark-theme .btn-filter-browse:hover,
-body.dark-theme .btn-service-why-action:hover,
-body.dark-theme .btn-hero-action-primary:hover,
-body.dark-theme .modal-submit-btn:hover,
-body.dark-theme .btn-bform-submit:hover,
-body.dark-theme .empty-cta-btn:hover,
-body.dark-theme .btn-dispatch-call:hover,
-body.dark-theme .btn-simple-cta-call:hover,
-body.dark-theme .btn-kitchen-quote:hover {
-  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
-}
