@@ -1073,7 +1073,8 @@ button[id*="phone"] svg {
 .article-cta-book-btn,
 .compare-card-cta,
 .btn-process-action,
-.btn-why-feature-cta {
+.btn-why-feature-cta,
+.service-card-btn {
   transition:
     transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -1096,10 +1097,16 @@ button[id*="phone"] svg {
 .btn-about-primary:hover,
 .btn-prefooter-primary:hover,
 .btn-emergency-primary:hover,
+.btn-emergency-call:hover,
+.btn-hub-open-maps:hover,
 .btn-cta-navy:hover,
 .btn-urgent-book:hover,
 .cta-primary-btn:hover,
 .cta-showcase-btn:hover,
+.cta-showcase-container .cta-primary-btn:hover,
+.compare-card-cta:hover,
+.service-card-btn:hover,
+.service-card-item:hover .service-card-btn,
 .btn-dispatch-phone:hover,
 .btn-contact-submit:hover,
 .modal-submit-btn:hover,
@@ -1149,6 +1156,10 @@ button[id*="phone"] svg {
 .btn-urgent-book:hover > span,
 .cta-primary-btn:hover > span,
 .cta-showcase-btn:hover > span,
+.cta-showcase-container .cta-primary-btn:hover > span,
+.compare-card-cta:hover > span,
+.service-card-btn:hover > span,
+.service-card-item:hover .service-card-btn > span,
 .btn-dispatch-phone:hover > span,
 .btn-contact-submit:hover > span,
 .modal-submit-btn:hover > span,
@@ -1187,6 +1198,10 @@ button[id*="phone"] svg {
 .btn-urgent-book:hover svg,
 .cta-primary-btn:hover svg,
 .cta-showcase-btn:hover svg,
+.cta-showcase-container .cta-primary-btn:hover svg,
+.compare-card-cta:hover svg,
+.service-card-btn:hover svg,
+.service-card-item:hover .service-card-btn svg,
 .btn-dispatch-phone:hover svg,
 .btn-contact-submit:hover svg,
 .modal-submit-btn:hover svg,
@@ -1413,8 +1428,7 @@ body.dark-theme .btn-why-feature-cta:hover > span {
    -------------------------------------------------------------------------- */
 .footer-book-btn:hover,
 .sidebar-btn-book:hover,
-.article-cta-book-btn:hover,
-.compare-card-cta:hover {
+.article-cta-book-btn:hover {
   animation: none !important;
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
@@ -1431,15 +1445,13 @@ body.dark-theme .btn-why-feature-cta:hover > span {
 
 .footer-book-btn:hover > span,
 .sidebar-btn-book:hover > span,
-.article-cta-book-btn:hover > span,
-.compare-card-cta:hover > span {
+.article-cta-book-btn:hover > span {
   color: #ffffff !important;
 }
 
 .footer-book-btn:hover svg,
 .sidebar-btn-book:hover svg,
-.article-cta-book-btn:hover svg,
-.compare-card-cta:hover svg {
+.article-cta-book-btn:hover svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
@@ -1505,8 +1517,7 @@ body.dark-theme .btn-why-feature-cta:hover > span {
 .footer-card-container a[class*="cta-"]:hover,
 .cta-banner .btn-cta-banner-primary:hover,
 .cta-banner-navy a:hover,
-.emergency-strip-container .btn-urgent-book:hover,
-.cta-showcase-container .cta-primary-btn:hover {
+.emergency-strip-container .btn-urgent-book:hover {
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.25),
@@ -1546,6 +1557,9 @@ body.dark-theme .btn-cta-navy:hover,
 body.dark-theme .btn-urgent-book:hover,
 body.dark-theme .cta-primary-btn:hover,
 body.dark-theme .cta-showcase-btn:hover,
+body.dark-theme .cta-showcase-container .cta-primary-btn:hover,
+body.dark-theme .service-card-btn:hover,
+body.dark-theme .service-card-item:hover .service-card-btn,
 body.dark-theme .btn-dispatch-phone:hover,
 body.dark-theme .btn-contact-submit:hover,
 body.dark-theme .modal-submit-btn:hover,
@@ -1633,6 +1647,9 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
 .btn-primary:active,
 .btn-hero-primary:active,
 .btn-hero-secondary:active,
+.service-card-btn:active,
+.compare-card-cta:active,
+.cta-primary-btn:active,
 [class*="btn-"]:active,
 [class*="cta-"]:active,
 [class*="-btn"]:active {
@@ -2500,8 +2517,15 @@ a.service-card-item *,
 .service-card-item:hover .service-card-btn {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: none !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px) !important;
+  box-shadow:
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.20),
+    0 0 0 2px #ffffff,
+    0 0 0 3.5px rgba(25, 32, 35, 0.14),
+    0 8px 20px -3px rgba(15, 23, 42, 0.16),
+    0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 .service-card-btn:hover svg,
 .service-card-item:hover .service-card-btn svg {
@@ -9938,24 +9962,7 @@ body.dark-theme .sidebar-btn-call {
   border: 1px solid rgba(255, 255, 255, 0.22) !important;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45) !important;
 }
-body.dark-theme .btn-hero-primary:hover,
-body.dark-theme .btn-schedule:hover,
-body.dark-theme .nav-menu-schedule-btn:hover,
-body.dark-theme .btn-primary:hover,
-body.dark-theme .btn-about-primary:hover,
-body.dark-theme .btn-prefooter-call:hover,
-body.dark-theme .btn-prefooter-primary:hover,
-body.dark-theme .modal-submit-btn:hover,
-body.dark-theme .btn-faq-call:hover,
-body.dark-theme .article-cta-call-btn:hover,
-body.dark-theme .sidebar-btn-call:hover,
-body.dark-theme .cta-primary-btn:hover,
-body.dark-theme .empty-cta-btn:hover,
-body.dark-theme .btn-dispatch-phone:hover,
-body.dark-theme .btn-filter-browse:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6) !important;
-  transform: translateY(-2px);
-}
+
 body.dark-theme .hero-emergency-link {
   color: #cbd5e1;
 }
@@ -10153,12 +10160,20 @@ body.dark-theme .service-card-item:hover .service-card-btn {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   border: none !important;
   color: #ffffff !important;
-  box-shadow: none !important;
-  transform: translateY(-2px);
+  transform: translateY(-2px) !important;
+  box-shadow:
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
+    0 0 0 2px #171c1f,
+    0 0 0 3.5px rgba(255, 255, 255, 0.20),
+    0 8px 24px -3px rgba(0, 0, 0, 0.60),
+    0 2px 6px rgba(0, 0, 0, 0.35) !important;
 }
 body.dark-theme .service-card-btn:hover svg,
 body.dark-theme .service-card-item:hover .service-card-btn svg {
   transform: translateX(4px);
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 body.dark-theme .services-dispatch-bar {
   background-color: #171c1f;
@@ -12957,15 +12972,6 @@ body.dark-theme .emergency-pillar-item:hover {
     0 2px 6px rgba(0, 0, 0, 0.25);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.cta-primary-btn:hover {
-  background: var(--btn-gradient-hover);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow:
-    0 10px 26px rgba(0, 0, 0, 0.6),
-    0 3px 8px rgba(0, 0, 0, 0.3);
-}
 .cta-primary-btn svg {
   flex-shrink: 0;
 } /* --- Center Column: Cutout Technician (Zero Empty Space) --- */
@@ -13104,12 +13110,6 @@ body.dark-theme .cta-primary-btn {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
-}
-body.dark-theme .cta-primary-btn:hover {
-  background: var(--btn-gradient-hover);
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
 }
 body.dark-theme .cta-feature-card {
   background: #171c1f;
@@ -16441,37 +16441,12 @@ body.dark-theme .service-why-feature-card:hover {
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
 }
-.btn-why-feature-cta:hover {
-  background-color: #ffffff;
-  color: var(--brand-accent, #d71c1b);
-  transform: translateY(-2px) scale(1.015);
-  box-shadow:
-    0 14px 32px rgba(0, 0, 0, 0.35),
-    0 0 24px rgba(255, 255, 255, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
-}
-.btn-why-feature-cta:hover span {
-  color: var(--brand-accent, #d71c1b);
-}
-.btn-why-feature-cta:hover svg {
-  background-color: var(--brand-accent, #d71c1b);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transform: translateX(2px);
-}
-.btn-why-feature-cta:active {
-  transform: translateY(0) scale(0.98);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Dark Theme Integration for btn-why-feature-cta */
+/* Dark Theme Integration for btn-why-feature-cta idle state */
 body.dark-theme .btn-why-feature-cta {
   background-color: #ffffff;
   color: #192023;
   border-color: rgba(255, 255, 255, 0.9);
-  box-shadow:
-    0 10px 28px rgba(0, 0, 0, 0.5),
-    0 0 16px rgba(215, 28, 27, 0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 body.dark-theme .btn-why-feature-cta span {
   color: #192023;
@@ -16479,20 +16454,6 @@ body.dark-theme .btn-why-feature-cta span {
 body.dark-theme .btn-why-feature-cta svg {
   background-color: #fdf2f2;
   color: #ff5a52;
-}
-body.dark-theme .btn-why-feature-cta:hover {
-  background-color: #ffffff;
-  color: #ff5a52;
-  box-shadow:
-    0 16px 36px rgba(0, 0, 0, 0.65),
-    0 0 28px rgba(215, 28, 27, 0.35);
-}
-body.dark-theme .btn-why-feature-cta:hover span {
-  color: #ff5a52;
-}
-body.dark-theme .btn-why-feature-cta:hover svg {
-  background-color: #ff5a52;
-  color: #ffffff;
 }
 .why-feature-visual {
   position: relative;
@@ -17621,12 +17582,12 @@ body.dark-theme .portfolio-hero-row .hero-description {
 }
 body.dark-theme .pf-collage-card {
   background: #171c1f !important;
-  border-color: #2a3136 !important;
+  border: 2px solid #ff5a52 !important;
   box-shadow: none !important;
 }
 body.dark-theme .pf-collage-card:hover {
-  border-color: #ff5a52 !important;
-  box-shadow: 0 0 0 3px rgba(255, 90, 82, 0.2) !important;
+  border-color: #ff837d !important;
+  box-shadow: 0 0 0 3px rgba(255, 90, 82, 0.25) !important;
 }
 .pf-collage-img {
   width: 100%;
@@ -17681,6 +17642,9 @@ body.dark-theme .pf-collage-card:hover {
 } /* Text Banner Card Overlay ("VERIFIED REPAIR") */
 .pf-collage-card.highlight-card {
   border: 2px solid var(--brand-accent, #d71c1b);
+}
+body.dark-theme .pf-collage-card.highlight-card {
+  border-color: #ff5a52 !important;
 }
 .pf-collage-text-banner {
   position: absolute;
