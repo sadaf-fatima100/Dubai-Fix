@@ -24,7 +24,6 @@
   --accent-purple-dark: var(--accent-navy-dark);
   --border-light: #e3e7e9;
   --border-active: rgba(215, 28, 27, 0.35);
-  --btn-moat-color: #ffffff;
   --btn-gradient-primary: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
   --btn-gradient-hover: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
   --shadow-card: 0 20px 45px rgba(25, 32, 35, 0.07);
@@ -1076,17 +1075,17 @@ button[id*="phone"] svg {
 .btn-process-action,
 .btn-why-feature-cta {
   transition:
-    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    background 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    color 0.3s ease !important;
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.25s ease !important;
   will-change: transform, box-shadow;
 }
 
 /* --------------------------------------------------------------------------
-   2. Red Primary Action Buttons: Concentric Outer-Loop Bezel & Elevation
-   (Background STAYS vivid Crimson Red; outer concentric loop frames the pill)
+   2. Red Primary Action Buttons: Fine Tactile Trench Bezel & Clean Ambient Shadow
+   (Background STAYS vivid Crimson Red; fine 1.5px neutral track lip, ZERO red shadow)
    -------------------------------------------------------------------------- */
 .btn-schedule:hover,
 .nav-menu-schedule-btn:hover,
@@ -1125,15 +1124,14 @@ button[id*="phone"] svg {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.4) !important;
-  transform: translateY(-2.5px) !important;
+  transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.18),
-    0 0 0 3.5px var(--btn-moat-color, #ffffff),
-    0 0 0 7px rgba(215, 28, 27, 0.40),
-    0 0 0 11.5px rgba(215, 28, 27, 0.14),
-    0 14px 30px -4px rgba(215, 28, 27, 0.42),
-    0 4px 10px rgba(0, 0, 0, 0.08) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.20),
+    0 0 0 2px #ffffff,
+    0 0 0 3.5px rgba(25, 32, 35, 0.14),
+    0 8px 20px -3px rgba(15, 23, 42, 0.16),
+    0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Zero Black Text Standard: All children of Red Buttons guaranteed crisp white on hover */
@@ -1212,8 +1210,8 @@ button[id*="phone"] svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
-  transform: translateX(3.5px) scale(1.04);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease !important;
+  transform: translateX(3px);
+  transition: transform 0.3s ease, color 0.3s ease !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1241,15 +1239,14 @@ button[id*="phone"] svg {
   background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #22c55e !important;
-  transform: translateY(-2.5px) !important;
+  transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.16),
-    0 0 0 3.5px var(--btn-moat-color, #ffffff),
-    0 0 0 7px rgba(37, 211, 102, 0.45),
-    0 0 0 11.5px rgba(37, 211, 102, 0.15),
-    0 14px 30px -4px rgba(37, 211, 102, 0.45),
-    0 4px 10px rgba(0, 0, 0, 0.08) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.48),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.18),
+    0 0 0 2px #ffffff,
+    0 0 0 3.5px rgba(22, 101, 52, 0.22),
+    0 8px 20px -3px rgba(15, 23, 42, 0.16),
+    0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Zero Black Text Standard: All children of Green Buttons guaranteed crisp white on hover */
@@ -1296,8 +1293,8 @@ button[id*="phone"] svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: currentColor !important;
-  transform: scale(1.08) rotate(-4deg);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease, stroke 0.3s ease, fill 0.3s ease !important;
+  transform: scale(1.08);
+  transition: transform 0.3s ease, color 0.3s ease, stroke 0.3s ease, fill 0.3s ease !important;
 }
 
 .btn-emergency-wa:hover .btn-content,
@@ -1337,15 +1334,14 @@ button[id*="phone"] svg {
   background: #ffffff !important;
   color: var(--brand-accent, #d71c1b) !important;
   border-color: #ffffff !important;
-  transform: translateY(-2.5px) scale(1.02) !important;
+  transform: translateY(-2px) scale(1.015) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 1),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.08),
-    0 0 0 3.5px rgba(255, 255, 255, 0.35),
-    0 0 0 7px rgba(255, 255, 255, 0.70),
-    0 0 0 12px rgba(255, 255, 255, 0.20),
-    0 16px 36px rgba(0, 0, 0, 0.40),
-    0 0 24px rgba(255, 255, 255, 0.45) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 1),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.08),
+    0 0 0 2px rgba(0, 0, 0, 0.14),
+    0 0 0 3.5px rgba(255, 255, 255, 0.85),
+    0 8px 22px -3px rgba(0, 0, 0, 0.30),
+    0 2px 6px rgba(0, 0, 0, 0.12) !important;
 }
 
 .btn-process-action:hover > span,
@@ -1364,8 +1360,7 @@ button[id*="phone"] svg {
   stroke: #ffffff !important;
   fill: currentColor !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
-  transform: translateX(3.5px) scale(1.04) !important;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease !important;
+  transform: translateX(3px) !important;
 }
 
 .areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon,
@@ -1373,8 +1368,8 @@ button[id*="phone"] svg {
   color: var(--brand-accent, #d71c1b) !important;
   fill: currentColor !important;
   animation: none !important;
-  transform: rotate(-12deg) scale(1.12) !important;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease !important;
+  transform: rotate(-10deg) scale(1.06) !important;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease !important;
 }
 
 /* Dark Theme variant for white buttons on red containers */
@@ -1397,13 +1392,14 @@ body.dark-theme .areas-cta-banner .btn-dispatch-call:hover,
 body.dark-theme .btn-why-feature-cta:hover {
   background: #ffffff !important;
   color: #d71c1b !important;
+  transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 1),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.12),
-    0 0 0 3.5px rgba(255, 255, 255, 0.40),
-    0 0 0 7px rgba(255, 255, 255, 0.70),
-    0 18px 40px rgba(0, 0, 0, 0.60),
-    0 0 28px rgba(255, 255, 255, 0.50) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 1),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.12),
+    0 0 0 2px rgba(0, 0, 0, 0.25),
+    0 0 0 3.5px rgba(255, 255, 255, 0.85),
+    0 10px 24px -3px rgba(0, 0, 0, 0.50),
+    0 2px 6px rgba(0, 0, 0, 0.25) !important;
 }
 
 body.dark-theme .btn-process-action:hover > span,
@@ -1423,15 +1419,14 @@ body.dark-theme .btn-why-feature-cta:hover > span {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   border-color: #d71c1b !important;
-  transform: translateY(-2.5px) !important;
+  transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.18),
-    0 0 0 3.5px #192023,
-    0 0 0 7px rgba(255, 90, 82, 0.65),
-    0 0 0 11.5px rgba(255, 90, 82, 0.20),
-    0 12px 28px -4px rgba(215, 28, 27, 0.45),
-    0 4px 10px rgba(0, 0, 0, 0.12) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.20),
+    0 0 0 2px #192023,
+    0 0 0 3.5px rgba(255, 255, 255, 0.20),
+    0 8px 22px -3px rgba(0, 0, 0, 0.50),
+    0 2px 6px rgba(0, 0, 0, 0.25) !important;
 }
 
 .footer-book-btn:hover > span,
@@ -1459,15 +1454,14 @@ body.dark-theme .btn-why-feature-cta:hover > span {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.35) !important;
-  transform: translateY(-2.5px) !important;
+  transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.18),
-    0 0 0 3.5px #1b2226,
-    0 0 0 7px rgba(255, 90, 82, 0.65),
-    0 0 0 11.5px rgba(255, 90, 82, 0.20),
-    0 12px 28px -4px rgba(215, 28, 27, 0.45),
-    0 4px 10px rgba(0, 0, 0, 0.12) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.20),
+    0 0 0 2px #1b2226,
+    0 0 0 3.5px rgba(255, 255, 255, 0.20),
+    0 8px 22px -3px rgba(0, 0, 0, 0.50),
+    0 2px 6px rgba(0, 0, 0, 0.25) !important;
 }
 
 .btn-kitchen-quote:hover > span {
@@ -1514,12 +1508,12 @@ body.dark-theme .btn-why-feature-cta:hover > span {
 .emergency-strip-container .btn-urgent-book:hover,
 .cta-showcase-container .cta-primary-btn:hover {
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.28),
-    0 0 0 3.5px #192023,
-    0 0 0 7px rgba(255, 90, 82, 0.65),
-    0 12px 30px -4px rgba(255, 90, 82, 0.45),
-    0 0 20px rgba(215, 28, 27, 0.35) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
+    0 0 0 2px #192023,
+    0 0 0 3.5px rgba(255, 255, 255, 0.20),
+    0 8px 22px -3px rgba(0, 0, 0, 0.50),
+    0 2px 6px rgba(0, 0, 0, 0.25) !important;
 }
 
 .site-footer-master .btn-hero-secondary:hover,
@@ -1527,12 +1521,12 @@ body.dark-theme .btn-why-feature-cta:hover > span {
 .footer-card-container .btn-dispatch-wa:hover,
 .cta-banner .btn-cta-banner-call:hover {
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.22),
-    0 0 0 3.5px #192023,
-    0 0 0 7px rgba(37, 211, 102, 0.68),
-    0 12px 30px -4px rgba(37, 211, 102, 0.50),
-    0 0 18px rgba(37, 211, 102, 0.35) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.22),
+    0 0 0 2px #192023,
+    0 0 0 3.5px rgba(34, 197, 94, 0.25),
+    0 8px 22px -3px rgba(0, 0, 0, 0.50),
+    0 2px 6px rgba(0, 0, 0, 0.25) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1579,25 +1573,27 @@ body.dark-theme :not(.areas-cta-banner) > .btn-dispatch-call:hover {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.45) !important;
+  transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.28),
-    0 0 0 3.5px #171c1f,
-    0 0 0 7px rgba(255, 90, 82, 0.65),
-    0 12px 30px -4px rgba(255, 90, 82, 0.45),
-    0 0 20px rgba(215, 28, 27, 0.35) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
+    0 0 0 2px #0f1315,
+    0 0 0 3.5px rgba(255, 255, 255, 0.20),
+    0 8px 24px -3px rgba(0, 0, 0, 0.60),
+    0 2px 6px rgba(0, 0, 0, 0.35) !important;
 }
 
 body.dark-theme .btn-kitchen-quote:hover {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
+  transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.28),
-    0 0 0 3.5px #12171a,
-    0 0 0 7px rgba(255, 90, 82, 0.65),
-    0 12px 30px -4px rgba(255, 90, 82, 0.45),
-    0 0 20px rgba(215, 28, 27, 0.35) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
+    0 0 0 2px #12171a,
+    0 0 0 3.5px rgba(255, 255, 255, 0.20),
+    0 8px 24px -3px rgba(0, 0, 0, 0.60),
+    0 2px 6px rgba(0, 0, 0, 0.35) !important;
 }
 
 body.dark-theme .btn-hero-secondary:hover,
@@ -1620,13 +1616,14 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
   background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #22c55e !important;
+  transform: translateY(-2px) !important;
   box-shadow:
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.50),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.22),
-    0 0 0 3.5px #171c1f,
-    0 0 0 7px rgba(37, 211, 102, 0.68),
-    0 12px 30px -4px rgba(37, 211, 102, 0.50),
-    0 0 18px rgba(37, 211, 102, 0.35) !important;
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.22),
+    0 0 0 2px #0f1315,
+    0 0 0 3.5px rgba(34, 197, 94, 0.25),
+    0 8px 24px -3px rgba(0, 0, 0, 0.60),
+    0 2px 6px rgba(0, 0, 0, 0.35) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1639,7 +1636,11 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
 [class*="btn-"]:active,
 [class*="cta-"]:active,
 [class*="-btn"]:active {
-  transform: translateY(0px) scale(0.98) !important;
+  transform: translateY(0px) scale(0.978) !important;
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.22),
+    0 1px 3px rgba(0, 0, 0, 0.10) !important;
+  transition: transform 0.08s ease, box-shadow 0.08s ease !important;
 }
 
 @keyframes synchronizedButtonShine {
@@ -9809,7 +9810,6 @@ body.dark-theme {
   --text-dark: #eceff1;
   --bg-canvas: #0f1315;
   --bg-alt: #171c1f;
-  --btn-moat-color: #0f1315;
   --color-subtitle: #a9b2b8;
   --text-sub: #a9b2b8;
   --text-muted: #737f87;
@@ -17281,7 +17281,7 @@ body.dark-theme .portfolio-card:hover .pf-action-btn svg {
   background: linear-gradient(135deg, #ff5a52 0%, #e02a24 100%) !important;
   border-color: #ff837d !important;
   transform: translateX(4px) scale(1.06);
-  box-shadow: 0 4px 18px rgba(255, 90, 82, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .tag-location {
   background: rgba(15, 19, 21, 0.92);

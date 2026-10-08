@@ -1162,7 +1162,7 @@
         <div class="pf-lightbox-media-wrap">
           <img src="" alt="Dubai Fix Restoration Project Preview" id="pfLightboxImg" class="pf-lightbox-img">
           <div class="pf-lightbox-badge-row">
-            <span class="pf-lightbox-chip location" id="pfLightboxLocation">Palm Jumeirah Villa</span>
+            <span class="pf-lightbox-chip location" id="pfLightboxLocationChip">Palm Jumeirah Villa</span>
             <span class="pf-lightbox-chip brand" id="pfLightboxBrand">Sub-Zero</span>
           </div>
         </div>
@@ -1174,7 +1174,7 @@
             <div class="pf-lb-meta-row">
               <span class="pf-lb-meta-chip pf-lb-chip-loc">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span id="pfLightboxLocationSub">Palm Jumeirah Villa</span>
+                <span id="pfLightboxLocationText">Palm Jumeirah Villa</span>
               </span>
               <span class="pf-lb-meta-chip pf-lb-chip-time">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
@@ -1379,18 +1379,24 @@
         const imgEl = document.getElementById('pfLightboxImg');
         const titleEl = document.getElementById('pfLightboxTitle');
         const descEl = document.getElementById('pfLightboxDesc');
-        const locEl = document.getElementById('pfLightboxLocation');
+        const locChip = document.getElementById('pfLightboxLocationChip');
+        const locText = document.getElementById('pfLightboxLocationText');
         const brandEl = document.getElementById('pfLightboxBrand');
         const timeEl = document.getElementById('pfLightboxTime');
 
         if (imgEl) imgEl.src = data.img || '';
         if (titleEl) titleEl.textContent = details.title || data.title;
         if (descEl) descEl.textContent = details.desc || data.desc;
-        if (locEl) locEl.textContent = details.location || data.location;
+        
+        const locVal = details.location || data.location || 'Dubai';
+        if (locChip) locChip.textContent = locVal;
+        if (locText) locText.textContent = locVal;
+
         if (brandEl) brandEl.textContent = details.brand || data.brand;
         if (timeEl) timeEl.textContent = details.time || data.time;
 
         const brand2El = document.getElementById('pfLightboxBrand2');
+        const partsEl = document.getElementById('pfLightboxParts');
         const standardEl = document.getElementById('pfLightboxStandard');
         const waBtn = document.getElementById('pfLightboxWaBtn');
 
@@ -1419,13 +1425,20 @@
 
       if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
       if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+      if (lightboxModal) {
+        lightboxModal.addEventListener('click', (e) => {
+          if (e.target === lightboxModal || e.target === lightboxOverlay) {
+            closeLightbox();
+          }
+        });
+      }
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
           closeLightbox();
         }
       });
 
-      // Attach Click Listeners to Portfolio Cards
+      // Attach Click Listeners to Portfolio Cards & Action Buttons
       cards.forEach(card => {
         const img = card.querySelector('.portfolio-img');
         const titleEl = card.querySelector('.portfolio-card-title');
@@ -1448,6 +1461,14 @@
         card.addEventListener('click', () => {
           openLightbox(cardData);
         });
+
+        const actionBtn = card.querySelector('.pf-action-btn');
+        if (actionBtn) {
+          actionBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(cardData);
+          });
+        }
       });
 
       // Attach Click Listeners to Hero Collage Cards

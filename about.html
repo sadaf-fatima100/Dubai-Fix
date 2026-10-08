@@ -914,6 +914,9 @@
     .about-process-content {
       position: relative;
       z-index: 2;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
     }
 
     .about-process-h2 {
@@ -941,19 +944,25 @@
       color: #cbd5e1;
     }
 
-    /* 2x2 Steps Grid - TIGHT GAP AS REQUESTED */
-    .process-steps-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 20px;
+    /* 2x2 Steps Grid - Full-Width Responsive Bento */
+    .about-process .process-steps-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      gap: 16px !important;
+      margin-bottom: 24px !important;
     }
 
-    .process-step-item {
+    .about-process .process-step-item {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: auto !important;
+      box-sizing: border-box !important;
       background: #ffffff;
       border: 1.5px solid #e3e7e9;
-      border-radius: 18px;
-      padding: 16px 18px 18px 18px;
+      border-radius: 20px;
+      padding: 20px 22px 22px 22px;
       position: relative;
       overflow: hidden;
       transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
@@ -961,19 +970,19 @@
       flex-direction: column;
       align-items: stretch;
       text-align: left;
-      box-shadow: 0 3px 14px rgba(25, 32, 35, 0.04);
+      box-shadow: 0 4px 16px rgba(25, 32, 35, 0.04);
     }
-    .process-step-item:hover {
+    .about-process .process-step-item:hover {
       transform: translateY(-2px);
       border-color: var(--brand-accent, #d71c1b);
       box-shadow: 0 10px 26px rgba(25, 32, 35, 0.1);
     }
-    body.dark-theme .process-step-item {
+    body.dark-theme .about-process .process-step-item {
       background: #171c1f;
       border: 1.5px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     }
-    body.dark-theme .process-step-item:hover {
+    body.dark-theme .about-process .process-step-item:hover {
       border-color: rgba(215, 28, 27, 0.45);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
     }
