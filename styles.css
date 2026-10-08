@@ -3292,6 +3292,8 @@ body.dark-theme .why-card-content .why-card-desc {
   padding-bottom: var(--section-py);
   margin: 0;
   position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 } /* Enclosed Box Container (Resolves wide spread & provides clean framed proportions) */
 .areas-boxed-container {
   width: 100%;
@@ -3304,6 +3306,7 @@ body.dark-theme .why-card-content .why-card-desc {
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 } /* Subtle dot-matrix mesh background enclosed cleanly inside the box container */
 .areas-boxed-container::before {
   content: "";
@@ -3983,13 +3986,23 @@ body.dark-theme .why-card-content .why-card-desc {
     grid-template-columns: 1fr;
     gap: 30px;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .areas-header-left {
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .areas-main-desc {
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
   .areas-districts-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -3999,24 +4012,29 @@ body.dark-theme .why-card-content .why-card-desc {
   .areas-boxed-container {
     padding: 24px 16px 20px 16px;
     border-radius: 18px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .areas-status-strip {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 8px 6px;
     padding: 0;
     margin: 0 auto 20px auto;
     width: 100%;
     max-width: 100%;
   }
   .status-pill-item {
-    padding: 4px 7px 4px 5px;
+    padding: 4px 8px 4px 6px;
     gap: 4px;
     white-space: nowrap;
     flex-shrink: 0;
+    max-width: 100%;
   }
   .status-icon-chip {
     width: 19px;
@@ -4058,19 +4076,20 @@ body.dark-theme .why-card-content .why-card-desc {
   .areas-status-strip {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 6px 6px;
     margin: 0 auto 18px auto;
     width: 100%;
     max-width: 100%;
   }
   .status-pill-item {
-    padding: 3.5px 6px 3.5px 4px;
+    padding: 3.5px 7px 3.5px 4px;
     gap: 3.5px;
     white-space: nowrap;
     flex-shrink: 0;
+    max-width: 100%;
   }
   .status-icon-chip {
     width: 18px;
@@ -4098,6 +4117,14 @@ body.dark-theme .why-card-content .why-card-desc {
   }
   .areas-counter-badge {
     text-align: center;
+  }
+  .hub-dispatch-pill {
+    padding: 4px 10px;
+    font-size: 10px;
+    gap: 5px;
+  }
+  .hub-badge-text {
+    font-size: 10px;
   }
 } /* ==========================================================================   Process Steps Section (Clean Layout without Outer Card Boundary)   ========================================================================== */
 .process-section {
@@ -16992,10 +17019,10 @@ body.dark-theme .service-why-card:hover .why-card-icon-box {
   box-shadow: none;
 }
 body.dark-theme .service-why-card .why-card-title {
-  color: #ff5a52;
+  color: #ffffff;
 }
 body.dark-theme .service-why-card:hover .why-card-title {
-  color: #ff7872;
+  color: #ff5a52;
 }
 body.dark-theme .service-why-card .why-card-desc {
   color: #94a3b8;
