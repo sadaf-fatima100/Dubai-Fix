@@ -54,8 +54,8 @@ This project follows strict engineering and visual standards. Every change must 
 - **Canvas Paddings**:
   - Desktop: `30px 48px 46px 48px;`
   - Tablet ($\le 992px$): `24px 20px 36px 20px;`
-  - Mobile ($\le 768px$): `20px 14px 30px 14px;`
-  - Compact ($\le 360px$): `14px 8px 18px 8px;`
+  - Mobile ($\le 768px$ down to $320px$): strictly `16px` left and right (e.g. `18px 16px 30px 16px;` / `14px 16px 22px 16px;`).
+  - Ultra-Compact ($\le 300px$): `8px 10px 16px 10px;`
 - **Card Paddings**:
   - Featured Bento Cards: `26px 24px` to `32px 28px`.
   - Grid Cards: `20px` to `24px` (Desktop) $\rightarrow$ `14px` to `16px` (Mobile).

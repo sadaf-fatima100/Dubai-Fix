@@ -8384,7 +8384,7 @@ body.dark-theme .trust-item svg {
     padding: 0 !important;
   }
   .site-canvas {
-    padding: 18px 14px 30px 14px;
+    padding: 18px 16px 30px 16px;
     border-radius: 0 !important;
     width: 100%;
     max-width: 100%;
@@ -8888,7 +8888,8 @@ body.dark-theme .trust-item svg {
   .why-stat-item {
     display: flex;
     align-items: center;
-    padding: 7px 18px 7px 14px;
+    justify-content: center;
+    padding: 7px 18px;
     min-height: 54px;
   }
   .why-stat-icon-wrap {
@@ -9038,7 +9039,7 @@ body.dark-theme .trust-item svg {
 } /* --- Mobile Landscape / Large Phone Viewports (576px) --- */
 @media (max-width: 576px) {
   .site-canvas {
-    padding: 16px 12px 24px 12px;
+    padding: 16px 16px 24px 16px;
     border-radius: 0 !important;
   }
   .nav-brand-img {
@@ -9158,7 +9159,7 @@ body.dark-theme .trust-item svg {
 } /* --- Standard Mobile Viewports (480px) --- */
 @media (max-width: 480px) {
   .site-canvas {
-    padding: 14px 10px 22px 10px;
+    padding: 14px 16px 22px 16px;
     border-radius: 0 !important;
   }
   .navbar {
@@ -9516,7 +9517,7 @@ body.dark-theme .trust-item svg {
 } /* --- Compact Mobile Viewports (360px - iPhone SE, Galaxy A) --- */
 @media (max-width: 360px) {
   .site-canvas {
-    padding: 12px 8px 18px 8px;
+    padding: 12px 16px 18px 16px;
     border-radius: 0 !important;
   }
   .navbar {
@@ -12824,12 +12825,15 @@ body.dark-theme .faq-card-body {
   color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 13px;
-  padding: 16px 32px 16px 20px;
+  gap: 14px;
+  padding: 16px 36px 16px 22px;
   position: relative;
   z-index: 2;
-  flex-shrink: 0;
-  max-width: 320px;
+  flex: 0 0 340px;
+  width: 340px;
+  min-width: 340px;
+  max-width: 340px;
+  box-sizing: border-box;
   clip-path: polygon(
     0 0,
     calc(100% - 18px) 0,
@@ -12840,6 +12844,15 @@ body.dark-theme .faq-card-body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: all 0.35s ease;
   cursor: pointer;
+}
+@media (min-width: 1280px) {
+  .emergency-call-card {
+    flex: 0 0 350px;
+    width: 350px;
+    min-width: 350px;
+    max-width: 350px;
+    padding: 16px 38px 16px 24px;
+  }
 }
 .emergency-call-card:hover {
   background-image:
@@ -13132,7 +13145,7 @@ body.dark-theme .emergency-pillar-item:hover {
     font-size: 10.5px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .brand-emergency-bar {
     flex-direction: column;
     border-radius: 18px;
@@ -23894,8 +23907,8 @@ body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
 @media (max-width: 360px) {
   .floating-contact-dock {
     bottom: 14px;
-    left: 12px;
-    right: 12px;
+    left: 16px;
+    right: 16px;
   }
   .float-contact-btn {
     width: 46px;
