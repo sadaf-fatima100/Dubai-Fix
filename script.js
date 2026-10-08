@@ -692,73 +692,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setSplitPosition(50);
   }
 
-  // Auto-inject Uiverse animated expanding bubble circles for all action buttons across the site
-  // Enforces GEMINI.md Rule 7: Silky liquid-collision smoothness matching the master navbar button (.btn-schedule)
+  // Universal Button Interaction & Accessibility Initialization
+  // Button styling and concentric outer-loop animation is governed by GPU-accelerated CSS in styles.css
   function initUniversalButtonBubbleAnimation() {
-    const btnSelector = [
-      'button',
-      'a[class*="btn-"]',
-      'a[class*="cta-"]',
-      'a[class*="-btn"]',
-      'a[role="button"]'
-    ].join(',');
-
-    const excludedSelectors = [
-      '.btn-theme-toggle',
-      '.mobile-toggle',
-      '.stories-nav-btn',
-      '.modal-close-btn',
-      '.filter-btn',
-      '.faq-toggle-btn',
-      '.footer-social-btn',
-      '.share-btn-pill'
-    ].join(',');
-
-    function injectBubbles() {
-      document.querySelectorAll(btnSelector).forEach(btn => {
-        if (btn.matches(excludedSelectors)) return;
-
-        // Wrap bare text nodes into protected <span> elements so they sit at z-index: 3
-        Array.from(btn.childNodes).forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
-            const span = document.createElement('span');
-            span.textContent = node.textContent;
-            btn.replaceChild(span, node);
-          }
-        });
-
-        // Inject the 5 liquid circles in strict 1..5 order before button content
-        if (!btn.querySelector('.btn-circle')) {
-          const fragment = document.createDocumentFragment();
-          for (let i = 1; i <= 5; i++) {
-            const circle = document.createElement('span');
-            circle.className = `btn-circle btn-circle-${i}`;
-            circle.setAttribute('aria-hidden', 'true');
-            fragment.appendChild(circle);
-          }
-          btn.insertBefore(fragment, btn.firstChild);
-        }
-      });
-    }
-
-    injectBubbles();
-
-    // Auto-heal any dynamically injected buttons, modals, or cloned elements
-    if (typeof MutationObserver !== 'undefined' && document.body) {
-      const observer = new MutationObserver(mutations => {
-        let hasNewNodes = false;
-        for (let i = 0; i < mutations.length; i++) {
-          if (mutations[i].addedNodes.length > 0) {
-            hasNewNodes = true;
-            break;
-          }
-        }
-        if (hasNewNodes) {
-          injectBubbles();
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
-    }
+    // Legacy DOM circle injection retired in favor of native CSS concentric bezel architecture
   }
 
   // Footer Legal Links Interactive Toast Notification
