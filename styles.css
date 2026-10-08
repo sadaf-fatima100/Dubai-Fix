@@ -1438,10 +1438,8 @@ body.dark-theme .btn-why-feature-cta:hover > span {
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.20),
-    0 0 0 2px #192023,
-    0 0 0 3.5px rgba(255, 255, 255, 0.20),
-    0 8px 22px -3px rgba(0, 0, 0, 0.50),
-    0 2px 6px rgba(0, 0, 0, 0.25) !important;
+    0 12px 28px rgba(0, 0, 0, 0.45),
+    0 4px 10px rgba(0, 0, 0, 0.20) !important;
 }
 
 .footer-book-btn:hover > span,
@@ -1471,10 +1469,8 @@ body.dark-theme .btn-why-feature-cta:hover > span {
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.20),
-    0 0 0 2px #1b2226,
-    0 0 0 3.5px rgba(255, 255, 255, 0.20),
-    0 8px 22px -3px rgba(0, 0, 0, 0.50),
-    0 2px 6px rgba(0, 0, 0, 0.25) !important;
+    0 12px 28px rgba(0, 0, 0, 0.45),
+    0 4px 10px rgba(0, 0, 0, 0.20) !important;
 }
 
 .btn-kitchen-quote:hover > span {
@@ -1604,10 +1600,8 @@ body.dark-theme .btn-kitchen-quote:hover {
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 0 0 2px #12171a,
-    0 0 0 3.5px rgba(255, 255, 255, 0.20),
-    0 8px 24px -3px rgba(0, 0, 0, 0.60),
-    0 2px 6px rgba(0, 0, 0, 0.35) !important;
+    0 14px 32px rgba(0, 0, 0, 0.60),
+    0 4px 12px rgba(0, 0, 0, 0.35) !important;
 }
 
 body.dark-theme .btn-hero-secondary:hover,
@@ -5587,9 +5581,11 @@ body.dark-theme .kitchen-main-desc {
 }
 .btn-kitchen-quote:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45), 0 4px 10px rgba(0, 0, 0, 0.20) !important;
   color: #ffffff !important;
 }
+.btn-kitchen-quote:hover > span,
 .btn-kitchen-quote:hover span {
   color: #ffffff !important;
 }
@@ -5609,12 +5605,13 @@ body.dark-theme .kitchen-main-desc {
 }
 .btn-kitchen-quote:hover .btn-kitchen-arrow-circle {
   transform: translateX(3px);
-  background: #ffffff;
+  background: #ffffff !important;
   color: #d71c1b !important;
 }
 .btn-kitchen-quote:hover .btn-kitchen-arrow-circle svg {
   color: #d71c1b !important;
   stroke: #d71c1b !important;
+  fill: none !important;
 }
 
 .btn-kitchen-call {
@@ -24576,9 +24573,9 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .btn-simple-cta-whatsapp > span:not(.btn-circle),
 .btn-simple-cta-whatsapp svg {
   transition:
-    color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    background-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    stroke 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    stroke 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 .btn-process-action:hover > span:not(.btn-circle),
@@ -24589,9 +24586,9 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .btn-simple-cta-whatsapp:hover > span:not(.btn-circle),
 .btn-simple-cta-whatsapp:hover svg {
   transition:
-    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    background-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
-    stroke 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+    color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    stroke 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
