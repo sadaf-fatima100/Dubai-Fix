@@ -22835,21 +22835,27 @@ body.dark-theme .wm-perf-img-frame {
     height: clamp(320px, 46vw, 440px);
     min-height: 320px;
     flex: 0 0 auto;
+    max-width: 100%;
+  }
+  .wm-perf-media-wrap {
+    gap: 0;
+  }
+  .wm-perf-left-accent-line {
+    display: none !important;
   }
   .wm-perf-img-frame {
     clip-path: none !important;
     -webkit-clip-path: none !important;
     border-radius: 20px;
+    width: 100%;
   }
 }
 @media (max-width: 480px) {
   .wm-perf-media-wrap {
-    gap: 10px;
+    gap: 0;
   }
   .wm-perf-left-accent-line {
-    flex: 0 0 10px;
-    width: 10px;
-    min-width: 10px;
+    display: none !important;
   }
 }
 
