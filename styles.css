@@ -847,13 +847,14 @@ button[id*="phone"] svg {
 .article-cta-call-btn::before,
 .sidebar-btn-call::before,
 .btn-lb-call::before,
-.compare-card-cta::before {
+.compare-card-cta::before,
+.service-card-btn::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -50%;
   left: -100%;
   width: 100%;
-  height: 100%;
+  height: 200%;
   background: linear-gradient(
     45deg,
     transparent 0%,
@@ -23975,67 +23976,169 @@ body.dark-theme .wm-feature-desc {
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background 0.35s ease, border-color 0.35s ease;
   will-change: transform;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* --- Organic Floating Island Levitation Physics --- */
+.float-call-btn {
+  animation: floatIslandCall 3.8s ease-in-out infinite;
+}
+
+.float-whatsapp-btn {
+  animation: floatIslandWhatsApp 4.2s ease-in-out infinite 0.7s;
+}
+
+@keyframes floatIslandCall {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes floatIslandWhatsApp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* --- 1. Phone Call Floating Button (Signature Crimson Red Gradient) --- */
 .float-call-btn {
   background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  box-shadow: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.22),
+    0 3px 8px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
 .float-call-btn:hover {
+  animation-play-state: paused;
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
-  transform: translateY(-3px) scale(1.06);
-  box-shadow: none;
+  transform: translateY(-8px) scale(1.08);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.45);
   color: #ffffff;
 }
 
 body.dark-theme .float-call-btn {
   border-color: rgba(255, 90, 82, 0.4);
-  box-shadow: none;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.65),
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
 }
 
 body.dark-theme .float-call-btn:hover {
   border-color: rgba(255, 90, 82, 0.65);
-  box-shadow: none;
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.8),
+    0 6px 16px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
 
 /* --- 2. WhatsApp Chat Floating Button (Signature Vibrant WhatsApp Green) --- */
 .float-whatsapp-btn {
-  background: #25d366;
-  border: 1.5px solid rgba(255, 255, 255, 0.32);
-  box-shadow: none;
+  background: linear-gradient(135deg, #25d366 0%, #20ba59 50%, #16a34a 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.22),
+    0 3px 8px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
 .float-whatsapp-btn:hover {
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 100%) !important;
-  transform: translateY(-4px) scale(1.07);
-  box-shadow: none !important;
+  animation-play-state: paused;
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #1da851 100%) !important;
+  transform: translateY(-8px) scale(1.08);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
   color: #ffffff;
 }
 
 body.dark-theme .float-whatsapp-btn {
-  box-shadow: none;
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.65),
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
 }
 
 body.dark-theme .float-whatsapp-btn:hover {
-  box-shadow: none;
+  border-color: rgba(52, 211, 153, 0.65);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.8),
+    0 6px 16px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
 
 .float-contact-btn:active {
-  transform: translateY(-1px) scale(0.97);
+  transform: translateY(-2px) scale(0.96) !important;
 }
 
-/* --- Concentric Sonar / Radar Pulse Rings Hidden (Clean look with no messy colored aura) --- */
+/* --- Concentric Sonar / Radar Pulse Waves (Active High-Tech Radiance) --- */
 .float-sonar-ring {
-  display: none !important;
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  display: block !important;
+  will-change: transform, opacity;
 }
 
-/* --- Icon Animations (Phone Ring Wiggle & WhatsApp Chatty Pop) --- */
+.float-call-btn .float-sonar-ring {
+  border: 1.8px solid rgba(215, 28, 27, 0.7);
+  animation: sonarWavePulse 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.float-call-btn .float-sonar-ring.ring-delay {
+  animation-delay: 1.4s;
+}
+
+.float-whatsapp-btn .float-sonar-ring {
+  border: 1.8px solid rgba(37, 211, 102, 0.75);
+  animation: sonarWavePulse 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.float-whatsapp-btn .float-sonar-ring.ring-delay {
+  animation-delay: 1.4s;
+}
+
+@keyframes sonarWavePulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.85;
+  }
+  65% {
+    transform: scale(1.48);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.72);
+    opacity: 0;
+  }
+}
+
+body.dark-theme .float-call-btn .float-sonar-ring {
+  border-color: rgba(255, 90, 82, 0.75);
+}
+
+body.dark-theme .float-whatsapp-btn .float-sonar-ring {
+  border-color: rgba(52, 211, 153, 0.8);
+}
+
+/* --- Icon Animations (Phone Ring Shake & WhatsApp Chatty Pop) --- */
 .float-icon-svg {
   position: relative;
   z-index: 2;
@@ -24046,65 +24149,79 @@ body.dark-theme .float-whatsapp-btn:hover {
 }
 
 .float-call-btn .float-icon-svg {
-  animation: phoneRingWiggle 3.4s ease-in-out infinite;
+  animation: phoneRingWiggle 3.2s ease-in-out infinite;
   transform-origin: center center;
 }
 
 .float-whatsapp-btn .float-icon-svg {
-  animation: waChattyPop 3.4s ease-in-out infinite;
-  animation-delay: 1.7s;
+  animation: waChattyPop 3.2s ease-in-out infinite;
+  animation-delay: 1.6s;
   transform-origin: center center;
 }
 
 .float-contact-btn:hover .float-icon-svg {
   animation-play-state: paused;
-  transform: scale(1.08);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.14);
 }
 
 @keyframes phoneRingWiggle {
-  0%, 66%, 100% {
+  0%, 68%, 100% {
     transform: rotate(0deg) scale(1);
   }
-  70% {
-    transform: rotate(-15deg) scale(1.1);
+  71% {
+    transform: rotate(-18deg) scale(1.14);
   }
   74% {
+    transform: rotate(18deg) scale(1.14);
+  }
+  77% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  80% {
     transform: rotate(15deg) scale(1.1);
   }
-  78% {
-    transform: rotate(-13deg) scale(1.08);
-  }
-  82% {
-    transform: rotate(13deg) scale(1.08);
+  83% {
+    transform: rotate(-9deg) scale(1.05);
   }
   86% {
-    transform: rotate(-7deg) scale(1.04);
+    transform: rotate(9deg) scale(1.05);
   }
-  90% {
-    transform: rotate(7deg) scale(1.04);
+  89% {
+    transform: rotate(-4deg) scale(1.02);
+  }
+  92% {
+    transform: rotate(0deg) scale(1);
   }
 }
 
 @keyframes waChattyPop {
-  0%, 68%, 100% {
+  0%, 65%, 100% {
     transform: scale(1) rotate(0deg);
   }
-  74% {
-    transform: scale(1.15) rotate(-8deg);
+  68% {
+    transform: scale(0.92) rotate(-3deg);
   }
-  81% {
-    transform: scale(0.94) rotate(6deg);
+  72% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  76% {
+    transform: scale(0.94) rotate(8deg);
+  }
+  80% {
+    transform: scale(1.12) rotate(-6deg);
+  }
+  84% {
+    transform: scale(0.97) rotate(4deg);
   }
   88% {
-    transform: scale(1.07) rotate(-4deg);
+    transform: scale(1.05) rotate(-2deg);
   }
-  94% {
-    transform: scale(0.98) rotate(2deg);
+  92% {
+    transform: scale(1) rotate(0deg);
   }
 }
 
-/* --- Live Online Notification Badge Dot --- */
+/* --- Live Online Notification Badge Dot with Active Radar Beacon --- */
 .float-online-dot {
   position: absolute;
   top: 2px;
@@ -24112,22 +24229,46 @@ body.dark-theme .float-whatsapp-btn:hover {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #22c55e;
-  border: 2.2px solid #ffffff;
-  box-shadow: none;
+  border: 2px solid #ffffff;
   z-index: 3;
+}
+
+.float-whatsapp-btn .float-online-dot {
+  background: #22c55e;
+  color: #22c55e;
 }
 
 .float-call-btn .float-online-dot {
   background: #ff5a52;
-  box-shadow: none;
+  color: #ff5a52;
+}
+
+.float-online-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.8px solid currentColor;
+  animation: beaconRadarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes beaconRadarPing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  70%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
 }
 
 body.dark-theme .float-online-dot {
   border-color: #121217;
 }
 
-/* --- Slide-Out Chatty Hover Label Pill --- */
+/* --- Slide-Out Chatty Hover Label Pill (Spring-Loaded Entrance) --- */
 .float-btn-tooltip {
   position: absolute;
   top: 50%;
@@ -24142,7 +24283,7 @@ body.dark-theme .float-online-dot {
   gap: 2px;
   white-space: nowrap;
   pointer-events: none;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0.25s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, visibility 0.25s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 4;
 }
 
