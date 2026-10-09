@@ -11415,6 +11415,7 @@ body.dark-theme .feature-description {
 .story-author-meta {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .story-author-name {
   font-size: 14px;
@@ -11422,12 +11423,18 @@ body.dark-theme .feature-description {
   color: var(--text-dark, #192023);
   margin: 0 0 2px 0;
   line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .story-author-role {
   font-size: 12px;
   font-weight: 500;
   color: #64748b;
-  line-height: 1;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 } /* Stylized Quotation Mark */
 .story-quote-mark {
   font-family: "Georgia", "Times New Roman", serif;
