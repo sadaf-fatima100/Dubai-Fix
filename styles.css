@@ -82,6 +82,17 @@ optgroup {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--bg-canvas);
@@ -505,6 +516,14 @@ body.dark-theme .dropdown-divider {
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
+  text-decoration: none !important;
+}
+.btn-schedule:hover,
+.btn-schedule:focus,
+.btn-schedule:active,
+.btn-schedule:visited,
+.btn-schedule span {
+  text-decoration: none !important;
 }
 .btn-schedule svg {
   flex-shrink: 0;
@@ -1014,6 +1033,19 @@ button[id*="phone"] svg {
     border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     color 0.25s ease !important;
   will-change: transform, box-shadow;
+  text-decoration: none !important;
+}
+
+/* Universal Button Child Text-Decoration None Protection */
+a[class*="btn"],
+a[class*="-btn"],
+button[class*="btn"],
+button[class*="-btn"],
+a[class*="btn"] *,
+a[class*="-btn"] *,
+button[class*="btn"] *,
+button[class*="-btn"] * {
+  text-decoration: none !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -5022,6 +5054,14 @@ body.dark-theme .blog-urgent-card .highlight-navy {
   cursor: pointer;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none !important;
+}
+.btn-about-primary:hover,
+.btn-about-primary:focus,
+.btn-about-primary:active,
+.btn-about-primary:visited,
+.btn-about-primary span {
+  text-decoration: none !important;
 }
 .btn-about-primary:hover {
   background: var(--btn-gradient-hover);

@@ -623,20 +623,22 @@
       width: 22px;
       height: 22px;
       border-radius: 50%;
-      background: #eff6ff;
+      background: rgba(215, 28, 27, 0.08);
       color: var(--brand-accent, #d71c1b);
-      font-size: 11.5px;
-      font-weight: 800;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 1.5px solid rgba(215, 28, 27, 0.2);
+      border: 1.5px solid rgba(215, 28, 27, 0.22);
+      flex-shrink: 0;
+    }
+    .pillar-bullet-check svg {
+      display: block;
       flex-shrink: 0;
     }
     body.dark-theme .pillar-bullet-check {
-      background: rgba(215, 28, 27, 0.12);
+      background: rgba(215, 28, 27, 0.14);
       color: #ff5a52;
-      border: 1.5px solid rgba(255, 90, 82, 0.28);
+      border: 1.5px solid rgba(255, 90, 82, 0.32);
     }
 
     /* Action Buttons Wrap */
@@ -3073,7 +3075,7 @@
         <div class="service-hero-media-wrap">
           <!-- Main Asymmetric Image Card (Exact #top-left-hero-cut) -->
           <div class="service-hero-media-card">
-            <img src="assets/about-hero-team.jpg" alt="Dubai Fix Certified Dubai Appliance Repair Specialists" class="hero-media-img">
+            <img src="assets/about-hero-team.jpg?v=2.0" alt="Dubai Fix Certified Dubai Appliance Repair Specialists" class="hero-media-img">
             
             <!-- Floating Service Badge Card (Bottom-Right, Matching Reference Design) -->
             <div class="hero-floating-service-card" aria-label="Same-Day Service - Fast, Reliable, Professional">
@@ -3260,15 +3262,27 @@
               <!-- 3 Core Heritage Trust Checkpoints -->
               <div class="heritage-pillars-row">
                 <div class="heritage-pillar-item">
-                  <span class="pillar-bullet-check" aria-hidden="true">?</span>
+                  <span class="pillar-bullet-check" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
                   <span>In-House Master Engineers</span>
                 </div>
                 <div class="heritage-pillar-item">
-                  <span class="pillar-bullet-check" aria-hidden="true">?</span>
+                  <span class="pillar-bullet-check" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
                   <span>100% Genuine OEM Spares</span>
                 </div>
                 <div class="heritage-pillar-item">
-                  <span class="pillar-bullet-check" aria-hidden="true">?</span>
+                  <span class="pillar-bullet-check" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
                   <span>Clear Upfront Fixed Quotes</span>
                 </div>
               </div>
@@ -3803,7 +3817,7 @@
 
             <!-- Left Column: Certified Technicians Team Cutout Visual -->
             <div class="prefooter-cta-visual">
-              <img src="assets/cta-technicians-team.png?v=2.0" alt="Dubai Fix Certified Appliance Repair Technicians Team in Dubai" class="prefooter-team-img" loading="lazy" width="1024" height="682">
+              <img src="assets/cta-technicians-team.png?v=3.0" alt="Dubai Fix Certified Appliance Repair Technicians Team in Dubai" class="prefooter-team-img" loading="lazy" width="1024" height="682">
             </div>
 
             <!-- Right Column: High-Conversion CTA Content -->
@@ -4045,7 +4059,7 @@
 
   <!-- Confirmation Toast -->
   <div class="toast" id="toastMessage">
-    <div class="toast-icon">?</div>
+    <div class="toast-icon">&#10003;</div>
     <div class="toast-content">
       <div class="toast-title">Booking Request Received!</div>
       <div class="toast-desc">Our master technician dispatch has been alerted. Calling you shortly.</div>
