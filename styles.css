@@ -2018,7 +2018,7 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
   z-index: 30;
   width: auto;
-  min-width: 215px;
+  min-width: 228px;
   border: 1.5px solid #e3e7e9;
   transition:
     transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -2047,7 +2047,7 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
 .stats-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .stats-icon-circle {
   width: 26px;
@@ -2065,12 +2065,15 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
   font-weight: 800;
   color: var(--text-dark);
   letter-spacing: -0.02em;
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 .stats-label {
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
   color: #5d6375;
+  white-space: nowrap;
 } /* Bottom Right Follow Us Block - Removed per user request */
 .hero-social-block {
   display: none !important;
