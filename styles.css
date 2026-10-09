@@ -775,6 +775,8 @@ button[id*="phone"] svg {
   .btn-hero-action-primary,
   .btn-hero-action-call,
   .btn-read-full-guide,
+  .btn-service-why-action,
+  .btn-hub-open-maps,
 .btn-hero-secondary,
 .btn-about-secondary,
 .btn-emergency-call,
@@ -820,6 +822,11 @@ button[id*="phone"] svg {
 .btn-filter-browse::before,
 .btn-read-article::before,
 .btn-faq-call::before,
+.btn-kitchen-quote::before,
+.btn-hero-action-primary::before,
+.btn-read-full-guide::before,
+.btn-service-why-action::before,
+.btn-hub-open-maps::before,
 .areas-clear-btn::before,
 .btn-bform-submit::before,
 .btn-emergency-call::before,
@@ -846,7 +853,8 @@ button[id*="phone"] svg {
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.28));
   pointer-events: none;
   z-index: 1;
-  animation: none !important;
+  animation: synchronizedButtonShine 3s ease-in-out infinite;
+  animation-delay: 0s !important;
 }
 
 /* Ensure button label text & icons stay sharp above the shimmer and bubble overlay */
@@ -2542,7 +2550,8 @@ a.service-card-item *,
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12));
   pointer-events: none;
   z-index: 1;
-  animation: none !important;
+  animation: synchronizedButtonShine 3s ease-in-out infinite;
+  animation-delay: 0s !important;
 }
 
 .service-card-btn::after,
@@ -2569,7 +2578,11 @@ a.service-card-item *,
 .btn-lb-whatsapp,
 .btn-cta-banner-call,
 .process-phone-link,
-.standards-call-link {
+.standards-call-link,
+.btn-simple-cta-whatsapp,
+.btn-emergency-wa,
+.btn-hero-action-call,
+.btn-kitchen-call {
   position: relative !important;
   overflow: hidden !important;
 }
@@ -2586,7 +2599,11 @@ a.service-card-item *,
 .btn-lb-whatsapp::before,
 .btn-cta-banner-call::before,
 .process-phone-link::before,
-.standards-call-link::before {
+.standards-call-link::before,
+.btn-simple-cta-whatsapp::before,
+.btn-emergency-wa::before,
+.btn-hero-action-call::before,
+.btn-kitchen-call::before {
   content: "";
   position: absolute;
   top: 0;
@@ -2605,7 +2622,8 @@ a.service-card-item *,
   filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.3));
   pointer-events: none;
   z-index: 1;
-  animation: none !important;
+  animation: synchronizedButtonShine 3s ease-in-out infinite;
+  animation-delay: 0s !important;
 }
 
 .btn-hero-secondary::after,
@@ -2620,7 +2638,11 @@ a.service-card-item *,
 .btn-lb-whatsapp::after,
 .btn-cta-banner-call::after,
 .process-phone-link::after,
-.standards-call-link::after {
+.standards-call-link::after,
+.btn-simple-cta-whatsapp::after,
+.btn-emergency-wa::after,
+.btn-hero-action-call::after,
+.btn-kitchen-call::after {
   display: none !important;
 }
 
@@ -2653,7 +2675,8 @@ a.service-card-item *,
   filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.35));
   pointer-events: none;
   z-index: 1;
-  animation: none !important;
+  animation: synchronizedButtonShine 3s ease-in-out infinite;
+  animation-delay: 0s !important;
 }
 
 .btn-standards-gold::after,
@@ -11807,7 +11830,22 @@ body.dark-theme .areas-cta-banner .btn-dispatch-call:hover svg {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
 .brand-filter-pill .pill-icon {
-  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  line-height: 1;
+  color: var(--brand-accent, #d71c1b);
+  transition: color 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+.brand-filter-pill:hover .pill-icon {
+  color: #d71c1b;
+  transform: scale(1.1);
+}
+.brand-filter-pill.active .pill-icon {
+  color: #ffffff;
+  transform: scale(1.05);
 }
 .brand-filter-pill .pill-count {
   font-size: 11px;
@@ -11987,6 +12025,15 @@ body.dark-theme .brand-filter-pill.active {
   border-color: rgba(255, 255, 255, 0.35);
   color: #ffffff;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+body.dark-theme .brand-filter-pill .pill-icon {
+  color: #ff5a52;
+}
+body.dark-theme .brand-filter-pill:hover .pill-icon {
+  color: #ffffff;
+}
+body.dark-theme .brand-filter-pill.active .pill-icon {
+  color: #ffffff;
 }
 body.dark-theme .brand-filter-pill .pill-count {
   background: rgba(255, 255, 255, 0.08);

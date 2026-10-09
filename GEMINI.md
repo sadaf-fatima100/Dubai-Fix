@@ -94,12 +94,13 @@ This project follows strict engineering and visual standards. Every change must 
 - **Strict Dubai-Only Geographic Scope**: The entire business, service areas, descriptions, and operations are strictly targeted to **Dubai Only**. Under NO circumstances should any other emirates (Sharjah, Abu Dhabi, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain, Al Ain) ever be added or reintroduced.
 - **Localized Technical Context**: All environmental and regulatory references must remain localized to Dubai (e.g., *Dubai climate defense protocols*, *50°C Dubai Summer Heat*, *Dubai water calcification*, *Dubai Municipality food safety guidelines*).
 - **Synchronized Core Trust Metrics**: Keep all metrics uniform across all 17 HTML pages:
-  - `4+ Yrs` / `4+ Years of Experience`
-  - `3,000+ Appliances Restored` / `3,000+ Happy Clients`
+  - `4+ Yrs` / `4+ Years of Experience` / `4+ Yrs Dubai Operations`
+  - `3,000+ Satisfied Homes` / `3,000+ Happy Clients` (Total households served)
+  - `4,000+ Appliances Restored` (Total appliances/issues fixed; accounts for multi-appliance repairs per home)
   - `60-Min Doorstep Response` / `60-Min Dispatch`
 
 ## 10. Strict Permanent Freeze on Core Figures & Banned Keywords (Zero Tolerance Rule)
 - **4+ Years Experience Lock**: Under NO circumstances should any other experience number (10+, 12+, 15+, etc.) ever be reintroduced or changed.
 - **60-Min Response Time Lock**: Under NO circumstances should any other response time (30-min, 2-hour, 90-min, 1-hr, etc.) ever be used. Must always remain strictly `60-Min` (or `60m` in compact badges).
-- **3,000+ Modest Figures Lock**: Under NO circumstances should inflated figures (50,000+, 25,000+, 15K+, 18k+, 22k+, 14k+, 9,500+) ever be reintroduced. All volume repair metrics must remain modestly unified at `3,000+`.
+- **Core Volume Metrics Lock**: Under NO circumstances should inflated figures (50,000+, 25,000+, 15K+, 18k+, 22k+, 14k+, 9,500+) ever be reintroduced. Client/household volume remains strictly locked at `3,000+ Satisfied Homes` / `3,000+ Happy Clients`, and total repair volume is locked at `4,000+ Appliances Restored`.
 - **Absolute Ban on 'Warranty', 'Guarantee', and 'Greentree'**: The words `Warranty`, `Guarantee`, `Guaranteed`, `Written Guarantee`, and `Greentree` are strictly banned across all page copy, HTML text, IDs, attributes, and comments. Always use certified equivalents: `Verified Standards`, `Certified OEM Quality`, `Official Invoice`, `100% Satisfaction`, `Same-Day Priority`.
