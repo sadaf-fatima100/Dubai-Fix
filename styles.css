@@ -8534,7 +8534,8 @@ body.dark-theme .trust-item svg {
     box-sizing: border-box !important;
     padding: 9px 12px !important;
     font-size: 13.5px !important;
-    white-space: normal !important;
+    white-space: nowrap !important;
+    text-wrap: nowrap !important;
     line-height: 1.35 !important;
     border-radius: 8px !important;
   }
