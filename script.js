@@ -105,92 +105,102 @@ document.addEventListener('DOMContentLoaded', () => {
     repairDateInput.min = today;
   }
 
-  // Open Modal function
-  function openModal(preselectedService = null, isEmergency = false) {
-    if (preselectedService && applianceTypeSelect) {
-      for (let option of applianceTypeSelect.options) {
-        if (option.value.toLowerCase().includes(preselectedService.toLowerCase()) || 
-            preselectedService.toLowerCase().includes(option.value.toLowerCase())) {
-          applianceTypeSelect.value = option.value;
-          break;
-        }
-      }
-    }
-
-    if (isEmergency && urgencySelect) {
-      urgencySelect.value = 'Emergency Same-Day (60-Min Response)';
-    }
-
-    bookingModal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  // Direct Action Handlers (Zero Popups - Instant Call & WhatsApp Dispatch)
+  function openDirectWhatsApp(serviceName = null) {
+    const service = serviceName || 'General Appliance Repair';
+    const msg = encodeURIComponent(`Hello Dubai Fix Appliances, I want to book an urgent service for ${service}.`);
+    window.open(`https://wa.me/923143110259?text=${msg}`, '_blank');
   }
 
-  // Close Modal function
+  function openDirectCall() {
+    window.location.href = 'tel:+923143110259';
+  }
+
+  // Legacy openModal safety redirect (ensures zero popups ever open)
+  function openModal(preselectedService = null, isEmergency = false) {
+    if (isEmergency) {
+      openDirectCall();
+    } else {
+      openDirectWhatsApp(preselectedService);
+    }
+  }
+
+  // Close Modal helper
   function closeModal() {
-    bookingModal.classList.remove('open');
+    if (bookingModal) {
+      bookingModal.classList.remove('open');
+      bookingModal.style.display = 'none';
+    }
     document.body.style.overflow = '';
   }
 
-  // Event Listeners for Open Modal
+  // Event Listeners for Direct Actions (Zero Popups)
   if (scheduleServiceBtn) {
-    scheduleServiceBtn.addEventListener('click', () => openModal());
+    scheduleServiceBtn.addEventListener('click', (e) => {
+      if (scheduleServiceBtn.tagName === 'A' && scheduleServiceBtn.getAttribute('href')?.startsWith('tel:')) {
+        return;
+      }
+      e.preventDefault();
+      openDirectCall();
+    });
   }
 
   if (navContactLink) {
     navContactLink.addEventListener('click', (e) => {
       const href = navContactLink.getAttribute('href');
-      // If pointing to contact.html page, allow normal navigation
-      if (href && (href === 'contact.html' || href.endsWith('/contact.html'))) {
-        return; // let browser navigate normally
+      if (href && (href === 'contact.html' || href.endsWith('/contact.html') || href.startsWith('#'))) {
+        return;
       }
-      // Legacy: same-page anchor — open modal
-      e.preventDefault();
-      openModal();
     });
   }
 
   if (openContactBtn) {
-    openContactBtn.addEventListener('click', () => openModal());
+    openContactBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openDirectCall();
+    });
   }
 
   const heroBookBtn = document.getElementById('heroBookBtn') || document.getElementById('heroGetStartedBtn');
   if (heroBookBtn) {
-    heroBookBtn.addEventListener('click', () => openModal());
+    heroBookBtn.addEventListener('click', (e) => {
+      if (heroBookBtn.tagName === 'A' && heroBookBtn.getAttribute('href')?.startsWith('https://wa.me')) {
+        return;
+      }
+      e.preventDefault();
+      openDirectWhatsApp('Appliance Repair');
+    });
   }
 
   if (emergencyLink) {
     emergencyLink.addEventListener('click', (e) => {
+      if (emergencyLink.tagName === 'A' && emergencyLink.getAttribute('href')?.startsWith('tel:')) {
+        return;
+      }
       e.preventDefault();
-      openModal(null, true);
+      openDirectCall();
     });
   }
 
   bookTriggers.forEach(trigger => {
     trigger.addEventListener('click', (e) => {
+      if (trigger.tagName === 'A') {
+        const href = trigger.getAttribute('href');
+        if (href && (href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('mailto:') || (href !== '#' && !href.startsWith('javascript:')))) {
+          return;
+        }
+      }
       e.preventDefault();
       const serviceName = trigger.getAttribute('data-service');
-      openModal(serviceName);
+      openDirectWhatsApp(serviceName);
     });
   });
 
-  // Close Modal triggers
-  if (modalCloseBtn) {
-    modalCloseBtn.addEventListener('click', closeModal);
-  }
-
+  // Permanently close and neutralize any modal backdrop on load
   if (bookingModal) {
-    bookingModal.addEventListener('click', (e) => {
-      if (e.target === bookingModal) {
-        closeModal();
-      }
-    });
+    bookingModal.classList.remove('open');
+    bookingModal.style.display = 'none';
   }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && bookingModal.classList.contains('open')) {
-      closeModal();
-    }
-  });
 
   // Form Submit & Toast
   if (bookingForm) {
