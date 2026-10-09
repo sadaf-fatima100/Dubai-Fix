@@ -18189,97 +18189,119 @@ body.dark-theme .tag-location svg {
   pointer-events: none;
 } /* Step Cards */
 .protocol-step-card {
+  position: relative;
   background: #ffffff;
   border: 1.5px solid #e3e7e9;
   border-radius: var(--radius-card, 18px);
-  padding: 20px 22px;
+  padding: 24px 22px 20px 22px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
 }
 .protocol-step-card:hover {
   border-color: var(--brand-accent, #d71c1b);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
-  transform: translateY(-3px);
+  box-shadow: 0 14px 34px -4px rgba(25, 32, 35, 0.1);
+  transform: translateY(-4px);
 }
 .step-num-badge {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--btn-gradient-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
   color: #ffffff;
-  font-size: 14.5px;
+  font-size: 15px;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-  font-family: var(--font-heading, inherit);
-  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(215, 28, 27, 0.22);
+  font-family: var(--font-family, inherit);
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.protocol-step-card:hover .step-num-badge {
+  transform: scale(1.05);
 }
 .step-card-title {
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   font-weight: 800;
   color: var(--text-dark, #192023);
-  line-height: 1.3;
-  margin-bottom: 8px;
-  letter-spacing: -0.015em;
-  font-family: var(--font-heading, inherit);
+  line-height: 1.32;
+  margin-bottom: 9px;
+  letter-spacing: -0.02em;
+  font-family: var(--font-family, inherit);
 }
 .step-card-desc {
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: var(--text-sub, #5a5f70);
+  font-size: 0.905rem;
+  line-height: 1.6;
+  color: var(--text-sub, #475056);
   margin: 0;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
-/* Step Card Deliverables / Technical Checklist (Docked at bottom, fills void) */
+/* Step Card Deliverables / Technical Checklist (Soft Tinted Inner Spec Box) */
 .step-card-deliverables {
   margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f4f5f5;
+  border: 1px solid #e3e7e9;
+  border-radius: 14px;
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  gap: 8.5px;
+  gap: 11px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.protocol-step-card:hover .step-card-deliverables {
+  background: #edf0f2;
+  border-color: rgba(215, 28, 27, 0.2);
 }
 .step-deliverable-item {
   display: flex;
   align-items: flex-start;
-  gap: 9px;
+  gap: 10px;
 }
 .step-deliverable-icon {
-  width: 19px;
-  height: 19px;
-  border-radius: 5px;
-  background: rgba(215, 28, 27, 0.08);
-  color: var(--brand-accent, #d71c1b);
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 6px;
+  background: #a81110;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   margin-top: 1.5px;
-  transition: all 0.25s ease;
+  box-shadow: none;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.step-deliverable-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke: #ffffff;
+  stroke-width: 3.2px;
+  display: block;
 }
 .protocol-step-card:hover .step-deliverable-icon {
   background: var(--brand-accent, #d71c1b);
-  color: #ffffff;
+  transform: scale(1.06);
 }
 .step-deliverable-text {
-  font-size: 0.81rem;
-  line-height: 1.42;
-  color: var(--text-dark, #121217);
+  font-size: 0.835rem;
+  line-height: 1.48;
+  color: #2d3748;
 }
 .step-deliverable-text strong {
   font-weight: 700;
-  color: var(--brand-accent, #d71c1b);
-  margin-right: 3px;
+  color: #a81110;
+  margin-right: 4px;
 }
 
 /* Dark Theme for Protocol Section */
@@ -18290,7 +18312,7 @@ body.dark-theme .protocol-step-card {
 }
 body.dark-theme .protocol-step-card:hover {
   border-color: #ff5a52;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
 }
 body.dark-theme .step-card-title {
   color: #ffffff;
@@ -18299,21 +18321,28 @@ body.dark-theme .step-card-desc {
   color: #94a3b8;
 }
 body.dark-theme .step-card-deliverables {
-  border-top-color: rgba(255, 255, 255, 0.08);
+  background: #1f2529;
+  border-color: #2a3136;
+}
+body.dark-theme .protocol-step-card:hover .step-card-deliverables {
+  background: #242b30;
+  border-color: rgba(255, 90, 82, 0.3);
 }
 body.dark-theme .step-deliverable-icon {
-  background: rgba(255, 90, 82, 0.15);
-  color: #ff5a52;
+  background: #e02a24;
+  color: #ffffff;
+}
+body.dark-theme .step-deliverable-icon svg {
+  stroke: #ffffff;
 }
 body.dark-theme .protocol-step-card:hover .step-deliverable-icon {
   background: #ff5a52;
-  color: #ffffff;
 }
 body.dark-theme .step-deliverable-text {
   color: #cbd5e1;
 }
 body.dark-theme .step-deliverable-text strong {
-  color: #cbd5e1;
+  color: #ff5a52;
 }
 body.dark-theme .protocol-img-card {
   border-color: #ff5a52;
