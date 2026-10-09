@@ -13888,21 +13888,24 @@ body.dark-theme .cta-feature-card.cta-card-featured:hover {
 }
 body.dark-theme .cta-card-featured .cta-circle-check {
   color: #ffffff;
-} /* ==========================================================================   CTA SECTION RESPONSIVE   ========================================================================== */
+/* ==========================================================================   CTA SECTION RESPONSIVE (Zero-Gap Grounded Technician on Mobile)   ========================================================================== */
 @media (max-width: 1080px) {
   .cta-showcase-section {
     padding: var(--section-py-sm) 0 0 0;
   }
   .cta-showcase-container {
     grid-template-columns: 1fr;
-    gap: 26px;
+    row-gap: 0 !important;
+    gap: 0 !important;
     padding: 0 16px;
     align-items: center;
   }
   .cta-showcase-left {
+    order: 1;
     text-align: center;
     align-items: center;
     padding-left: 0;
+    margin-bottom: 24px;
   }
   .cta-left-accent-line {
     display: none;
@@ -13917,22 +13920,46 @@ body.dark-theme .cta-card-featured .cta-circle-check {
   }
   .cta-showcase-center {
     order: 2;
+    margin-bottom: -4px !important;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    z-index: 3;
+  }
+  .cta-tech-holder {
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     margin-bottom: 0;
+    width: 100%;
   }
   .cta-showcase-tech-img {
+    width: 100%;
     max-width: 320px;
+    margin-bottom: 0;
+    display: block;
   }
   .cta-showcase-right {
     order: 3;
+    margin-top: 0 !important;
     padding-bottom: 36px;
     width: 100%;
     max-width: 460px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
   }
 }
 @media (max-width: 520px) {
   .cta-showcase-section {
     padding: var(--section-py-sm) 0 0 0;
+  }
+  .cta-showcase-left {
+    margin-bottom: 20px;
   }
   .cta-showcase-desc {
     font-size: 0.88rem;
@@ -13941,8 +13968,11 @@ body.dark-theme .cta-card-featured .cta-circle-check {
     width: 100%;
     padding: 12px 20px;
   }
+  .cta-showcase-center {
+    margin-bottom: -6px !important;
+  }
   .cta-showcase-tech-img {
-    max-width: 270px;
+    max-width: 280px;
   }
   .cta-feature-card {
     padding: 12px 14px;
@@ -13953,6 +13983,17 @@ body.dark-theme .cta-card-featured .cta-circle-check {
   }
   .cta-card-desc {
     font-size: 0.78rem;
+  }
+}
+@media (max-width: 360px) {
+  .cta-showcase-left {
+    margin-bottom: 16px;
+  }
+  .cta-showcase-center {
+    margin-bottom: -4px !important;
+  }
+  .cta-showcase-tech-img {
+    max-width: 240px;
   }
 } /* ==========================================================================   NEW 3-TIER SERVICE PAGE LAYOUT (ApexFix Brand Consistent Palette & Typography)   Tier 1: Top Hero Split (Left Creative Card + Right Media Card)   Tier 2: Middle Interactive Bar (Search/Filter + Rotating CTA Banner)   Tier 3: Brand Navy "Our Expertise" Bento Showcase Grid   ========================================================================== */ /* --- TIER 1: Top Hero Split Row --- */
 .service-hero-split-row {
