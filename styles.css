@@ -8794,7 +8794,7 @@ body.dark-theme .trust-item svg {
     border: 1px solid #e3e7e9;
   }
   .stats-label {
-    white-space: normal;
+    white-space: nowrap;
     font-size: 10.5px;
     line-height: 1.25;
   }
