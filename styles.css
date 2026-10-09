@@ -821,7 +821,6 @@ button[id*="phone"] svg {
 .nav-menu-schedule-btn::before,
 .btn-hero-primary::before,
 .btn-about-primary::before,
-.btn-prefooter-primary::before,
 .btn-emergency-primary::before,
 .btn-cta-navy::before,
 .cta-primary-btn::before,
@@ -2551,6 +2550,7 @@ a.service-card-item *,
 .areas-cta-banner .btn-dispatch-call,
 .btn-why-feature-cta,
 .btn-kitchen-quote,
+.btn-prefooter-primary,
 .sidebar-btn-book,
 .article-cta-book-btn,
 .btn-urgent-book,
@@ -2571,30 +2571,30 @@ a.service-card-item *,
 .areas-cta-banner .btn-dispatch-call::before,
 .btn-why-feature-cta::before,
 .btn-kitchen-quote::before,
+.btn-prefooter-primary::before,
 .sidebar-btn-book::before,
 .article-cta-book-btn::before,
 .btn-urgent-book::before,
 .expertise-circle-arrow-btn::before,
 .mcard-arrow-btn::before,
 .btn-map-direction::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: -100% !important;
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  display: block;
   background: linear-gradient(
     45deg,
     transparent 0%,
-    rgba(215, 28, 27, 0.05) 15%,
-    rgba(255, 255, 255, 0.95) 35%,
-    rgba(215, 28, 27, 0.32) 50%,
-    rgba(255, 255, 255, 0.95) 65%,
-    rgba(215, 28, 27, 0.05) 85%,
+    rgba(0, 0, 0, 0.04) 20%,
+    rgba(255, 255, 255, 0.95) 45%,
+    rgba(215, 28, 27, 0.25) 55%,
+    rgba(0, 0, 0, 0.04) 80%,
     transparent 100%
   ) !important;
-  filter: drop-shadow(0 0 6px rgba(215, 28, 27, 0.25)) !important;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12)) !important;
   pointer-events: none !important;
   z-index: 1 !important;
   animation: synchronizedButtonShine 3s ease-in-out infinite !important;
@@ -2606,6 +2606,7 @@ a.service-card-item *,
 .areas-cta-banner .btn-dispatch-call > *:not(.btn-circle),
 .btn-why-feature-cta > *:not(.btn-circle),
 .btn-kitchen-quote > *:not(.btn-circle),
+.btn-prefooter-primary > *:not(.btn-circle),
 .sidebar-btn-book > *:not(.btn-circle),
 .article-cta-book-btn > *:not(.btn-circle),
 .btn-urgent-book > *:not(.btn-circle),
@@ -3059,7 +3060,7 @@ a.service-card-item *,
     0 16px 36px rgba(10, 16, 28, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.04);
   background-color: #171c1f;
-  cursor: pointer;
+  cursor: default;
   transition:
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3181,6 +3182,7 @@ a.service-card-item *,
   flex-direction: column;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: visible;
+  cursor: default;
 }
 .why-card-item:hover .why-card-content {
   background: #ffffff;
@@ -11609,9 +11611,8 @@ body.dark-theme .feature-description {
     opacity: 0.82;
     pointer-events: auto !important;
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: none !important;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.35s ease, 
                 border-color 0.35s ease, 
                 opacity 0.35s ease;
   }
@@ -11620,14 +11621,20 @@ body.dark-theme .feature-description {
     opacity: 1 !important;
     transform: scale(1) !important;
     border-color: rgba(215, 28, 27, 0.28) !important;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09) !important;
+    box-shadow: none !important;
   }
 
-  .story-card:hover {
-    transform: none !important;
-  }
+  .story-card:hover,
   .story-card.is-active:hover {
-    transform: scale(1) !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  body.dark-theme .story-card,
+  body.dark-theme .story-card.is-active,
+  body.dark-theme .story-card:hover,
+  body.dark-theme .story-card.is-active:hover {
+    box-shadow: none !important;
   }
 }
 
@@ -24621,7 +24628,6 @@ a.service-card-item:active,
 .service-card-item:active,
 .portfolio-card:active,
 .brand-curved-card:active,
-.why-card-item:not(.why-card-offset):active,
 .area-card:active,
 .blog-card:active,
 .expertise-card:active,
@@ -24635,11 +24641,6 @@ a.service-card-item:active,
 .faq-card-header:active,
 .hero-stat-box:active {
   transform: translateY(-1px) scale(0.992) !important;
-  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.1s ease !important;
-}
-
-.why-card-item.why-card-offset:active {
-  transform: translateY(22px) scale(0.992) !important;
   transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.1s ease !important;
 }
 
