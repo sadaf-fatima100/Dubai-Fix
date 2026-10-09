@@ -304,53 +304,86 @@ document.addEventListener('DOMContentLoaded', () => {
   const storiesNextBtn = document.getElementById('storiesNextBtn');
   const storiesPagination = document.getElementById('storiesPagination');
   const paginationBars = storiesPagination ? storiesPagination.querySelectorAll('.pagination-bar') : [];
+  const allStoryCards = storiesTrack ? storiesTrack.querySelectorAll('.story-card') : [];
 
   let currentStoryPage = 0;
+  let currentStoryCardIndex = 0;
   const maxStoryPages = 2;
+
+  function scrollToCardIndex(index, smooth = true) {
+    if (!storiesDeckWrapper || allStoryCards.length === 0) return;
+    const targetIdx = Math.max(0, Math.min(index, allStoryCards.length - 1));
+    currentStoryCardIndex = targetIdx;
+    const targetCard = allStoryCards[targetIdx];
+
+    try {
+      targetCard.scrollIntoView({
+        behavior: smooth ? 'smooth' : 'auto',
+        inline: 'center',
+        block: 'nearest'
+      });
+    } catch (e) {
+      const wrapperRect = storiesDeckWrapper.getBoundingClientRect();
+      const cardRect = targetCard.getBoundingClientRect();
+      const scrollOffset = (cardRect.left - wrapperRect.left) - (wrapperRect.width - cardRect.width) / 2;
+      storiesDeckWrapper.scrollBy({
+        left: scrollOffset,
+        behavior: smooth ? 'smooth' : 'auto'
+      });
+    }
+
+    allStoryCards.forEach((c, i) => {
+      c.classList.toggle('is-active', i === targetIdx);
+    });
+
+    const page = targetIdx < 4 ? 0 : 1;
+    currentStoryPage = page;
+    paginationBars.forEach((bar, idx) => {
+      bar.classList.toggle('active', idx === page);
+    });
+  }
 
   function updateStoryCarousel(pageIndex) {
     currentStoryPage = Math.max(0, Math.min(pageIndex, maxStoryPages - 1));
 
-    if (storiesTrack) {
-      if (window.innerWidth > 1080) {
+    if (window.innerWidth > 1080) {
+      if (storiesTrack) {
         storiesTrack.style.transform = `translateX(-${currentStoryPage * 50}%)`;
-      } else {
-        storiesTrack.style.transform = 'none';
       }
-    }
-
-    paginationBars.forEach((bar, idx) => {
-      bar.classList.toggle('active', idx === currentStoryPage);
-    });
-
-    // Mobile / Tablet smooth scroll support
-    if (storiesDeckWrapper && window.innerWidth <= 1080) {
-      const targetCard = storiesTrack ? storiesTrack.querySelector(`.story-card[data-index="${currentStoryPage * 4}"]`) : null;
-      if (targetCard) {
-        storiesDeckWrapper.scrollTo({
-          left: targetCard.offsetLeft - 16,
-          behavior: 'smooth'
-        });
-      }
+      paginationBars.forEach((bar, idx) => {
+        bar.classList.toggle('active', idx === currentStoryPage);
+      });
+    } else {
+      scrollToCardIndex(currentStoryPage * 4, true);
     }
   }
 
   if (storiesPrevBtn) {
     storiesPrevBtn.addEventListener('click', () => {
-      if (currentStoryPage > 0) {
-        updateStoryCarousel(currentStoryPage - 1);
+      if (window.innerWidth > 1080) {
+        if (currentStoryPage > 0) {
+          updateStoryCarousel(currentStoryPage - 1);
+        } else {
+          updateStoryCarousel(maxStoryPages - 1);
+        }
       } else {
-        updateStoryCarousel(maxStoryPages - 1);
+        const prevIdx = currentStoryCardIndex > 0 ? currentStoryCardIndex - 1 : allStoryCards.length - 1;
+        scrollToCardIndex(prevIdx, true);
       }
     });
   }
 
   if (storiesNextBtn) {
     storiesNextBtn.addEventListener('click', () => {
-      if (currentStoryPage < maxStoryPages - 1) {
-        updateStoryCarousel(currentStoryPage + 1);
+      if (window.innerWidth > 1080) {
+        if (currentStoryPage < maxStoryPages - 1) {
+          updateStoryCarousel(currentStoryPage + 1);
+        } else {
+          updateStoryCarousel(0);
+        }
       } else {
-        updateStoryCarousel(0);
+        const nextIdx = currentStoryCardIndex < allStoryCards.length - 1 ? currentStoryCardIndex + 1 : 0;
+        scrollToCardIndex(nextIdx, true);
       }
     });
   }
@@ -364,18 +397,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Mobile scroll detection for updating pagination active state
+  allStoryCards.forEach((card, idx) => {
+    card.addEventListener('click', () => {
+      if (window.innerWidth <= 1080) {
+        scrollToCardIndex(idx, true);
+      }
+    });
+  });
+
+  // Mobile scroll detection for centered card and pagination active state
   if (storiesDeckWrapper) {
     let scrollTimeout;
     storiesDeckWrapper.addEventListener('scroll', () => {
       if (window.innerWidth > 1080) return;
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        const scrollLeft = storiesDeckWrapper.scrollLeft;
-        const maxScroll = storiesDeckWrapper.scrollWidth - storiesDeckWrapper.clientWidth;
-        if (maxScroll > 0) {
-          const ratio = scrollLeft / maxScroll;
-          const targetPage = ratio > 0.4 ? 1 : 0;
+        const wrapperRect = storiesDeckWrapper.getBoundingClientRect();
+        const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
+        let closestIdx = 0;
+        let minDiff = Infinity;
+
+        allStoryCards.forEach((card, idx) => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const diff = Math.abs(wrapperCenter - cardCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = idx;
+          }
+        });
+
+        if (closestIdx !== currentStoryCardIndex) {
+          currentStoryCardIndex = closestIdx;
+          allStoryCards.forEach((c, i) => {
+            c.classList.toggle('is-active', i === closestIdx);
+          });
+
+          const targetPage = closestIdx < 4 ? 0 : 1;
           if (targetPage !== currentStoryPage) {
             currentStoryPage = targetPage;
             paginationBars.forEach((bar, idx) => {
@@ -383,9 +441,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           }
         }
-      }, 100);
+      }, 40);
     }, { passive: true });
   }
+
+  // Initial state: ensure first card is active
+  if (allStoryCards.length > 0) {
+    allStoryCards[0].classList.add('is-active');
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1080) {
+      if (storiesTrack) storiesTrack.style.transform = 'none';
+    } else {
+      if (storiesTrack) storiesTrack.style.transform = `translateX(-${currentStoryPage * 50}%)`;
+      allStoryCards.forEach(c => c.classList.remove('is-active'));
+    }
+  });
 
   // --- Areas We Proudly Serve Across Dubai Interactive Filter & Booking ---
   const areaSearchInput = document.getElementById('areaSearchInput');
