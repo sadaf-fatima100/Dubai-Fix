@@ -719,41 +719,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Sticky Navbar Scroll Elevation & Active Link Spy ---
+  // --- Sticky Navbar Scroll Elevation ---
   const navbar = document.querySelector('.navbar');
-  const navLinks = document.querySelectorAll('.nav-menu .nav-link:not(.nav-dropdown-toggle)');
-  const sections = document.querySelectorAll('#home, #about, #services, #brands, #service-areas, #faq, #contact');
 
   function updateNavbarOnScroll() {
     const scrollY = window.scrollY;
 
-    // Elevate navbar when scrolled past top
+    // Elevate navbar when scrolled past top (adds shadow & slight opacity without layout shift)
     if (navbar) {
       if (scrollY > 15) {
         navbar.classList.add('is-scrolled');
       } else {
         navbar.classList.remove('is-scrolled');
       }
-    }
-
-    // Dynamic section active pill spy using getBoundingClientRect
-    let currentId = '';
-    sections.forEach(sec => {
-      const rect = sec.getBoundingClientRect();
-      if (rect.top <= 160 && rect.bottom >= 140) {
-        currentId = sec.getAttribute('id');
-      }
-    });
-
-    if (currentId) {
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${currentId}`) {
-          link.classList.add('active-pill');
-        } else {
-          link.classList.remove('active-pill');
-        }
-      });
     }
   }
 

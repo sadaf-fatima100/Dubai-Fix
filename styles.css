@@ -150,7 +150,7 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid #e3e7e9;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .navbar.is-scrolled {
   background: rgba(255, 255, 255, 0.95);
@@ -7820,6 +7820,9 @@ body.dark-theme .trust-item svg {
   .nav-link {
     font-size: 13.5px;
     padding: 5px 8px;
+  }
+  .nav-link.active-pill {
+    padding: 5px 14px;
   }
   .nav-actions {
     gap: 8px;
