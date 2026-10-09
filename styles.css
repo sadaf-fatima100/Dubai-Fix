@@ -13888,7 +13888,11 @@ body.dark-theme .cta-feature-card.cta-card-featured:hover {
 }
 body.dark-theme .cta-card-featured .cta-circle-check {
   color: #ffffff;
-/* ==========================================================================   CTA SECTION RESPONSIVE (Zero-Gap Grounded Technician on Mobile)   ========================================================================== */
+}
+
+/* ==========================================================================
+   CTA SECTION RESPONSIVE (Zero-Gap Grounded Technician on Mobile)
+   ========================================================================== */
 @media (max-width: 1080px) {
   .cta-showcase-section {
     padding: var(--section-py-sm) 0 0 0;
