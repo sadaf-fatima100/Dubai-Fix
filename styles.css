@@ -13924,13 +13924,13 @@ body.dark-theme .cta-card-featured .cta-circle-check {
   }
   .cta-showcase-center {
     order: 2;
-    margin-bottom: -4px !important;
+    margin-bottom: 0 !important;
     line-height: 0;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     position: relative;
-    z-index: 3;
+    z-index: 2;
   }
   .cta-tech-holder {
     line-height: 0;
@@ -13948,7 +13948,7 @@ body.dark-theme .cta-card-featured .cta-circle-check {
   }
   .cta-showcase-right {
     order: 3;
-    margin-top: 0 !important;
+    margin-top: 8px !important;
     padding-bottom: 36px;
     width: 100%;
     max-width: 460px;
@@ -13963,7 +13963,7 @@ body.dark-theme .cta-card-featured .cta-circle-check {
     padding: var(--section-py-sm) 0 0 0;
   }
   .cta-showcase-left {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .cta-showcase-desc {
     font-size: 0.88rem;
@@ -13973,10 +13973,13 @@ body.dark-theme .cta-card-featured .cta-circle-check {
     padding: 12px 20px;
   }
   .cta-showcase-center {
-    margin-bottom: -6px !important;
+    margin-bottom: 0 !important;
   }
   .cta-showcase-tech-img {
-    max-width: 280px;
+    max-width: 270px;
+  }
+  .cta-showcase-right {
+    margin-top: 6px !important;
   }
   .cta-feature-card {
     padding: 12px 14px;
@@ -13994,10 +13997,13 @@ body.dark-theme .cta-card-featured .cta-circle-check {
     margin-bottom: 16px;
   }
   .cta-showcase-center {
-    margin-bottom: -4px !important;
+    margin-bottom: 0 !important;
   }
   .cta-showcase-tech-img {
     max-width: 240px;
+  }
+  .cta-showcase-right {
+    margin-top: 6px !important;
   }
 } /* ==========================================================================   NEW 3-TIER SERVICE PAGE LAYOUT (ApexFix Brand Consistent Palette & Typography)   Tier 1: Top Hero Split (Left Creative Card + Right Media Card)   Tier 2: Middle Interactive Bar (Search/Filter + Rotating CTA Banner)   Tier 3: Brand Navy "Our Expertise" Bento Showcase Grid   ========================================================================== */ /* --- TIER 1: Top Hero Split Row --- */
 .service-hero-split-row {
