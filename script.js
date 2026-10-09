@@ -459,6 +459,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Service Reviews Carousel (Mobile Touch & Click Centering) ---
+  const serviceReviewsGrid = document.querySelector('.service-reviews-grid');
+  if (serviceReviewsGrid) {
+    const serviceCards = serviceReviewsGrid.querySelectorAll('.service-review-card');
+    serviceCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          try {
+            card.scrollIntoView({
+              behavior: 'smooth',
+              inline: 'center',
+              block: 'nearest'
+            });
+          } catch (e) {
+            const gridRect = serviceReviewsGrid.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+            const scrollOffset = (cardRect.left - gridRect.left) - (gridRect.width - cardRect.width) / 2;
+            serviceReviewsGrid.scrollBy({
+              left: scrollOffset,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  }
+
   // --- Areas We Proudly Serve Across Dubai Interactive Filter & Booking ---
   const areaSearchInput = document.getElementById('areaSearchInput');
   const searchClearBtn = document.getElementById('searchClearBtn');
