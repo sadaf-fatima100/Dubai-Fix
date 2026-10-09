@@ -13499,11 +13499,15 @@ body.dark-theme .brand-emergency-bar {
   box-shadow: none !important;
 }
 body.dark-theme .emergency-call-card {
-  background: linear-gradient(135deg, #201313 0%, #171c1f 100%);
+  background:
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 90, 82, 0.28) 0%, transparent 65%),
+    linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%);
   box-shadow: none !important;
 }
 body.dark-theme .emergency-call-card:hover {
-  background: linear-gradient(135deg, #2d1616 0%, #1f2529 100%);
+  background:
+    radial-gradient(120% 85% at 20% 0%, rgba(255, 120, 115, 0.4) 0%, transparent 65%),
+    linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
   box-shadow: none !important;
 }
 body.dark-theme .pillar-icon-box {
