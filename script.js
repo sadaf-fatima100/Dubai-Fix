@@ -842,8 +842,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
   // Production Floating Contact Dock (Chatty) Footer Auto-Dismiss Observer
-  // Sentinel Intersection Observer: Smoothly hides floating chatty buttons
-  // when scrolling near the bottom copyright bar to prevent UI collision.
+  // Sentinel Intersection Observer + Hysteresis Scroll Tracking:
+  // Butter-smoothly sinks floating chatty buttons below the viewport
+  // when approaching the footer copyright bar to prevent UI overlap.
   // ==========================================================================
   function initFloatingDockFooterObserver() {
     const floatingDock = document.getElementById('floatingContactDock') || document.querySelector('.floating-contact-dock');
@@ -851,38 +852,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!floatingDock || !footerBottom) return;
 
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            floatingDock.classList.add('dock-hidden');
-          } else {
-            floatingDock.classList.remove('dock-hidden');
-          }
-        });
-      }, {
-        root: null,
-        // Triggers ~60px before entering copyright bar so it vanishes seamlessly before collision
-        rootMargin: '0px 0px 60px 0px',
-        threshold: 0
-      });
+    let isHidden = false;
+    let ticking = false;
 
-      observer.observe(footerBottom);
-    } else {
-      // Lightweight scroll fallback for older browsers
-      const checkDockOverlap = () => {
-        const rect = footerBottom.getBoundingClientRect();
-        const isNearFooter = rect.top <= window.innerHeight - 30;
-        if (isNearFooter) {
-          floatingDock.classList.add('dock-hidden');
-        } else {
-          floatingDock.classList.remove('dock-hidden');
-        }
-      };
-      window.addEventListener('scroll', checkDockOverlap, { passive: true });
-      window.addEventListener('resize', checkDockOverlap, { passive: true });
-      checkDockOverlap();
+    function checkDockCollision() {
+      const rect = footerBottom.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      
+      // Distance from viewport bottom to top of copyright bar
+      const distanceToCopyright = rect.top - viewportHeight;
+
+      // Hysteresis deadband to completely eliminate edge flickering:
+      // - Smoothly sink when copyright bar is within 110px of entering viewport
+      // - Smoothly rise back up only after scrolling at least 190px away from it
+      if (!isHidden && distanceToCopyright <= 110) {
+        isHidden = true;
+        floatingDock.classList.add('dock-hidden');
+      } else if (isHidden && distanceToCopyright > 190) {
+        isHidden = false;
+        floatingDock.classList.remove('dock-hidden');
+      }
+      ticking = false;
     }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(checkDockCollision);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    
+    // Check on initial load
+    checkDockCollision();
   }
 
   initFloatingDockFooterObserver();
