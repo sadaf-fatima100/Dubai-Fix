@@ -357,7 +357,8 @@ body.dark-theme .logo-icon-img {
   box-shadow: 0 16px 40px rgba(18, 18, 23, 0.12);
   border-radius: 16px;
   padding: 8px;
-  min-width: 250px;
+  min-width: max-content;
+  width: max-content;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -396,6 +397,12 @@ body.dark-theme .logo-icon-img {
   text-decoration: none;
   border-radius: 10px;
   transition: all 0.15s ease;
+  white-space: nowrap !important;
+  text-wrap: nowrap !important;
+}
+.dropdown-link span {
+  white-space: nowrap !important;
+  text-wrap: nowrap !important;
 }
 .dropdown-icon {
   font-size: 14px;
@@ -7462,6 +7469,76 @@ body.dark-theme .prefooter-cta-overlay {
   .site-footer-master {
     padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px)) !important;
   }
+
+  /* Master Architectural Responsive Clip-Path for Tablet & Mobile Footer Card */
+  .footer-card-container {
+    --footer-cut: 24px;
+    --footer-ear: 58px;
+    --footer-indent: 7px;
+    --footer-slope: 12px;
+    --footer-polygon: polygon(
+      var(--footer-cut) 0%,
+      calc(100% - var(--footer-cut)) 0%,
+      100% var(--footer-cut),
+      100% var(--footer-ear),
+      calc(100% - var(--footer-indent)) calc(var(--footer-ear) + var(--footer-slope)),
+      calc(100% - var(--footer-indent)) calc(100% - (var(--footer-ear) + var(--footer-slope))),
+      100% calc(100% - var(--footer-ear)),
+      100% calc(100% - var(--footer-cut)),
+      calc(100% - var(--footer-cut)) 100%,
+      var(--footer-cut) 100%,
+      0% calc(100% - var(--footer-cut)),
+      0% calc(100% - var(--footer-ear)),
+      var(--footer-indent) calc(100% - (var(--footer-ear) + var(--footer-slope))),
+      var(--footer-indent) calc(var(--footer-ear) + var(--footer-slope)),
+      0% var(--footer-ear),
+      0% var(--footer-cut)
+    );
+    clip-path: var(--footer-polygon) !important;
+    -webkit-clip-path: var(--footer-polygon) !important;
+    border-radius: 0 !important;
+    border: none !important;
+    background: var(--brand-accent, #d71c1b) !important;
+    filter: drop-shadow(0 18px 42px rgba(0, 0, 0, 0.42));
+    padding: 38px 24px 32px 24px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+  .footer-card-container::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 2px !important;
+    width: auto !important;
+    height: auto !important;
+    background-image: none !important;
+    background: linear-gradient(145deg, #192023 0%, #151b1e 60%, #111618 100%) !important;
+    clip-path: var(--footer-polygon) !important;
+    -webkit-clip-path: var(--footer-polygon) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    border-radius: 0 !important;
+  }
+  .footer-card-container:hover {
+    background: #e02a24 !important;
+    filter: drop-shadow(0 22px 50px rgba(0, 0, 0, 0.52));
+  }
+  .footer-card-grid {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  body.dark-theme .footer-card-container {
+    background: #ff5a52 !important;
+    border: none !important;
+    filter: drop-shadow(0 22px 50px rgba(0, 0, 0, 0.8));
+  }
+  body.dark-theme .footer-card-container::before {
+    background: linear-gradient(145deg, #14191c 0%, #0f1315 100%) !important;
+  }
+  body.dark-theme .footer-card-container:hover {
+    background: #ff7a73 !important;
+  }
 }
 @media (max-width: 360px) {
   .site-footer-master {
@@ -9096,7 +9173,6 @@ body.dark-theme .trust-item svg {
   } /* Footer */
   .footer-card-container {
     padding: 34px 22px 28px 22px;
-    border-radius: 20px;
   }
   .footer-card-grid {
     display: grid;
@@ -9235,17 +9311,7 @@ body.dark-theme .trust-item svg {
     padding: 28px 18px;
   }
   .footer-card-container {
-    clip-path: none;
-    border-radius: 20px;
-    border: 5px solid var(--brand-accent, #d71c1b) !important;
-    overflow: hidden;
-    padding: 28px 18px 30px 18px;
-  }
-  .footer-card-container::before {
-    display: none !important;
-  }
-  body.dark-theme .footer-card-container {
-    border-color: #ff5a52 !important;
+    padding: 30px 20px 30px 20px;
   }
   .footer-card-grid {
     grid-template-columns: 1fr;
@@ -21369,6 +21435,24 @@ body.dark-theme .blog-section-subtitle-tag {
   cursor: pointer;
   border: 1.5px solid transparent;
   transition: all 0.22s ease;
+}
+.share-btn-pill svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  display: block;
+}
+.share-btn-whatsapp svg {
+  width: 17px;
+  height: 17px;
+}
+.share-btn-facebook svg {
+  width: 16px;
+  height: 16px;
+}
+.share-btn-copy svg {
+  width: 15px;
+  height: 15px;
 }
 .share-btn-whatsapp {
   background: #25d366;
