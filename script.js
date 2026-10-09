@@ -459,31 +459,83 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Service Reviews Carousel (Mobile Touch & Click Centering) ---
+  // --- Service Reviews Carousel (Mobile Touch & Arrow Navigation) ---
   const serviceReviewsGrid = document.querySelector('.service-reviews-grid');
+  const servicePrevBtn = document.querySelector('.service-reviews-prev-btn');
+  const serviceNextBtn = document.querySelector('.service-reviews-next-btn');
+
   if (serviceReviewsGrid) {
-    const serviceCards = serviceReviewsGrid.querySelectorAll('.service-review-card');
-    serviceCards.forEach((card) => {
+    const serviceCards = Array.from(serviceReviewsGrid.querySelectorAll('.service-review-card'));
+    let currentServiceIndex = 0;
+
+    function scrollToServiceCard(index, smooth = true) {
+      if (serviceCards.length === 0) return;
+      const targetIdx = (index + serviceCards.length) % serviceCards.length;
+      currentServiceIndex = targetIdx;
+      const targetCard = serviceCards[targetIdx];
+
+      try {
+        targetCard.scrollIntoView({
+          behavior: smooth ? 'smooth' : 'auto',
+          inline: 'center',
+          block: 'nearest'
+        });
+      } catch (e) {
+        const gridRect = serviceReviewsGrid.getBoundingClientRect();
+        const cardRect = targetCard.getBoundingClientRect();
+        const scrollOffset = (cardRect.left - gridRect.left) - (gridRect.width - cardRect.width) / 2;
+        serviceReviewsGrid.scrollBy({
+          left: scrollOffset,
+          behavior: smooth ? 'smooth' : 'auto'
+        });
+      }
+    }
+
+    if (servicePrevBtn) {
+      servicePrevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        scrollToServiceCard(currentServiceIndex - 1, true);
+      });
+    }
+
+    if (serviceNextBtn) {
+      serviceNextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        scrollToServiceCard(currentServiceIndex + 1, true);
+      });
+    }
+
+    serviceCards.forEach((card, idx) => {
       card.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
-          try {
-            card.scrollIntoView({
-              behavior: 'smooth',
-              inline: 'center',
-              block: 'nearest'
-            });
-          } catch (e) {
-            const gridRect = serviceReviewsGrid.getBoundingClientRect();
-            const cardRect = card.getBoundingClientRect();
-            const scrollOffset = (cardRect.left - gridRect.left) - (gridRect.width - cardRect.width) / 2;
-            serviceReviewsGrid.scrollBy({
-              left: scrollOffset,
-              behavior: 'smooth'
-            });
-          }
+          scrollToServiceCard(idx, true);
         }
       });
     });
+
+    let serviceScrollTimeout;
+    serviceReviewsGrid.addEventListener('scroll', () => {
+      if (window.innerWidth > 768) return;
+      clearTimeout(serviceScrollTimeout);
+      serviceScrollTimeout = setTimeout(() => {
+        const gridRect = serviceReviewsGrid.getBoundingClientRect();
+        const gridCenter = gridRect.left + gridRect.width / 2;
+        let closestIdx = 0;
+        let minDiff = Infinity;
+
+        serviceCards.forEach((card, idx) => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const diff = Math.abs(gridCenter - cardCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = idx;
+          }
+        });
+
+        currentServiceIndex = closestIdx;
+      }, 50);
+    }, { passive: true });
   }
 
   // --- Areas We Proudly Serve Across Dubai Interactive Filter & Booking ---
