@@ -840,7 +840,6 @@ button[id*="phone"] svg {
 .btn-read-full-guide::before,
 .btn-service-why-action::before,
 .btn-hub-open-maps::before,
-.areas-clear-btn::before,
 .btn-bform-submit::before,
 .btn-emergency-call::before,
 .btn-simple-cta-call::before,
@@ -2562,11 +2561,6 @@ a.service-card-item *,
   overflow: hidden !important;
 }
 
-.service-card-btn::before,
-.pf-action-btn::before {
-  display: none !important;
-}
-
 .footer-book-btn::before,
 .btn-process-action::before,
 .areas-cta-banner .btn-dispatch-call::before,
@@ -2578,28 +2572,12 @@ a.service-card-item *,
 .btn-urgent-book::before,
 .expertise-circle-arrow-btn::before,
 .mcard-arrow-btn::before,
-.btn-map-direction::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  display: block;
-  background: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.04) 20%,
-    rgba(255, 255, 255, 0.95) 45%,
-    rgba(215, 28, 27, 0.25) 55%,
-    rgba(0, 0, 0, 0.04) 80%,
-    transparent 100%
-  ) !important;
-  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12)) !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-  animation: synchronizedButtonShine 3s ease-in-out infinite !important;
-  animation-delay: 0s !important;
+.btn-map-direction::before,
+.pf-action-btn::before {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+  background: none !important;
 }
 
 .footer-book-btn > *:not(.btn-circle),
@@ -2670,10 +2648,10 @@ a.service-card-item *,
 .btn-kitchen-call::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -50%;
   left: -100%;
   width: 100%;
-  height: 100%;
+  height: 200%;
   background: linear-gradient(
     45deg,
     transparent 0%,
@@ -2723,10 +2701,10 @@ a.service-card-item *,
 .btn-bento-gold::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -50%;
   left: -100%;
   width: 100%;
-  height: 100%;
+  height: 200%;
   background: linear-gradient(
     45deg,
     transparent 0%,
@@ -5568,7 +5546,7 @@ body.dark-theme .kitchen-content-bay:hover {
   );
   border-color: rgba(224, 42, 36, 0.55);
   box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.75),;
+    0 24px 60px rgba(0, 0, 0, 0.75),
     inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
