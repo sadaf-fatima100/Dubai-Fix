@@ -19279,27 +19279,10 @@ body.dark-theme .pf-proof-tag {
   display: block;
 }
 .pf-lightbox-badge-row {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  display: flex;
-  gap: 8px;
-  z-index: 2;
+  display: none !important;
 }
 .pf-lightbox-chip {
-  padding: 5px 12px;
-  border-radius: 9999px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  background: rgba(0, 0, 0, 0.9);
-  color: #ffffff;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-.pf-lightbox-chip.brand {
-  background: rgba(5, 150, 105, 0.9);
+  display: none !important;
 } /* Info Column — Tight Vertical Rhythm & Zero Empty Void */
 .pf-lightbox-info-col {
   padding: 22px 24px 18px 24px;
@@ -19311,31 +19294,10 @@ body.dark-theme .pf-proof-tag {
 .pf-lb-header {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 .pf-lightbox-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  background: rgba(215, 28, 27, 0.08);
-  border: 1px solid rgba(215, 28, 27, 0.22);
-  color: var(--brand-accent, #d71c1b);
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  width: fit-content;
-}
-.pf-lb-pulse-dot {
-  width: 6.5px;
-  height: 6.5px;
-  border-radius: 50%;
-  background: var(--brand-accent, #d71c1b);
-  box-shadow: 0 0 6px rgba(215, 28, 27, 0.7);
-  display: inline-block;
-  flex-shrink: 0;
+  display: none !important;
 }
 .pf-lightbox-title {
   font-size: 1.18rem;
@@ -19698,17 +19660,6 @@ body.dark-theme .pf-lb-reassurance {
   .pf-lightbox-media-wrap {
     height: 180px;
     min-height: 180px;
-  }
-  .pf-lightbox-badge-row {
-    top: 10px;
-    left: 10px;
-    max-width: calc(100% - 54px);
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .pf-lightbox-chip {
-    padding: 3px 9px;
-    font-size: 10px;
   }
   .pf-lightbox-close {
     top: 10px;
