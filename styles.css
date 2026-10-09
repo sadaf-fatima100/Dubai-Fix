@@ -13937,18 +13937,19 @@ body.dark-theme .cta-card-featured .cta-circle-check {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     width: 100%;
   }
   .cta-showcase-tech-img {
     width: 100%;
     max-width: 320px;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     display: block;
+    filter: drop-shadow(0 -2px 8px rgba(25, 32, 35, 0.06));
   }
   .cta-showcase-right {
     order: 3;
-    margin-top: 8px !important;
+    margin-top: 0 !important;
     padding-bottom: 36px;
     width: 100%;
     max-width: 460px;
@@ -13977,12 +13978,13 @@ body.dark-theme .cta-card-featured .cta-circle-check {
   }
   .cta-showcase-tech-img {
     max-width: 270px;
+    margin-bottom: 0 !important;
   }
   .cta-showcase-right {
-    margin-top: 6px !important;
+    margin-top: 0 !important;
   }
   .cta-feature-card {
-    padding: 12px 14px;
+    padding: 14px 14px 12px 14px;
     gap: 11px;
   }
   .cta-card-title {
@@ -14001,9 +14003,10 @@ body.dark-theme .cta-card-featured .cta-circle-check {
   }
   .cta-showcase-tech-img {
     max-width: 240px;
+    margin-bottom: 0 !important;
   }
   .cta-showcase-right {
-    margin-top: 6px !important;
+    margin-top: 0 !important;
   }
 } /* ==========================================================================   NEW 3-TIER SERVICE PAGE LAYOUT (ApexFix Brand Consistent Palette & Typography)   Tier 1: Top Hero Split (Left Creative Card + Right Media Card)   Tier 2: Middle Interactive Bar (Search/Filter + Rotating CTA Banner)   Tier 3: Brand Navy "Our Expertise" Bento Showcase Grid   ========================================================================== */ /* --- TIER 1: Top Hero Split Row --- */
 .service-hero-split-row {
