@@ -1639,12 +1639,17 @@ body.dark-theme .btn-kitchen-quote:hover {
 body.dark-theme .btn-kitchen-quote:hover > span:not(.btn-kitchen-arrow-circle):not(.btn-circle),
 body.dark-theme .btn-kitchen-quote:hover span:not(.btn-kitchen-arrow-circle):not(.btn-circle) {
   color: #ffffff !important;
+}
+
 body.dark-theme .sidebar-btn-book,
 body.dark-theme .sidebar-btn-book > span:not(.btn-circle),
 body.dark-theme .sidebar-btn-book span:not(.btn-circle),
 body.dark-theme .article-cta-book-btn,
 body.dark-theme .article-cta-book-btn > span:not(.btn-circle),
-body.dark-theme .article-cta-book-btn span:not(.btn-circle) {
+body.dark-theme .article-cta-book-btn span:not(.btn-circle),
+body.dark-theme .btn-urgent-book,
+body.dark-theme .btn-urgent-book > span:not(.btn-circle),
+body.dark-theme .btn-urgent-book span:not(.btn-circle) {
   background: #ffffff !important;
   color: var(--brand-accent, #d71c1b) !important;
 }
@@ -4386,7 +4391,7 @@ body.dark-theme .process-badge-tag .badge-dot {
   align-items: center;
   gap: 12px;
   background-color: #ffffff;
-  color: var(--text-dark, #192023);
+  color: #192023 !important;
   font-family: var(--font-family);
   font-size: 13.5px;
   font-weight: 800;
@@ -4405,7 +4410,7 @@ body.dark-theme .process-badge-tag .badge-dot {
   user-select: none;
 }
 .btn-process-action span {
-  color: var(--text-dark, #192023);
+  color: #192023 !important;
   transition: color 0.25s ease;
 }
 .btn-process-action svg {
@@ -24124,6 +24129,28 @@ body.dark-theme .wm-feature-desc {
   justify-content: space-between;
   align-items: flex-end;
   pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Production Footer Sentinel Dismissal: Gracefully hides chatty icons near copyright bar */
+.floating-contact-dock.dock-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(28px) scale(0.9) !important;
+  pointer-events: none !important;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-contact-dock.dock-hidden .float-contact-btn {
+  pointer-events: none !important;
 }
 
 .float-contact-btn {

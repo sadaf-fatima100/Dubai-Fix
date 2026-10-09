@@ -840,6 +840,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initUniversalButtonBubbleAnimation();
 
+  // ==========================================================================
+  // Production Floating Contact Dock (Chatty) Footer Auto-Dismiss Observer
+  // Sentinel Intersection Observer: Smoothly hides floating chatty buttons
+  // when scrolling near the bottom copyright bar to prevent UI collision.
+  // ==========================================================================
+  function initFloatingDockFooterObserver() {
+    const floatingDock = document.getElementById('floatingContactDock') || document.querySelector('.floating-contact-dock');
+    const footerBottom = document.querySelector('.footer-bottom-bar') || document.querySelector('.site-footer-master');
+
+    if (!floatingDock || !footerBottom) return;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            floatingDock.classList.add('dock-hidden');
+          } else {
+            floatingDock.classList.remove('dock-hidden');
+          }
+        });
+      }, {
+        root: null,
+        // Triggers ~60px before entering copyright bar so it vanishes seamlessly before collision
+        rootMargin: '0px 0px 60px 0px',
+        threshold: 0
+      });
+
+      observer.observe(footerBottom);
+    } else {
+      // Lightweight scroll fallback for older browsers
+      const checkDockOverlap = () => {
+        const rect = footerBottom.getBoundingClientRect();
+        const isNearFooter = rect.top <= window.innerHeight - 30;
+        if (isNearFooter) {
+          floatingDock.classList.add('dock-hidden');
+        } else {
+          floatingDock.classList.remove('dock-hidden');
+        }
+      };
+      window.addEventListener('scroll', checkDockOverlap, { passive: true });
+      window.addEventListener('resize', checkDockOverlap, { passive: true });
+      checkDockOverlap();
+    }
+  }
+
+  initFloatingDockFooterObserver();
+
   window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
   window.addEventListener('resize', updateNavbarOnScroll, { passive: true });
   updateNavbarOnScroll();
