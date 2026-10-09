@@ -7534,10 +7534,15 @@ body.dark-theme .prefooter-cta-overlay {
     filter: drop-shadow(0 22px 50px rgba(0, 0, 0, 0.8));
   }
   body.dark-theme .footer-card-container::before {
+    background-image: none !important;
     background: linear-gradient(145deg, #14191c 0%, #0f1315 100%) !important;
   }
   body.dark-theme .footer-card-container:hover {
     background: #ff7a73 !important;
+  }
+  body.dark-theme .footer-card-container:hover::before {
+    background-image: none !important;
+    background: linear-gradient(145deg, #192023 0%, #121618 100%) !important;
   }
 }
 @media (max-width: 360px) {
@@ -9675,10 +9680,7 @@ body.dark-theme .trust-item svg {
     line-height: 1.35;
   }
   .footer-card-container {
-    padding: 26px 16px 28px 16px;
-    clip-path: none;
-    border-radius: 20px;
-    overflow: hidden;
+    padding: 28px 18px 28px 18px;
   }
   .footer-card-grid {
     grid-template-columns: 1fr;
@@ -9912,9 +9914,11 @@ body.dark-theme .trust-item svg {
     padding: 22px 12px;
   } /* Footer 360px Adaptations */
   .footer-card-container {
-    padding: 22px 12px 20px 12px;
-    clip-path: none;
-    border-radius: 16px;
+    --footer-cut: 18px;
+    --footer-ear: 46px;
+    --footer-indent: 5px;
+    --footer-slope: 10px;
+    padding: 24px 14px 22px 14px;
   }
   .footer-col-title {
     font-size: 16.5px;
@@ -10344,9 +10348,11 @@ body.dark-theme .trust-item svg {
     height: 36px;
   }
   .footer-card-container {
-    padding: 18px 10px 18px 10px;
-    clip-path: none;
-    border-radius: 14px;
+    --footer-cut: 14px;
+    --footer-ear: 38px;
+    --footer-indent: 4px;
+    --footer-slope: 8px;
+    padding: 20px 10px 18px 10px;
     margin-bottom: 18px;
   }
   .footer-card-grid {
