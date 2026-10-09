@@ -14850,6 +14850,13 @@ body.dark-theme .service-hero-copy-card .hero-description {
   width: 17px;
   height: 17px;
 }
+.hero-trust-icon-box svg polygon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .hero-trust-item:hover .hero-trust-icon-box {
   background: var(--btn-gradient-primary, linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%));
   color: #ffffff;
@@ -14869,7 +14876,7 @@ body.dark-theme .service-hero-copy-card .hero-description {
   font-family: var(--font-family);
   font-size: 13px;
   font-weight: 800;
-  color: var(--text-dark, #192023);
+  color: var(--brand-accent, #d71c1b);
   line-height: 1.25;
   white-space: nowrap;
 }
@@ -14905,7 +14912,7 @@ body.dark-theme .hero-trust-item:hover .hero-trust-icon-box svg {
   color: #ffffff;
 }
 body.dark-theme .hero-trust-title {
-  color: #eceff1;
+  color: #ff5a52;
 }
 body.dark-theme .hero-trust-sub {
   color: #a9b2b8;
