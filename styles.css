@@ -23632,14 +23632,14 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
 /* 2-Column Split: Visual vs Content (Flexbox for perfect top & bottom stretch matching Home Page About Us) */
 .wm-perf-grid {
   display: flex;
-  gap: clamp(36px, 4.5vw, 60px);
+  gap: 48px;
   align-items: stretch;
 }
 
-/* Left Column: Media & Floating Elements (Height balances exactly with Content Column) */
+/* Left Column: Media & Floating Elements (Width & proportions EXACTLY matching Home Page About Us Section) */
 .wm-perf-media-col {
-  flex: 0 0 clamp(420px, 39vw, 480px);
-  max-width: 480px;
+  flex: 0 0 545px;
+  max-width: 545px;
   width: 100%;
   position: relative;
   display: flex;
@@ -23653,7 +23653,7 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
   min-height: 0;
   display: flex;
   align-items: stretch;
-  gap: 16px;
+  gap: 14px;
 }
 
 /* Thick Vertical Brand Accent Line on the Left of Image (Matching Home Page About Us Section) */
@@ -23710,6 +23710,17 @@ body.dark-theme .wm-perf-img-frame {
 
 .wm-perf-media-wrap:hover .wm-perf-photo {
   transform: scale(1.025);
+}
+
+/* Medium Desktop scaling matching Home Page About Us Section */
+@media (min-width: 993px) and (max-width: 1240px) {
+  .wm-perf-grid {
+    gap: 28px;
+  }
+  .wm-perf-media-col {
+    flex: 0 0 520px;
+    max-width: 520px;
+  }
 }
 
 /* Tablet & Mobile responsive fallback */
