@@ -312,47 +312,30 @@ body.dark-theme .logo-icon-img {
 .nav-link {
   font-size: 14.5px;
   font-weight: 600;
-  line-height: 1;
   color: #2b2e3b;
   text-decoration: none;
   transition:
     color 0.2s ease,
     background-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.2s ease;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   gap: 5px;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 9999px;
-  box-sizing: border-box;
 }
 .nav-link:hover {
   color: var(--brand-accent);
-} /* Active Pill (Home, About, Services, etc.) - Red Pill by default matching Dark Theme */
+} /* Active Pill (Home) */
 .nav-link.active-pill {
-  background: var(--btn-gradient-primary) !important;
-  color: #ffffff !important;
-  padding: 8px 20px 9px 20px;
+  background-color: var(--brand-accent-light);
+  color: var(--brand-accent);
+  padding: 7px 20px;
   font-weight: 700;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 9999px;
-  border: 1px solid rgba(215, 28, 27, 0.2) !important;
-  box-shadow: 0 3px 12px rgba(215, 28, 27, 0.28) !important;
 }
 .nav-link.active-pill:hover {
   background: var(--btn-gradient-hover) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 16px rgba(215, 28, 27, 0.38) !important;
-}
-.nav-link.active-pill .dropdown-chevron {
-  stroke: #ffffff !important;
 } /* Services Dropdown */
 .nav-dropdown {
   position: relative;
@@ -7394,7 +7377,7 @@ body.dark-theme .prefooter-cta-overlay {
     padding: var(--section-py-sm) 0;
   }
   .prefooter-cta-container {
-    padding: 0;
+    padding: 0 16px;
   }
   .prefooter-cta-card {
     border-radius: 22px;
@@ -8156,12 +8139,10 @@ body.dark-theme .trust-item svg {
   }
   .nav-link {
     font-size: 13.5px;
-    padding: 7px 10px;
-    line-height: 1;
+    padding: 5px 8px;
   }
   .nav-link.active-pill {
-    padding: 7px 16px 8px 16px;
-    line-height: 1;
+    padding: 5px 14px;
   }
   .nav-actions {
     gap: 8px;
@@ -9590,8 +9571,8 @@ body.dark-theme .trust-item svg {
   }
   .emergency-pillars-grid {
     width: 100% !important;
-    grid-template-columns: 1fr;
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     padding: 14px;
     box-sizing: border-box;
   }
@@ -9605,7 +9586,7 @@ body.dark-theme .trust-item svg {
     justify-content: center;
   }
   .prefooter-cta-container {
-    padding: 0;
+    padding: 28px 18px;
   }
   .site-footer-master {
     padding-bottom: 16px !important;
@@ -10220,7 +10201,7 @@ body.dark-theme .trust-item svg {
     height: 300px;
   }
   .prefooter-cta-container {
-    padding: 0;
+    padding: 22px 12px;
   } /* Footer 360px Adaptations */
   .footer-card-container {
     padding: 16px 12px;
@@ -10622,7 +10603,7 @@ body.dark-theme .trust-item svg {
     height: 240px;
   }
   .prefooter-cta-container {
-    padding: 0;
+    padding: 18px 8px;
   }
   .prefooter-cta-heading {
     font-size: 1.2rem;
@@ -13317,8 +13298,8 @@ body.dark-theme .hub-core-body {
   }
 } /* ==========================================================================   FAQ SECTION (Matching Reference media_1790252329392.png with ApexFix Luxury Engineering)   ========================================================================== */
 .faq-section {
-  padding-top: var(--section-py, clamp(40px, 4.2vw, 56px));
-  padding-bottom: var(--section-py, clamp(40px, 4.2vw, 56px));
+  padding-top: clamp(20px, 2.4vw, 32px);
+  padding-bottom: clamp(20px, 2.4vw, 32px);
   margin: 0;
   position: relative;
   background: transparent;
@@ -13345,10 +13326,7 @@ body.dark-theme .hub-core-body {
 .faq-sticky-wrap {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-.faq-sticky-wrap .badge-tag {
-  margin-bottom: 0;
+  gap: 18px;
 }
 .faq-eyebrow-pill {
   position: relative;
@@ -13605,10 +13583,6 @@ body.dark-theme .faq-card-body {
 
 /* Responsive Queries for FAQ */
 @media (max-width: 992px) {
-  .faq-section {
-    padding-top: clamp(44px, 5.2vw, 58px);
-    padding-bottom: clamp(32px, 4vw, 44px);
-  }
   .faq-grid {
     display: flex;
     flex-direction: column;
@@ -13620,10 +13594,6 @@ body.dark-theme .faq-card-body {
   }
   .faq-sticky-wrap {
     align-items: flex-start;
-    gap: 12px;
-  }
-  .faq-sticky-wrap .badge-tag {
-    margin-bottom: 0 !important;
   }
   .faq-accordion-col {
     width: 100%;
@@ -13634,31 +13604,12 @@ body.dark-theme .faq-card-body {
   }
   .faq-main-heading {
     font-size: var(--text-h2);
-    margin: 0 !important;
-  }
-  .faq-main-desc {
-    margin: 0 !important;
   }
 }
 @media (max-width: 640px) {
   .faq-section {
-    padding-top: clamp(46px, 6.5vw, 58px);
-    padding-bottom: clamp(28px, 4vw, 38px);
-  }
-  .faq-sticky-wrap {
-    gap: 10px;
-  }
-  .faq-sticky-wrap .badge-tag {
-    margin-bottom: 0 !important;
-  }
-  .faq-main-heading {
-    margin: 0 !important;
-  }
-  .faq-main-desc {
-    margin: 0 !important;
-  }
-  .faq-cta-box {
-    margin-top: 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .faq-card-header {
     padding: 13px 16px;
@@ -13677,15 +13628,6 @@ body.dark-theme .faq-card-body {
   }
 }
 @media (max-width: 480px) {
-  .faq-section {
-    padding-top: clamp(44px, 6.5vw, 52px);
-  }
-  .faq-sticky-wrap {
-    gap: 9px;
-  }
-  .faq-sticky-wrap .badge-tag {
-    margin-bottom: 0 !important;
-  }
   .faq-stats-row {
     padding: 14px 12px;
     gap: 8px;
@@ -15236,12 +15178,12 @@ body.dark-theme .pill-dot-navy {
 } .service-hero-copy-card {
   background: #ffffff;
   border-radius: 28px;
-  padding: 30px 28px 20px 30px;
+  padding: 34px 28px 26px 30px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 544px;
   min-height: 544px;
   max-height: 544px;
@@ -15285,36 +15227,32 @@ body.dark-theme .service-hero-copy-card {
   box-shadow: none !important;
 }
 
-/* 1. Badge Tag: Exact 12px Gap to Headline, Larger Prominent Typography */
+/* 1. Badge Tag: Exact 14px Gap to Headline */
 .service-hero-copy-card .hero-copy-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
+  gap: 7px;
+  padding: 5px 14px;
   border-radius: 9999px;
-  font-size: 13.5px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   width: fit-content;
 }
-.service-hero-copy-card .hero-copy-badge svg {
-  width: 14px;
-  height: 14px;
-}
 
-/* 2. Consistent Homepage Headline Typography: Exact 12px Gap to Description */
+/* 2. Consistent Homepage Headline Typography: Exact 14px Gap to Description */
 .service-hero-copy-card .hero-headline {
   font-family: var(--font-family);
-  font-size: clamp(2.15rem, 3.1vw, 3.05rem);
+  font-size: clamp(1.95rem, 2.75vw, 2.85rem);
   font-weight: 700;
-  line-height: 1.16;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   word-spacing: normal;
   color: #121217;
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
   max-width: 100%;
 }
 body.dark-theme .service-hero-copy-card .hero-headline {
@@ -15327,25 +15265,19 @@ body.dark-theme .service-hero-copy-card .hero-headline {
 .service-hero-copy-card .hl-line.line-2 {
   margin-left: 0;
 }
-.hl-nowrap {
-  white-space: nowrap !important;
-}
-.blog-hero-mbl-br {
-  display: none;
-}
 
-/* 3. Description: Exact 16px Gap to CTA Buttons */
+/* 3. Description: Exact 18px Gap to CTA Buttons */
 .service-hero-copy-card .hero-description {
   font-family: var(--font-family);
   font-size: var(--text-subtitle, 16px);
   font-weight: 400;
-  line-height: var(--lh-subtitle, 1.58);
+  line-height: var(--lh-subtitle, 1.6);
   color: var(--color-subtitle, var(--text-sub));
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   max-width: 580px;
   width: 100%;
-  min-height: auto;
+  min-height: 72px;
   overflow-wrap: break-word;
   word-break: normal;
 }
@@ -15358,14 +15290,14 @@ body.dark-theme .service-hero-copy-card .hero-description {
   white-space: normal;
 }
 
-/* 4. CTA Button Group: Balanced 22px Gap to Social Proof (Exact Equal Top/Bottom Rhythm for Avatars) */
+/* 4. CTA Button Group: Balanced 36px Gap to Social Proof (Equal Top/Bottom Rhythm) */
 .service-hero-copy-card .hero-cta-group,
 .portfolio-hero-row .hero-cta-group {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-top: 0;
-  margin-bottom: 22px;
+  margin-bottom: 36px;
   width: 100%;
 } /* Bottom Key Metrics Row */
 .hero-split-stats {
@@ -15406,9 +15338,9 @@ body.dark-theme .service-hero-copy-card .hero-description {
   padding-top: 18px;
   padding-bottom: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 0;
+  margin-top: auto;
   width: 100%;
-  height: auto;
+  height: 56px;
   box-sizing: border-box;
 }
 .hero-trust-item {
@@ -15625,9 +15557,9 @@ body.dark-theme .hero-trust-sub {
   padding-top: 18px;
   padding-bottom: 0;
   border-top: 1px solid rgba(25, 32, 35, 0.08);
-  margin-top: 0;
+  margin-top: auto;
   width: 100%;
-  height: auto;
+  height: 56px;
   box-sizing: border-box;
 }
 .blog-trust-item {
@@ -16396,9 +16328,6 @@ body.dark-theme .expertise-card {
     font-size: clamp(2.125rem, 1.125rem + 4vw, 2.65rem);
     line-height: 1.18;
     margin-bottom: 12px;
-  }
-  .blog-hero-mbl-br {
-    display: inline;
   }
   .service-hero-copy-card .hero-description {
     font-size: 15px;
@@ -19042,36 +18971,33 @@ body.dark-theme .pf-stat-item {
   box-sizing: border-box;
 }
 .portfolio-hero-row .service-hero-copy-card {
-  padding: 30px 28px 20px 30px;
+  padding: 34px 28px 26px 30px;
   overflow: hidden;
   height: 544px;
   min-height: 544px;
   max-height: 544px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 .portfolio-hero-row .hero-headline {
   font-family: var(--font-family);
-  font-size: clamp(2.15rem, 3.1vw, 3.05rem);
+  font-size: clamp(1.95rem, 2.75vw, 2.85rem);
   font-weight: 700;
-  line-height: 1.16;
+  line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
   max-width: 100%;
 }
 .portfolio-hero-row .hero-description {
   font-family: var(--font-family);
   font-size: var(--text-subtitle, 16px);
   font-weight: 400;
-  line-height: var(--lh-subtitle, 1.58);
+  line-height: var(--lh-subtitle, 1.6);
   white-space: normal;
   color: var(--color-subtitle, var(--text-sub));
   max-width: 580px;
   width: 100%;
-  margin: 0 0 16px 0;
-  min-height: auto;
+  margin: 0 0 18px 0;
+  min-height: 72px;
   overflow-wrap: break-word;
   word-break: normal;
 }
@@ -19236,7 +19162,7 @@ body.dark-theme .pf-collage-card.highlight-card {
   border: none;
   padding: 0;
   margin-top: 0;
-  margin-bottom: 22px;
+  margin-bottom: 0;
   width: 100%;
   min-height: 36px;
   box-shadow: none;
@@ -24983,27 +24909,25 @@ body.dark-theme .wm-feature-desc {
   will-change: transform, opacity;
 }
 
-/* Production Footer Sentinel Dismissal: Gracefully sinks chatty icons below viewport (Mobile Only) */
-@media (max-width: 768px) {
-  .floating-contact-dock.dock-hidden {
-    opacity: 0 !important;
-    visibility: hidden;
-    transform: translateY(96px) scale(0.85) !important;
-    pointer-events: none !important;
-    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                visibility 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  }
+/* Production Footer Sentinel Dismissal: Gracefully sinks chatty icons below viewport */
+.floating-contact-dock.dock-hidden {
+  opacity: 0 !important;
+  visibility: hidden;
+  transform: translateY(96px) scale(0.85) !important;
+  pointer-events: none !important;
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
 
-  .floating-contact-dock.dock-hidden .float-contact-btn {
-    pointer-events: none !important;
-    box-shadow: none !important;
-  }
+.floating-contact-dock.dock-hidden .float-contact-btn {
+  pointer-events: none !important;
+  box-shadow: none !important;
+}
 
-  .floating-contact-dock.dock-hidden .float-sonar-ring {
-    opacity: 0 !important;
-    transition: opacity 0.3s ease !important;
-  }
+.floating-contact-dock.dock-hidden .float-sonar-ring {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
 }
 
 .float-contact-btn {
