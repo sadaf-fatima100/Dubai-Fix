@@ -13317,8 +13317,8 @@ body.dark-theme .hub-core-body {
   }
 } /* ==========================================================================   FAQ SECTION (Matching Reference media_1790252329392.png with ApexFix Luxury Engineering)   ========================================================================== */
 .faq-section {
-  padding-top: clamp(20px, 2.4vw, 32px);
-  padding-bottom: clamp(20px, 2.4vw, 32px);
+  padding-top: var(--section-py, clamp(40px, 4.2vw, 56px));
+  padding-bottom: var(--section-py, clamp(40px, 4.2vw, 56px));
   margin: 0;
   position: relative;
   background: transparent;
@@ -13345,7 +13345,10 @@ body.dark-theme .hub-core-body {
 .faq-sticky-wrap {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
+}
+.faq-sticky-wrap .badge-tag {
+  margin-bottom: 0;
 }
 .faq-eyebrow-pill {
   position: relative;
@@ -13602,6 +13605,10 @@ body.dark-theme .faq-card-body {
 
 /* Responsive Queries for FAQ */
 @media (max-width: 992px) {
+  .faq-section {
+    padding-top: clamp(44px, 5.2vw, 58px);
+    padding-bottom: clamp(32px, 4vw, 44px);
+  }
   .faq-grid {
     display: flex;
     flex-direction: column;
@@ -13613,6 +13620,10 @@ body.dark-theme .faq-card-body {
   }
   .faq-sticky-wrap {
     align-items: flex-start;
+    gap: 12px;
+  }
+  .faq-sticky-wrap .badge-tag {
+    margin-bottom: 0 !important;
   }
   .faq-accordion-col {
     width: 100%;
@@ -13623,12 +13634,31 @@ body.dark-theme .faq-card-body {
   }
   .faq-main-heading {
     font-size: var(--text-h2);
+    margin: 0 !important;
+  }
+  .faq-main-desc {
+    margin: 0 !important;
   }
 }
 @media (max-width: 640px) {
   .faq-section {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: clamp(46px, 6.5vw, 58px);
+    padding-bottom: clamp(28px, 4vw, 38px);
+  }
+  .faq-sticky-wrap {
+    gap: 10px;
+  }
+  .faq-sticky-wrap .badge-tag {
+    margin-bottom: 0 !important;
+  }
+  .faq-main-heading {
+    margin: 0 !important;
+  }
+  .faq-main-desc {
+    margin: 0 !important;
+  }
+  .faq-cta-box {
+    margin-top: 4px;
   }
   .faq-card-header {
     padding: 13px 16px;
@@ -13647,6 +13677,15 @@ body.dark-theme .faq-card-body {
   }
 }
 @media (max-width: 480px) {
+  .faq-section {
+    padding-top: clamp(44px, 6.5vw, 52px);
+  }
+  .faq-sticky-wrap {
+    gap: 9px;
+  }
+  .faq-sticky-wrap .badge-tag {
+    margin-bottom: 0 !important;
+  }
   .faq-stats-row {
     padding: 14px 12px;
     gap: 8px;
