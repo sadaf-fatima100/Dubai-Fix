@@ -857,22 +857,24 @@ button[id*="phone"] svg {
 .service-card-btn::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -100%;
-  width: 100%;
-  height: 200%;
+  top: -60%;
+  left: -50%;
+  width: 35%;
+  height: 220%;
   background: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.08) 25%,
-    rgba(255, 255, 255, 0.52) 50%,
-    rgba(255, 255, 255, 0.08) 75%,
-    transparent 100%
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 215, 210, 0.12) 20%,
+    rgba(255, 255, 255, 0.48) 50%,
+    rgba(255, 215, 210, 0.12) 80%,
+    rgba(255, 255, 255, 0) 100%
   );
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.28));
+  filter: drop-shadow(0 0 5px rgba(255, 180, 175, 0.30));
   pointer-events: none;
   z-index: 1;
-  animation: synchronizedButtonShine 3s ease-in-out infinite;
+  transform: translateX(0) skewX(-25deg);
+  opacity: 0;
+  animation: synchronizedButtonShine 4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
   animation-delay: 0s !important;
 }
 
@@ -1716,34 +1718,82 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
 
 @keyframes synchronizedButtonShine {
   0% {
-    left: -100%;
+    transform: translateX(0) skewX(-25deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  64% {
+    transform: translateX(450%) skewX(-25deg);
+    opacity: 0;
   }
   100% {
-    left: 200%;
+    transform: translateX(450%) skewX(-25deg);
+    opacity: 0;
   }
 }
 @keyframes synchronizedShimmer {
   0% {
-    left: -100%;
+    transform: translateX(0) skewX(-25deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  64% {
+    transform: translateX(450%) skewX(-25deg);
+    opacity: 0;
   }
   100% {
-    left: 200%;
+    transform: translateX(450%) skewX(-25deg);
+    opacity: 0;
   }
 }
 @keyframes shimmer {
   0% {
-    left: -100%;
+    transform: translateX(0) skewX(-25deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  64% {
+    transform: translateX(450%) skewX(-25deg);
+    opacity: 0;
   }
   100% {
-    left: 200%;
+    transform: translateX(450%) skewX(-25deg);
+    opacity: 0;
   }
 }
 @keyframes shine {
   0% {
-    left: -100%;
+    transform: translateX(0) skewX(-25deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  64% {
+    transform: translateX(450%) skewX(-25deg);
+    opacity: 0;
   }
   100% {
-    left: 200%;
+    transform: translateX(450%) skewX(-25deg);
+    opacity: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2617,10 +2667,27 @@ a.service-card-item *,
 .mcard-arrow-btn::before,
 .btn-map-direction::before,
 .pf-action-btn::before {
-  content: none !important;
-  display: none !important;
-  animation: none !important;
-  background: none !important;
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -50%;
+  width: 35%;
+  height: 220%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.38) 25%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0.38) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.55));
+  pointer-events: none;
+  z-index: 1;
+  transform: translateX(0) skewX(-25deg);
+  opacity: 0;
+  animation: synchronizedButtonShine 4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: 0s !important;
 }
 
 .footer-book-btn > *:not(.btn-circle),
@@ -2691,23 +2758,24 @@ a.service-card-item *,
 .btn-kitchen-call::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -100%;
-  width: 100%;
-  height: 200%;
+  top: -60%;
+  left: -50%;
+  width: 35%;
+  height: 220%;
   background: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(16, 185, 129, 0.06) 20%,
-    rgba(255, 255, 255, 0.95) 45%,
-    rgba(52, 211, 153, 0.32) 55%,
-    rgba(16, 185, 129, 0.08) 80%,
-    transparent 100%
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(167, 243, 208, 0.18) 22%,
+    rgba(255, 255, 255, 0.52) 50%,
+    rgba(167, 243, 208, 0.18) 78%,
+    rgba(255, 255, 255, 0) 100%
   );
-  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.3));
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.28));
   pointer-events: none;
   z-index: 1;
-  animation: synchronizedButtonShine 3s ease-in-out infinite;
+  transform: translateX(0) skewX(-25deg);
+  opacity: 0;
+  animation: synchronizedButtonShine 4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
   animation-delay: 0s !important;
 }
 
@@ -2744,23 +2812,24 @@ a.service-card-item *,
 .btn-bento-gold::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -100%;
-  width: 100%;
-  height: 200%;
+  top: -60%;
+  left: -50%;
+  width: 35%;
+  height: 220%;
   background: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(251, 191, 36, 0.08) 20%,
-    rgba(255, 255, 255, 0.95) 45%,
-    rgba(251, 191, 36, 0.35) 55%,
-    rgba(245, 158, 11, 0.1) 80%,
-    transparent 100%
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(251, 191, 36, 0.15) 20%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(251, 191, 36, 0.15) 80%,
+    rgba(255, 255, 255, 0) 100%
   );
   filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.35));
   pointer-events: none;
   z-index: 1;
-  animation: synchronizedButtonShine 3s ease-in-out infinite;
+  transform: translateX(0) skewX(-25deg);
+  opacity: 0;
+  animation: synchronizedButtonShine 4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
   animation-delay: 0s !important;
 }
 
