@@ -686,9 +686,10 @@ body.dark-theme .dropdown-divider {
   flex-shrink: 0;
 }
 
-.btn-hero-secondary > span {
+.btn-hero-secondary > span,
+.btn-hero-secondary span:not(.btn-circle) {
   color: #15803d;
-  transition: color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transition: color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 .btn-hero-secondary svg {
@@ -1342,21 +1343,37 @@ button[class*="-btn"] * {
 }
 
 .btn-hero-secondary:hover > span,
+.btn-hero-secondary:hover span:not(.btn-circle),
 .btn-hero-action-call:hover > span,
+.btn-hero-action-call:hover span:not(.btn-circle),
 .btn-about-secondary:hover > span,
+.btn-about-secondary:hover span:not(.btn-circle),
 .btn-urgent-call:hover > span,
+.btn-urgent-call:hover span:not(.btn-circle),
 .btn-cta-green:hover > span,
+.btn-cta-green:hover span:not(.btn-circle),
 .btn-prefooter-call:hover > span,
+.btn-prefooter-call:hover span:not(.btn-circle),
 .btn-faq-talk:hover > span,
+.btn-faq-talk:hover span:not(.btn-circle),
 .btn-cta-banner-call:hover > span,
+.btn-cta-banner-call:hover span:not(.btn-circle),
 .process-phone-link:hover > span,
+.process-phone-link:hover span:not(.btn-circle),
 .standards-call-link:hover > span,
+.standards-call-link:hover span:not(.btn-circle),
 .btn-dispatch-wa:hover > span,
+.btn-dispatch-wa:hover span:not(.btn-circle),
 .btn-dispatch-whatsapp:hover > span,
+.btn-dispatch-whatsapp:hover span:not(.btn-circle),
 .btn-simple-cta-whatsapp:hover > span,
+.btn-simple-cta-whatsapp:hover span:not(.btn-circle),
 .btn-lb-whatsapp:hover > span,
+.btn-lb-whatsapp:hover span:not(.btn-circle),
 .btn-emergency-wa:hover > span,
-.btn-dispatch-option.btn-dispatch-wa:hover > span {
+.btn-emergency-wa:hover span:not(.btn-circle),
+.btn-dispatch-option.btn-dispatch-wa:hover > span,
+.btn-dispatch-option.btn-dispatch-wa:hover span:not(.btn-circle) {
   color: #ffffff !important;
 }
 
@@ -1711,21 +1728,37 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
 }
 
 body.dark-theme .btn-hero-secondary:hover > span,
+body.dark-theme .btn-hero-secondary:hover span:not(.btn-circle),
 body.dark-theme .btn-hero-action-call:hover > span,
+body.dark-theme .btn-hero-action-call:hover span:not(.btn-circle),
 body.dark-theme .btn-about-secondary:hover > span,
+body.dark-theme .btn-about-secondary:hover span:not(.btn-circle),
 body.dark-theme .btn-urgent-call:hover > span,
+body.dark-theme .btn-urgent-call:hover span:not(.btn-circle),
 body.dark-theme .btn-cta-green:hover > span,
+body.dark-theme .btn-cta-green:hover span:not(.btn-circle),
 body.dark-theme .btn-prefooter-call:hover > span,
+body.dark-theme .btn-prefooter-call:hover span:not(.btn-circle),
 body.dark-theme .btn-faq-talk:hover > span,
+body.dark-theme .btn-faq-talk:hover span:not(.btn-circle),
 body.dark-theme .btn-cta-banner-call:hover > span,
+body.dark-theme .btn-cta-banner-call:hover span:not(.btn-circle),
 body.dark-theme .process-phone-link:hover > span,
+body.dark-theme .process-phone-link:hover span:not(.btn-circle),
 body.dark-theme .standards-call-link:hover > span,
+body.dark-theme .standards-call-link:hover span:not(.btn-circle),
 body.dark-theme .btn-dispatch-wa:hover > span,
+body.dark-theme .btn-dispatch-wa:hover span:not(.btn-circle),
 body.dark-theme .btn-dispatch-whatsapp:hover > span,
+body.dark-theme .btn-dispatch-whatsapp:hover span:not(.btn-circle),
 body.dark-theme .btn-simple-cta-whatsapp:hover > span,
+body.dark-theme .btn-simple-cta-whatsapp:hover span:not(.btn-circle),
 body.dark-theme .btn-lb-whatsapp:hover > span,
+body.dark-theme .btn-lb-whatsapp:hover span:not(.btn-circle),
 body.dark-theme .btn-emergency-wa:hover > span,
-body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover > span {
+body.dark-theme .btn-emergency-wa:hover span:not(.btn-circle),
+body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover > span,
+body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover span:not(.btn-circle) {
   color: #ffffff !important;
 }
 
@@ -10791,8 +10824,11 @@ body.dark-theme .btn-about-secondary {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 body.dark-theme .btn-hero-secondary > span,
-body.dark-theme .btn-about-secondary > span {
+body.dark-theme .btn-hero-secondary span:not(.btn-circle),
+body.dark-theme .btn-about-secondary > span,
+body.dark-theme .btn-about-secondary span:not(.btn-circle) {
   color: #25d366 !important;
+  transition: color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 body.dark-theme .btn-hero-secondary svg,
 body.dark-theme .btn-about-secondary svg {
