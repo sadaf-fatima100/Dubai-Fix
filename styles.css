@@ -1304,7 +1304,6 @@ button[class*="-btn"] * {
 .sidebar-btn-book:hover::after,
 .article-cta-book-btn:hover::after,
 .btn-kitchen-quote:hover::after,
-.pf-action-btn:hover::after,
 .btn-dispatch-option.btn-dispatch-call:hover::after {
   opacity: 1 !important;
 }
@@ -1618,8 +1617,7 @@ button[class*="-btn"] * {
 .btn-filter-browse:hover svg,
 .btn-read-article:hover svg,
 .btn-read-full-guide:hover svg,
-.btn-service-why-action:hover svg,
-.pf-action-btn:hover svg {
+.btn-service-why-action:hover svg {
   transform: translateX(3.5px) !important;
 }
 
@@ -23092,6 +23090,13 @@ body.dark-theme .areas-dispatch-link {
 body.dark-theme .areas-dispatch-live .status-pulse-dot {
   background: #ff5a52;
   box-shadow: 0 0 6px rgba(255, 90, 82, 0.9);
+}
+body.dark-theme .article-cta-banner,
+body.dark-theme .article-body-cta-box,
+body.dark-theme .sidebar-dispatch-card {
+  background: #171c1f;
+  border-color: #2a3136;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* Article Responsive Queries */
