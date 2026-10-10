@@ -610,17 +610,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Brand Category Filtering ---
   const brandFilterPills = document.querySelectorAll('.brand-filter-pill');
   const brandCards = document.querySelectorAll('.brand-curved-card');
-  const brandsCategoryHint = document.getElementById('brandsCategoryHint');
 
-  const categoryHints = {
-    'all': 'Showing all <strong>20 certified brands</strong> with same-day technician dispatch across Dubai.',
-    'kitchen': 'Showing <strong>10 certified kitchen & cooking brands</strong> for Ovens, Cooktops, Ranges & Dishwashers.',
-    'laundry': 'Showing <strong>9 master laundry brands</strong> for Washing Machines, Dryers & Laundry Centers.',
-    'cooling': 'Showing <strong>9 refrigeration specialist brands</strong> for French-Door, Side-by-Side & Deep Freezers.',
-    'ac': 'Showing <strong>7 authorized AC brands</strong> for Split AC, Central HVAC, Chillers & VRV Systems.'
-  };
-
+  // Dynamically synchronize pill counts with actual DOM cards
   if (brandFilterPills.length > 0 && brandCards.length > 0) {
+    brandFilterPills.forEach(pill => {
+      const filter = pill.getAttribute('data-filter');
+      const countEl = pill.querySelector('.pill-count');
+      if (countEl) {
+        if (filter === 'all') {
+          countEl.textContent = brandCards.length;
+        } else {
+          let count = 0;
+          brandCards.forEach(card => {
+            const cats = (card.getAttribute('data-categories') || '').split(' ');
+            if (cats.includes(filter)) count++;
+          });
+          countEl.textContent = count;
+        }
+      }
+    });
+
     brandFilterPills.forEach(pill => {
       pill.addEventListener('click', () => {
         const filter = pill.getAttribute('data-filter');
@@ -632,15 +641,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         pill.classList.add('active');
         pill.setAttribute('aria-selected', 'true');
-
-        // Update hint text
-        if (brandsCategoryHint && categoryHints[filter]) {
-          brandsCategoryHint.style.opacity = '0';
-          setTimeout(() => {
-            brandsCategoryHint.innerHTML = categoryHints[filter];
-            brandsCategoryHint.style.opacity = '1';
-          }, 150);
-        }
 
         // Filter cards smoothly
         brandCards.forEach(card => {
