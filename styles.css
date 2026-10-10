@@ -15308,7 +15308,7 @@ body.dark-theme .service-hero-copy-card {
 /* 2. Consistent Homepage Headline Typography: Exact 12px Gap to Description */
 .service-hero-copy-card .hero-headline {
   font-family: var(--font-family);
-  font-size: clamp(2.15rem, 3.1vw, 3.05rem);
+  font-size: clamp(2.25rem, 3.25vw, 3.15rem);
   font-weight: 700;
   line-height: 1.16;
   letter-spacing: -0.02em;
@@ -15358,14 +15358,14 @@ body.dark-theme .service-hero-copy-card .hero-description {
   white-space: normal;
 }
 
-/* 4. CTA Button Group: Balanced 22px Gap to Social Proof (Exact Equal Top/Bottom Rhythm for Avatars) */
+/* 4. CTA Button Group: Balanced 18px Gap to Social Proof (Exact Equal Top/Bottom Rhythm for Avatars) */
 .service-hero-copy-card .hero-cta-group,
 .portfolio-hero-row .hero-cta-group {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 0;
-  margin-bottom: 22px;
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
   width: 100%;
 } /* Bottom Key Metrics Row */
 .hero-split-stats {
@@ -15403,10 +15403,10 @@ body.dark-theme .service-hero-copy-card .hero-description {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 18px;
+  padding-top: 16px !important;
   padding-bottom: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 0;
+  margin-top: 0 !important;
   width: 100%;
   height: auto;
   box-sizing: border-box;
@@ -15622,10 +15622,10 @@ body.dark-theme .hero-trust-sub {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 18px;
+  padding-top: 16px !important;
   padding-bottom: 0;
   border-top: 1px solid rgba(25, 32, 35, 0.08);
-  margin-top: 0;
+  margin-top: 0 !important;
   width: 100%;
   height: auto;
   box-sizing: border-box;
@@ -16309,7 +16309,7 @@ body.dark-theme .expertise-card {
     text-align: center;
   }
   .service-hero-copy-card .hero-headline {
-    font-size: clamp(2.1rem, 4.2vw, 2.85rem);
+    font-size: clamp(2.35rem, 4.8vw, 3.0rem);
     line-height: 1.15;
     margin: 0 auto 16px auto;
     text-align: center;
