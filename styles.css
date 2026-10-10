@@ -8436,8 +8436,8 @@ body.dark-theme .trust-item svg {
     background-color: rgba(215, 28, 27, 0.12) !important;
   }
   body.dark-theme .nav-link.active-pill {
-    background-color: rgba(215, 28, 27, 0.25) !important;
-    color: #ff5a52 !important;
+    background: var(--btn-gradient-primary) !important;
+    color: #ffffff !important;
   }
   body.dark-theme .nav-dropdown .dropdown-content {
     background-color: #171c1f !important;
@@ -8886,6 +8886,11 @@ body.dark-theme .trust-item svg {
   }
   .nav-menu.open {
     display: flex;
+  }
+  body.dark-theme .nav-menu {
+    background-color: #171c1f !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85) !important;
   }
   .nav-menu .nav-link {
     width: fit-content;
