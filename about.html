@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=12.6">
+  <link rel="stylesheet" href="styles.css?v=12.7">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -37,7 +37,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=12.6 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=12.7 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* -------------------------------------------------------
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -468,7 +468,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 154px;
+      flex: 1;
+      height: auto;
+      min-height: 154px;
       box-sizing: border-box;
       box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.35s ease, border-color 0.3s ease;
@@ -859,7 +861,7 @@
         "visual steps";
       column-gap: clamp(20px, 3vw, 42px);
       row-gap: 0;
-      align-items: center;
+      align-items: stretch;
     }
 
     .about-process-header {
@@ -879,8 +881,9 @@
       align-items: center;
       justify-content: flex-start;
       width: 100%;
-      align-self: start;
+      align-self: stretch;
       margin-top: 41px; /* Exactly aligns card top horizontally with H2 heading */
+      height: calc(100% - 41px);
     }
 
     /* Bento Stage Architectural Card */
@@ -888,8 +891,8 @@
       position: relative;
       width: 100%;
       max-width: 440px;
-      height: clamp(430px, 38vw, 470px);
-      max-height: 470px;
+      height: 100%;
+      min-height: 440px;
       margin: 0 auto;
       border-radius: 28px;
       overflow: hidden;
@@ -3600,17 +3603,9 @@
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     Dubai Certified Crew
                   </span>
-                  <span class="stage-live">
-                    <span class="stage-live-dot"></span>
-                    60-Min Dispatch
-                  </span>
                 </div>
                 <div class="process-stage-backdrop"></div>
                 <img src="assets/process-technicians-crew.jpg?v=3.0" alt="Dubai Fix Certified Appliance Repair Engineers" class="process-technicians-img" loading="lazy">
-                <div class="process-float-badge">
-                  <span class="process-float-dot"></span>
-                  <span>Certified Master Technicians &bull; Dubai</span>
-                </div>
               </div>
             </div>
 
