@@ -17414,9 +17414,14 @@ body.dark-theme .hero-flank-card {
     width: 100%;
     justify-content: center;
   }
+  .proof-trust-badge-title,
   .proof-trust-highlight,
   .proof-trust-caption {
     white-space: normal;
+    text-align: center;
+  }
+  .proof-trust-text {
+    align-items: center;
     text-align: center;
   }
   .hero-center-trust-dock,
