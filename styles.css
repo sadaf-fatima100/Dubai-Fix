@@ -6293,11 +6293,11 @@ body.dark-theme .btn-kitchen-call:hover {
    ========================================================================== */
 .prefooter-cta-section {
   padding: clamp(40px, 4.5vw, 60px) 0;
-  background: var(--bg-canvas, #fbfbfe);
+  background: transparent;
   width: 100%;
 }
 body.dark-theme .prefooter-cta-section {
-  background: #0c1017;
+  background: transparent;
 }
 .prefooter-cta-container {
   width: 100%;
@@ -6603,7 +6603,7 @@ body.dark-theme .prefooter-cta-section {
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  background: linear-gradient(135deg, #f6f9ff 0%, #ffffff 48%, #ffffff 100%);
+  background: #ffffff;
   border: 2.5px solid #d71c1b;
   border-radius: 30px;
   padding: 0;

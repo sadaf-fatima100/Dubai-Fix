@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=11.9">
+  <link rel="stylesheet" href="styles.css?v=11.8">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -853,18 +853,33 @@
     .about-process-layout {
       display: grid;
       grid-template-columns: clamp(320px, 30vw, 440px) 1fr;
-      gap: clamp(20px, 3vw, 42px);
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+        "visual header"
+        "visual steps";
+      column-gap: clamp(20px, 3vw, 42px);
+      row-gap: 0;
       align-items: center;
+    }
+
+    .about-process-header {
+      grid-area: header;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      min-width: 0;
     }
 
     /* Left Column: Bento Stage Frame for Certified Crew */
     .about-process-visual {
+      grid-area: visual;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 100%;
+      align-self: center;
     }
 
     /* Bento Stage Architectural Card */
@@ -1050,7 +1065,9 @@
     }
 
     /* Right Column: Content & Steps */
-    .about-process-content {
+    .about-process-content,
+    .about-process-steps-wrap {
+      grid-area: steps;
       position: relative;
       z-index: 2;
       width: 100%;
@@ -2744,8 +2761,31 @@
       .pillar-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
       .about-stats-strip { grid-template-columns: repeat(2, 1fr); }
       .about-stats-strip-item:nth-child(2) { border-right: none; }
-      .about-process-layout { grid-template-columns: 1fr; gap: 36px; }
-      .about-process-visual { order: -1; max-width: 440px; margin: 0 auto; align-items: center; }
+      .about-process-layout {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+        grid-template-areas: none;
+        gap: 28px;
+      }
+      .about-process-header {
+        order: 1;
+        width: 100%;
+      }
+      .about-process-header .about-process-lead {
+        margin-bottom: 0;
+      }
+      .about-process-visual {
+        order: 2;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+        align-items: center;
+      }
+      .about-process-steps-wrap {
+        order: 3;
+        width: 100%;
+      }
       .process-stage-card { max-width: 420px; }
       .process-technicians-img { margin-left: 0; }
       .process-float-badge { bottom: 16px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
@@ -2780,6 +2820,9 @@
       .about-why-choose,
       .about-compare-section {
         padding: clamp(20px, 3.2vw, 26px) 0;
+      }
+      .about-process-layout {
+        gap: 20px;
       }
       .process-stage-card {
         border-radius: 22px;
@@ -3523,7 +3566,25 @@
         <div class="section-container-inner">
           <div class="about-process-layout">
 
-            <!-- Left Column: Cutout Technicians Bento Stage (Option 1) -->
+            <!-- Header / Text: Eyebrow, H2, and Lead Description -->
+            <div class="about-process-header">
+              <!-- Eyebrow Pill -->
+              <div class="badge-tag" style="display:inline-flex;margin-bottom:14px;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>OUR 4-STEP PROTOCOL</span>
+              </div>
+
+              <!-- Section H2 -->
+              <h2 class="about-process-h2">How We Deliver <span class="highlight-navy">Precision Care</span></h2>
+
+              <!-- Lead Paragraph -->
+              <p class="about-process-lead">A structured Dubai Fix 4-step workflow designed to restore your home appliance on the very first visit.</p>
+            </div>
+
+            <!-- Bento Stage Frame for Certified Crew -->
             <div class="about-process-visual">
               <div class="process-stage-card">
                 <div class="process-stage-topbar">
@@ -3545,23 +3606,8 @@
               </div>
             </div>
 
-            <!-- Right Column: Content & 4 Steps -->
-            <div class="about-process-content">
-              <!-- Eyebrow Pill -->
-              <div class="badge-tag" style="display:inline-flex;margin-bottom:14px;">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <span>OUR 4-STEP PROTOCOL</span>
-              </div>
-
-              <!-- Section H2 -->
-              <h2 class="about-process-h2">How We Deliver <span class="highlight-navy">Precision Care</span></h2>
-
-              <!-- Lead Paragraph -->
-              <p class="about-process-lead">A structured Dubai Fix 4-step workflow designed to restore your home appliance on the very first visit.</p>
-
+            <!-- Steps & Actions: 4 Steps Grid + CTA Action Row -->
+            <div class="about-process-steps-wrap">
               <!-- 2x2 Steps Grid -->
               <div class="process-steps-grid">
 
@@ -3637,7 +3683,7 @@
                 </a>
               </div>
 
-            </div><!-- /.about-process-content -->
+            </div><!-- /.about-process-steps-wrap -->
 
           </div><!-- /.about-process-layout -->
         </div><!-- /.section-container-inner -->
