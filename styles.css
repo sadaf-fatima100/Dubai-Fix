@@ -15376,6 +15376,13 @@ body.dark-theme .service-hero-copy-card .hero-headline {
 .service-hero-copy-card .hl-line.line-2 {
   margin-left: 0;
 }
+.hl-nowrap {
+  white-space: nowrap !important;
+}
+.blog-hero-mbl-br,
+.contact-hero-mbl-br {
+  display: none;
+}
 
 /* 3. Description: Exact 18px Gap to CTA Buttons */
 .service-hero-copy-card .hero-description {
@@ -16439,6 +16446,10 @@ body.dark-theme .expertise-card {
     font-size: clamp(2.125rem, 1.125rem + 4vw, 2.65rem);
     line-height: 1.18;
     margin-bottom: 12px;
+  }
+  .blog-hero-mbl-br,
+  .contact-hero-mbl-br {
+    display: inline;
   }
   .service-hero-copy-card .hero-description {
     font-size: 15px;
@@ -19614,7 +19625,7 @@ body.dark-theme .pf-proof-tag {
 /* --- Standard Mobile Viewports (480px & Below) --- */
 @media (max-width: 480px) {
   .portfolio-hero-row .service-hero-copy-card {
-    padding: 32px 14px 22px 14px;
+    padding: 32px 10px 22px 10px;
     border-radius: 18px;
     height: auto !important;
     min-height: auto !important;
@@ -19623,6 +19634,7 @@ body.dark-theme .pf-proof-tag {
   .portfolio-hero-row .hero-headline {
     font-size: clamp(2rem, 1.125rem + 4vw, 2.45rem);
     line-height: 1.2;
+    letter-spacing: -0.03em;
   }
   .portfolio-hero-row .hero-description {
     font-size: 13.5px;
