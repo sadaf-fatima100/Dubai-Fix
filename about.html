@@ -964,7 +964,7 @@
     /* 2x2 Steps Grid - Full-Width Responsive Bento */
     .about-process .process-steps-grid {
       display: grid !important;
-      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       width: 100% !important;
       max-width: 100% !important;
       gap: 16px !important;
@@ -1183,6 +1183,7 @@
       color: var(--text-dark, #121217);
       margin: 0 0 14px;
       text-align: left;
+      text-wrap: balance;
     }
     body.dark-theme .why-choose-h2 {
       color: #ffffff;
@@ -1669,6 +1670,10 @@
       }
     }
     @media (max-width: 576px) {
+      .why-choose-h2 {
+        font-size: clamp(1.4rem, 5.5vw, 1.75rem);
+        line-height: 1.22;
+      }
       .why-dual-cards-grid {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -2635,7 +2640,10 @@
       }
     @media (max-width: 768px) {
       .pillar-grid { grid-template-columns: 1fr; }
-      .process-steps-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .about-process .process-steps-grid,
+      .process-steps-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .about-process .process-step-item,
+      .process-step-item { padding: 18px 20px !important; }
       /* .about-standards-section responsive */
       .standards-media-col { min-height: 360px; }
       .standards-quote-card { bottom: 16px; left: 16px; right: 16px; padding: 18px 20px; }
@@ -2666,8 +2674,10 @@
       .btn-cta-green, .btn-cta-navy { justify-content: center; }
       .about-float-chip-top, .pillar-card { padding: 20px 16px; }
       .compare-card-pro, .compare-card-risk { padding: 22px 18px; }
-      .process-steps-grid { grid-template-columns: 1fr; gap: 12px; }
-      .process-step-item { padding: 18px 16px; }
+      .about-process .process-steps-grid,
+      .process-steps-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .about-process .process-step-item,
+      .process-step-item { padding: 16px 18px !important; border-radius: 16px !important; }
       .process-action-row { flex-direction: column; align-items: stretch; }
       .process-action-row .btn-cta-navy, .process-action-row .process-phone-link { justify-content: center; }
       .standards-quote-card { padding: 14px 16px; }
@@ -2682,12 +2692,19 @@
       .mission-card-featured { padding: 22px 18px 20px 18px; }
     }
     @media (max-width: 360px) {
+      .why-choose-h2 { font-size: clamp(1.18rem, 5vw, 1.35rem); }
       /* .about-standards-section responsive */
       .standards-content-col { padding: 22px 14px; }
       .standards-stats-row { grid-template-columns: 1fr; gap: 12px; }
       .about-stats-strip { grid-template-columns: 1fr; }
       .about-stats-strip-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
-      }
+      .about-process .process-steps-grid,
+      .process-steps-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+      .about-process .process-step-item,
+      .process-step-item { padding: 14px 14px 16px 14px !important; }
+      .process-step-title { font-size: 15px !important; }
+      .process-step-desc { font-size: 13px !important; }
+    }
 
       /* Fixed Navbar Anchor Scroll Offset */
       #home,
@@ -3466,7 +3483,7 @@
 
               <!-- Dual-Color H2 Heading (Brand Standard) -->
               <h2 class="why-choose-h2">
-                Rapid Appliance Repairs With<br><span class="highlight-navy">Certified Standards</span>
+                Rapid Appliance Repairs<br class="why-choose-br">With <span class="highlight-navy">Certified Standards</span>
               </h2>
 
               <!-- Subtitle Paragraph -->
