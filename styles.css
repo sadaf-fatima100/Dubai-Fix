@@ -3198,8 +3198,9 @@ a.service-card-item *,
 }
 .btn-dispatch-whatsapp svg {
   color: #16a34a;
-  stroke: #16a34a;
-  transition: color 0.2s ease, stroke 0.2s ease;
+  fill: currentColor;
+  stroke: none;
+  transition: color 0.2s ease, fill 0.2s ease;
 }
 .btn-dispatch-whatsapp:hover {
   transform: translateY(-2px);
@@ -3218,11 +3219,11 @@ a.service-card-item *,
 }
 .btn-dispatch-whatsapp:hover svg {
   color: #ffffff !important;
-  stroke: #ffffff !important;
+  stroke: none !important;
   fill: currentColor !important;
   transition:
     color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    stroke 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    fill 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 /* Responsive Breakpoints for Services Dispatch Bar */
@@ -7462,7 +7463,12 @@ body.dark-theme .prefooter-cta-overlay {
 .footer-social-btn.btn-whatsapp:hover {
   background: #25d366 !important;
   border-color: #25d366 !important;
+  color: #ffffff !important;
   box-shadow: 0 10px 22px rgba(37, 211, 102, 0.40) !important;
+}
+.footer-social-btn.btn-whatsapp:hover svg {
+  fill: #ffffff !important;
+  color: #ffffff !important;
 } /* Floating Card Container (Exact Reference Box Architecture with Dubai Notched Cutout) */
 .footer-card-container {
   width: 100%;
@@ -11271,6 +11277,11 @@ body.dark-theme .footer-social-btn:hover {
 body.dark-theme .footer-social-btn.btn-whatsapp:hover {
   background-color: #25d366 !important;
   border-color: #25d366 !important;
+  color: #ffffff !important;
+}
+body.dark-theme .footer-social-btn.btn-whatsapp:hover svg {
+  fill: #ffffff !important;
+  color: #ffffff !important;
 }
 body.dark-theme .footer-card-container {
   background: linear-gradient(145deg, #14191c 0%, #0f1315 100%);
@@ -14876,14 +14887,14 @@ body.dark-theme .hf-card-caption {
 .hf-card-title-wrap {
   display: flex;
   flex-direction: column;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .hf-card-title-line {
   font-family: var(--font-family);
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 800;
-  line-height: 1.14;
+  line-height: 1.18;
   letter-spacing: -0.02em;
   color: #ffffff;
 }
@@ -14951,12 +14962,12 @@ body.dark-theme .hf-card-caption {
   .hero-floating-service-card {
     bottom: 16px;
     right: 16px;
-    padding: 13px 16px 15px 16px;
-    min-width: 155px;
+    padding: 12px 15px 14px 15px;
+    min-width: 145px;
     border-radius: 16px;
   }
   .hf-card-title-line {
-    font-size: 19px;
+    font-size: 14px;
   }
   .hf-card-caption {
     font-size: 10px;
@@ -14983,12 +14994,12 @@ body.dark-theme .hf-card-caption {
   .hero-floating-service-card {
     bottom: 10px;
     right: 10px;
-    padding: 10px 12px 12px 12px;
+    padding: 9px 12px 11px 12px;
     border-radius: 14px;
-    min-width: 135px;
+    min-width: 125px;
   }
   .hf-card-title-line {
-    font-size: 16px;
+    font-size: 12px;
   }
   .hf-card-caption {
     font-size: 9px;
@@ -15008,6 +15019,16 @@ body.dark-theme .hf-card-caption {
   }
   .hf-card-meta-sub {
     font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-floating-service-card {
+    padding: 8px 10px 10px 10px;
+    min-width: 115px;
+  }
+  .hf-card-title-line {
+    font-size: 11px;
   }
 }
 
