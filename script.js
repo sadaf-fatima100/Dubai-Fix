@@ -958,6 +958,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     function checkDockCollision() {
+      // Auto-dismiss is strictly for mobile viewports (<= 768px). Never hide on desktop.
+      if (window.innerWidth > 768) {
+        if (isHidden) {
+          isHidden = false;
+          floatingDock.classList.remove('dock-hidden');
+        }
+        ticking = false;
+        return;
+      }
+
       const rect = footerBottom.getBoundingClientRect();
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
       

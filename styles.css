@@ -24983,25 +24983,27 @@ body.dark-theme .wm-feature-desc {
   will-change: transform, opacity;
 }
 
-/* Production Footer Sentinel Dismissal: Gracefully sinks chatty icons below viewport */
-.floating-contact-dock.dock-hidden {
-  opacity: 0 !important;
-  visibility: hidden;
-  transform: translateY(96px) scale(0.85) !important;
-  pointer-events: none !important;
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
+/* Production Footer Sentinel Dismissal: Gracefully sinks chatty icons below viewport (Mobile Only) */
+@media (max-width: 768px) {
+  .floating-contact-dock.dock-hidden {
+    opacity: 0 !important;
+    visibility: hidden;
+    transform: translateY(96px) scale(0.85) !important;
+    pointer-events: none !important;
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
 
-.floating-contact-dock.dock-hidden .float-contact-btn {
-  pointer-events: none !important;
-  box-shadow: none !important;
-}
+  .floating-contact-dock.dock-hidden .float-contact-btn {
+    pointer-events: none !important;
+    box-shadow: none !important;
+  }
 
-.floating-contact-dock.dock-hidden .float-sonar-ring {
-  opacity: 0 !important;
-  transition: opacity 0.3s ease !important;
+  .floating-contact-dock.dock-hidden .float-sonar-ring {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+  }
 }
 
 .float-contact-btn {
