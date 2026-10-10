@@ -1889,9 +1889,10 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover svg {
 .service-card-btn:active,
 .compare-card-cta:active,
 .cta-primary-btn:active,
-[class*="btn-"]:active,
-[class*="cta-"]:active,
-[class*="-btn"]:active {
+a[class*="btn-"]:active,
+button[class*="btn-"]:active,
+a[class*="-btn"]:active,
+button[class*="-btn"]:active {
   transform: translateY(0px) scale(0.98) !important;
   box-shadow:
     inset 0 2px 4px rgba(0, 0, 0, 0.22),
@@ -14179,6 +14180,10 @@ body.dark-theme .emergency-pillar-item:hover {
   min-width: 0;
   line-height: 0;
   margin-bottom: -48px;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .cta-tech-glow {
   display: none !important;
@@ -14191,6 +14196,10 @@ body.dark-theme .emergency-pillar-item:hover {
   align-items: flex-end;
   width: 100%;
   line-height: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .cta-showcase-tech-img {
   width: 100%;
@@ -14200,6 +14209,12 @@ body.dark-theme .emergency-pillar-item:hover {
   display: block;
   filter: drop-shadow(0 16px 28px rgba(25, 32, 35, 0.16));
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .cta-showcase-center:hover .cta-showcase-tech-img {
   transform: scale(1.02);
@@ -25125,11 +25140,11 @@ body.dark-theme .float-online-dot {
   visibility: hidden;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-radius: 14px;
-  padding: 8px 15px;
+  border-radius: 12px;
+  padding: 7px 14px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 2.5px;
   white-space: nowrap;
   pointer-events: none;
   transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, visibility 0.25s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
