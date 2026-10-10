@@ -21958,74 +21958,116 @@ body.dark-theme .blog-section-subtitle-tag {
 }
 
 /* Diagnostic Matrix Table */
-.article-table-container {
+.article-table-container,
+.article-table-wrapper {
   display: block;
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin: 32px 0;
+  margin: 32px 0 38px 0;
   border-radius: 18px;
   border: 1.5px solid #e3e7e9;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
+  background: #ffffff;
   overscroll-behavior-x: contain;
 }
-.article-diagnostic-table {
+.article-diagnostic-table,
+.article-matrix-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   text-align: left;
   font-size: 14px;
-  min-width: 620px;
+  min-width: 680px;
 }
-.article-diagnostic-table th {
+.article-diagnostic-table th,
+.article-matrix-table th {
   background: var(--btn-gradient-primary);
   color: #ffffff;
   padding: 16px 20px;
   font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.03em;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  white-space: nowrap;
+  border: none;
 }
-.article-diagnostic-table td {
-  padding: 15px 20px;
-  border-bottom: 1px solid #e3e7e9;
-  color: var(--text-sub, #475056);
-  line-height: 1.6;
-  font-weight: 400;
+.article-diagnostic-table th:first-child,
+.article-matrix-table th:first-child {
+  border-top-left-radius: 16px;
+}
+.article-diagnostic-table th:last-child,
+.article-matrix-table th:last-child {
+  border-top-right-radius: 16px;
+}
+.article-diagnostic-table td,
+.article-matrix-table td {
+  padding: 16px 20px;
+  border-bottom: 1.5px solid #edf0f2;
+  color: var(--text-dark, #192023);
+  line-height: 1.55;
+  font-weight: 500;
+  vertical-align: middle;
   transition: background-color 0.22s ease;
 }
-.article-diagnostic-table tr:nth-child(even) td {
-  background: rgba(0, 0, 0, 0.02);
+.article-diagnostic-table td strong,
+.article-matrix-table td strong {
+  font-weight: 700;
+  color: var(--text-dark, #192023);
 }
-.article-diagnostic-table tr:hover td {
+.article-diagnostic-table tr:nth-child(even) td,
+.article-matrix-table tr:nth-child(even) td {
+  background: #f8fafc;
+}
+.article-diagnostic-table tr:hover td,
+.article-matrix-table tr:hover td {
   background: rgba(215, 28, 27, 0.04);
 }
-.risk-badge {
+.article-diagnostic-table tr:last-child td,
+.article-matrix-table tr:last-child td {
+  border-bottom: none;
+}
+.article-diagnostic-table tr:last-child td:first-child,
+.article-matrix-table tr:last-child td:first-child {
+  border-bottom-left-radius: 16px;
+}
+.article-diagnostic-table tr:last-child td:last-child,
+.article-matrix-table tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
+}
+.risk-badge,
+.tag-matrix {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
+  justify-content: center;
+  padding: 5px 14px;
   border-radius: var(--radius-pill, 9999px);
   font-size: 11.5px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   white-space: nowrap;
+  line-height: 1.2;
 }
-.risk-high {
-  background: #fee2e2;
-  color: #dc2626;
-  border: 1px solid rgba(220, 38, 38, 0.2);
+.risk-high,
+.tag-urgent,
+.tag-critical {
+  background: rgba(215, 28, 27, 0.1);
+  color: #d71c1b;
+  border: 1.5px solid rgba(215, 28, 27, 0.25);
 }
-.risk-med {
-  background: #fef3c7;
-  color: #d97706;
-  border: 1px solid rgba(217, 119, 6, 0.2);
+.risk-med,
+.tag-moderate {
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+  border: 1.5px solid rgba(245, 158, 11, 0.3);
 }
 .risk-low {
-  background: #dcfce7;
-  color: #16a34a;
-  border: 1px solid rgba(22, 163, 74, 0.2);
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+  border: 1.5px solid rgba(16, 185, 129, 0.3);
 }
 
 /* Quote Highlight */
@@ -22714,18 +22756,46 @@ body.dark-theme .article-danger-box {
 body.dark-theme .article-danger-box strong {
   color: #ef4444;
 }
-body.dark-theme .article-table-container {
+body.dark-theme .article-table-container,
+body.dark-theme .article-table-wrapper {
+  background: #171c1f;
   border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
 }
-body.dark-theme .article-diagnostic-table td {
+body.dark-theme .article-diagnostic-table td,
+body.dark-theme .article-matrix-table td {
   border-bottom-color: #2a3136;
   color: #f1f5f9 !important;
 }
-body.dark-theme .article-diagnostic-table tr:nth-child(even) td {
-  background: #131719;
+body.dark-theme .article-diagnostic-table td strong,
+body.dark-theme .article-matrix-table td strong {
+  color: #ffffff !important;
 }
-body.dark-theme .article-diagnostic-table tr:hover td {
-  background: #1f2529;
+body.dark-theme .article-diagnostic-table tr:nth-child(even) td,
+body.dark-theme .article-matrix-table tr:nth-child(even) td {
+  background: #1c2226;
+}
+body.dark-theme .article-diagnostic-table tr:hover td,
+body.dark-theme .article-matrix-table tr:hover td {
+  background: #232b30;
+}
+body.dark-theme .risk-high,
+body.dark-theme .tag-urgent,
+body.dark-theme .tag-critical {
+  background: rgba(255, 90, 82, 0.18);
+  color: #ff837d;
+  border-color: rgba(255, 90, 82, 0.35);
+}
+body.dark-theme .risk-med,
+body.dark-theme .tag-moderate {
+  background: rgba(251, 191, 36, 0.18);
+  color: #fcd34d;
+  border-color: rgba(251, 191, 36, 0.35);
+}
+body.dark-theme .risk-low {
+  background: rgba(52, 211, 153, 0.18);
+  color: #6ee7b7;
+  border-color: rgba(52, 211, 153, 0.35);
 }
 body.dark-theme .article-expert-quote {
   background: #171c1f;
@@ -23433,7 +23503,7 @@ body.dark-theme .areas-dispatch-live .status-pulse-dot {
 
 .wm-perf-container {
   width: 100%;
-  max-width: var(--container-max, 1200px);
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -23748,6 +23818,8 @@ body.dark-theme .wm-float-card-sub {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  flex: 1;
+  min-width: 0;
 }
 
 .wm-perf-eyebrow-row {
@@ -24034,6 +24106,8 @@ body.dark-theme .wm-check-label {
   box-shadow: 0 16px 45px -12px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.02);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 body.dark-theme .wm-perf-features-card {
