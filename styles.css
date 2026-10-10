@@ -11459,11 +11459,12 @@ body.dark-theme .process-step-item:hover {
   border-color: transparent !important;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
 }
+/* Homepage Process Step Cards - Subtle Red Border in Dark Theme Default State */
 body.dark-theme .process-section .process-step-item {
-  border: 1.5px solid transparent !important;
+  border: 1.5px solid rgba(215, 28, 27, 0.35) !important;
 }
 body.dark-theme .process-section .process-step-item:hover {
-  border-color: transparent !important;
+  border-color: rgba(255, 90, 82, 0.6) !important;
 }
 body.dark-theme .step-title {
   color: #ffffff !important;
@@ -25581,12 +25582,7 @@ body.dark-theme .process-step-item::after {
   border-color: #ff5a52;
 }
 
-/* Homepage Process Step Cards - Thick Red Border in Dark Theme by Default */
-body.dark-theme .process-section .process-step-item::before,
-body.dark-theme .process-section .process-step-item::after {
-  clip-path: inset(0 0 0 0) !important;
-  border-color: #ff5a52 !important;
-}
+
 
 /* ==========================================================================
    FEATURED NAVY CARDS (about page & mosaic): Matching Signature Button Shade
