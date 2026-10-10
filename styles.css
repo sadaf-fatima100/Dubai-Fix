@@ -21909,9 +21909,12 @@ body.dark-theme .blog-section-subtitle-tag {
   background: #25d366;
   color: #ffffff !important;
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  transition: transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .share-btn-whatsapp:hover {
-  background: #20bd5a;
+  background-color: #20bd5a !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
 }
@@ -21919,9 +21922,12 @@ body.dark-theme .blog-section-subtitle-tag {
   background: #1877f2;
   color: #ffffff !important;
   box-shadow: 0 4px 12px rgba(24, 119, 242, 0.25);
+  transition: transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .share-btn-facebook:hover {
-  background: #166fe5;
+  background-color: #166fe5 !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(24, 119, 242, 0.35);
 }
@@ -21929,9 +21935,35 @@ body.dark-theme .blog-section-subtitle-tag {
   background: rgba(215, 28, 27, 0.08);
   color: var(--brand-accent, #d71c1b) !important;
   border-color: rgba(215, 28, 27, 0.16);
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.share-btn-copy::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: var(--btn-gradient-primary) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transition: opacity 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: opacity;
+}
+.share-btn-copy:hover::after {
+  opacity: 1 !important;
+}
+.share-btn-copy > * {
+  position: relative !important;
+  z-index: 3 !important;
+  transition: color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              stroke 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .share-btn-copy:hover {
-  background: var(--btn-gradient-primary);
   color: #ffffff !important;
   border-color: transparent;
   transform: translateY(-2px);
@@ -22734,10 +22766,33 @@ body.dark-theme .article-table-wrapper::-webkit-scrollbar-thumb {
   margin-bottom: 10px;
   border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
   box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.25);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.sidebar-btn-call::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transition: opacity 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: opacity;
+}
+.sidebar-btn-call:hover::after {
+  opacity: 1 !important;
+}
+.sidebar-btn-call > * {
+  position: relative !important;
+  z-index: 3 !important;
+  pointer-events: none;
 }
 .sidebar-btn-call:hover {
-  background: var(--btn-gradient-hover) !important;
   transform: translateY(-2px);
   box-shadow: 0 12px 26px -3px rgba(215, 28, 27, 0.45);
   color: #ffffff !important;
@@ -22758,25 +22813,39 @@ body.dark-theme .article-table-wrapper::-webkit-scrollbar-thumb {
   border: 1.5px solid #ffffff !important;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              background 0.35s ease,
-              color 0.35s ease,
-              border-color 0.35s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   position: relative !important;
   overflow: hidden !important;
+  transition: transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.sidebar-btn-book::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transition: opacity 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: opacity;
+}
+.sidebar-btn-book:hover::after {
+  opacity: 1 !important;
 }
 .sidebar-btn-book > span {
+  position: relative !important;
+  z-index: 3 !important;
   color: var(--brand-accent, #d71c1b) !important;
-  transition: color 0.35s ease;
+  transition: color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .sidebar-btn-book:hover {
-  background: var(--btn-gradient-primary) !important;
-  color: #ffffff !important;
   border-color: var(--brand-accent, #d71c1b) !important;
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(215, 28, 27, 0.42) !important;
@@ -23049,8 +23118,10 @@ body.dark-theme .share-btn-copy {
   border-color: rgba(255, 255, 255, 0.12);
 }
 body.dark-theme .share-btn-copy:hover {
-  background: var(--btn-gradient-primary);
   color: #ffffff !important;
+}
+body.dark-theme .share-btn-copy:hover::after {
+  opacity: 1 !important;
 }
 body.dark-theme .article-author-bio-footer {
   background: rgba(255, 255, 255, 0.03);
@@ -26139,7 +26210,6 @@ body.dark-theme .btn-hero-action-call .btn-circle {
 
 /* Individual Blog Pages: Hero Call Button Hover State (Emerald Green Secondary) */
 .btn-hero-action-call:hover {
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   border-color: #25d366 !important;
   color: #ffffff !important;
   box-shadow: 0 10px 24px rgba(37, 211, 102, 0.42) !important;
@@ -26154,7 +26224,6 @@ body.dark-theme .btn-hero-action-call .btn-circle {
   stroke: #ffffff !important;
 }
 body.dark-theme .btn-hero-action-call:hover {
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   border-color: #25d366 !important;
   color: #ffffff !important;
   box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
@@ -26192,7 +26261,6 @@ body.dark-theme .btn-hero-action-call:hover svg {
 }
 .article-cta-book-btn:hover,
 .sidebar-btn-book:hover {
-  background: var(--btn-gradient-primary) !important;
   border-color: var(--brand-accent, #d71c1b) !important;
   color: #ffffff !important;
   box-shadow: 0 10px 24px rgba(215, 28, 27, 0.42) !important;
@@ -26210,7 +26278,6 @@ body.dark-theme .btn-hero-action-call:hover svg {
 }
 body.dark-theme .article-cta-book-btn:hover,
 body.dark-theme .sidebar-btn-book:hover {
-  background: var(--btn-gradient-primary) !important;
   border-color: #ff5a52 !important;
   color: #ffffff !important;
   box-shadow: 0 10px 24px rgba(224, 42, 36, 0.45) !important;
@@ -26246,7 +26313,9 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .article-cta-call-btn > span:not(.btn-circle) {
   position: relative !important;
   z-index: 3 !important;
-  transition: color 0.3s ease !important;
+  transition: color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              stroke 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              fill 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 /* ==========================================================================
