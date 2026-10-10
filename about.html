@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles\.css\?v=12\.4">
+  <link rel="stylesheet" href="styles.css?v=12.4">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -37,7 +37,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles\.css\?v=12\.4 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=12.4 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* -------------------------------------------------------
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -877,9 +877,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       width: 100%;
-      align-self: center;
+      align-self: start;
+      margin-top: 41px; /* Exactly aligns card top horizontally with H2 heading */
     }
 
     /* Bento Stage Architectural Card */
@@ -887,6 +888,8 @@
       position: relative;
       width: 100%;
       max-width: 440px;
+      height: clamp(430px, 38vw, 470px);
+      max-height: 470px;
       margin: 0 auto;
       border-radius: 28px;
       overflow: hidden;
@@ -999,8 +1002,10 @@
     /* Certified Technician Crew Photo */
     .process-technicians-img {
       width: 100%;
-      height: auto;
+      height: 100%;
       max-width: 100%;
+      object-fit: cover;
+      object-position: center 12%;
       display: block;
       position: relative;
       z-index: 2;
