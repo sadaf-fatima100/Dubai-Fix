@@ -857,74 +857,196 @@
       align-items: center;
     }
 
-    /* Left Column: Cutout Technicians (Transparent PNG) */
+    /* Left Column: Bento Stage Frame for Certified Crew */
     .about-process-visual {
       position: relative;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      overflow: visible;
     }
 
-    /* Ambient lighting aura behind technicians */
-    .process-visual-glow {
-      display: none;
+    /* Bento Stage Architectural Card */
+    .process-stage-card {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+      border: 1.5px solid #e3e7e9;
+      box-shadow: 0 16px 44px rgba(25, 32, 35, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-top: 56px;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    .process-stage-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(25, 32, 35, 0.13);
+      border-color: rgba(215, 28, 27, 0.35);
+    }
+    body.dark-theme .process-stage-card {
+      background: linear-gradient(180deg, #1d2327 0%, #14181b 100%);
+      border-color: rgba(255, 255, 255, 0.10);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55);
+    }
+    body.dark-theme .process-stage-card:hover {
+      border-color: rgba(215, 28, 27, 0.45);
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.7);
     }
 
+    /* Architectural Stage Topbar */
+    .process-stage-topbar {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      right: 16px;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+    .stage-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(227, 231, 233, 0.9);
+      color: #192023;
+      box-shadow: 0 2px 8px rgba(25, 32, 35, 0.06);
+    }
+    .stage-tag svg {
+      color: var(--brand-accent, #d71c1b);
+    }
+    body.dark-theme .stage-tag {
+      background: rgba(23, 28, 31, 0.9);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #f1f5f9;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .stage-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #059669;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    body.dark-theme .stage-live {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #34d399;
+    }
+    .stage-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
+      animation: pulseLiveDot 2s infinite ease-in-out;
+    }
+    @keyframes pulseLiveDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    /* Ambient Lighting Backdrop */
+    .process-stage-backdrop {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(215, 28, 27, 0.06) 0%, transparent 65%),
+        radial-gradient(circle at 50% 85%, rgba(25, 32, 35, 0.04) 0%, transparent 60%);
+    }
+    body.dark-theme .process-stage-backdrop {
+      background:
+        radial-gradient(circle at 50% 28%, rgba(215, 28, 27, 0.12) 0%, transparent 65%),
+        radial-gradient(circle at 50% 85%, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+    }
+
+    /* Technician Cutout Framed in Stage */
     .process-technicians-img {
       width: 100%;
-      max-width: 500px;
+      max-width: 440px;
       height: auto;
       display: block;
       position: relative;
-      z-index: 1;
-      margin-left: -6px; /* Exactly aligns leftmost technician pixel with navbar left curve at x=69 */
-      filter: none !important; /* Zero background shadow on image as requested */
-      /* mask removed */
-      /* mask removed */
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2;
+      margin: 0 auto;
+      vertical-align: bottom;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .about-process-visual:hover .process-technicians-img {
-      transform: translateY(-3px) scale(1.01);
-    }
-    body.dark-theme .process-technicians-img {
-      filter: none !important;
+    .process-stage-card:hover .process-technicians-img {
+      transform: scale(1.025);
     }
 
-    /* Floating Trust Badge on Image */
+    /* Floating Trust Badge Centered over Bottom Seam */
     .process-float-badge {
       position: absolute;
-      bottom: 20px;
-      left: 4px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1.5px solid #e3e7e9;
       border-radius: 9999px;
-      padding: 9px 18px;
+      padding: 8px 18px;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 12px 30px rgba(25, 32, 35, 0.12);
-      z-index: 2;
-      font-size: 13px;
+      gap: 9px;
+      box-shadow: 0 10px 26px rgba(25, 32, 35, 0.12);
+      z-index: 4;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--brand-accent, #d71c1b);
       white-space: nowrap;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+    .process-stage-card:hover .process-float-badge {
+      transform: translateX(-50%) translateY(-2px);
+      box-shadow: 0 14px 30px rgba(25, 32, 35, 0.16);
     }
     body.dark-theme .process-float-badge {
       background: rgba(23, 28, 31, 0.94);
       border-color: rgba(255, 255, 255, 0.12);
       color: #ffffff;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+    }
+    body.dark-theme .process-stage-card:hover .process-float-badge {
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.65);
     }
     .process-float-dot {
-      width: 9px;
-      height: 9px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #10b981;
       box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+      flex-shrink: 0;
     }
 
     /* Right Column: Content & Steps */
@@ -1670,10 +1792,6 @@
       }
     }
     @media (max-width: 576px) {
-      .why-choose-h2 {
-        font-size: clamp(1.4rem, 5.5vw, 1.75rem);
-        line-height: 1.22;
-      }
       .why-dual-cards-grid {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -2628,6 +2746,7 @@
       .about-stats-strip-item:nth-child(2) { border-right: none; }
       .about-process-layout { grid-template-columns: 1fr; gap: 36px; }
       .about-process-visual { order: -1; max-width: 440px; margin: 0 auto; align-items: center; }
+      .process-stage-card { max-width: 420px; }
       .process-technicians-img { margin-left: 0; }
       .process-float-badge { bottom: 16px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
       /* .about-standards-section responsive */
@@ -2662,6 +2781,29 @@
       .about-compare-section {
         padding: clamp(20px, 3.2vw, 26px) 0;
       }
+      .process-stage-card {
+        border-radius: 22px;
+        padding-top: 48px;
+        max-width: 100%;
+      }
+      .process-stage-topbar {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+      }
+      .stage-tag {
+        font-size: 10px;
+        padding: 4px 9px;
+      }
+      .stage-live {
+        font-size: 10px;
+        padding: 4px 8px;
+      }
+      .process-float-badge {
+        bottom: 12px;
+        padding: 7px 14px;
+        font-size: 11.5px;
+      }
       .why-choose-split { gap: 16px; }
       .why-acc-media-stage {
         min-height: 200px;
@@ -2692,6 +2834,34 @@
       .mission-card-featured { padding: 22px 18px 20px 18px; }
     }
     @media (max-width: 360px) {
+      .process-stage-card {
+        border-radius: 18px;
+        padding-top: 40px;
+      }
+      .process-stage-topbar {
+        top: 10px;
+        left: 8px;
+        right: 8px;
+      }
+      .stage-tag {
+        font-size: 9px;
+        padding: 3px 6px;
+        gap: 4px;
+      }
+      .stage-live {
+        font-size: 9px;
+        padding: 3px 6px;
+        gap: 4px;
+      }
+      .process-float-badge {
+        bottom: 10px;
+        padding: 5px 10px;
+        font-size: 10px;
+        gap: 5px;
+        max-width: 92%;
+        white-space: normal;
+        text-align: center;
+      }
       .why-choose-h2 { font-size: clamp(1.18rem, 5vw, 1.35rem); }
       /* .about-standards-section responsive */
       .standards-content-col { padding: 22px 14px; }
@@ -3353,13 +3523,25 @@
         <div class="section-container-inner">
           <div class="about-process-layout">
 
-            <!-- Left Column: Cutout Technicians (Transparent PNG) -->
+            <!-- Left Column: Cutout Technicians Bento Stage (Option 1) -->
             <div class="about-process-visual">
-              <div class="process-visual-glow"></div>
-              <img src="assets/process-technicians-cutout.png?v=2.0" alt="Dubai Fix Certified Appliance Repair Engineer" class="process-technicians-img" loading="lazy">
-              <div class="process-float-badge">
-                <span class="process-float-dot"></span>
-                <span>Certified Master Technicians &bull; Dubai</span>
+              <div class="process-stage-card">
+                <div class="process-stage-topbar">
+                  <span class="stage-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Dubai Certified Crew
+                  </span>
+                  <span class="stage-live">
+                    <span class="stage-live-dot"></span>
+                    60-Min Dispatch
+                  </span>
+                </div>
+                <div class="process-stage-backdrop"></div>
+                <img src="assets/process-technicians-cutout.png?v=2.0" alt="Dubai Fix Certified Appliance Repair Engineer" class="process-technicians-img" loading="lazy">
+                <div class="process-float-badge">
+                  <span class="process-float-dot"></span>
+                  <span>Certified Master Technicians &bull; Dubai</span>
+                </div>
               </div>
             </div>
 
