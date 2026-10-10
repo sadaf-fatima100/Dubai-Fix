@@ -2,6 +2,92 @@
  * Dubai Fix Appliances - Interactive UI Script
  */
 
+/**
+ * Back-Forward Cache (bfcache) & WebSocket Lifecycle Guardian
+ * Gracefully handles navigation transitions, prevents broken WebSocket errors
+ * when Chromium places pages into Back-Forward Cache (e.g. during local Live Server development),
+ * and restores clean UI/navigation state upon page resumption.
+ */
+(function () {
+  if (typeof window === 'undefined') return;
+
+  const activeSockets = new Set();
+  const NativeWebSocket = window.WebSocket;
+
+  if (NativeWebSocket) {
+    function SafeWebSocket(url, protocols) {
+      const ws = protocols !== undefined
+        ? new NativeWebSocket(url, protocols)
+        : new NativeWebSocket(url);
+
+      activeSockets.add(ws);
+
+      const cleanup = () => {
+        activeSockets.delete(ws);
+      };
+
+      ws.addEventListener('close', cleanup);
+      ws.addEventListener('error', cleanup);
+
+      return ws;
+    }
+
+    SafeWebSocket.prototype = NativeWebSocket.prototype;
+    if (NativeWebSocket.CONNECTING !== undefined) {
+      SafeWebSocket.CONNECTING = NativeWebSocket.CONNECTING;
+      SafeWebSocket.OPEN = NativeWebSocket.OPEN;
+      SafeWebSocket.CLOSING = NativeWebSocket.CLOSING;
+      SafeWebSocket.CLOSED = NativeWebSocket.CLOSED;
+    }
+
+    try {
+      Object.setPrototypeOf(SafeWebSocket, NativeWebSocket);
+    } catch (e) {}
+
+    window.WebSocket = SafeWebSocket;
+  }
+
+  // Gracefully close active dev sockets before browser freezes page into bfcache
+  window.addEventListener('pagehide', () => {
+    activeSockets.forEach((ws) => {
+      try {
+        if (ws && (ws.readyState === 0 || ws.readyState === 1)) {
+          // 0 = CONNECTING, 1 = OPEN
+          ws.close(1000, 'bfcache-navigation');
+        }
+      } catch (err) {}
+    });
+    activeSockets.clear();
+  });
+
+  // Reset UI components (e.g., mobile drawer, modals) when restoring from bfcache
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      const navMenu = document.getElementById('navMenu') || document.querySelector('.nav-menu');
+      const mobileToggle = document.getElementById('mobileToggle') || document.querySelector('.mobile-toggle');
+      if (navMenu) {
+        navMenu.classList.remove('open');
+      }
+      if (mobileToggle) {
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      const servicesDropdown = document.getElementById('servicesDropdown') || document.querySelector('.nav-dropdown');
+      if (servicesDropdown) {
+        servicesDropdown.classList.remove('open');
+      }
+
+      const bookingModal = document.getElementById('bookingModal');
+      if (bookingModal) {
+        bookingModal.classList.remove('active');
+      }
+
+      document.body.style.overflow = '';
+    }
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   // Elements
   const bookingModal = document.getElementById('bookingModal');
