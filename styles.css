@@ -3133,6 +3133,12 @@ a.service-card-item *,
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+}
+.why-header .section-desc {
+  text-wrap: balance;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 } /* 4-Column Staggered Cards Grid */
 .why-cards-grid {
   display: grid;
@@ -11234,11 +11240,12 @@ body.dark-theme .process-grid-title {
 }
 body.dark-theme .process-step-item {
   background-color: #1f2529 !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.14) !important;
+  border: 1.5px solid transparent !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .process-step-item:hover {
   background-color: #1f2529 !important;
+  border-color: transparent !important;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
 }
 body.dark-theme .step-title {
@@ -11264,15 +11271,15 @@ body.dark-theme .process-step-item:hover .step-icon-box {
 }
 body.dark-theme .process-step-num,
 body.dark-theme .step-num-badge {
-  background: var(--btn-gradient-primary);
-  border-color: #171c1f;
-  color: #ffffff;
+  background: var(--btn-gradient-primary) !important;
+  border: 2px solid #171c1f !important;
+  color: #ffffff !important;
 }
 body.dark-theme .process-step-item:hover .process-step-num,
 body.dark-theme .process-step-item:hover .step-num-badge {
   background: var(--btn-gradient-primary) !important;
   color: #ffffff !important;
-  border-color: #171c1f !important;
+  border: 2px solid #171c1f !important;
   transform: scale(1.06);
 }
 body.dark-theme .tech-glow-circle,
@@ -12266,7 +12273,8 @@ body.dark-theme .areas-cta-banner .btn-dispatch-call:hover svg {
   line-height: var(--lh-subtitle);
   color: var(--color-subtitle);
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 640px;
+  text-wrap: balance;
 } /* Brands Category Filter Navigation */
 .brands-category-filter {
   display: flex;
