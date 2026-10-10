@@ -337,12 +337,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
-      align-items: start;
+      align-items: stretch;
     }
     .mosaic-col {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      height: 100%;
     }
 
     .mosaic-item {
@@ -388,6 +389,7 @@
       border-radius: 20px;
       padding: 18px 20px;
       height: 114px;
+      flex-shrink: 0;
       box-sizing: border-box;
       display: flex;
       flex-direction: row;
@@ -547,7 +549,10 @@
 
     /* Box 4: Standing Master Technician Photo (Bottom-Right) - Tall */
     .mosaic-img-tall-box {
-      height: 350px;
+      flex: 1;
+      height: auto;
+      min-height: 350px;
+      display: flex;
       box-shadow: 0 12px 32px rgba(25, 32, 35, 0.1);
       border: 1px solid #e3e7e9;
       background: #e2e8f0;
@@ -1184,7 +1189,8 @@
       color: var(--color-subtitle, var(--text-sub, #475056));
       margin: 0 0 26px;
       text-align: left;
-      max-width: 660px;
+      max-width: 680px;
+      text-wrap: pretty;
     }
     body.dark-theme .why-choose-lead {
       color: #f1f5f9 !important;
@@ -3459,7 +3465,7 @@
 
               <!-- Subtitle Paragraph -->
               <p class="why-choose-lead">
-                Reliable doorstep appliance repair with certified master technicians ensuring precision diagnostics, 100% genuine OEM factory parts, and verified satisfaction every single time.
+                Reliable doorstep appliance repair with certified master technicians ensuring precision diagnostics, 100% genuine OEM factory parts, and verified satisfaction.
               </p>
 
               <!-- 2-Card Feature Grid (Adapted from Previous Content) -->
