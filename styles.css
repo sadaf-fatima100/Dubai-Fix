@@ -16892,15 +16892,14 @@ body.dark-theme .expertise-card {
   flex-shrink: 0;
 }
 
-/* Social Proof & Trust Verification Dock (Google Rating + 100% Guaranteed Badge) */
+/* Social Proof & Trust Verification Dock (Google Rating + 100% Verified Badge) */
 .hero-center-social-proof {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 470px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
   padding: 13px 20px;
   background: rgba(248, 250, 252, 0.9);
   border: 1px solid rgba(226, 232, 240, 0.95);
@@ -16920,6 +16919,7 @@ body.dark-theme .expertise-card {
 .hero-proof-google {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   flex: 1 1 0;
 }
@@ -16981,20 +16981,21 @@ body.dark-theme .expertise-card {
 .hero-proof-trust {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   flex: 1 1 0;
+  text-align: center;
 }
 .proof-seal-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  display: none !important;
 }
 .proof-trust-text {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1px;
-  text-align: left;
+  text-align: center;
+  width: 100%;
 }
 .proof-trust-badge-title {
   font-family: var(--font-family, inherit);
@@ -17003,6 +17004,7 @@ body.dark-theme .expertise-card {
   color: var(--text-dark, #192023);
   letter-spacing: -0.01em;
   line-height: 1.15;
+  text-align: center;
 }
 .proof-trust-highlight {
   font-size: 12px;
@@ -17010,6 +17012,7 @@ body.dark-theme .expertise-card {
   color: var(--brand-accent, #d71c1b);
   line-height: 1.15;
   white-space: nowrap;
+  text-align: center;
 }
 .proof-trust-caption {
   font-size: 11px;
@@ -17017,6 +17020,7 @@ body.dark-theme .expertise-card {
   color: #64748b;
   line-height: 1;
   white-space: nowrap;
+  text-align: center;
 }
 
 /* Grounded Trust Shelf Dock (Both .hero-center-trust-dock and backward-compatible .hero-center-trust-row) */
