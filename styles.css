@@ -11450,6 +11450,13 @@ body.dark-theme .process-step-item:hover {
   border-color: transparent !important;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
 }
+/* Homepage Process Step Cards - Subtle Red Border in Dark Theme Default State */
+body.dark-theme .process-section .process-step-item {
+  border: 1.5px solid rgba(215, 28, 27, 0.35) !important;
+}
+body.dark-theme .process-section .process-step-item:hover {
+  border-color: rgba(255, 90, 82, 0.55) !important;
+}
 body.dark-theme .step-title {
   color: #ffffff !important;
 }
