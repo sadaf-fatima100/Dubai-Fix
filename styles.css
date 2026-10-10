@@ -3280,7 +3280,7 @@ body.dark-theme .why-card-content .why-card-desc {
   align-items: center;
   background-color: #ffffff;
   border: 1.5px solid #edf0f2;
-  border-radius: var(--radius-pill, 9999px);
+  border-radius: 15px;
   padding: 8px 18px 8px 14px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -7456,7 +7456,8 @@ body.dark-theme .prefooter-cta-overlay {
   max-width: 1100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   padding-top: 8px;
   padding-bottom: 8px;
   font-size: 13px;
@@ -7466,6 +7467,7 @@ body.dark-theme .prefooter-cta-overlay {
 }
 .footer-bottom-copy {
   margin: 0;
+  text-align: center;
   color: var(--text-muted);
 }
 .heart-pulse {
@@ -7501,9 +7503,7 @@ body.dark-theme .prefooter-cta-overlay {
   text-decoration: underline;
 }
 .footer-legal-links {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: none !important;
 }
 .footer-legal-links a {
   color: var(--text-sub);
