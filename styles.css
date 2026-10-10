@@ -312,30 +312,47 @@ body.dark-theme .logo-icon-img {
 .nav-link {
   font-size: 14.5px;
   font-weight: 600;
+  line-height: 1;
   color: #2b2e3b;
   text-decoration: none;
   transition:
     color 0.2s ease,
     background-color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 5px;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 9999px;
+  box-sizing: border-box;
 }
 .nav-link:hover {
   color: var(--brand-accent);
-} /* Active Pill (Home) */
+} /* Active Pill (Home, About, Services, etc.) - Red Pill by default matching Dark Theme */
 .nav-link.active-pill {
-  background-color: var(--brand-accent-light);
-  color: var(--brand-accent);
-  padding: 7px 20px;
+  background: var(--btn-gradient-primary) !important;
+  color: #ffffff !important;
+  padding: 8px 20px 9px 20px;
   font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(215, 28, 27, 0.2) !important;
+  box-shadow: 0 3px 12px rgba(215, 28, 27, 0.28) !important;
 }
 .nav-link.active-pill:hover {
   background: var(--btn-gradient-hover) !important;
   color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(215, 28, 27, 0.38) !important;
+}
+.nav-link.active-pill .dropdown-chevron {
+  stroke: #ffffff !important;
 } /* Services Dropdown */
 .nav-dropdown {
   position: relative;
@@ -8139,10 +8156,12 @@ body.dark-theme .trust-item svg {
   }
   .nav-link {
     font-size: 13.5px;
-    padding: 5px 8px;
+    padding: 7px 10px;
+    line-height: 1;
   }
   .nav-link.active-pill {
-    padding: 5px 14px;
+    padding: 7px 16px 8px 16px;
+    line-height: 1;
   }
   .nav-actions {
     gap: 8px;
@@ -15269,6 +15288,12 @@ body.dark-theme .service-hero-copy-card .hero-headline {
 .service-hero-copy-card .hl-line.line-2 {
   margin-left: 0;
 }
+.hl-nowrap {
+  white-space: nowrap !important;
+}
+.blog-hero-mbl-br {
+  display: none;
+}
 
 /* 3. Description: Exact 16px Gap to CTA Buttons */
 .service-hero-copy-card .hero-description {
@@ -16332,6 +16357,9 @@ body.dark-theme .expertise-card {
     font-size: clamp(2.125rem, 1.125rem + 4vw, 2.65rem);
     line-height: 1.18;
     margin-bottom: 12px;
+  }
+  .blog-hero-mbl-br {
+    display: inline;
   }
   .service-hero-copy-card .hero-description {
     font-size: 15px;
