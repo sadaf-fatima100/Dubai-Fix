@@ -676,12 +676,10 @@ body.dark-theme .dropdown-divider {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15);
-  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              background 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              background-color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              border-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   white-space: nowrap;
   animation: none !important;
@@ -1145,7 +1143,7 @@ button[class*="-btn"] * {
   opacity: 0 !important;
   pointer-events: none !important;
   z-index: 1 !important;
-  transition: opacity 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transition: opacity 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   will-change: opacity;
 }
 
@@ -1333,8 +1331,6 @@ button[class*="-btn"] * {
 .btn-emergency-wa:hover,
 .btn-dispatch-option.btn-dispatch-wa:hover {
   animation: none !important;
-  background-color: #25d366 !important;
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2.5px) !important;
@@ -1703,8 +1699,6 @@ body.dark-theme .btn-simple-cta-whatsapp:hover,
 body.dark-theme .btn-lb-whatsapp:hover,
 body.dark-theme .btn-emergency-wa:hover,
 body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
-  background-color: #25d366 !important;
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2.5px) !important;
@@ -3080,18 +3074,15 @@ a.service-card-item *,
   transition: color 0.2s ease, stroke 0.2s ease;
 }
 .btn-dispatch-whatsapp:hover {
-  background-color: #25d366 !important;
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   transform: translateY(-2px);
   color: #ffffff !important;
   border-color: #25d366 !important;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
   transition:
-    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .btn-dispatch-whatsapp:hover span {
   color: #ffffff !important;
@@ -5269,8 +5260,6 @@ body.dark-theme .blog-urgent-card .highlight-navy {
   transform-origin: center center;
 }
 .btn-about-secondary:hover {
-  background-color: #25d366 !important;
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2px);
@@ -6701,8 +6690,6 @@ body.dark-theme .btn-simple-cta-whatsapp {
 }
 
 .btn-simple-cta-whatsapp:hover {
-  background-color: #25d366 !important;
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   transform: translateY(-2px) !important;
   border-color: #25d366 !important;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
@@ -10815,17 +10802,14 @@ body.dark-theme .btn-about-secondary svg {
 }
 body.dark-theme .btn-hero-secondary:hover,
 body.dark-theme .btn-about-secondary:hover {
-  background-color: #25d366 !important;
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   border-color: #25d366 !important;
   color: #ffffff !important;
   box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
   transition:
-    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 body.dark-theme .btn-hero-secondary:hover svg,
 body.dark-theme .btn-about-secondary:hover svg {
@@ -16749,7 +16733,6 @@ body.dark-theme .expertise-card {
     color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .hero-center-cta-group .btn-hero-secondary:hover {
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 100%) !important;
   border-color: #25d366 !important;
   color: #ffffff !important;
   transform: translateY(-2px) !important;
@@ -17068,7 +17051,6 @@ body.dark-theme .hero-center-cta-group .btn-hero-secondary svg {
   opacity: 1 !important;
 }
 body.dark-theme .hero-center-cta-group .btn-hero-secondary:hover {
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 100%) !important;
   border-color: #25d366 !important;
   color: #ffffff !important;
   box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
