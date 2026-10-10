@@ -649,14 +649,14 @@ body.dark-theme .dropdown-divider {
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   white-space: nowrap;
   animation: none !important;
   flex-shrink: 0;
 }
 .btn-hero-primary svg {
-  transition: transform 0.25s ease;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke 0.38s ease, color 0.38s ease;
 } /* Secondary Button: Emergency Call 24/7 (Professional Reassuring Vibrant Green) */
 .btn-hero-secondary {
   display: inline-flex;
@@ -675,10 +675,10 @@ body.dark-theme .dropdown-divider {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              border-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   white-space: nowrap;
   animation: none !important;
@@ -871,7 +871,7 @@ button[id*="phone"] svg {
   );
   filter: drop-shadow(0 0 5px rgba(255, 180, 175, 0.30));
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   transform: translateX(0) skewX(-25deg);
   opacity: 0;
   animation: synchronizedButtonShine 4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
@@ -948,16 +948,24 @@ button[id*="phone"] svg {
 
 /* ==========================================================================
    Tactile Concentric Outer-Loop Bezel & Fluid Elevation Animation Suite
-   Precision-engineered to match reference design (media_1791435479075_7bed316d.png)
-   1. Red Action Buttons: Background STAYS rich Crimson Red (never turns black /
-      never merges into dark-theme backgrounds). Hover creates a sculpted outer
-      concentric loop bezel with soft ambient elevation.
-   2. Green Call / WhatsApp Buttons: Background fills with solid vibrant emerald
-      green on hover with silky-smooth cubic-bezier transition & concentric bezel.
-   3. Decommissions legacy black expanding bubble collision (.btn-circle).
+   Master GPU-Accelerated Double-Surface (::after) Cross-Fade Architecture
+   Enforces GEMINI.md Rule 7: Silky, organic liquid-smoothness across ALL buttons.
+   
+   1. Red Action Buttons: Base Crimson stays anchored; dedicated ::after layer
+      smoothly fades in the brighter hover gradient over 0.42s with zero color snap.
+   2. Green Action Buttons: Base emerald tint smoothly cross-fades into vivid emerald
+      gradient via ::after layer with matching 0.42s cubic-bezier curve.
+   3. White Card Buttons: Solid white surface smoothly cross-fades into vivid crimson
+      gradient via ::after layer.
+   4. Specular Shine Beam (::before): Operates on z-index: 2, smoothly sweeping across
+      both idle and hover states without collision.
+   5. Children & Text Layer: Anchored at z-index: 4 with pointer-events: none to eliminate
+      hover flicker and jitter.
+   6. Bidirectional Micro-Motion: SVG arrows and phone icons transition smoothly on
+      both hover (mouseenter) AND restoration (mouseleave).
    ========================================================================== */
 
-/* Decommission expanding bubbles completely: zero black leakage, zero clipping jitter */
+/* Decommission legacy bubble collision elements safely */
 .btn-circle {
   display: none !important;
   opacity: 0 !important;
@@ -968,7 +976,7 @@ button[id*="phone"] svg {
 }
 
 /* --------------------------------------------------------------------------
-   1. Universal Base Transition Configuration for All Interactive Buttons
+   1. Universal Base Transition Configuration for All Action Buttons
    -------------------------------------------------------------------------- */
 .btn-schedule,
 .nav-menu-schedule-btn,
@@ -1027,15 +1035,19 @@ button[id*="phone"] svg {
 .compare-card-cta,
 .btn-process-action,
 .btn-why-feature-cta,
-.service-card-btn {
+.service-card-btn,
+.pf-action-btn {
+  position: relative !important;
+  overflow: hidden !important;
   transition:
-    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    color 0.25s ease !important;
+    transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   will-change: transform, box-shadow;
   text-decoration: none !important;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Universal Button Child Text-Decoration None Protection */
@@ -1051,8 +1063,142 @@ button[class*="-btn"] * {
 }
 
 /* --------------------------------------------------------------------------
-   2. Red Primary Action Buttons: Fine Tactile Trench Bezel & Clean Ambient Shadow
-   (Background STAYS vivid Crimson Red; fine 1.5px neutral track lip, ZERO red shadow)
+   2. Dedicated GPU-Accelerated Double-Surface (::after) Base Setup
+   -------------------------------------------------------------------------- */
+.btn-schedule::after,
+.nav-menu-schedule-btn::after,
+.btn-primary::after,
+.btn-hero-primary::after,
+.btn-hero-action-primary::after,
+.btn-get-started::after,
+.btn-about-primary::after,
+.btn-prefooter-primary::after,
+.btn-emergency-primary::after,
+.btn-cta-navy::after,
+.btn-urgent-book::after,
+.cta-primary-btn::after,
+.cta-showcase-btn::after,
+.btn-dispatch-call::after,
+.btn-dispatch-phone::after,
+.btn-contact-submit::after,
+.modal-submit-btn::after,
+.btn-bform-submit::after,
+.empty-cta-btn::after,
+.why-btn-pill::after,
+.btn-cta-banner-primary::after,
+.mcard-featured-btn::after,
+.btn-filter-browse::after,
+.btn-read-article::after,
+.btn-read-full-guide::after,
+.btn-faq-call::after,
+.btn-kitchen-quote::after,
+.btn-simple-cta-call::after,
+.article-cta-call-btn::after,
+.sidebar-btn-call::after,
+.btn-lb-call::after,
+.btn-kitchen-call::after,
+.btn-service-why-action::after,
+.areas-clear-btn::after,
+.btn-hero-secondary::after,
+.btn-hero-action-call::after,
+.btn-about-secondary::after,
+.btn-emergency-call::after,
+.btn-hub-open-maps::after,
+.btn-urgent-call::after,
+.btn-cta-green::after,
+.btn-prefooter-call::after,
+.btn-faq-talk::after,
+.btn-cta-banner-call::after,
+.process-phone-link::after,
+.standards-call-link::after,
+.btn-dispatch-wa::after,
+.btn-dispatch-whatsapp::after,
+.btn-simple-cta-whatsapp::after,
+.btn-lb-whatsapp::after,
+.btn-emergency-wa::after,
+.footer-book-btn::after,
+.sidebar-btn-book::after,
+.article-cta-book-btn::after,
+.compare-card-cta::after,
+.service-card-btn::after,
+.pf-action-btn::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transition: opacity 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: opacity;
+}
+
+/* --------------------------------------------------------------------------
+   3. Palette Assignment for the ::after Smooth Surface
+   -------------------------------------------------------------------------- */
+/* Red Primary Surface Gradient */
+.btn-schedule::after,
+.nav-menu-schedule-btn::after,
+.btn-primary::after,
+.btn-hero-primary::after,
+.btn-hero-action-primary::after,
+.btn-get-started::after,
+.btn-about-primary::after,
+.btn-emergency-primary::after,
+.btn-cta-navy::after,
+.btn-urgent-book::after,
+.cta-primary-btn::after,
+.cta-showcase-btn::after,
+.btn-dispatch-call::after,
+.btn-dispatch-phone::after,
+.btn-contact-submit::after,
+.modal-submit-btn::after,
+.btn-bform-submit::after,
+.empty-cta-btn::after,
+.why-btn-pill::after,
+.btn-cta-banner-primary::after,
+.mcard-featured-btn::after,
+.btn-filter-browse::after,
+.btn-read-article::after,
+.btn-read-full-guide::after,
+.btn-faq-call::after,
+.btn-simple-cta-call::after,
+.article-cta-call-btn::after,
+.sidebar-btn-call::after,
+.btn-lb-call::after,
+.btn-service-why-action::after,
+.areas-clear-btn::after,
+.service-card-btn::after,
+.footer-book-btn::after,
+.sidebar-btn-book::after,
+.article-cta-book-btn::after,
+.compare-card-cta::after,
+.btn-kitchen-quote::after,
+.pf-action-btn::after {
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+}
+
+/* Green Secondary Surface Gradient */
+.btn-hero-secondary::after,
+.btn-hero-action-call::after,
+.btn-about-secondary::after,
+.btn-urgent-call::after,
+.btn-cta-green::after,
+.btn-prefooter-call::after,
+.btn-faq-talk::after,
+.btn-cta-banner-call::after,
+.process-phone-link::after,
+.standards-call-link::after,
+.btn-dispatch-wa::after,
+.btn-dispatch-whatsapp::after,
+.btn-simple-cta-whatsapp::after,
+.btn-lb-whatsapp::after,
+.btn-emergency-wa::after {
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Red Primary Action Buttons: Fluid Elevation & Silky Glow Bloom
    -------------------------------------------------------------------------- */
 .btn-schedule:hover,
 .nav-menu-schedule-btn:hover,
@@ -1091,113 +1237,68 @@ button[class*="-btn"] * {
 .btn-lb-call:hover,
 .btn-service-why-action:hover,
 .areas-clear-btn:hover,
+.footer-book-btn:hover,
+.sidebar-btn-book:hover,
+.article-cta-book-btn:hover,
 .btn-dispatch-option.btn-dispatch-call:hover {
   animation: none !important;
-  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.4) !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-2.5px) !important;
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.20),
-    0 12px 28px rgba(0, 0, 0, 0.22),
-    0 4px 10px rgba(0, 0, 0, 0.08) !important;
+    0 12px 28px rgba(0, 0, 0, 0.24),
+    0 4px 10px rgba(0, 0, 0, 0.10) !important;
 }
 
-/* Zero Black Text Standard: All children of Red Buttons verified crisp white on hover */
-.btn-schedule:hover > span,
-.btn-schedule:hover strong,
-.nav-menu-schedule-btn:hover > span,
-.btn-primary:hover > span,
-.btn-hero-primary:hover > span,
-.btn-hero-action-primary:hover > span,
-.btn-get-started:hover > span,
-.btn-about-primary:hover > span,
-.btn-prefooter-primary:hover > span,
-.btn-emergency-primary:hover > span,
-.btn-emergency-call:hover > span,
-.btn-emergency-call:hover .btn-content,
-.btn-emergency-call:hover .btn-content *,
-.btn-hub-open-maps:hover > span,
-.btn-cta-navy:hover > span,
-.btn-urgent-book:hover > span,
-.cta-primary-btn:hover > span,
-.cta-showcase-btn:hover > span,
-.cta-showcase-container .cta-primary-btn:hover > span,
-.compare-card-cta:hover > span,
-.service-card-btn:hover > span,
-.service-card-item:hover .service-card-btn > span,
-.btn-dispatch-phone:hover > span,
-.btn-contact-submit:hover > span,
-.modal-submit-btn:hover > span,
-.btn-bform-submit:hover > span,
-.empty-cta-btn:hover > span,
-.why-btn-pill:hover > span,
-.btn-cta-banner-primary:hover > span,
-.mcard-featured-btn:hover > span,
-.btn-filter-browse:hover > span,
-.btn-read-article:hover > span,
-.btn-read-full-guide:hover > span,
-.btn-faq-call:hover > span,
-.btn-simple-cta-call:hover > span,
-.article-cta-call-btn:hover > span,
-.sidebar-btn-call:hover > span,
-.btn-lb-call:hover > span,
-.btn-service-why-action:hover > span,
-.btn-dispatch-option.btn-dispatch-call:hover > *,
-.btn-dispatch-option.btn-dispatch-call:hover .dispatch-label,
-.btn-dispatch-option.btn-dispatch-call:hover .dispatch-val {
-  color: #ffffff !important;
-}
-
-.btn-schedule:hover svg,
-.nav-menu-schedule-btn:hover svg,
-.btn-primary:hover svg,
-.btn-hero-primary:hover svg,
-.btn-hero-action-primary:hover svg,
-.btn-get-started:hover svg,
-.btn-about-primary:hover svg,
-.btn-prefooter-primary:hover svg,
-.btn-emergency-primary:hover svg,
-.btn-emergency-call:hover svg,
-.btn-hub-open-maps:hover svg,
-.btn-cta-navy:hover svg,
-.btn-urgent-book:hover svg,
-.cta-primary-btn:hover svg,
-.cta-showcase-btn:hover svg,
-.cta-showcase-container .cta-primary-btn:hover svg,
-.compare-card-cta:hover svg,
-.service-card-btn:hover svg,
-.service-card-item:hover .service-card-btn svg,
-.btn-dispatch-phone:hover svg,
-.btn-contact-submit:hover svg,
-.modal-submit-btn:hover svg,
-.btn-bform-submit:hover svg,
-.empty-cta-btn:hover svg,
-.why-btn-pill:hover svg,
-.btn-cta-banner-primary:hover svg,
-.mcard-featured-btn:hover svg,
-.btn-filter-browse:hover svg,
-.btn-read-article:hover svg,
-.btn-read-full-guide:hover svg,
-.btn-faq-call:hover svg,
-.btn-simple-cta-call:hover svg,
-.article-cta-call-btn:hover svg,
-.sidebar-btn-call:hover svg,
-.btn-lb-call:hover svg,
-.btn-service-why-action:hover svg,
-.areas-clear-btn:hover svg,
-.btn-dispatch-option.btn-dispatch-call:hover svg {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  fill: currentColor !important;
-  transform: translateX(3px);
-  transition: transform 0.3s ease, color 0.3s ease !important;
+/* Activate ::after surface on hover */
+.btn-schedule:hover::after,
+.nav-menu-schedule-btn:hover::after,
+.btn-primary:hover::after,
+.btn-hero-primary:hover::after,
+.btn-hero-action-primary:hover::after,
+.btn-get-started:hover::after,
+.btn-about-primary:hover::after,
+.btn-prefooter-primary:hover::after,
+.btn-emergency-primary:hover::after,
+.btn-cta-navy:hover::after,
+.btn-urgent-book:hover::after,
+.cta-primary-btn:hover::after,
+.cta-showcase-btn:hover::after,
+.cta-showcase-container .cta-primary-btn:hover::after,
+.compare-card-cta:hover::after,
+.service-card-btn:hover::after,
+.service-card-item:hover .service-card-btn::after,
+.btn-dispatch-phone:hover::after,
+.btn-contact-submit:hover::after,
+.modal-submit-btn:hover::after,
+.btn-bform-submit:hover::after,
+.empty-cta-btn:hover::after,
+.why-btn-pill:hover::after,
+.btn-cta-banner-primary:hover::after,
+.mcard-featured-btn:hover::after,
+.btn-filter-browse:hover::after,
+.btn-read-article:hover::after,
+.btn-read-full-guide:hover::after,
+.btn-faq-call:hover::after,
+.btn-simple-cta-call:hover::after,
+.article-cta-call-btn:hover::after,
+.sidebar-btn-call:hover::after,
+.btn-lb-call::after:hover,
+.btn-service-why-action:hover::after,
+.areas-clear-btn:hover::after,
+.footer-book-btn:hover::after,
+.sidebar-btn-book:hover::after,
+.article-cta-book-btn:hover::after,
+.btn-kitchen-quote:hover::after,
+.pf-action-btn:hover::after,
+.btn-dispatch-option.btn-dispatch-call:hover::after {
+  opacity: 1 !important;
 }
 
 /* --------------------------------------------------------------------------
-   3. Green Call & WhatsApp Action Buttons: Fluid Green Fill & Emerald Bezel
-   (Background smoothly sweeps to solid vibrant green on hover)
+   5. Green Call & WhatsApp Action Buttons: Fluid Green Fill & Emerald Bezel
    -------------------------------------------------------------------------- */
 .btn-hero-secondary:hover,
 .btn-hero-action-call:hover,
@@ -1216,76 +1317,37 @@ button[class*="-btn"] * {
 .btn-emergency-wa:hover,
 .btn-dispatch-option.btn-dispatch-wa:hover {
   animation: none !important;
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 100%) !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-2.5px) !important;
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.12),
-    0 8px 24px rgba(37, 211, 102, 0.40),
-    0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    0 10px 24px rgba(37, 211, 102, 0.42),
+    0 3px 8px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Zero Black Text Standard: All children of Green Buttons verified crisp white on hover */
-.btn-hero-secondary:hover > span,
-.btn-hero-action-call:hover > span,
-.btn-about-secondary:hover > span,
-.btn-urgent-call:hover > span,
-.btn-cta-green:hover > span,
-.btn-prefooter-call:hover > span,
-.btn-faq-talk:hover > span,
-.btn-cta-banner-call:hover > span,
-.process-phone-link:hover > span,
-.standards-call-link:hover > span,
-.btn-dispatch-wa:hover > span,
-.btn-dispatch-whatsapp:hover > span,
-.btn-simple-cta-whatsapp:hover > span,
-.btn-lb-whatsapp:hover > span,
-.btn-emergency-wa:hover > span,
-.btn-dispatch-option.btn-dispatch-wa:hover > *,
-.btn-dispatch-option.btn-dispatch-wa:hover .dispatch-label,
-.btn-dispatch-option.btn-dispatch-wa:hover .dispatch-val {
-  color: #ffffff !important;
-}
-
-.btn-hero-secondary:hover svg,
-.btn-hero-action-call:hover svg,
-.btn-about-secondary:hover svg,
-.btn-urgent-call:hover svg,
-.btn-cta-green:hover svg,
-.btn-prefooter-call:hover svg,
-.btn-faq-talk:hover svg,
-.btn-cta-banner-call:hover svg,
-.process-phone-link:hover svg,
-.standards-call-link:hover svg,
-.btn-dispatch-wa:hover svg,
-.btn-dispatch-whatsapp:hover svg,
-.btn-simple-cta-whatsapp:hover svg,
-.btn-lb-whatsapp:hover svg,
-.btn-emergency-wa:hover svg,
-.btn-dispatch-option.btn-dispatch-wa:hover svg {
-  animation: none !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  fill: currentColor !important;
-  transform: scale(1.08);
-  transition: transform 0.3s ease, color 0.3s ease, stroke 0.3s ease, fill 0.3s ease !important;
-}
-
-.btn-emergency-wa:hover .btn-content,
-.btn-emergency-wa:hover .btn-content * {
-  color: #ffffff !important;
-  fill: #ffffff !important;
-  transition: color 0.3s ease !important;
+.btn-hero-secondary:hover::after,
+.btn-hero-action-call:hover::after,
+.btn-about-secondary:hover::after,
+.btn-urgent-call:hover::after,
+.btn-cta-green:hover::after,
+.btn-prefooter-call:hover::after,
+.btn-faq-talk:hover::after,
+.btn-cta-banner-call:hover::after,
+.process-phone-link:hover::after,
+.standards-call-link:hover::after,
+.btn-dispatch-wa:hover::after,
+.btn-dispatch-whatsapp:hover::after,
+.btn-simple-cta-whatsapp:hover::after,
+.btn-lb-whatsapp:hover::after,
+.btn-emergency-wa:hover::after,
+.btn-dispatch-option.btn-dispatch-wa:hover::after {
+  opacity: 1 !important;
 }
 
 /* --------------------------------------------------------------------------
-   4. WHITE BUTTONS ON RED CONTAINERS (CRITICAL CONTRAST FIX - NEVER MERGE!)
-   Applies to:
-   - .btn-process-action inside .process-featured-card (Process Section)
-   - .areas-cta-banner .btn-dispatch-call inside .areas-cta-banner (Areas Banner)
-   - .btn-why-feature-cta inside .service-why-feature-card (Service Pages)
+   6. White Buttons on Red Containers (Never Merge! Maintain High Contrast)
    -------------------------------------------------------------------------- */
 .btn-process-action,
 .areas-cta-banner .btn-dispatch-call,
@@ -1300,7 +1362,7 @@ button[class*="-btn"] * {
 .areas-cta-banner .btn-dispatch-call > span,
 .btn-why-feature-cta > span {
   color: var(--brand-accent, #d71c1b) !important;
-  transition: color 0.25s ease !important;
+  transition: color 0.38s ease !important;
 }
 
 .btn-process-action:hover,
@@ -1310,7 +1372,7 @@ button[class*="-btn"] * {
   background: #ffffff !important;
   color: var(--brand-accent, #d71c1b) !important;
   border-color: #ffffff !important;
-  transform: translateY(-2px) scale(1.015) !important;
+  transform: translateY(-2.5px) scale(1.015) !important;
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.24),
     0 4px 10px rgba(0, 0, 0, 0.10),
@@ -1326,248 +1388,194 @@ button[class*="-btn"] * {
   color: var(--brand-accent, #d71c1b) !important;
 }
 
-.btn-process-action:hover svg,
-.btn-why-feature-cta:hover svg {
-  background-color: var(--brand-accent, #d71c1b) !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  fill: currentColor !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
-  transform: translateX(3px) !important;
-}
-
-.areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon,
-.areas-cta-banner .btn-dispatch-call:hover svg {
-  color: var(--brand-accent, #d71c1b) !important;
-  fill: currentColor !important;
-  animation: none !important;
-  transform: rotate(-10deg) scale(1.06) !important;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease !important;
-}
-
-/* Dark Theme variant for white buttons on red containers */
-body.dark-theme .btn-process-action,
-body.dark-theme .areas-cta-banner .btn-dispatch-call,
-body.dark-theme .btn-why-feature-cta {
-  background: #ffffff !important;
-  color: #192023 !important;
-  border-color: rgba(255, 255, 255, 0.95) !important;
-}
-
-body.dark-theme .btn-process-action > span,
-body.dark-theme .areas-cta-banner .btn-dispatch-call > span,
-body.dark-theme .btn-why-feature-cta > span {
-  color: #192023 !important;
-}
-
-body.dark-theme .btn-process-action:hover,
-body.dark-theme .areas-cta-banner .btn-dispatch-call:hover,
-body.dark-theme .btn-why-feature-cta:hover {
-  background: #ffffff !important;
-  color: #d71c1b !important;
-  transform: translateY(-2px) !important;
-  box-shadow:
-    0 14px 32px rgba(0, 0, 0, 0.50),
-    0 4px 12px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
-}
-
-body.dark-theme .btn-process-action:hover > span,
-body.dark-theme .areas-cta-banner .btn-dispatch-call:hover > span,
-body.dark-theme .btn-why-feature-cta:hover > span {
-  color: #d71c1b !important;
+/* --------------------------------------------------------------------------
+   7. Protected Child Content Layer (z-index: 4 & pointer-events: none)
+   -------------------------------------------------------------------------- */
+.btn-schedule > *:not(::before):not(::after):not(.btn-circle),
+.nav-menu-schedule-btn > *:not(::before):not(::after):not(.btn-circle),
+.btn-primary > *:not(::before):not(::after):not(.btn-circle),
+.btn-hero-primary > *:not(::before):not(::after):not(.btn-circle),
+.btn-hero-action-primary > *:not(::before):not(::after):not(.btn-circle),
+.btn-get-started > *:not(::before):not(::after):not(.btn-circle),
+.btn-about-primary > *:not(::before):not(::after):not(.btn-circle),
+.btn-prefooter-primary > *:not(::before):not(::after):not(.btn-circle),
+.btn-emergency-primary > *:not(::before):not(::after):not(.btn-circle),
+.btn-emergency-call > *:not(::before):not(::after):not(.btn-circle),
+.btn-hub-open-maps > *:not(::before):not(::after):not(.btn-circle),
+.btn-cta-navy > *:not(::before):not(::after):not(.btn-circle),
+.btn-urgent-book > *:not(::before):not(::after):not(.btn-circle),
+.cta-primary-btn > *:not(::before):not(::after):not(.btn-circle),
+.cta-showcase-btn > *:not(::before):not(::after):not(.btn-circle),
+.footer-book-btn > *:not(::before):not(::after):not(.btn-circle),
+.sidebar-btn-book > *:not(::before):not(::after):not(.btn-circle),
+.article-cta-book-btn > *:not(::before):not(::after):not(.btn-circle),
+.compare-card-cta > *:not(::before):not(::after):not(.btn-circle),
+.btn-process-action > *:not(::before):not(::after):not(.btn-circle),
+.empty-cta-btn > *:not(::before):not(::after):not(.btn-circle),
+.why-btn-pill > *:not(::before):not(::after):not(.btn-circle),
+.btn-cta-banner-primary > *:not(::before):not(::after):not(.btn-circle),
+.mcard-featured-btn > *:not(::before):not(::after):not(.btn-circle),
+.btn-filter-browse > *:not(::before):not(::after):not(.btn-circle),
+.btn-read-article > *:not(::before):not(::after):not(.btn-circle),
+.btn-read-full-guide > *:not(::before):not(::after):not(.btn-circle),
+.btn-faq-call > *:not(::before):not(::after):not(.btn-circle),
+.btn-simple-cta-call > *:not(::before):not(::after):not(.btn-circle),
+.article-cta-call-btn > *:not(::before):not(::after):not(.btn-circle),
+.sidebar-btn-call > *:not(::before):not(::after):not(.btn-circle),
+.btn-lb-call > *:not(::before):not(::after):not(.btn-circle),
+.btn-kitchen-call > *:not(::before):not(::after):not(.btn-circle),
+.btn-service-why-action > *:not(::before):not(::after):not(.btn-circle),
+.areas-clear-btn > *:not(::before):not(::after):not(.btn-circle),
+.btn-hero-secondary > *:not(::before):not(::after):not(.btn-circle),
+.btn-hero-action-call > *:not(::before):not(::after):not(.btn-circle),
+.btn-about-secondary > *:not(::before):not(::after):not(.btn-circle),
+.btn-urgent-call > *:not(::before):not(::after):not(.btn-circle),
+.btn-cta-green > *:not(::before):not(::after):not(.btn-circle),
+.btn-prefooter-call > *:not(::before):not(::after):not(.btn-circle),
+.btn-faq-talk > *:not(::before):not(::after):not(.btn-circle),
+.btn-cta-banner-call > *:not(::before):not(::after):not(.btn-circle),
+.process-phone-link > *:not(::before):not(::after):not(.btn-circle),
+.standards-call-link > *:not(::before):not(::after):not(.btn-circle),
+.btn-dispatch-wa > *:not(::before):not(::after):not(.btn-circle),
+.btn-dispatch-whatsapp > *:not(::before):not(::after):not(.btn-circle),
+.btn-simple-cta-whatsapp > *:not(::before):not(::after):not(.btn-circle),
+.btn-lb-whatsapp > *:not(::before):not(::after):not(.btn-circle),
+.btn-emergency-wa > *:not(::before):not(::after):not(.btn-circle),
+.btn-dispatch-phone > *:not(::before):not(::after):not(.btn-circle),
+.btn-contact-submit > *:not(::before):not(::after):not(.btn-circle),
+.modal-submit-btn > *:not(::before):not(::after):not(.btn-circle),
+.btn-bform-submit > *:not(::before):not(::after):not(.btn-circle),
+.service-card-btn > *:not(::before):not(::after):not(.btn-circle),
+.pf-action-btn > *:not(::before):not(::after):not(.btn-circle) {
+  position: relative !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  transition:
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 /* --------------------------------------------------------------------------
-   5. White Elevated Card Buttons on Dark Containers (Footer & Sidebar)
-   Silky GPU-accelerated gradient cross-fade via ::after opacity
+   8. Bidirectional SVG Icon Physics (Glides in on Enter, Glides back on Leave)
    -------------------------------------------------------------------------- */
-.footer-book-btn,
-.sidebar-btn-book,
-.article-cta-book-btn {
-  position: relative !important;
-  overflow: hidden !important;
-  z-index: 1 !important;
-  transition:
-    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-.footer-book-btn::after,
-.sidebar-btn-book::after,
-.article-cta-book-btn::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  border-radius: inherit !important;
-  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
-  opacity: 0 !important;
-  z-index: 1 !important;
-  transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-  pointer-events: none !important;
-}
-
-.footer-book-btn:hover::after,
-.sidebar-btn-book:hover::after,
-.article-cta-book-btn:hover::after {
-  opacity: 1 !important;
-}
-
-.footer-book-btn:hover,
-.sidebar-btn-book:hover,
-.article-cta-book-btn:hover {
-  animation: none !important;
-  color: #ffffff !important;
-  border-color: #d71c1b !important;
-  transform: translateY(-2px) !important;
-  box-shadow:
-    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.20),
-    0 12px 28px rgba(0, 0, 0, 0.45),
-    0 4px 10px rgba(0, 0, 0, 0.20) !important;
-}
-
-.footer-book-btn > span,
-.sidebar-btn-book > span,
-.article-cta-book-btn > span {
-  position: relative !important;
-  z-index: 3 !important;
-  transition: color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-.footer-book-btn:hover > span,
-.sidebar-btn-book:hover > span,
-.article-cta-book-btn:hover > span {
-  color: #ffffff !important;
-}
-
+.btn-schedule svg,
+.nav-menu-schedule-btn svg,
+.btn-primary svg,
+.btn-hero-primary svg,
+.btn-hero-action-primary svg,
+.btn-get-started svg,
+.btn-about-primary svg,
+.btn-prefooter-primary svg,
+.btn-emergency-primary svg,
+.btn-cta-navy svg,
+.btn-urgent-book svg,
+.cta-primary-btn svg,
+.cta-showcase-btn svg,
+.btn-dispatch-call svg,
+.btn-dispatch-phone svg,
+.btn-contact-submit svg,
+.modal-submit-btn svg,
+.btn-bform-submit svg,
+.empty-cta-btn svg,
+.why-btn-pill svg,
+.btn-cta-banner-primary svg,
+.mcard-featured-btn svg,
+.btn-filter-browse svg,
+.btn-read-article svg,
+.btn-read-full-guide svg,
+.btn-faq-call svg,
+.btn-kitchen-quote svg,
+.btn-simple-cta-call svg,
+.article-cta-call-btn svg,
+.sidebar-btn-call svg,
+.btn-lb-call svg,
+.btn-kitchen-call svg,
+.btn-service-why-action svg,
+.areas-clear-btn svg,
+.service-card-btn svg,
 .footer-book-btn svg,
 .sidebar-btn-book svg,
-.article-cta-book-btn svg {
-  position: relative !important;
-  z-index: 3 !important;
+.article-cta-book-btn svg,
+.compare-card-cta svg,
+.btn-process-action svg,
+.btn-why-feature-cta svg,
+.btn-hero-secondary svg,
+.btn-hero-action-call svg,
+.btn-about-secondary svg,
+.btn-emergency-call svg,
+.btn-urgent-call svg,
+.btn-cta-green svg,
+.btn-prefooter-call svg,
+.btn-faq-talk svg,
+.btn-cta-banner-call svg,
+.process-phone-link svg,
+.standards-call-link svg,
+.btn-dispatch-wa svg,
+.btn-dispatch-whatsapp svg,
+.btn-simple-cta-whatsapp svg,
+.btn-lb-whatsapp svg,
+.btn-emergency-wa svg,
+.pf-action-btn svg {
+  display: inline-block;
+  transform: translateX(0) scale(1);
   transition:
-    color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    stroke 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.3s ease !important;
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: transform;
 }
 
+/* Arrow Slide on Hover */
+.btn-schedule:hover svg,
+.nav-menu-schedule-btn:hover svg,
+.btn-primary:hover svg,
+.btn-hero-primary:hover svg,
+.btn-hero-action-primary:hover svg,
+.btn-get-started:hover svg,
+.btn-about-primary:hover svg,
+.btn-prefooter-primary:hover svg,
+.cta-primary-btn:hover svg,
+.cta-showcase-btn:hover svg,
+.cta-showcase-container .cta-primary-btn:hover svg,
+.service-card-btn:hover svg,
+.service-card-item:hover .service-card-btn svg,
 .footer-book-btn:hover svg,
 .sidebar-btn-book:hover svg,
-.article-cta-book-btn:hover svg {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  fill: currentColor !important;
-  transform: translateX(3px);
+.article-cta-book-btn:hover svg,
+.compare-card-cta:hover svg,
+.btn-process-action:hover svg,
+.btn-why-feature-cta:hover svg,
+.btn-filter-browse:hover svg,
+.btn-read-article:hover svg,
+.btn-read-full-guide:hover svg,
+.btn-service-why-action:hover svg,
+.pf-action-btn:hover svg {
+  transform: translateX(3.5px) !important;
+}
+
+/* Phone / WhatsApp Icon Micro-Scale on Hover */
+.btn-hero-secondary:hover svg,
+.btn-hero-action-call:hover svg,
+.btn-about-secondary:hover svg,
+.btn-urgent-call:hover svg,
+.btn-cta-green:hover svg,
+.btn-prefooter-call:hover svg,
+.btn-faq-talk:hover svg,
+.btn-cta-banner-call:hover svg,
+.process-phone-link:hover svg,
+.standards-call-link:hover svg,
+.btn-dispatch-wa:hover svg,
+.btn-dispatch-whatsapp:hover svg,
+.btn-simple-cta-whatsapp:hover svg,
+.btn-lb-whatsapp:hover svg,
+.btn-emergency-wa:hover svg {
+  transform: scale(1.08) !important;
 }
 
 /* --------------------------------------------------------------------------
-   6. Kitchen Showcase Interactive Buttons (High Contrast in Dark Bay)
-   -------------------------------------------------------------------------- */
-.btn-kitchen-quote {
-  position: relative !important;
-  overflow: hidden !important;
-  background-color: #ffffff !important;
-  color: #192023 !important;
-  z-index: 1;
-}
-
-.btn-kitchen-quote > span:not(.btn-kitchen-arrow-circle):not(.btn-circle),
-.btn-kitchen-quote span:not(.btn-kitchen-arrow-circle):not(.btn-circle) {
-  color: #192023 !important;
-}
-
-.btn-kitchen-quote::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  border-radius: 9999px !important;
-  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-  transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-.btn-kitchen-quote:hover::after {
-  opacity: 1 !important;
-}
-
-.btn-kitchen-quote:hover {
-  animation: none !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  transform: translateY(-2px) !important;
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.45),
-    0 4px 10px rgba(0, 0, 0, 0.20) !important;
-  color: #ffffff !important;
-}
-
-.btn-kitchen-quote:hover > span:not(.btn-kitchen-arrow-circle):not(.btn-circle),
-.btn-kitchen-quote:hover span:not(.btn-kitchen-arrow-circle):not(.btn-circle) {
-  color: #ffffff !important;
-}
-
-.btn-kitchen-quote:hover .btn-kitchen-arrow-circle {
-  background: #ffffff !important;
-  color: #d71c1b !important;
-  transform: translateX(3px) !important;
-}
-
-.btn-kitchen-quote:hover .btn-kitchen-arrow-circle svg {
-  color: #d71c1b !important;
-  stroke: #d71c1b !important;
-}
-
-.btn-kitchen-call:hover {
-  border-color: rgba(255, 255, 255, 0.5) !important;
-  background: rgba(255, 255, 255, 0.22) !important;
-  transform: translateY(-2.5px) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
-  color: #ffffff !important;
-}
-
-.btn-kitchen-call:hover > span {
-  color: #ffffff !important;
-}
-
-.btn-kitchen-call:hover svg {
-  color: #34d399 !important;
-  stroke: #34d399 !important;
-}
-
-/* --------------------------------------------------------------------------
-   7. Dark Surface Adaptations in Light Mode (Footer, Dark CTA Banners)
-   -------------------------------------------------------------------------- */
-.site-footer-master .btn-schedule:hover,
-.footer-card-container button:hover,
-.footer-card-container a[class*="btn-"]:hover,
-.footer-card-container a[class*="cta-"]:hover,
-.cta-banner .btn-cta-banner-primary:hover,
-.cta-banner-navy a:hover,
-.emergency-strip-container .btn-urgent-book:hover {
-  box-shadow:
-    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 14px 32px rgba(0, 0, 0, 0.45),
-    0 4px 12px rgba(0, 0, 0, 0.25) !important;
-}
-
-.site-footer-master .btn-hero-secondary:hover,
-.site-footer-master .btn-dispatch-wa:hover,
-.footer-card-container .btn-dispatch-wa:hover,
-.cta-banner .btn-cta-banner-call:hover {
-  box-shadow:
-    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.22),
-    0 8px 24px rgba(37, 211, 102, 0.45),
-    0 2px 6px rgba(0, 0, 0, 0.25) !important;
-}
-
-/* --------------------------------------------------------------------------
-   8. Dark Theme Concentric Outer-Loop Bezel & Glow Suite (body.dark-theme)
-   (High-contrast luminous outer loop - NEVER merges into dark background)
+   9. Dark Theme Adaptations (body.dark-theme)
    -------------------------------------------------------------------------- */
 body.dark-theme .btn-schedule:hover,
 body.dark-theme .nav-menu-schedule-btn:hover,
@@ -1584,7 +1592,6 @@ body.dark-theme .btn-cta-navy:hover,
 body.dark-theme .btn-urgent-book:hover,
 body.dark-theme .cta-primary-btn:hover,
 body.dark-theme .cta-showcase-btn:hover,
-body.dark-theme .cta-showcase-container .cta-primary-btn:hover,
 body.dark-theme .service-card-btn:hover,
 body.dark-theme .service-card-item:hover .service-card-btn,
 body.dark-theme .btn-dispatch-phone:hover,
@@ -1606,67 +1613,20 @@ body.dark-theme .btn-lb-call:hover,
 body.dark-theme .btn-service-why-action:hover,
 body.dark-theme .areas-clear-btn:hover,
 body.dark-theme .compare-card-cta:hover,
-body.dark-theme .btn-dispatch-option.btn-dispatch-call:hover {
-  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.45) !important;
-  transform: translateY(-2px) !important;
-  box-shadow:
-    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 14px 32px rgba(0, 0, 0, 0.60),
-    0 4px 12px rgba(0, 0, 0, 0.35) !important;
-}
-
-body.dark-theme .btn-kitchen-quote {
-  background-color: #ffffff !important;
-  color: #192023 !important;
-}
-
-body.dark-theme .btn-kitchen-quote > span:not(.btn-kitchen-arrow-circle):not(.btn-circle),
-body.dark-theme .btn-kitchen-quote span:not(.btn-kitchen-arrow-circle):not(.btn-circle) {
-  color: #192023 !important;
-}
-
-body.dark-theme .btn-kitchen-quote:hover {
-  color: #ffffff !important;
-  transform: translateY(-2px) !important;
-  box-shadow:
-    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 14px 32px rgba(0, 0, 0, 0.60),
-    0 4px 12px rgba(0, 0, 0, 0.35) !important;
-}
-
-body.dark-theme .btn-kitchen-quote:hover > span:not(.btn-kitchen-arrow-circle):not(.btn-circle),
-body.dark-theme .btn-kitchen-quote:hover span:not(.btn-kitchen-arrow-circle):not(.btn-circle) {
-  color: #ffffff !important;
-}
-
-body.dark-theme .sidebar-btn-book,
-body.dark-theme .sidebar-btn-book > span:not(.btn-circle),
-body.dark-theme .sidebar-btn-book span:not(.btn-circle),
-body.dark-theme .article-cta-book-btn,
-body.dark-theme .article-cta-book-btn > span:not(.btn-circle),
-body.dark-theme .article-cta-book-btn span:not(.btn-circle),
-body.dark-theme .btn-urgent-book,
-body.dark-theme .btn-urgent-book > span:not(.btn-circle),
-body.dark-theme .btn-urgent-book span:not(.btn-circle) {
-  background: #ffffff !important;
-  color: var(--brand-accent, #d71c1b) !important;
-}
-
 body.dark-theme .footer-book-btn:hover,
 body.dark-theme .sidebar-btn-book:hover,
-body.dark-theme .article-cta-book-btn:hover {
+body.dark-theme .article-cta-book-btn:hover,
+body.dark-theme .pf-action-btn:hover,
+body.dark-theme .btn-dispatch-option.btn-dispatch-call:hover {
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.45) !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-2.5px) !important;
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 14px 32px rgba(0, 0, 0, 0.60),
-    0 4px 12px rgba(0, 0, 0, 0.35) !important;
+    0 0 0 3px #171c1f,
+    0 0 0 6px rgba(255, 90, 82, 0.45),
+    0 14px 32px rgba(0, 0, 0, 0.65) !important;
 }
 
 body.dark-theme .btn-hero-secondary:hover,
@@ -1685,19 +1645,19 @@ body.dark-theme .btn-simple-cta-whatsapp:hover,
 body.dark-theme .btn-lb-whatsapp:hover,
 body.dark-theme .btn-emergency-wa:hover,
 body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
-  background: linear-gradient(135deg, #2ee06b 0%, #25d366 100%) !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-2.5px) !important;
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.22),
-    0 8px 26px rgba(37, 211, 102, 0.45),
-    0 2px 6px rgba(0, 0, 0, 0.35) !important;
+    0 0 0 3px #171c1f,
+    0 0 0 6px rgba(37, 211, 102, 0.45),
+    0 12px 30px rgba(0, 0, 0, 0.65) !important;
 }
 
 /* --------------------------------------------------------------------------
-   9. Tactile Press Feedback (:active state)
+   10. Tactile Press Feedback (:active state)
    -------------------------------------------------------------------------- */
 .btn-schedule:active,
 .btn-primary:active,
@@ -1709,11 +1669,11 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
 [class*="btn-"]:active,
 [class*="cta-"]:active,
 [class*="-btn"]:active {
-  transform: translateY(0px) scale(0.978) !important;
+  transform: translateY(0px) scale(0.98) !important;
   box-shadow:
     inset 0 2px 4px rgba(0, 0, 0, 0.22),
     0 1px 3px rgba(0, 0, 0, 0.10) !important;
-  transition: transform 0.08s ease, box-shadow 0.08s ease !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
 }
 
 @keyframes synchronizedButtonShine {
@@ -1831,7 +1791,7 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
 .btn-about-primary svg,
 .why-btn-pill svg,
 .modal-submit-btn .btn-arrow {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke 0.38s ease, color 0.38s ease;
 }
 .btn-hero-primary:hover svg,
 .btn-about-primary:hover svg,
@@ -2617,7 +2577,7 @@ a.service-card-item *,
   color: #ffffff;
   stroke: #ffffff;
   flex-shrink: 0;
-  transition: transform 0.25s ease;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke 0.38s ease, color 0.38s ease;
 }
 .service-card-btn:hover,
 .service-card-item:hover .service-card-btn {
@@ -5179,7 +5139,7 @@ body.dark-theme .blog-urgent-card .highlight-navy {
   border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none !important;
 }
 .btn-about-primary:hover,
@@ -5190,13 +5150,12 @@ body.dark-theme .blog-urgent-card .highlight-navy {
   text-decoration: none !important;
 }
 .btn-about-primary:hover {
-  background: var(--btn-gradient-hover);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2.5px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
 }
 .btn-about-primary svg {
-  transition: transform 0.2s ease;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke 0.38s ease, color 0.38s ease;
 }
 .btn-about-primary:hover svg {
   transform: translateX(3px);
@@ -5220,14 +5179,15 @@ body.dark-theme .blog-urgent-card .highlight-navy {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.38s ease, border-color 0.42s ease;
   animation: none !important;
 }
 .btn-about-secondary svg {
   color: #16a34a;
   transition:
-    transform 0.2s ease,
-    color 0.2s ease;
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   animation: none !important;
   transform-origin: center center;
 }
@@ -6616,16 +6576,15 @@ body.dark-theme .prefooter-simple-desc {
   border-radius: 9999px !important;
   text-decoration: none !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   cursor: pointer !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   white-space: nowrap !important;
 }
 
 .btn-simple-cta-call:hover {
-  transform: translateY(-2px) !important;
-  background: var(--btn-gradient-hover) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
+  transform: translateY(-2.5px) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6) !important;
   color: #ffffff !important;
 }
@@ -6649,7 +6608,7 @@ body.dark-theme .prefooter-simple-desc {
   border-radius: 9999px !important;
   text-decoration: none !important;
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.38s ease, border-color 0.42s ease !important;
   cursor: pointer !important;
   border: 1.5px solid #25d366 !important;
   white-space: nowrap !important;
@@ -7007,17 +6966,15 @@ body.dark-theme .btn-simple-cta-whatsapp:hover {
   border-radius: 9999px;
   border: none;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
 }
 .btn-prefooter-primary:hover {
-  background: #edf3fc;
-  color: var(--brand-accent-hover, #b00403);
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.38);
 }
 .btn-prefooter-primary svg {
-  transition: transform 0.25s ease;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke 0.38s ease, color 0.38s ease;
 }
 .btn-prefooter-primary:hover svg {
   transform: translateX(3px);
@@ -7034,7 +6991,7 @@ body.dark-theme .btn-simple-cta-whatsapp:hover {
   color: #ffffff;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.42s ease, border-color 0.42s ease;
 }
 .btn-prefooter-call:hover {
   background: rgba(255, 255, 255, 0.18);
@@ -7700,7 +7657,7 @@ body.dark-theme .prefooter-cta-overlay {
   padding: 14px 18px;
   border-radius: var(--radius-pill, 9999px);
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   border: 1.5px solid #e3e7e9;
 }
@@ -7711,10 +7668,9 @@ body.dark-theme .prefooter-cta-overlay {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
 }
 .btn-dispatch-option.btn-dispatch-call:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
-  background: var(--btn-gradient-hover);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
 }
 .btn-dispatch-wa {
@@ -7861,12 +7817,11 @@ body.dark-theme .trust-item svg {
   cursor: pointer;
   margin-top: 6px;
   box-shadow: 0 8px 22px -3px rgba(0, 0, 0, 0.22);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .modal-submit-btn:hover {
-  background: var(--btn-gradient-hover);
   box-shadow: 0 12px 28px -3px rgba(0, 0, 0, 0.32);
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
 } /* --- Toast Notification --- */
 .toast {
   position: fixed;
@@ -11511,7 +11466,7 @@ body.dark-theme .feature-description {
   justify-content: center;
   cursor: pointer;
   outline: none;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.42s ease, border-color 0.42s ease, box-shadow 0.42s ease;
 }
 .stories-nav-btn.btn-prev {
   background-color: #ffffff;
@@ -13162,14 +13117,13 @@ body.dark-theme .hub-core-body {
   text-decoration: none !important;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: fit-content;
   cursor: pointer;
 }
 .btn-faq-call:hover {
-  background: var(--btn-gradient-hover);
-  border-color: rgba(255, 255, 255, 0.32);
-  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2.5px);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
   color: #ffffff !important;
 }
@@ -17354,12 +17308,11 @@ body.dark-theme .hero-flank-card {
   border: 1px solid rgba(255, 255, 255, 0.22);
   cursor: pointer;
   box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   white-space: nowrap;
 }
 .btn-service-why-action:hover {
-  background: var(--btn-gradient-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.32);
 }
 
@@ -19710,8 +19663,7 @@ body.dark-theme .pf-lb-chip-time svg {
   white-space: nowrap;
 }
 .btn-lb-call:hover {
-  background: var(--btn-gradient-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
 }
 .btn-lb-whatsapp {
@@ -20311,7 +20263,7 @@ body.dark-theme .blog-filter-pill.active .badge-count {
 }
 .blog-section-lead {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.6;
   color: var(--text-sub, #5a5f70);
   margin: 0 auto;
@@ -20494,7 +20446,7 @@ body.dark-theme a.blog-title-link:hover {
 .blog-card-excerpt {
   font-family: var(--font-family);
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.6;
   color: var(--text-sub, #5a5f70);
   margin: 0 0 20px 0;
@@ -21347,7 +21299,7 @@ body.dark-theme .blog-section-subtitle-tag {
 /* Article Lead Paragraph */
 .article-post-lead {
   font-size: 16.5px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.72;
   color: var(--text-sub, #475056);
   margin-bottom: 26px;
@@ -21503,12 +21455,11 @@ body.dark-theme .blog-section-subtitle-tag {
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
 }
 .btn-hero-action-primary:hover {
-  background: var(--btn-gradient-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
   color: #ffffff;
 }
@@ -21528,7 +21479,7 @@ body.dark-theme .blog-section-subtitle-tag {
   gap: 8px;
   border: 1.5px solid #e3e7e9;
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.38s ease, border-color 0.42s ease;
 }
 .btn-hero-action-call:hover {
   color: #ffffff !important;
@@ -21710,7 +21661,7 @@ body.dark-theme .blog-section-subtitle-tag {
 }
 .author-bio-desc {
   font-size: 13.5px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text-sub, #5a5f70);
   line-height: 1.6;
   margin: 6px 0 0 0;
@@ -21994,7 +21945,7 @@ body.dark-theme .blog-section-subtitle-tag {
   border-bottom: 1px solid #e3e7e9;
   color: var(--text-sub, #475056);
   line-height: 1.6;
-  font-weight: 500;
+  font-weight: 400;
   transition: background-color 0.22s ease;
 }
 .article-diagnostic-table tr:nth-child(even) td {
@@ -22129,11 +22080,10 @@ body.dark-theme .blog-section-subtitle-tag {
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .article-cta-call-btn:hover {
-  background: var(--btn-gradient-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 12px 26px -3px rgba(0, 0, 0, 0.32);
   color: #ffffff;
 }
@@ -22151,14 +22101,14 @@ body.dark-theme .blog-section-subtitle-tag {
   border: 1.5px solid #ffffff;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative !important;
   overflow: hidden !important;
 }
 .article-cta-book-btn:hover {
   color: #ffffff !important;
   border-color: #d71c1b !important;
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
 }
 
@@ -22352,7 +22302,7 @@ body.dark-theme .blog-section-subtitle-tag {
   border: 1.5px solid #ffffff;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22362,7 +22312,7 @@ body.dark-theme .blog-section-subtitle-tag {
 .sidebar-btn-book:hover {
   color: #ffffff !important;
   border-color: #d71c1b !important;
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
 }
 
@@ -23968,13 +23918,12 @@ body.dark-theme .wm-check-label {
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 8px 22px -3px rgba(0, 0, 0, 0.25);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   white-space: nowrap;
 }
 
 .btn-cta-navy:hover {
-  background: var(--btn-gradient-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
   box-shadow: 0 12px 28px -3px rgba(0, 0, 0, 0.35);
   color: #ffffff;
 }
@@ -25730,10 +25679,10 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .btn-simple-cta-whatsapp > span:not(.btn-circle),
 .btn-simple-cta-whatsapp svg {
   transition:
-    color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    stroke 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background-color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .btn-process-action:hover > span:not(.btn-circle),
 .btn-process-action:hover > svg,
@@ -25743,10 +25692,10 @@ body.dark-theme .sidebar-btn-book:hover svg {
 .btn-simple-cta-whatsapp:hover > span:not(.btn-circle),
 .btn-simple-cta-whatsapp:hover svg {
   transition:
-    color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    stroke 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background-color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 /* Master Universal Enforcer for all buttons containing bubbles:

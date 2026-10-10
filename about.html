@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9.5">
+  <link rel="stylesheet" href="styles.css?v=9.6">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -37,7 +37,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=9.5 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=9.6 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* -------------------------------------------------------
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -144,7 +144,9 @@
       font-weight: 400;
       line-height: 1.65;
       color: var(--color-subtitle, var(--text-sub, #475056));
-      margin: 0;
+      margin: 0 auto;
+      max-width: 680px;
+      text-wrap: balance;
     }
     body.dark-theme .about-mission-lead { color: #f1f5f9 !important; }
 
@@ -289,7 +291,7 @@
     /* Card Paragraphs - Ensure Crisp Contrast */
     .mcard-desc {
       font-size: 14.5px;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.65;
       color: var(--text-sub, #5a5f70);
       margin: 0;
@@ -500,7 +502,7 @@
     }
     .mosaic-navy-desc {
       font-size: 11.5px;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.4;
       color: rgba(255, 255, 255, 0.9);
       margin: 0;
@@ -1078,7 +1080,7 @@
 
     .process-step-desc {
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--text-sub, #5a5f70);
       line-height: 1.5;
       margin: 0;
@@ -1302,7 +1304,7 @@
     /* Card Body Description */
     .why-fcard-desc {
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.6;
       color: var(--text-sub, #5a5f70);
       margin: 0 0 20px 0;
@@ -1812,7 +1814,7 @@
       font-size: 14.5px;
       line-height: 1.65;
       color: rgba(255, 255, 255, 0.78);
-      font-weight: 500;
+      font-weight: 400;
       margin: 0 0 24px;
     }
     .bento-tall-bullets {
@@ -1945,7 +1947,7 @@
       color: rgba(255, 255, 255, 0.82);
       margin: 0;
       line-height: 1.45;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     /* Bottom Sub-grid: 2 square/portrait cards */
@@ -2373,7 +2375,7 @@
     }
     .compare-summary-desc {
       font-size: 14px;
-      font-weight: 450;
+      font-weight: 400;
       line-height: 1.6;
       color: var(--text-sub, #5a5f70);
       margin: 0 0 20px 0;
@@ -2523,7 +2525,7 @@
     }
     .station-desc {
       font-size: 13px;
-      font-weight: 450;
+      font-weight: 400;
       line-height: 1.52;
       color: var(--text-sub, #5a5f70);
       margin: 0;
@@ -3120,7 +3122,8 @@
               Committed to Reliable <span class="highlight-navy">Appliance Repair Services</span> Across Dubai
             </h2>
             <p class="about-mission-lead">
-              Dubai Fix Appliances is your dependable appliance repair company across Dubai. We deliver quick, cost-effective repairs for all major appliances&mdash;handled by experienced technicians focused on quality service and consistent results.
+              Dubai Fix Appliances delivers fast, cost-effective doorstep repairs for all<br class="hide-mobile">
+              major appliances across Dubai, handled by certified master technicians.
             </p>
           </div>
 
