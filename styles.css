@@ -5880,8 +5880,10 @@ body.dark-theme .kitchen-main-desc {
   transition: color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .btn-kitchen-quote:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 4px 10px rgba(0, 0, 0, 0.20) !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  background-color: #d71c1b !important;
+  transform: translateY(-2.5px) !important;
+  box-shadow: 0 14px 32px rgba(215, 28, 27, 0.45), 0 4px 10px rgba(0, 0, 0, 0.20) !important;
   color: #ffffff !important;
 }
 .btn-kitchen-quote:hover > span:not(.btn-kitchen-arrow-circle):not(.btn-circle),
@@ -5935,7 +5937,10 @@ body.dark-theme .btn-kitchen-quote span:not(.btn-kitchen-arrow-circle):not(.btn-
   color: #192023 !important;
 }
 body.dark-theme .btn-kitchen-quote:hover {
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  background-color: #d71c1b !important;
   color: #ffffff !important;
+  box-shadow: 0 14px 32px rgba(224, 42, 36, 0.45) !important;
 }
 body.dark-theme .btn-kitchen-quote:hover > span:not(.btn-kitchen-arrow-circle):not(.btn-circle),
 body.dark-theme .btn-kitchen-quote:hover span:not(.btn-kitchen-arrow-circle):not(.btn-circle) {
@@ -11314,6 +11319,8 @@ body.dark-theme .btn-kitchen-quote span:not(.btn-kitchen-arrow-circle):not(.btn-
   color: #192023 !important;
 }
 body.dark-theme .btn-kitchen-quote:hover {
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  background-color: #d71c1b !important;
   color: #ffffff !important;
 }
 body.dark-theme .btn-kitchen-quote:hover > span:not(.btn-kitchen-arrow-circle):not(.btn-circle),
