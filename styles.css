@@ -8264,7 +8264,8 @@ body.dark-theme .trust-item svg {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
     padding: 20px;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    text-align: center;
     gap: 12px;
     display: none;
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -8276,8 +8277,48 @@ body.dark-theme .trust-item svg {
   .nav-menu.open {
     display: flex;
   }
+  .nav-menu .nav-link {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: 9999px;
+  }
   .nav-dropdown {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .nav-dropdown .nav-link.nav-dropdown-toggle {
+    width: fit-content;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 20px;
+  }
+  .nav-menu .nav-link.active-pill {
+    width: fit-content !important;
+    margin: 0 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 24px 9px 24px !important;
+    border-radius: 9999px !important;
+    background: var(--btn-gradient-primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(215, 28, 27, 0.28) !important;
   }
   .nav-dropdown .dropdown-content,
   .nav-dropdown.open .dropdown-content {
@@ -8833,7 +8874,8 @@ body.dark-theme .trust-item svg {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
     padding: 20px;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    text-align: center;
     gap: 12px;
     display: none;
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -8845,13 +8887,48 @@ body.dark-theme .trust-item svg {
   .nav-menu.open {
     display: flex;
   }
-  body.dark-theme .nav-menu {
-    background-color: #171c1f !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85) !important;
+  .nav-menu .nav-link {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: 9999px;
   }
   .nav-dropdown {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .nav-dropdown .nav-link.nav-dropdown-toggle {
+    width: fit-content;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 20px;
+  }
+  .nav-menu .nav-link.active-pill {
+    width: fit-content !important;
+    margin: 0 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 24px 9px 24px !important;
+    border-radius: 9999px !important;
+    background: var(--btn-gradient-primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(215, 28, 27, 0.28) !important;
   }
   .nav-dropdown .dropdown-content,
   .nav-dropdown.open .dropdown-content {
@@ -16393,7 +16470,7 @@ body.dark-theme .expertise-card {
     border-radius: 22px;
   }
   .service-hero-copy-card .hero-headline {
-    font-size: clamp(2.125rem, 1.125rem + 4vw, 2.65rem);
+    font-size: clamp(2.3rem, 1.4rem + 4.5vw, 2.9rem);
     line-height: 1.18;
     margin-bottom: 12px;
   }
@@ -16471,7 +16548,7 @@ body.dark-theme .expertise-card {
     border-radius: 20px;
   }
   .service-hero-copy-card .hero-headline {
-    font-size: clamp(2.05rem, 1.125rem + 4vw, 2.55rem);
+    font-size: clamp(2.25rem, 1.35rem + 4.5vw, 2.8rem);
     line-height: 1.2;
     margin-bottom: 10px;
   }
@@ -16485,7 +16562,8 @@ body.dark-theme .expertise-card {
     align-items: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 8px 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
     gap: 12px !important;
   }
   .service-hero-copy-card .btn-hero-primary,
@@ -16561,7 +16639,7 @@ body.dark-theme .expertise-card {
     border-radius: 18px;
   }
   .service-hero-copy-card .hero-headline {
-    font-size: clamp(2rem, 1.125rem + 4vw, 2.45rem);
+    font-size: clamp(2.2rem, 1.3rem + 4.2vw, 2.7rem);
     line-height: 1.22;
   }
   .service-hero-copy-card .hero-description {
