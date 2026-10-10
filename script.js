@@ -633,6 +633,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const areaCards = document.querySelectorAll('.area-card');
   const dubaiMapHub = document.querySelector('.dubai-map-hub');
 
+  if (areaSearchInput) {
+    const syncAreaPlaceholder = () => {
+      const w = window.innerWidth;
+      if (w <= 360) {
+        areaSearchInput.placeholder = 'Search neighborhood...';
+      } else if (w <= 640) {
+        areaSearchInput.placeholder = 'Search your neighborhood...';
+      } else {
+        areaSearchInput.placeholder = 'Search your neighborhood (e.g. Marina, Downtown)...';
+      }
+    };
+    syncAreaPlaceholder();
+    window.addEventListener('resize', syncAreaPlaceholder, { passive: true });
+    window.addEventListener('orientationchange', syncAreaPlaceholder, { passive: true });
+  }
+
   if (areaSearchInput && areaCards.length > 0) {
     const totalDistricts = areaCards.length;
 
