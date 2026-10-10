@@ -738,28 +738,141 @@ body.dark-theme .dropdown-divider {
   }
 }
 
-/* Keyframes: Ringing Phone Vibration Loop (Restricted to hover only) */
-@keyframes phoneRingVibrantLoop {
-  0%, 100% {
+/* ==========================================================================
+   Master Synchronized Phone Vibration Animation System
+   Subtle luxury periodic ring (vibrates ~0.75s, rests ~2.85s) repeating
+   at a globally synchronized 3.6s interval across all call buttons.
+   ========================================================================== */
+@keyframes phoneVibeRing {
+  0%, 72%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  74% {
+    transform: rotate(-14deg) scale(1.12);
+  }
+  76.5% {
+    transform: rotate(14deg) scale(1.12);
+  }
+  79% {
+    transform: rotate(-12deg) scale(1.10);
+  }
+  81.5% {
+    transform: rotate(12deg) scale(1.10);
+  }
+  84% {
+    transform: rotate(-8deg) scale(1.06);
+  }
+  86.5% {
+    transform: rotate(8deg) scale(1.06);
+  }
+  89% {
+    transform: rotate(-4deg) scale(1.02);
+  }
+  91.5% {
+    transform: rotate(4deg) scale(1.02);
+  }
+  94% {
     transform: rotate(0deg) scale(1);
   }
 }
 
-/* Zero Idle Float & Motion Standard: Buttons and icons sit grounded without jitter */
+@keyframes phoneHoverRing {
+  0%, 100% {
+    transform: rotate(0deg) scale(1.12);
+  }
+  20% {
+    transform: rotate(-15deg) scale(1.15);
+  }
+  40% {
+    transform: rotate(15deg) scale(1.15);
+  }
+  60% {
+    transform: rotate(-10deg) scale(1.14);
+  }
+  80% {
+    transform: rotate(10deg) scale(1.14);
+  }
+}
+
+/* Master Synchronized Ambient Phone Vibration on all Phone Icon Buttons */
 .btn-schedule svg,
+.nav-menu-schedule-btn svg,
 .btn-hero-secondary svg,
+.btn-hero-action-call svg,
 .btn-about-secondary svg,
 .btn-dispatch-call svg,
 .btn-dispatch-call .phone-vibe-icon,
+.btn-dispatch-phone svg,
+.emergency-call-card .emergency-phone-icon svg,
+.emergency-call-card svg,
+.hub-phone-circle svg,
+.float-call-btn svg,
+.float-call-btn .float-icon-svg,
 .footer-social-btn.btn-phone svg,
+.footer-contact-item .icon-phone-wrap svg,
+.cta-primary-btn svg,
+.btn-simple-cta-call svg,
+.btn-simple-cta-call .btn-simple-icon svg,
+.sidebar-btn-call svg,
+.article-cta-call-btn svg,
+.btn-emergency-call svg,
+.btn-urgent-call svg,
+.btn-prefooter-call svg,
+.btn-faq-call svg,
+.btn-kitchen-call svg,
+.btn-lb-call svg,
+.process-phone-link svg,
+.emergency-call-pill svg,
 .phone-vibe-icon,
-a[href^="tel:"] svg,
+a[href^="tel:"]:not(.contact-link) > svg,
+a[href^="tel:"]:not(.contact-link) > span > svg,
+a[href^="tel:"]:not(.contact-link) .btn-content svg,
 button[id*="Call"] svg,
 button[id*="call"] svg,
 button[id*="phone"] svg {
-  display: inline-block;
-  transform-origin: center center;
-  animation: none !important;
+  display: inline-block !important;
+  transform-origin: center center !important;
+  backface-visibility: hidden;
+  will-change: transform;
+  animation: phoneVibeRing 3.6s ease-in-out infinite !important;
+}
+
+/* Responsive Active Ring Vibration on Hover */
+.btn-schedule:hover svg,
+.nav-menu-schedule-btn:hover svg,
+.btn-hero-secondary:hover svg,
+.btn-hero-action-call:hover svg,
+.btn-about-secondary:hover svg,
+.btn-dispatch-call:hover svg,
+.btn-dispatch-call:hover .phone-vibe-icon,
+.btn-dispatch-phone:hover svg,
+.emergency-call-card:hover .emergency-phone-icon svg,
+.emergency-call-card:hover svg,
+.hub-phone-circle:hover svg,
+.float-call-btn:hover svg,
+.float-call-btn:hover .float-icon-svg,
+.footer-social-btn.btn-phone:hover svg,
+.footer-contact-item:hover .icon-phone-wrap svg,
+.cta-primary-btn:hover svg,
+.btn-simple-cta-call:hover svg,
+.btn-simple-cta-call:hover .btn-simple-icon svg,
+.sidebar-btn-call:hover svg,
+.article-cta-call-btn:hover svg,
+.btn-emergency-call:hover svg,
+.btn-urgent-call:hover svg,
+.btn-prefooter-call:hover svg,
+.btn-faq-call:hover svg,
+.btn-kitchen-call:hover svg,
+.btn-lb-call:hover svg,
+.process-phone-link:hover svg,
+.emergency-call-pill:hover svg,
+a[href^="tel:"]:not(.contact-link):hover > svg,
+a[href^="tel:"]:not(.contact-link):hover > span > svg,
+a[href^="tel:"]:not(.contact-link):hover .btn-content svg,
+button[id*="Call"]:hover svg,
+button[id*="call"]:hover svg,
+button[id*="phone"]:hover svg {
+  animation: phoneHoverRing 0.45s ease-in-out infinite !important;
 }
 
 /* All CTA Action Buttons Sit Completely Grounded at Rest */
@@ -1594,18 +1707,14 @@ button[class*="-btn"] * {
   will-change: transform;
 }
 
-/* Arrow Slide on Hover */
-.btn-schedule:hover svg,
-.nav-menu-schedule-btn:hover svg,
+/* Arrow Slide on Hover (Buttons with directional chevron/arrow icons) */
 .btn-primary:hover svg,
 .btn-hero-primary:hover svg,
 .btn-hero-action-primary:hover svg,
 .btn-get-started:hover svg,
 .btn-about-primary:hover svg,
 .btn-prefooter-primary:hover svg,
-.cta-primary-btn:hover svg,
 .cta-showcase-btn:hover svg,
-.cta-showcase-container .cta-primary-btn:hover svg,
 .service-card-btn:hover svg,
 .service-card-item:hover .service-card-btn svg,
 .footer-book-btn:hover svg,
@@ -1621,16 +1730,9 @@ button[class*="-btn"] * {
   transform: translateX(3.5px) !important;
 }
 
-/* Phone / WhatsApp Icon Micro-Scale on Hover */
-.btn-hero-secondary:hover svg,
-.btn-hero-action-call:hover svg,
-.btn-about-secondary:hover svg,
-.btn-urgent-call:hover svg,
+/* WhatsApp & Chat Icon Micro-Scale on Hover */
 .btn-cta-green:hover svg,
-.btn-prefooter-call:hover svg,
 .btn-faq-talk:hover svg,
-.btn-cta-banner-call:hover svg,
-.process-phone-link:hover svg,
 .standards-call-link:hover svg,
 .btn-dispatch-wa:hover svg,
 .btn-dispatch-whatsapp:hover svg,
@@ -2747,8 +2849,7 @@ a.service-card-item *,
 .btn-urgent-book::before,
 .expertise-circle-arrow-btn::before,
 .mcard-arrow-btn::before,
-.btn-map-direction::before,
-.pf-action-btn::before {
+.btn-map-direction::before {
   content: "";
   position: absolute;
   top: -60%;
@@ -2921,7 +3022,6 @@ a.service-card-item *,
 
 @media (prefers-reduced-motion: reduce) {
   .service-card-btn::before,
-  .pf-action-btn::before,
   .expertise-circle-arrow-btn::before,
   .mcard-arrow-btn::before,
   .btn-map-direction::before,
@@ -4163,8 +4263,7 @@ body.dark-theme .why-card-content .why-card-desc {
 .areas-cta-banner .btn-dispatch-call:hover svg {
   color: #b00403 !important;
   fill: currentColor !important;
-  transform: rotate(-10deg) scale(1.08) !important;
-  animation: phoneRing 0.5s ease infinite alternate;
+  animation: phoneHoverRing 0.45s ease-in-out infinite !important;
 }
 @keyframes phoneRing {
   0% {
@@ -6692,7 +6791,7 @@ body.dark-theme .prefooter-simple-desc {
 }
 
 .btn-simple-cta-call:hover .btn-simple-icon svg {
-  animation: phoneRingVibrantLoop 1.2s infinite ease-in-out;
+  animation: phoneHoverRing 0.45s ease-in-out infinite !important;
 }
 
 /* Secondary Button: WhatsApp Live Chat (Exact match to Hero secondary emerald green) */
@@ -8643,9 +8742,13 @@ body.dark-theme .trust-item svg {
 @media (max-width: 600px), (prefers-reduced-motion: reduce) {
   .btn-hero-primary,
   .btn-hero-secondary,
-  .btn-hero-secondary svg,
   .emergency-pulse-ring,
   .emergency-pulse-ring-outer {
+    animation: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-hero-secondary svg {
     animation: none !important;
   }
 }
@@ -12316,8 +12419,7 @@ body.dark-theme .areas-cta-banner .btn-dispatch-call:hover .phone-vibe-icon,
 body.dark-theme .areas-cta-banner .btn-dispatch-call:hover svg {
   color: var(--brand-accent, #d71c1b) !important;
   fill: currentColor !important;
-  transform: rotate(-10deg) scale(1.08) !important;
-  animation: phoneRing 0.5s ease infinite alternate;
+  animation: phoneHoverRing 0.45s ease-in-out infinite !important;
 } /* ==========================================================================   MAJOR BRANDS WE SERVICE & REPAIR (Replicating media_1790161239392.png)   ========================================================================== */
 .brands-section {
   padding-top: var(--section-py);
@@ -18320,6 +18422,7 @@ body.dark-theme .service-issue-desc {
   padding-top: 12px;
   border-top: 1px solid rgba(25, 32, 35, 0.08);
   margin-top: auto;
+  overflow: visible !important;
 }
 .pf-stat-item {
   font-size: 11.5px;
@@ -18339,7 +18442,7 @@ body.dark-theme .service-issue-desc {
   width: 100%;
   gap: 10px;
   height: auto;
-  padding: 2px 0;
+  padding: 2px 6px 2px 0;
   border-radius: 0;
   background: transparent !important;
   color: var(--text-dark, #192023) !important;
@@ -18355,7 +18458,7 @@ body.dark-theme .service-issue-desc {
   white-space: nowrap;
   text-decoration: none !important;
   position: relative;
-  overflow: visible;
+  overflow: visible !important;
   box-sizing: border-box;
 }
 .pf-action-btn span {
@@ -18380,6 +18483,7 @@ body.dark-theme .service-issue-desc {
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible !important;
 }
 .pf-action-btn:hover,
 .portfolio-card:hover .pf-action-btn {
@@ -18400,7 +18504,7 @@ body.dark-theme .service-issue-desc {
   border-color: #e02a24 !important;
   color: #ffffff !important;
   stroke: #ffffff !important;
-  transform: translateX(4px) scale(1.06);
+  transform: translateX(3px) scale(1.05);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
 }
 /* Dark Theme for Portfolio Cards */
@@ -18488,12 +18592,13 @@ body.dark-theme .pf-action-btn svg {
   color: #ffffff !important;
   stroke: #ffffff !important;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  overflow: visible !important;
 }
 body.dark-theme .pf-action-btn:hover svg,
 body.dark-theme .portfolio-card:hover .pf-action-btn svg {
   background: linear-gradient(135deg, #ff5a52 0%, #e02a24 100%) !important;
   border-color: #ff837d !important;
-  transform: translateX(4px) scale(1.06);
+  transform: translateX(3px) scale(1.05);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 body.dark-theme .tag-location {
@@ -22370,12 +22475,33 @@ body.dark-theme .article-table-wrapper::-webkit-scrollbar-thumb {
   text-decoration: none;
   border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
   box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.25);
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              background 0.35s ease;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.article-cta-call-btn::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transition: opacity 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: opacity;
+}
+.article-cta-call-btn:hover::after {
+  opacity: 1 !important;
+}
+.article-cta-call-btn > * {
+  position: relative !important;
+  z-index: 3 !important;
+  pointer-events: none;
 }
 .article-cta-call-btn:hover {
-  background: var(--btn-gradient-hover) !important;
   transform: translateY(-2.5px);
   box-shadow: 0 12px 26px -3px rgba(215, 28, 27, 0.45);
   color: #ffffff !important;
@@ -22394,11 +22520,6 @@ body.dark-theme .article-table-wrapper::-webkit-scrollbar-thumb {
   border: 1.5px solid #ffffff !important;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              background 0.35s ease,
-              color 0.35s ease,
-              border-color 0.35s ease;
   position: relative !important;
   overflow: hidden !important;
   text-decoration: none;
@@ -22406,14 +22527,33 @@ body.dark-theme .article-table-wrapper::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  transition: transform 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.article-cta-book-btn::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transition: opacity 0.48s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: opacity;
+}
+.article-cta-book-btn:hover::after {
+  opacity: 1 !important;
 }
 .article-cta-book-btn > span {
+  position: relative !important;
+  z-index: 3 !important;
   color: var(--brand-accent, #d71c1b) !important;
-  transition: color 0.35s ease;
+  transition: color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .article-cta-book-btn:hover {
-  background: var(--btn-gradient-primary) !important;
-  color: #ffffff !important;
   border-color: var(--brand-accent, #d71c1b) !important;
   transform: translateY(-2.5px);
   box-shadow: 0 10px 24px rgba(215, 28, 27, 0.42) !important;
