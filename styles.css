@@ -663,7 +663,7 @@ body.dark-theme .dropdown-divider {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: rgba(37, 211, 102, 0.06);
+  background-color: rgba(37, 211, 102, 0.08);
   color: #15803d;
   border: 1.5px solid #25d366;
   font-family: inherit;
@@ -678,6 +678,8 @@ body.dark-theme .dropdown-divider {
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15);
   transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background-color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               border-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
@@ -686,22 +688,35 @@ body.dark-theme .dropdown-divider {
   flex-shrink: 0;
 }
 
+.btn-hero-secondary > span {
+  color: #15803d;
+  transition: color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
 .btn-hero-secondary svg {
   color: #16a34a;
+  stroke: #16a34a;
+  fill: currentColor;
   transition:
     transform 0.2s ease,
     color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    fill 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    fill 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   animation: none !important;
   transform-origin: center center;
+}
+.btn-hero-secondary:hover > span {
+  color: #ffffff !important;
 }
 .btn-hero-secondary:hover svg {
   animation: none !important;
   color: #ffffff !important;
-  fill: currentColor !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
   transition:
     color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    fill 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    fill 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 } /* ==========================================================================   Universal Button Animation & Interaction Suite (Hero-Quality Everywhere)   ========================================================================== */ /* Zero Idle Float Animation Standard: Buttons sit grounded, calm, and stable without floating */
 @keyframes primaryButtonPulseLoop {
   0%, 50%, 100% {
@@ -1318,6 +1333,8 @@ button[class*="-btn"] * {
 .btn-emergency-wa:hover,
 .btn-dispatch-option.btn-dispatch-wa:hover {
   animation: none !important;
+  background-color: #25d366 !important;
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2.5px) !important;
@@ -1326,6 +1343,46 @@ button[class*="-btn"] * {
     inset 0 -1px 2px rgba(0, 0, 0, 0.12),
     0 10px 24px rgba(37, 211, 102, 0.42),
     0 3px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.btn-hero-secondary:hover > span,
+.btn-hero-action-call:hover > span,
+.btn-about-secondary:hover > span,
+.btn-urgent-call:hover > span,
+.btn-cta-green:hover > span,
+.btn-prefooter-call:hover > span,
+.btn-faq-talk:hover > span,
+.btn-cta-banner-call:hover > span,
+.process-phone-link:hover > span,
+.standards-call-link:hover > span,
+.btn-dispatch-wa:hover > span,
+.btn-dispatch-whatsapp:hover > span,
+.btn-simple-cta-whatsapp:hover > span,
+.btn-lb-whatsapp:hover > span,
+.btn-emergency-wa:hover > span,
+.btn-dispatch-option.btn-dispatch-wa:hover > span {
+  color: #ffffff !important;
+}
+
+.btn-hero-secondary:hover svg,
+.btn-hero-action-call:hover svg,
+.btn-about-secondary:hover svg,
+.btn-urgent-call:hover svg,
+.btn-cta-green:hover svg,
+.btn-prefooter-call:hover svg,
+.btn-faq-talk:hover svg,
+.btn-cta-banner-call:hover svg,
+.process-phone-link:hover svg,
+.standards-call-link:hover svg,
+.btn-dispatch-wa:hover svg,
+.btn-dispatch-whatsapp:hover svg,
+.btn-simple-cta-whatsapp:hover svg,
+.btn-lb-whatsapp:hover svg,
+.btn-emergency-wa:hover svg,
+.btn-dispatch-option.btn-dispatch-wa:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 .btn-hero-secondary:hover::after,
@@ -1646,6 +1703,8 @@ body.dark-theme .btn-simple-cta-whatsapp:hover,
 body.dark-theme .btn-lb-whatsapp:hover,
 body.dark-theme .btn-emergency-wa:hover,
 body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
+  background-color: #25d366 !important;
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2.5px) !important;
@@ -1655,6 +1714,46 @@ body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover {
     0 0 0 3px #171c1f,
     0 0 0 6px rgba(37, 211, 102, 0.45),
     0 12px 30px rgba(0, 0, 0, 0.65) !important;
+}
+
+body.dark-theme .btn-hero-secondary:hover > span,
+body.dark-theme .btn-hero-action-call:hover > span,
+body.dark-theme .btn-about-secondary:hover > span,
+body.dark-theme .btn-urgent-call:hover > span,
+body.dark-theme .btn-cta-green:hover > span,
+body.dark-theme .btn-prefooter-call:hover > span,
+body.dark-theme .btn-faq-talk:hover > span,
+body.dark-theme .btn-cta-banner-call:hover > span,
+body.dark-theme .process-phone-link:hover > span,
+body.dark-theme .standards-call-link:hover > span,
+body.dark-theme .btn-dispatch-wa:hover > span,
+body.dark-theme .btn-dispatch-whatsapp:hover > span,
+body.dark-theme .btn-simple-cta-whatsapp:hover > span,
+body.dark-theme .btn-lb-whatsapp:hover > span,
+body.dark-theme .btn-emergency-wa:hover > span,
+body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover > span {
+  color: #ffffff !important;
+}
+
+body.dark-theme .btn-hero-secondary:hover svg,
+body.dark-theme .btn-hero-action-call:hover svg,
+body.dark-theme .btn-about-secondary:hover svg,
+body.dark-theme .btn-urgent-call:hover svg,
+body.dark-theme .btn-cta-green:hover svg,
+body.dark-theme .btn-prefooter-call:hover svg,
+body.dark-theme .btn-faq-talk:hover svg,
+body.dark-theme .btn-cta-banner-call:hover svg,
+body.dark-theme .process-phone-link:hover svg,
+body.dark-theme .standards-call-link:hover svg,
+body.dark-theme .btn-dispatch-wa:hover svg,
+body.dark-theme .btn-dispatch-whatsapp:hover svg,
+body.dark-theme .btn-simple-cta-whatsapp:hover svg,
+body.dark-theme .btn-lb-whatsapp:hover svg,
+body.dark-theme .btn-emergency-wa:hover svg,
+body.dark-theme .btn-dispatch-option.btn-dispatch-wa:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -2668,13 +2767,7 @@ a.service-card-item *,
   z-index: 3 !important;
 }
 
-.service-card-btn::after,
-.pf-action-btn::after,
-.expertise-circle-arrow-btn::after,
-.mcard-arrow-btn::after,
-.btn-map-direction::after {
-  display: none !important;
-}
+/* Service & Map Card button after surface */
 
 /* ==========================================================================
    Luminous Emerald Crystal Shimmer Calibrated for All Green Action Buttons
@@ -2734,32 +2827,14 @@ a.service-card-item *,
   );
   filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.28));
   pointer-events: none;
-  z-index: 1;
+  z-index: 2 !important;
   transform: translateX(0) skewX(-25deg);
   opacity: 0;
   animation: synchronizedButtonShine 4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
   animation-delay: 0s !important;
 }
 
-.btn-hero-secondary::after,
-.btn-about-secondary::after,
-.btn-cta-green::after,
-.btn-prefooter-call::after,
-.btn-urgent-call::after,
-.sidebar-btn-call::after,
-.btn-faq-talk::after,
-.btn-dispatch-wa::after,
-.btn-dispatch-whatsapp::after,
-.btn-lb-whatsapp::after,
-.btn-cta-banner-call::after,
-.process-phone-link::after,
-.standards-call-link::after,
-.btn-simple-cta-whatsapp::after,
-.btn-emergency-wa::after,
-.btn-hero-action-call::after,
-.btn-kitchen-call::after {
-  display: none !important;
-}
+/* Green Call button after surface restored */
 
 /* ==========================================================================
    Luminous Warm Champagne Gold Shimmer for Gold Action Buttons
@@ -2795,10 +2870,7 @@ a.service-card-item *,
   animation-delay: 0s !important;
 }
 
-.btn-standards-gold::after,
-.btn-bento-gold::after {
-  display: none !important;
-}
+/* Gold button after surface restored */
 
 /* Ensure button label text & icons stay sharp above the shimmer overlay */
 .service-card-btn > *:not(.btn-circle),
@@ -3008,6 +3080,8 @@ a.service-card-item *,
   transition: color 0.2s ease, stroke 0.2s ease;
 }
 .btn-dispatch-whatsapp:hover {
+  background-color: #25d366 !important;
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   transform: translateY(-2px);
   color: #ffffff !important;
   border-color: #25d366 !important;
@@ -3015,6 +3089,7 @@ a.service-card-item *,
   transition:
     transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
@@ -5194,6 +5269,8 @@ body.dark-theme .blog-urgent-card .highlight-navy {
   transform-origin: center center;
 }
 .btn-about-secondary:hover {
+  background-color: #25d366 !important;
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
   transform: translateY(-2px);
@@ -6624,6 +6701,8 @@ body.dark-theme .btn-simple-cta-whatsapp {
 }
 
 .btn-simple-cta-whatsapp:hover {
+  background-color: #25d366 !important;
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   transform: translateY(-2px) !important;
   border-color: #25d366 !important;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40) !important;
@@ -10724,18 +10803,27 @@ body.dark-theme .btn-about-secondary {
   border-color: rgba(37, 211, 102, 0.45);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
+body.dark-theme .btn-hero-secondary > span,
+body.dark-theme .btn-about-secondary > span {
+  color: #25d366 !important;
+}
 body.dark-theme .btn-hero-secondary svg,
 body.dark-theme .btn-about-secondary svg {
   color: #25d366;
+  stroke: #25d366;
+  fill: currentColor;
 }
 body.dark-theme .btn-hero-secondary:hover,
 body.dark-theme .btn-about-secondary:hover {
+  background-color: #25d366 !important;
+  background: linear-gradient(135deg, #2ee06b 0%, #25d366 50%, #16a34a 100%) !important;
   border-color: #25d366 !important;
   color: #ffffff !important;
   box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45) !important;
   transition:
     transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
