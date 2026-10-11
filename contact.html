@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=13.0">
+  <link rel="stylesheet" href="styles.css?v=13.4">
 
   <style>
     /* ============================================================
@@ -422,7 +422,7 @@
       margin-bottom: 12px;
     }
     .booking-card-heading {
-      font-size: clamp(1.6rem, 2.3vw, 2.15rem);
+      font-size: var(--text-h2);
       font-weight: 800;
       line-height: 1.22;
       letter-spacing: -0.025em;
@@ -793,9 +793,6 @@
       }
     }
     @media (max-width: 360px) {
-      .booking-card-heading {
-        font-size: 1.35rem;
-      }
       .hub-loc-badges {
         flex-direction: column;
         align-items: flex-start;
@@ -813,9 +810,6 @@
       }
     }
     @media (max-width: 300px) {
-      .booking-card-heading {
-        font-size: 1.15rem;
-      }
     }
   </style>
 </head>
@@ -1135,7 +1129,7 @@
               </div>
               <div class="hero-trust-text">
                 <span class="hero-trust-title">24 Dubai Districts</span>
-                <span class="hero-trust-sub">Direct Doorstep Units</span>
+                <span class="hero-trust-sub">Direct Doorstep</span>
               </div>
             </div>
           </div>
@@ -1147,11 +1141,11 @@
           <div class="service-hero-media-card">
             <img src="assets/contact-hero-support.jpg?v=2.0" alt="Dubai Fix Certified Customer Support and Dispatch Specialists in Dubai" class="hero-media-img">
             <!-- Floating Service Badge Card (Bottom-Right) -->
-            <div class="hero-floating-service-card" aria-label="Fast Response Support">
+            <div class="hero-floating-service-card" aria-label="24/7 Rapid On-Site Support and Dispatch">
               <span class="hf-card-caption">Fast &bull; Reliable &bull; Professional</span>
               <div class="hf-card-title-wrap">
-                <span class="hf-card-title-line">24/7 Rapid</span>
-                <span class="hf-card-title-line">Dispatch</span>
+                <span class="hf-card-title-line">24/7 Rapid On-Site</span>
+                <span class="hf-card-title-line">Support &amp; Dispatch</span>
               </div>
               <div class="hf-card-meta-row">
                 <div class="hf-card-icon-wrap" aria-hidden="true">
@@ -1588,19 +1582,6 @@
                       <span>WhatsApp Chat (24/7)</span>
                       <span class="chat-status-pill"><span class="dot-online"></span></span>
                     </a>
-                  </div>
-                </li>
-
-                <li class="footer-contact-item">
-                  <div class="footer-contact-icon" aria-hidden="true">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                  </div>
-                  <div class="footer-contact-info">
-                    <span class="contact-label">Availability</span>
-                    <span class="contact-value">24/7 Support | 365 Days Available</span>
                   </div>
                 </li>
               </ul>

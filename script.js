@@ -560,21 +560,11 @@ document.addEventListener('DOMContentLoaded', () => {
       currentServiceIndex = targetIdx;
       const targetCard = serviceCards[targetIdx];
 
-      try {
-        targetCard.scrollIntoView({
-          behavior: smooth ? 'smooth' : 'auto',
-          inline: 'center',
-          block: 'nearest'
-        });
-      } catch (e) {
-        const gridRect = serviceReviewsGrid.getBoundingClientRect();
-        const cardRect = targetCard.getBoundingClientRect();
-        const scrollOffset = (cardRect.left - gridRect.left) - (gridRect.width - cardRect.width) / 2;
-        serviceReviewsGrid.scrollBy({
-          left: scrollOffset,
-          behavior: smooth ? 'smooth' : 'auto'
-        });
-      }
+      const targetScrollLeft = targetCard.offsetLeft - (serviceReviewsGrid.clientWidth - targetCard.offsetWidth) / 2;
+      serviceReviewsGrid.scrollTo({
+        left: Math.max(0, targetScrollLeft),
+        behavior: smooth ? 'smooth' : 'auto'
+      });
     }
 
     if (servicePrevBtn) {
