@@ -14920,7 +14920,8 @@ body.dark-theme .emergency-pillar-item:hover {
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 16px 28px rgba(25, 32, 35, 0.16));
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: none !important;
+  transform: none !important;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
@@ -14928,8 +14929,9 @@ body.dark-theme .emergency-pillar-item:hover {
   outline: none !important;
   box-shadow: none !important;
 }
-.cta-showcase-center:hover .cta-showcase-tech-img {
-  transform: scale(1.02);
+.cta-showcase-center:hover .cta-showcase-tech-img,
+.cta-showcase-tech-img:hover {
+  transform: none !important;
 } /* --- Right Column: 3 Benefit Cards Stack --- */
 .cta-showcase-right {
   position: relative;
@@ -15064,6 +15066,34 @@ body.dark-theme .cta-feature-card.cta-card-featured:hover {
 }
 body.dark-theme .cta-card-featured .cta-circle-check {
   color: #ffffff;
+}
+
+/* Dark Theme Technician Backlight Glow & Zero-Hover Grounding */
+body.dark-theme .cta-tech-glow {
+  display: block !important;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 440px;
+  max-width: 95%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(215, 28, 27, 0.22) 0%, rgba(255, 90, 82, 0.10) 35%, rgba(25, 32, 35, 0) 70%);
+  filter: blur(36px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.dark-theme .cta-showcase-tech-img {
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55)) !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+body.dark-theme .cta-showcase-center:hover .cta-showcase-tech-img,
+body.dark-theme .cta-showcase-tech-img:hover {
+  transform: none !important;
 }
 
 /* ==========================================================================
