@@ -1397,9 +1397,21 @@ button[id*="phone"]:hover svg {
     background 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   will-change: transform, box-shadow;
   text-decoration: none !important;
+  text-transform: none !important;
   -webkit-font-smoothing: antialiased;
   backface-visibility: hidden;
   transform: translateZ(0);
+}
+
+/* Universal Button Casing Standard: Strictly Enforce Title Case / Normal Casing across all viewports */
+button,
+input[type="button"],
+input[type="submit"],
+a[class*="btn-"],
+button[class*="btn-"],
+a[class*="-btn"],
+button[class*="-btn"] {
+  text-transform: none !important;
 }
 
 /* Universal Button Child Text-Decoration None Protection */
@@ -13485,7 +13497,7 @@ body.dark-theme .brand-curved-card:hover .brand-card-footer svg {
 @media (max-width: 900px) {
   .brands-section {
     padding-top: var(--section-py-sm);
-    padding-bottom: var(--section-py-sm);
+    padding-bottom: 14px;
   }
   .brands-curved-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -14884,8 +14896,8 @@ body.dark-theme .emergency-pillar-item:hover {
   font-family: inherit;
   font-size: 13.5px;
   font-weight: 700;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-transform: none !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
   position: relative;
@@ -15116,7 +15128,7 @@ body.dark-theme .cta-showcase-tech-img:hover {
    ========================================================================== */
 @media (max-width: 1080px) {
   .cta-showcase-section {
-    padding: var(--section-py-sm) 0 0 0;
+    padding: 10px 0 0 0 !important;
   }
   .cta-showcase-container {
     grid-template-columns: 1fr;
@@ -15182,7 +15194,7 @@ body.dark-theme .cta-showcase-tech-img:hover {
 }
 @media (max-width: 520px) {
   .cta-showcase-section {
-    padding: var(--section-py-sm) 0 0 0;
+    padding: 4px 0 0 0 !important;
   }
   .cta-showcase-left {
     margin-bottom: 18px;
