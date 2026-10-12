@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17.6">
+  <link rel="stylesheet" href="styles.css?v=17.7">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -37,7 +37,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=17.6 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=17.7 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* -------------------------------------------------------
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -2611,6 +2611,10 @@
       text-align: center;
       margin-top: auto;
       box-sizing: border-box;
+      white-space: nowrap;
+    }
+    .compare-risk-warning-box svg {
+      flex-shrink: 0;
     }
     body.dark-theme .compare-risk-warning-box {
       background: rgba(239, 68, 68, 0.1);
@@ -2839,6 +2843,11 @@
       }
       .compare-card-stage {
         height: 150px;
+      }
+      .compare-risk-warning-box {
+        font-size: 9.5px;
+        padding: 0 4px;
+        gap: 4px;
       }
     }
 
@@ -3977,7 +3986,7 @@
                     <line x1="12" y1="9" x2="12" y2="13"/>
                     <line x1="12" y1="17" x2="12.01" y2="17"/>
                   </svg>
-                  <span>Rework costs often exceed original quote by up to 240%</span>
+                  <span>Rework costs often exceed 240%</span>
                 </div>
               </div>
             </div>

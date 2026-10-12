@@ -1751,7 +1751,12 @@ button[class*="-btn"] * {
 .btn-faq-talk:hover svg,
 .btn-cta-banner-call:hover svg,
 .process-phone-link:hover svg,
-.standards-call-link:hover svg,
+.standards-call-link:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
 .btn-dispatch-wa:hover svg,
 .btn-dispatch-whatsapp:hover svg,
 .btn-simple-cta-whatsapp:hover svg,
@@ -1762,7 +1767,8 @@ button[class*="-btn"] * {
 .btn-dispatch-option.btn-dispatch-wa:hover svg {
   color: #ffffff !important;
   fill: #ffffff !important;
-  stroke: #ffffff !important;
+  stroke: none !important;
+  overflow: visible !important;
 }
 
 .btn-hero-secondary:hover::after,
@@ -7267,22 +7273,46 @@ body.dark-theme .btn-simple-cta-whatsapp:hover {
 }
 
 .btn-simple-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  overflow: visible !important;
+  flex-shrink: 0 !important;
 }
 
 .btn-wa-icon {
   color: #16a34a;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
   transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.btn-simple-cta-whatsapp svg,
+.btn-wa-icon svg {
+  display: block !important;
+  overflow: visible !important;
+  stroke: none !important;
+  flex-shrink: 0 !important;
+  transform-origin: center center !important;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94), fill 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
 .btn-simple-cta-whatsapp:hover .btn-wa-icon,
-.btn-simple-cta-whatsapp:hover svg {
+.btn-simple-cta-whatsapp:hover .btn-simple-icon {
+  transform: scale(1.08) !important;
+  transform-origin: center center !important;
+}
+
+.btn-simple-cta-whatsapp:hover svg,
+.btn-simple-cta-whatsapp:hover .btn-wa-icon svg {
   color: #ffffff !important;
-  stroke: #ffffff !important;
-  fill: currentColor !important;
-  transform: scale(1.06);
+  fill: #ffffff !important;
+  stroke: none !important;
+  overflow: visible !important;
+  transform: none !important;
 }
 
 .btn-simple-cta-whatsapp:hover span {
@@ -12798,6 +12828,13 @@ body.dark-theme .feature-description {
   .story-card:hover,
   .story-card.is-active:hover {
     transform: none !important;
+  }
+  .story-rating-stars {
+    gap: 4px;
+  }
+  .story-rating-stars svg {
+    width: 23px !important;
+    height: 23px !important;
   }
   .story-quote {
     font-size: 14.5px;
