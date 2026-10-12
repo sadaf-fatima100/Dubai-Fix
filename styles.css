@@ -26863,7 +26863,7 @@ body.dark-theme .mosaic-navy-card:hover {
 }
 .mosaic-navy-footer {
   display: flex !important;
-  align-items: center !important;
+  align-items: center;
   justify-content: space-between !important;
   gap: 8px !important;
   margin-top: auto !important;
@@ -26894,6 +26894,26 @@ body.dark-theme .mosaic-navy-card:hover {
   display: inline-flex !important;
   align-items: center !important;
   line-height: 1.2 !important;
+}
+
+@media (max-width: 768px) {
+  .mosaic-navy-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    text-align: left !important;
+  }
+  .mosaic-navy-brand {
+    align-self: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+  .mosaic-navy-pill,
+  .mosaic-navy-priority {
+    align-self: flex-start !important;
+    text-align: left !important;
+  }
 }
 
 /* ==========================================================================

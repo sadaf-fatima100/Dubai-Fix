@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17.1">
+  <link rel="stylesheet" href="styles.css?v=17.2">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -37,7 +37,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=17.1 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=17.2 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* -------------------------------------------------------
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -733,19 +733,27 @@
         line-height: 1.35;
       }
       .mosaic-navy-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-        margin-top: 8px;
-        padding-top: 6px;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        margin-top: 8px !important;
+        padding-top: 6px !important;
+        text-align: left !important;
       }
       .mosaic-navy-brand {
         font-size: 10.5px;
+        align-self: flex-start !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
       }
-      .mosaic-navy-priority {
+      .mosaic-navy-priority,
+      .mosaic-navy-pill {
         font-size: 10px;
         font-weight: 700;
         color: rgba(255, 255, 255, 0.95);
+        align-self: flex-start !important;
+        text-align: left !important;
       }
       .mosaic-stat-card {
         height: auto;
@@ -827,16 +835,23 @@
         line-height: 1.35;
       }
       .mosaic-navy-footer {
-        margin-top: 6px;
-        padding-top: 6px;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        margin-top: 6px !important;
+        padding-top: 6px !important;
+        text-align: left !important;
       }
       .mosaic-navy-brand {
         font-size: 10px;
+        align-self: flex-start !important;
+        text-align: left !important;
       }
       .mosaic-navy-pill,
       .mosaic-navy-priority {
         font-size: 9.5px;
         padding: 2px 6px;
+        align-self: flex-start !important;
+        text-align: left !important;
       }
       .mosaic-stat-number {
         font-size: 19px;
