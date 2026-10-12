@@ -9825,11 +9825,12 @@ body.dark-theme .trust-item svg {
     min-height: 380px;
   } /* Brand Category Filters */
   .brands-category-filter {
-    overflow-x: auto;
-    flex-wrap: nowrap;
+    overflow: visible !important;
+    flex-wrap: wrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding-bottom: 6px;
+    margin-bottom: 24px;
   }
   .brands-category-filter::-webkit-scrollbar {
     display: none;
@@ -9837,6 +9838,17 @@ body.dark-theme .trust-item svg {
   .brand-filter-pill {
     flex-shrink: 0;
     white-space: nowrap;
+  }
+  .brand-filter-pill,
+  .brand-filter-pill:hover,
+  .brand-filter-pill.active,
+  .brand-filter-pill:focus,
+  body.dark-theme .brand-filter-pill,
+  body.dark-theme .brand-filter-pill:hover,
+  body.dark-theme .brand-filter-pill.active {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    transform: none !important;
   } /* Why Choose Us */
   .why-cards-grid {
     grid-template-columns: 1fr;
@@ -20268,12 +20280,19 @@ body.dark-theme .pf-proof-tag {
   .portfolio-filter-bar::-webkit-scrollbar {
     display: none;
   }
-  .pf-filter-btn {
+  .pf-filter-btn,
+  .pf-filter-btn:hover,
+  .pf-filter-btn.active,
+  body.dark-theme .pf-filter-btn,
+  body.dark-theme .pf-filter-btn:hover,
+  body.dark-theme .pf-filter-btn.active {
     flex-shrink: 0;
     white-space: nowrap;
     padding: 8px 16px;
     font-size: 12.5px;
     box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    transform: none !important;
   } /* Portfolio Grid 1-Column on Mobile */
   .portfolio-grid {
     grid-template-columns: 1fr;
@@ -22300,7 +22319,12 @@ body.dark-theme .blog-section-subtitle-tag {
     flex-wrap: wrap;
     padding: 0;
   }
-  .blog-filter-pill {
+  .blog-filter-pill,
+  .blog-filter-pill:hover,
+  .blog-filter-pill.active,
+  body.dark-theme .blog-filter-pill,
+  body.dark-theme .blog-filter-pill:hover,
+  body.dark-theme .blog-filter-pill.active {
     width: 100%;
     min-height: 42px;
     justify-content: center;
@@ -22310,6 +22334,9 @@ body.dark-theme .blog-section-subtitle-tag {
     text-align: center;
     box-sizing: border-box;
     white-space: nowrap;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    transform: none !important;
   }
   .blog-cards-grid {
     grid-template-columns: 1fr;
