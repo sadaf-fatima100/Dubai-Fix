@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=16.6">
+  <link rel="stylesheet" href="styles.css?v=16.7">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -37,7 +37,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=16.6 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=16.7 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* -------------------------------------------------------
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -2575,12 +2575,14 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
+      height: 46px;
+      min-height: 46px;
       background: rgba(220, 38, 38, 0.05);
       border: 1px dashed rgba(220, 38, 38, 0.28);
       color: #dc2626;
-      padding: 12px 18px;
+      padding: 0 16px;
       border-radius: 9999px;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
       text-align: center;
       margin-top: auto;
@@ -2597,26 +2599,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
+      gap: 10px;
       width: 100%;
+      height: 46px;
+      min-height: 46px;
+      padding: 0 16px;
       background: var(--btn-gradient-primary);
       border: 1px solid rgba(255, 255, 255, 0.22);
       color: #ffffff !important;
-      padding: 13px 24px;
       border-radius: 9999px;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
+      transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       margin-top: auto;
       box-sizing: border-box;
       cursor: pointer;
+      white-space: nowrap;
     }
     .compare-card-cta:hover {
       background: var(--btn-gradient-hover);
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      box-shadow: 0 12px 26px -3px rgba(215, 28, 27, 0.38), 0 4px 10px rgba(0, 0, 0, 0.12);
       color: #ffffff !important;
     }
     body.dark-theme .compare-card-cta {
@@ -2742,6 +2747,25 @@
         padding: 20px 16px;
         border-radius: 20px;
       }
+      .compare-card-cta,
+      .compare-risk-warning-box {
+        height: 44px;
+        min-height: 44px;
+      }
+      .compare-card-cta {
+        font-size: 13.5px;
+        gap: 8px;
+        padding: 0 12px;
+      }
+      .compare-card-cta .btn-hero-arrow-circle {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+      }
+      .compare-risk-warning-box {
+        font-size: 11.5px;
+        padding: 0 10px;
+      }
       .compare-card-stage {
         height: 180px;
       }
@@ -2760,6 +2784,28 @@
       }
       .compare-station-card {
         padding: 16px 14px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .compare-card-cta,
+      .compare-risk-warning-box {
+        height: 40px;
+        min-height: 40px;
+      }
+      .compare-card-cta {
+        font-size: 12px;
+        gap: 6px;
+        padding: 0 8px;
+      }
+      .compare-card-cta .btn-hero-arrow-circle {
+        width: 25px !important;
+        height: 25px !important;
+        min-width: 25px !important;
+      }
+      .compare-risk-warning-box {
+        font-size: 10.5px;
+        padding: 0 6px;
       }
     }
 
