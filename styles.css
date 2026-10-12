@@ -26694,12 +26694,12 @@ body.dark-theme .float-online-dot {
   left: auto;
   align-items: flex-end;
   transform: translateY(-50%) translateX(8px) scale(0.97);
-  background: linear-gradient(135deg, rgba(17, 24, 27, 0.97) 0%, rgba(25, 34, 38, 0.96) 50%, rgba(14, 20, 23, 0.98) 100%);
-  border: 1.5px solid rgba(37, 211, 102, 0.42);
+  background: #ffffff;
+  border: 1.5px solid rgba(16, 185, 129, 0.32);
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.42),
-    0 0 16px rgba(37, 211, 102, 0.12),
-    inset 0 1px 1px rgba(255, 255, 255, 0.18);
+    0 12px 32px rgba(25, 32, 35, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 0 16px rgba(16, 185, 129, 0.08);
 }
 
 /* Anti-flicker mouse bridge for WhatsApp tooltip */
@@ -26722,8 +26722,8 @@ body.dark-theme .float-online-dot {
   transform: translateY(-50%);
   border-width: 6px 0 6px 8px;
   border-style: solid;
-  border-color: transparent transparent transparent rgba(17, 24, 27, 0.97);
-  filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.35));
+  border-color: transparent transparent transparent #ffffff;
+  filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.08));
   transition: border-color 0.28s ease;
 }
 
@@ -26749,16 +26749,15 @@ body.dark-theme .float-online-dot {
 
 /* Hover Elevation for WhatsApp Chatty Pill */
 .float-whatsapp-btn:hover .float-btn-tooltip {
-  background: linear-gradient(135deg, rgba(22, 30, 34, 0.98) 0%, rgba(30, 41, 46, 0.97) 50%, rgba(18, 25, 28, 0.99) 100%);
-  border-color: rgba(37, 211, 102, 0.72);
+  background: #ffffff;
+  border-color: rgba(16, 185, 129, 0.75);
   box-shadow:
-    0 14px 34px rgba(0, 0, 0, 0.5),
-    0 0 22px rgba(37, 211, 102, 0.22),
-    inset 0 1px 1px rgba(255, 255, 255, 0.24);
+    0 16px 38px rgba(25, 32, 35, 0.16),
+    0 0 22px rgba(16, 185, 129, 0.18);
 }
 
 .float-whatsapp-btn:hover .float-btn-tooltip::after {
-  border-color: transparent transparent transparent rgba(22, 30, 34, 0.98);
+  border-color: transparent transparent transparent #ffffff;
 }
 
 /* Kicker Meta Tag */
@@ -26781,8 +26780,8 @@ body.dark-theme .float-online-dot {
 }
 
 .float-whatsapp-btn .float-tooltip-kicker {
-  color: #25D366 !important;
-  text-shadow: 0 0 10px rgba(37, 211, 102, 0.35);
+  color: #059669 !important;
+  text-shadow: none;
 }
 
 .float-tooltip-dot {
@@ -26805,19 +26804,19 @@ body.dark-theme .float-online-dot {
   width: 7.5px;
   height: 7.5px;
   border-radius: 50%;
-  background: #25D366 !important;
-  box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.35), 0 0 8px rgba(37, 211, 102, 0.85) !important;
+  background: #10b981 !important;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25), 0 0 8px rgba(16, 185, 129, 0.75) !important;
   animation: liveDotPulseGreen 2s ease-in-out infinite;
 }
 
 @keyframes liveDotPulseGreen {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.35), 0 0 8px rgba(37, 211, 102, 0.85);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25), 0 0 8px rgba(16, 185, 129, 0.75);
   }
   50% {
     transform: scale(1.25);
-    box-shadow: 0 0 0 3.5px rgba(37, 211, 102, 0.2), 0 0 12px rgba(37, 211, 102, 0.95);
+    box-shadow: 0 0 0 3.5px rgba(16, 185, 129, 0.18), 0 0 12px rgba(16, 185, 129, 0.95);
   }
 }
 
@@ -26843,8 +26842,20 @@ body.dark-theme .float-online-dot {
   transition: all 0.25s ease;
 }
 
-.float-contact-btn:hover .float-tooltip-title {
+.float-call-btn .float-tooltip-title {
   color: #ffffff;
+}
+
+.float-whatsapp-btn .float-tooltip-title {
+  color: #192023;
+}
+
+.float-call-btn:hover .float-tooltip-title {
+  color: #ffffff;
+}
+
+.float-whatsapp-btn:hover .float-tooltip-title {
+  color: #059669;
 }
 
 /* --- Dark Theme Harmonization --- */
@@ -26898,6 +26909,14 @@ body.dark-theme .float-whatsapp-btn:hover .float-btn-tooltip::after {
 }
 
 body.dark-theme .float-whatsapp-btn .float-tooltip-kicker {
+  color: #34d399 !important;
+}
+
+body.dark-theme .float-whatsapp-btn .float-tooltip-title {
+  color: #ffffff !important;
+}
+
+body.dark-theme .float-whatsapp-btn:hover .float-tooltip-title {
   color: #34d399 !important;
 }
 
