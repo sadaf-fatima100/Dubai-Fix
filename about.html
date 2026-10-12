@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17.0">
+  <link rel="stylesheet" href="styles.css?v=17.1">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -37,7 +37,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=17.0 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=17.1 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* -------------------------------------------------------
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -503,6 +503,7 @@
       gap: 4px;
     }
     .mosaic-navy-title {
+      font-family: var(--font-family);
       font-size: 15px;
       font-weight: 800;
       line-height: 1.25;
@@ -511,8 +512,9 @@
       letter-spacing: -0.015em;
     }
     .mosaic-navy-desc {
+      font-family: var(--font-family);
       font-size: 11.5px;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 1.4;
       color: rgba(255, 255, 255, 0.9);
       margin: 0;
@@ -530,6 +532,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      font-family: var(--font-family);
       font-size: 11.5px;
       font-weight: 700;
       color: #ffffff;
@@ -544,7 +547,9 @@
       display: inline-block;
       flex-shrink: 0;
     }
-    .mosaic-navy-pill {
+    .mosaic-navy-pill,
+    .mosaic-navy-priority {
+      font-family: var(--font-family);
       font-size: 10.5px;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.95);
@@ -553,6 +558,9 @@
       border-radius: 9999px;
       border: 1px solid rgba(255, 255, 255, 0.22);
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1.2;
     }
 
     /* Box 4: Standing Master Technician Photo (Bottom-Right) - Tall */
@@ -825,7 +833,8 @@
       .mosaic-navy-brand {
         font-size: 10px;
       }
-      .mosaic-navy-pill {
+      .mosaic-navy-pill,
+      .mosaic-navy-priority {
         font-size: 9.5px;
         padding: 2px 6px;
       }
@@ -3535,7 +3544,7 @@
                       <span class="mosaic-navy-badge-dot" aria-hidden="true"></span>
                       <span>Dubai Fix Appliances</span>
                     </div>
-                    <span class="mosaic-navy-priority">60-Min Priority Arrival</span>
+                    <span class="mosaic-navy-priority mosaic-navy-pill">60-Min Priority Arrival</span>
                   </div>
                 </div>
               </div>
