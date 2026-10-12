@@ -12442,7 +12442,7 @@ body.dark-theme .status-icon.icon-clock {
   color: #ff5a52;
 }
 body.dark-theme .areas-map-img {
-  content: url("assets/world-map-dark.png?v=2.0");
+  content: url("assets/images/ui/world-map-dark.webp?v=2.0");
   opacity: 0.92;
   filter: none;
 }
@@ -15607,9 +15607,9 @@ body.dark-theme .hero-trust-sub {
     min-height: auto !important;
     max-height: none !important;
     gap: 12px;
-    padding-top: 14px;
-    padding-bottom: 8px;
-    margin-top: 14px;
+    padding-top: 16px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
     justify-content: unset;
     align-items: start;
   }
@@ -15648,9 +15648,9 @@ body.dark-theme .hero-trust-sub {
     min-height: auto !important;
     max-height: none !important;
     gap: 10px;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    margin-top: 12px;
+    padding-top: 16px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
   .hero-trust-item {
     flex-direction: column;
@@ -15681,8 +15681,9 @@ body.dark-theme .hero-trust-sub {
 @media (max-width: 360px) {
   .hero-trust-bar {
     gap: 8px;
-    padding-top: 12px;
-    padding-bottom: 6px;
+    padding-top: 14px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
   .hero-trust-icon-box {
     width: 30px;
@@ -15700,7 +15701,9 @@ body.dark-theme .hero-trust-sub {
   .hero-trust-bar {
     grid-template-columns: 1fr;
     gap: 8px;
-    padding-bottom: 6px;
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
   .hero-trust-item {
     flex-direction: row;
@@ -15872,9 +15875,9 @@ body.dark-theme .blog-trust-divider {
     min-height: auto !important;
     max-height: none !important;
     gap: 10px;
-    padding-top: 14px;
-    padding-bottom: 8px;
-    margin-top: 14px;
+    padding-top: 16px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
   .blog-trust-divider {
     display: none;
@@ -15905,9 +15908,9 @@ body.dark-theme .blog-trust-divider {
     min-height: auto !important;
     max-height: none !important;
     gap: 8px;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    margin-top: 12px;
+    padding-top: 16px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
   .blog-trust-icon-box {
     width: 28px;
@@ -15925,10 +15928,21 @@ body.dark-theme .blog-trust-divider {
     font-size: 9.5px;
   }
 }
+@media (max-width: 360px) {
+  .blog-hero-trust-bar {
+    gap: 8px;
+    padding-top: 14px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+}
 @media (max-width: 340px) {
   .blog-hero-trust-bar {
     grid-template-columns: 1fr;
     gap: 10px;
+    padding-top: 14px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
   .blog-trust-item {
     flex-direction: row;
@@ -15938,6 +15952,13 @@ body.dark-theme .blog-trust-divider {
   }
   .blog-trust-text {
     align-items: flex-start;
+  }
+}
+@media (max-width: 300px) {
+  .blog-hero-trust-bar {
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
 } /* Tier 1 Hero Media Stage End */
 .hero-media-gradient {
@@ -16488,7 +16509,7 @@ body.dark-theme .expertise-card {
 } /* --- Mobile Breakpoint (768px & Below) --- */
 @media (max-width: 768px) {
   .service-hero-copy-card {
-    padding: 36px 20px 26px 20px;
+    padding: 36px 20px 16px 20px !important;
     border-radius: 22px;
   }
   .service-hero-copy-card .hero-headline {
@@ -16567,7 +16588,7 @@ body.dark-theme .expertise-card {
     margin-bottom: 18px;
   }
   .service-hero-copy-card {
-    padding: 34px 16px 22px 16px;
+    padding: 34px 16px 16px 16px !important;
     border-radius: 20px;
   }
   .service-hero-copy-card .hero-headline {
@@ -16585,7 +16606,7 @@ body.dark-theme .expertise-card {
     align-items: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 8px 0 !important;
+    margin: 8px 0 0 0 !important;
     gap: 12px !important;
   }
   .service-hero-copy-card .btn-hero-primary,
@@ -16657,7 +16678,7 @@ body.dark-theme .expertise-card {
 } /* --- Standard Mobile Viewports (480px & Below) --- */
 @media (max-width: 480px) {
   .service-hero-copy-card {
-    padding: 32px 14px 20px 14px;
+    padding: 32px 14px 16px 14px !important;
     border-radius: 18px;
   }
   .service-hero-copy-card .hero-headline {
@@ -16742,7 +16763,7 @@ body.dark-theme .expertise-card {
 } /* --- Small Screen Viewports (360px & Below - iPhone SE / Compact Android) --- */
 @media (max-width: 360px) {
   .service-hero-copy-card {
-    padding: 26px 10px 16px 10px;
+    padding: 26px 10px 14px 10px !important;
     border-radius: 14px;
   }
   .service-hero-copy-card .hero-headline {
@@ -16861,7 +16882,7 @@ body.dark-theme .expertise-card {
 } /* --- Ultra-Compact Viewports (300px down to 250px - Galaxy Z Fold Outer, Smartwatch, Embedded) --- */
 @media (max-width: 300px) {
   .service-hero-copy-card {
-    padding: 20px 6px 14px 6px;
+    padding: 20px 6px 10px 6px !important;
     border-radius: 10px;
   }
   .service-hero-copy-card .hero-headline {
@@ -19453,7 +19474,7 @@ body.dark-theme .pf-proof-tag {
 } /* --- Mobile Breakpoint (768px & Below) --- */
 @media (max-width: 768px) {
   .portfolio-hero-row .service-hero-copy-card {
-    padding: 36px 20px 26px 20px;
+    padding: 36px 20px 16px 20px !important;
     border-radius: 22px;
   }
   .portfolio-hero-row .hero-headline {
@@ -19603,7 +19624,7 @@ body.dark-theme .pf-proof-tag {
     margin-bottom: 18px;
   }
   .portfolio-hero-row .service-hero-copy-card {
-    padding: 34px 16px 24px 16px;
+    padding: 34px 16px 16px 16px !important;
     border-radius: 20px;
     height: auto !important;
     min-height: auto !important;
@@ -19624,7 +19645,7 @@ body.dark-theme .pf-proof-tag {
     align-items: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 8px 0 !important;
+    margin: 8px 0 0 0 !important;
     gap: 12px !important;
   }
   .portfolio-hero-row .btn-hero-primary,
@@ -19639,7 +19660,8 @@ body.dark-theme .pf-proof-tag {
     box-sizing: border-box;
   }
   .pf-hero-social-proof {
-    margin-top: 18px;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
     gap: 12px;
     justify-content: center;
     width: 100%;
@@ -19694,7 +19716,7 @@ body.dark-theme .pf-proof-tag {
 /* --- Standard Mobile Viewports (480px & Below) --- */
 @media (max-width: 480px) {
   .portfolio-hero-row .service-hero-copy-card {
-    padding: 32px 10px 22px 10px;
+    padding: 32px 10px 16px 10px !important;
     border-radius: 18px;
     height: auto !important;
     min-height: auto !important;
@@ -19764,7 +19786,7 @@ body.dark-theme .pf-proof-tag {
 } /* --- Small Screen Viewports (360px & Below - iPhone SE / Compact Android) --- */
 @media (max-width: 360px) {
   .portfolio-hero-row .service-hero-copy-card {
-    padding: 26px 10px 16px 10px;
+    padding: 26px 10px 14px 10px !important;
     border-radius: 14px;
   }
   .portfolio-hero-row .hero-headline {
@@ -19788,6 +19810,8 @@ body.dark-theme .pf-proof-tag {
     text-align: center;
     gap: 8px;
     width: 100%;
+    margin-top: 14px !important;
+    margin-bottom: 14px !important;
   }
   .pf-proof-tag {
     font-size: 13.5px;
@@ -19861,8 +19885,12 @@ body.dark-theme .pf-proof-tag {
 } /* --- Ultra-Compact Viewports (300px down to 250px - Galaxy Z Fold Outer, Smartwatch, Embedded) --- */
 @media (max-width: 300px) {
   .portfolio-hero-row .service-hero-copy-card {
-    padding: 20px 6px 14px 6px;
+    padding: 20px 6px 10px 6px !important;
     border-radius: 10px;
+  }
+  .pf-hero-social-proof {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
   }
   .portfolio-hero-row .hero-headline {
     font-size: clamp(1.5rem, 5.5vw, 1.75rem);

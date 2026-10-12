@@ -50,3 +50,5 @@ Thumbs.db
 scratch/
 scratch_*.json
 test_*.html
+optimized-images/
+assets/images-backup/
