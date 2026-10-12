@@ -10590,7 +10590,8 @@ body.dark-theme .trust-item svg {
   }
   .service-card-btn {
     min-width: auto;
-    padding: 4px 8px 4px 16px;
+    padding: 5.5px 9px 5.5px 17px;
+    min-height: 40px;
     gap: 10px;
     justify-content: center;
   }
@@ -19139,7 +19140,8 @@ body.dark-theme .service-issue-desc {
   min-width: auto;
   max-width: 100%;
   margin: 0;
-  padding: 5px 10px 5px 20px;
+  padding: 7px 11px 7px 21px;
+  min-height: 46px;
   border-radius: 9999px;
   background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
   color: #ffffff !important;
