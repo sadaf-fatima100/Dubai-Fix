@@ -24555,6 +24555,10 @@ body.dark-theme .sidebar-dispatch-card {
     width: 100%;
     max-width: 100%;
   }
+  .sidebar-toc-widget,
+  .sidebar-widget-card:has(.toc-nav-list) {
+    display: none !important;
+  }
   .article-content-body {
     padding: 30px 24px;
     border-radius: 22px;

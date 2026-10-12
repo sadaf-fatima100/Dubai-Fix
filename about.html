@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17.7">
+  <link rel="stylesheet" href="styles.css?v=17.8">
     <style>
     /* ============================================================
        ABOUT PAGE -- SCOPED STYLES -- PREMIUM OVERHAUL
@@ -37,7 +37,7 @@
     ============================================================ */
 
 
-    /* Section 1 Hero styles are powered globally by styles.css?v=17.7 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
+    /* Section 1 Hero styles are powered globally by styles.css?v=17.8 (.service-hero-split-row, .service-hero-copy-card, .service-hero-media-wrap, .hero-horizontal-service-marquee) */
 
     /* -------------------------------------------------------
        EXPERT UI/UX: ABOUT HERO RIGHT MEDIA FRAMED CARD
@@ -280,12 +280,17 @@
 
     /* Card Headings */
     .mcard-title {
-      font-size: clamp(1.22rem, 1.4vw, 1.38rem);
+      font-size: clamp(1.15rem, 1.3vw, 1.35rem);
       font-weight: 800;
       line-height: 1.3;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       color: var(--text-dark, #121217);
       margin: 0 0 12px 0;
+    }
+    @media (min-width: 993px) {
+      .mcard-title {
+        white-space: nowrap;
+      }
     }
     body.dark-theme .mcard-title { color: #ffffff; }
     .mcard-title-dark,
@@ -3402,7 +3407,7 @@
             <div class="blog-trust-divider" aria-hidden="true"></div>
 
             <!-- Metric 2: 4,000+ Restored -->
-            <div class="blog-trust-item">
+            <div class="blog-trust-item trust-hide-mobile">
               <div class="blog-trust-icon-box">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
@@ -3517,7 +3522,7 @@
                   <polyline points="9 12 11 14 15 10"></polyline>
                 </svg>
               </div>
-              <h3 class="mcard-title mcard-title-dark">Integrity &amp; Uncompromising Standards</h3>
+              <h3 class="mcard-title mcard-title-dark">Integrity &amp; High Standards</h3>
               <p class="mcard-desc mcard-desc-dark">
                 We uphold uncompromising integrity, upfront transparent pricing, and 100% genuine OEM factory parts on every service call with complete customer satisfaction.
               </p>
