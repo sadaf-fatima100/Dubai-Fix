@@ -2446,8 +2446,8 @@ button[class*="-btn"]:active {
   width: 15px;
   height: 64%;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #b00403 100%);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: linear-gradient(180deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  border: none;
   box-shadow: none;
   z-index: 20;
   pointer-events: none;
@@ -5282,8 +5282,8 @@ body.dark-theme .process-badge-tag .badge-dot {
   height: 64%;
   align-self: flex-end;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #b00403 100%);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: linear-gradient(180deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  border: none;
   box-shadow: none;
   position: relative;
   z-index: 10;
@@ -7049,7 +7049,7 @@ body.dark-theme .prefooter-team-img {
   z-index: 2;
 }
 
-/* Thick Vertical Accent Line on Prefooter CTA (Clean Brand Crimson - No Shadow) */
+/* Thick Vertical Accent Line on Prefooter CTA (Clean Solid Brand Crimson - No Border, No Cutting) */
 .prefooter-cta-content::before {
   content: "";
   position: absolute;
@@ -7058,19 +7058,23 @@ body.dark-theme .prefooter-team-img {
   left: 4px;
   width: 15px;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #b00403 100%);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: linear-gradient(180deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  border: none !important;
+  outline: none !important;
   box-shadow: none !important;
+  filter: none !important;
   pointer-events: none;
 }
 
 body.dark-theme .prefooter-cta-content::before {
-  background: linear-gradient(180deg, #ff5a52 0%, #e02a24 50%, #b00403 100%);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, #ff3b30 0%, #e02a24 50%, #b00403 100%) !important;
+  border: none !important;
+  outline: none !important;
   box-shadow: none !important;
+  filter: none !important;
 }
 
-/* Master Enforcement: All Vertical Brand Accent Lines (Zero Glow / Zero Blurred Shadow) */
+/* Master Enforcement: All Vertical Brand Accent Lines (Fully Filled Solid Geometry - Zero Cutting Borders / Zero End Gaps) */
 .hero-right-accent-line,
 .about-left-accent-line,
 .faq-right-accent-line,
@@ -7079,8 +7083,12 @@ body.dark-theme .prefooter-cta-content::before {
 .service-hero-copy-card .hero-copy-main::before,
 .wm-perf-left-accent-line,
 .why-right-accent-line {
+  background: linear-gradient(180deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  border: none !important;
+  outline: none !important;
   box-shadow: none !important;
   filter: none !important;
+  border-radius: 9999px !important;
 }
 
 body.dark-theme .hero-right-accent-line,
@@ -7091,8 +7099,9 @@ body.dark-theme .prefooter-cta-content::before,
 body.dark-theme .service-hero-copy-card .hero-copy-main::before,
 body.dark-theme .wm-perf-left-accent-line,
 body.dark-theme .why-right-accent-line {
-  background: linear-gradient(180deg, #ff5a52 0%, #e02a24 50%, #b00403 100%) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
+  background: linear-gradient(180deg, #ff3b30 0%, #e02a24 50%, #b00403 100%) !important;
+  border: none !important;
+  outline: none !important;
   box-shadow: none !important;
   filter: none !important;
 }
@@ -14066,8 +14075,8 @@ body.dark-theme .hub-core-body {
   right: 0;
   width: 15px;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #b00403 100%);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: linear-gradient(180deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  border: none;
   box-shadow: none;
   pointer-events: none;
 }
@@ -14832,8 +14841,8 @@ body.dark-theme .emergency-pillar-item:hover {
   left: 0;
   width: 15px;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #b00403 100%);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: linear-gradient(180deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  border: none;
   box-shadow: none;
   pointer-events: none;
 }
@@ -15897,9 +15906,11 @@ body.dark-theme .service-hero-copy-card {
   left: 0;
   width: 15px;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #b00403 100%);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: linear-gradient(180deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  border: none !important;
+  outline: none !important;
   box-shadow: none !important;
+  filter: none !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -25101,9 +25112,11 @@ body.dark-theme .sidebar-dispatch-card {
   height: 64%;
   align-self: flex-end;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #ff4d46 0%, #e02a24 50%, #b00403 100%);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: linear-gradient(180deg, #e52524 0%, #d71c1b 50%, #b00403 100%);
+  border: none !important;
+  outline: none !important;
   box-shadow: none !important;
+  filter: none !important;
   position: relative;
   z-index: 5;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
