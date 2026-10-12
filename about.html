@@ -73,24 +73,30 @@
     .btn-cta-navy {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      padding: 13px 26px;
+      justify-content: center;
+      gap: 10px;
+      height: 48px;
+      min-height: 48px;
+      padding: 0 8px 0 22px;
       background: var(--btn-gradient-primary);
       color: #ffffff;
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 700;
       border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.22);
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.38);
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.22);
+      transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       white-space: nowrap;
+      box-sizing: border-box;
+      text-decoration: none !important;
     }
     .btn-cta-navy:hover {
       background: var(--btn-gradient-hover);
       border-color: rgba(255, 255, 255, 0.3);
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 12px 26px -3px rgba(215, 28, 27, 0.38), 0 4px 10px rgba(0, 0, 0, 0.12);
+      color: #ffffff;
     }
 
     /* -------------------------------------------------------
@@ -884,6 +890,7 @@
       align-self: stretch;
       margin-top: 41px; /* Exactly aligns card top horizontally with H2 heading */
       height: calc(100% - 41px);
+      min-height: 0;
     }
 
     /* Bento Stage Architectural Card */
@@ -892,7 +899,7 @@
       width: 100%;
       max-width: 440px;
       height: 100%;
-      min-height: 440px;
+      min-height: 0;
       margin: 0 auto;
       border-radius: 28px;
       overflow: hidden;
@@ -1004,16 +1011,16 @@
 
     /* Certified Technician Crew Photo */
     .process-technicians-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       max-width: 100%;
       object-fit: cover;
       object-position: center 12%;
       display: block;
-      position: relative;
       z-index: 2;
       margin: 0 auto;
-      vertical-align: bottom;
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .process-stage-card:hover .process-technicians-img {
@@ -1135,13 +1142,13 @@
       box-shadow: 0 10px 26px rgba(25, 32, 35, 0.1);
     }
     body.dark-theme .about-process .process-step-item {
-      background: #171c1f;
-      border: 1.5px solid transparent;
+      background: #171c1f !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     }
     body.dark-theme .about-process .process-step-item:hover {
       background: #171c1f !important;
-      border-color: transparent !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
     }
 
@@ -1246,24 +1253,49 @@
     .process-action-row {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
+    }
+
+    .process-action-row .btn-cta-navy {
+      height: 48px !important;
+      min-height: 48px !important;
+      padding: 0 8px 0 22px !important;
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      box-sizing: border-box !important;
+    }
+
+    .process-action-row .btn-cta-navy .btn-hero-arrow-circle {
+      width: 32px !important;
+      height: 32px !important;
+      min-width: 32px !important;
+    }
+
+    .process-action-row .btn-cta-navy .btn-hero-arrow-circle svg {
+      width: 14px !important;
+      height: 14px !important;
     }
 
     .process-phone-link {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
+      height: 48px !important;
+      min-height: 48px !important;
       color: #15803d;
       text-decoration: none;
       font-size: 14.5px;
       font-weight: 700;
-      padding: 10px 18px;
+      padding: 0 22px !important;
       border-radius: 9999px;
       border: 1.5px solid #25d366;
       background: rgba(37, 211, 102, 0.06);
       box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+      box-sizing: border-box !important;
     }
     .process-phone-link:hover {
       background: #25d366 !important;
@@ -3151,7 +3183,7 @@
           <a href="blog.html" class="nav-link">Blog</a>
           <a href="contact.html" class="nav-link" id="navContactLink">Contact</a>
           <div class="nav-menu-cta-wrap">
-            <a href="tel:+923143110259" class="nav-menu-schedule-btn" aria-label="Call Now: +92 314 3110259">
+            <a href="tel:+971562050036" class="nav-menu-schedule-btn" aria-label="Call Now: +971 56 205 0036">
               <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
               <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
               <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -3184,7 +3216,7 @@
             </svg>
           </button>
 
-          <a href="tel:+923143110259" class="btn-schedule" id="scheduleServiceBtn" aria-label="Call Now: +92 314 3110259">
+          <a href="tel:+971562050036" class="btn-schedule" id="scheduleServiceBtn" aria-label="Call Now: +971 56 205 0036">
             <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
             <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
             <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -3233,7 +3265,7 @@
 
             <!-- Hero CTA Button Group: 2 Dedicated Action Buttons -->
             <div class="hero-cta-group">
-              <a href="https://wa.me/923143110259?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20want%20to%20book%20an%20appliance%20repair%20service" target="_blank" rel="noopener" class="btn-hero-primary" id="aboutHeroBookBtn" aria-label="Book Repair on WhatsApp">
+              <a href="https://wa.me/971562050036?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20want%20to%20book%20an%20appliance%20repair%20service" target="_blank" rel="noopener" class="btn-hero-primary" id="aboutHeroBookBtn" aria-label="Book Repair on WhatsApp">
                 <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                 <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                 <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -3247,7 +3279,7 @@
                   </svg>
                 </span>
               </a>
-              <a href="tel:+923143110259" class="btn-hero-secondary" id="aboutHeroCallBtn">
+              <a href="tel:+971562050036" class="btn-hero-secondary" id="aboutHeroCallBtn">
                 <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                 <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                 <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -3541,7 +3573,7 @@
 
               <!-- Action Buttons: Pill CTA Button (matching reference 'Learn More' position) -->
               <div class="heritage-action-wrap">
-                <a href="https://wa.me/923143110259?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20want%20to%20book%20an%20appliance%20repair%20service" target="_blank" rel="noopener" class="btn-hero-primary" id="heritageBookBtn" aria-label="Book Repair on WhatsApp">
+                <a href="https://wa.me/971562050036?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20want%20to%20book%20an%20appliance%20repair%20service" target="_blank" rel="noopener" class="btn-hero-primary" id="heritageBookBtn" aria-label="Book Repair on WhatsApp">
                   <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -3555,7 +3587,7 @@
                     </svg>
                   </span>
                 </a>
-                <a href="tel:+923143110259" class="btn-hero-secondary" id="heritageCallBtn">
+                <a href="tel:+971562050036" class="btn-hero-secondary" id="heritageCallBtn">
                   <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -3670,13 +3702,13 @@
 
               <!-- Bottom Action Row -->
               <div class="process-action-row">
-                <a href="https://wa.me/923143110259?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20want%20to%20book%20a%20service" target="_blank" rel="noopener" class="btn-cta-navy" aria-label="Book Service Online on WhatsApp">
+                <a href="https://wa.me/971562050036?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20want%20to%20book%20a%20service" target="_blank" rel="noopener" class="btn-cta-navy" aria-label="Book Service Online on WhatsApp">
                   <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-4" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-5" aria-hidden="true"></span>
-                  <span>Book Priority Inspection</span>
+                  <span>Book Inspection</span>
                   <span class="btn-hero-arrow-circle" aria-hidden="true">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -3684,14 +3716,14 @@
                     </svg>
                   </span>
                 </a>
-                <a href="tel:+923143110259" class="process-phone-link">
+                <a href="tel:+971562050036" class="process-phone-link">
                   <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-4" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-5" aria-hidden="true"></span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <span>Call +92 314 3110259</span>
+                  <span>Call +971 56 205 0036</span>
                 </a>
               </div>
 
@@ -3899,7 +3931,7 @@
                 <p class="compare-summary-desc">
                   200+ hours OEM factory-trained master technicians equipped with digital multimeters, 100% genuine barcode-traceable parts, fixed upfront quotes, and official written quality certification.
                 </p>
-                <a href="https://wa.me/923143110259?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20want%20to%20schedule%20a%20technician" target="_blank" rel="noopener" class="compare-card-cta" aria-label="Book Dubai Fix Technician on WhatsApp">
+                <a href="https://wa.me/971562050036?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20want%20to%20schedule%20a%20technician" target="_blank" rel="noopener" class="compare-card-cta" aria-label="Book Dubai Fix Technician on WhatsApp">
                   <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                   <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -4115,7 +4147,7 @@
 
             <!-- Centered 2 Action Buttons -->
             <div class="prefooter-simple-actions">
-              <a href="tel:+923143110259" class="btn-simple-cta-call" aria-label="Call Now: +92 314 3110259">
+              <a href="tel:+971562050036" class="btn-simple-cta-call" aria-label="Call Now: +971 56 205 0036">
                 <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                 <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                 <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -4126,10 +4158,10 @@
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
                 </span>
-                <span>Call Now: +92 314 3110259</span>
+                <span>Call Now: +971 56 205 0036</span>
               </a>
 
-              <a href="https://wa.me/923143110259?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20need%20fast%20appliance%20repair" target="_blank" rel="noopener noreferrer" class="btn-simple-cta-whatsapp" aria-label="Live WhatsApp Chat">
+              <a href="https://wa.me/971562050036?text=Hello%20Dubai%20Fix%20Appliances%2C%20I%20need%20fast%20appliance%20repair" target="_blank" rel="noopener noreferrer" class="btn-simple-cta-whatsapp" aria-label="Live WhatsApp Chat">
                 <span class="btn-circle btn-circle-1" aria-hidden="true"></span>
                 <span class="btn-circle btn-circle-2" aria-hidden="true"></span>
                 <span class="btn-circle btn-circle-3" aria-hidden="true"></span>
@@ -4170,12 +4202,12 @@
 
           <!-- Social Channels Row -->
           <div class="footer-social-row">
-            <a href="https://wa.me/923143110259" target="_blank" rel="noopener" class="footer-social-btn btn-whatsapp" aria-label="WhatsApp Dispatch" title="WhatsApp 24/7">
+            <a href="https://wa.me/971562050036" target="_blank" rel="noopener" class="footer-social-btn btn-whatsapp" aria-label="WhatsApp Dispatch" title="WhatsApp 24/7">
               <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
               </svg>
             </a>
-            <a href="tel:+923143110259" class="footer-social-btn btn-phone" aria-label="Call Dispatch Hub" title="Call +92 314 3110259">
+            <a href="tel:+971562050036" class="footer-social-btn btn-phone" aria-label="Call Dispatch Hub" title="Call +971 56 205 0036">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
@@ -4268,7 +4300,7 @@
                   </div>
                   <div class="footer-contact-info">
                     <span class="contact-label">Direct Phone</span>
-                    <a href="tel:+923143110259" class="contact-link">+92 314 3110259</a>
+                    <a href="tel:+971562050036" class="contact-link">+971 56 205 0036</a>
                   </div>
                 </li>
 
@@ -4280,7 +4312,7 @@
                   </div>
                   <div class="footer-contact-info">
                     <span class="contact-label">Live Chat</span>
-                    <a href="https://wa.me/923143110259" target="_blank" rel="noopener" class="contact-link live-chat-link">
+                    <a href="https://wa.me/971562050036" target="_blank" rel="noopener" class="contact-link live-chat-link">
                       <span>WhatsApp Chat (24/7)</span>
                       <span class="chat-status-pill"><span class="dot-online"></span></span>
                     </a>
@@ -4317,7 +4349,7 @@
     <!-- Production Floating Contact Dock (WhatsApp & Emergency Phone Call Chatty Icons) -->
   <div class="floating-contact-dock" id="floatingContactDock" aria-label="Quick Contact Actions">
     <!-- 1. Direct Phone Call Floating Button -->
-    <a href="tel:+923143110259" class="float-contact-btn float-call-btn" aria-label="Call Dubai Fix Appliances Available 24/7">
+    <a href="tel:+971562050036" class="float-contact-btn float-call-btn" aria-label="Call Dubai Fix Appliances Available 24/7">
       <span class="float-sonar-ring" aria-hidden="true"></span>
       <span class="float-sonar-ring ring-delay" aria-hidden="true"></span>
       <span class="float-online-dot" aria-hidden="true"></span>
@@ -4326,12 +4358,12 @@
       </svg>
       <div class="float-btn-tooltip" aria-hidden="true">
         <span class="float-tooltip-kicker"><span class="float-tooltip-dot"></span>Available 24/7</span>
-        <span class="float-tooltip-title">Call +92 314 3110259</span>
+        <span class="float-tooltip-title">Call +971 56 205 0036</span>
       </div>
     </a>
 
     <!-- 2. WhatsApp Instant Chat Floating Button -->
-    <a href="https://wa.me/923143110259?text=Hi%20Dubai%20Fix%20Appliances,%20I%20need%20certified%20appliance%20repair%20assistance%20in%20Dubai." target="_blank" rel="noopener noreferrer" class="float-contact-btn float-whatsapp-btn" aria-label="Chat with Dubai Fix Appliances on WhatsApp">
+    <a href="https://wa.me/971562050036?text=Hi%20Dubai%20Fix%20Appliances,%20I%20need%20certified%20appliance%20repair%20assistance%20in%20Dubai." target="_blank" rel="noopener noreferrer" class="float-contact-btn float-whatsapp-btn" aria-label="Chat with Dubai Fix Appliances on WhatsApp">
       <span class="float-sonar-ring" aria-hidden="true"></span>
       <span class="float-sonar-ring ring-delay" aria-hidden="true"></span>
       <span class="float-online-dot" aria-hidden="true"></span>

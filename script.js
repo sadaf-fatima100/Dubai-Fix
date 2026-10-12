@@ -195,11 +195,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function openDirectWhatsApp(serviceName = null) {
     const service = serviceName || 'General Appliance Repair';
     const msg = encodeURIComponent(`Hello Dubai Fix Appliances, I want to book an urgent service for ${service}.`);
-    window.open(`https://wa.me/923143110259?text=${msg}`, '_blank');
+    window.open(`https://wa.me/971562050036?text=${msg}`, '_blank');
   }
 
   function openDirectCall() {
-    window.location.href = 'tel:+923143110259';
+    window.location.href = 'tel:+971562050036';
   }
 
   // Legacy openModal safety redirect (ensures zero popups ever open)

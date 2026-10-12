@@ -24,13 +24,13 @@ This document defines the core architecture, visual design standards, typography
 1. **Top Identity & Social Bar (`.footer-top-brand`)**:
    - Official ApexFix Gear & Wrench Silhouette SVG Logo with speed motion trails.
    - Brand Statement: Certified same-day appliance repair across Dubai & UAE.
-   - Social & Dispatch Channels: Circular action buttons for WhatsApp (`+923143110259`), Direct Phone, Facebook, and Instagram.
+   - Social & Dispatch Channels: Circular action buttons for WhatsApp (`+971562050036`), Direct Phone, Facebook, and Instagram.
 2. **Floating Elevated Card (`.footer-card-container` > `.footer-card-grid`)**:
    - **Column 1 — Quick Links**: Home, Services, About Us, Service Areas, How It Works, Customer Reviews (with `.footer-col-accent-bar` and chevron icons). *On sub-pages, these must link to `index.html#section`.*
    - **Column 2 — Our Services**: Washing Machine, Dishwasher, Refrigerator, Cooker & Oven, Dryer, Central AC (each bound to `.book-trigger` with `data-service`).
    - **Column 3 — Contact & Emergency Dispatch (`.footer-col-contact`)**:
      - Location: United Arab Emirates
-     - Direct Phone: `+92 314 3110259`
+     - Direct Phone: `+971 56 205 0036`
      - WhatsApp Live Chat: with green pulsating active beacon (`.dot-online`)
      - Availability: 24/7 Support | 365 Days Available
      - Action CTA: "Book Appointment Online" button triggering `#bookingModal`.
