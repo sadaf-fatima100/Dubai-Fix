@@ -7811,8 +7811,8 @@ body.dark-theme .prefooter-cta-overlay {
   }
 } /* ==========================================================================   Master Brand Footer (Inspired by reference media_1790231422435.png)   ApexFix Luxury Engineering & Floating Box Architecture   ========================================================================== */
 .site-footer-master {
-  padding-top: 24px;
-  padding-bottom: 20px;
+  padding-top: clamp(44px, 4.2vw, 56px);
+  padding-bottom: 24px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   margin-top: 0;
   margin-bottom: 0;
@@ -8237,11 +8237,11 @@ body.dark-theme .prefooter-cta-overlay {
   font-size: 12px;
 }
 
-/* Ensure mobile & tablet footer has perfectly equal top and bottom padding */
+/* Ensure mobile & tablet footer has generous breathing room and balanced padding */
 @media (max-width: 992px) {
   .site-footer-master {
-    padding-top: 18px !important;
-    padding-bottom: 18px !important;
+    padding-top: 32px !important;
+    padding-bottom: 20px !important;
   }
   .footer-card-container {
     margin-bottom: 18px !important;
@@ -8253,8 +8253,8 @@ body.dark-theme .prefooter-cta-overlay {
 }
 @media (max-width: 360px) {
   .site-footer-master {
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
+    padding-top: 24px !important;
+    padding-bottom: 16px !important;
   }
   .footer-card-container {
     margin-bottom: 14px !important;
