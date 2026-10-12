@@ -403,18 +403,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetCard = allStoryCards[targetIdx];
 
     try {
-      targetCard.scrollIntoView({
-        behavior: smooth ? 'smooth' : 'auto',
-        inline: 'center',
-        block: 'nearest'
-      });
-    } catch (e) {
       const wrapperRect = storiesDeckWrapper.getBoundingClientRect();
       const cardRect = targetCard.getBoundingClientRect();
       const scrollOffset = (cardRect.left - wrapperRect.left) - (wrapperRect.width - cardRect.width) / 2;
       storiesDeckWrapper.scrollBy({
         left: scrollOffset,
         behavior: smooth ? 'smooth' : 'auto'
+      });
+    } catch (e) {
+      targetCard.scrollIntoView({
+        behavior: smooth ? 'smooth' : 'auto',
+        inline: 'center',
+        block: 'nearest'
       });
     }
 

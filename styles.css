@@ -8179,24 +8179,33 @@ body.dark-theme .trust-item svg {
     padding: 10px 18px;
     white-space: nowrap;
     letter-spacing: 0.02em;
-  } /* Hero Section scaling */
+  } /* Hero Section scaling for intermediate laptop/desktop viewports (1081px - 1240px) */
   .hero-section {
-    grid-template-columns: 1.12fr 0.88fr;
-    gap: 22px;
+    grid-template-columns: 1.02fr 1.18fr;
+    gap: 26px;
+    align-items: center;
   }
   .visual-stage {
-    height: 480px;
+    height: 505px;
   }
   .main-image-card {
-    width: 360px;
-    height: 460px;
+    position: absolute;
+    top: 0;
+    right: 24px;
+    left: auto;
+    width: 65%;
+    height: 505px;
   }
   .sub-image-card {
-    width: 160px;
-    height: 205px;
+    position: absolute;
+    bottom: 0px;
+    left: -32px;
+    width: 29.5%;
+    height: 255px;
+    z-index: 15;
   }
   .hero-headline {
-    font-size: clamp(2.75rem, 3.8vw, 3.25rem);
+    font-size: clamp(2.45rem, 3.5vw, 3.25rem);
   }
   /* Process section: responsive adjustments */
   .process-steps-grid {
@@ -12233,14 +12242,52 @@ body.dark-theme .feature-description {
 
 @media (max-width: 768px) {
   :root, .stories-section {
-    --story-card-w: clamp(290px, 80vw, 360px);
+    --story-card-w: 100%;
+  }
+  .stories-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
   }
   .stories-header {
-    padding: 0 16px;
+    padding: 0;
     margin-bottom: 18px;
   }
+  .stories-deck-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    scroll-padding: 0 !important;
+    padding: 8px 0 18px 0 !important;
+  }
+  .stories-track {
+    width: max-content !important;
+    padding: 0 !important;
+    gap: 16px !important;
+  }
+  .stories-slide {
+    width: auto !important;
+    gap: 16px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
   .story-card {
-    padding: 22px 18px 18px 18px;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    box-sizing: border-box !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    transform: none !important;
+    opacity: 1 !important;
+    padding: 24px 20px 20px 20px;
+  }
+  .story-card.is-active,
+  .story-card:hover,
+  .story-card.is-active:hover {
+    transform: none !important;
   }
   .story-quote {
     font-size: 14.5px;
@@ -12254,7 +12301,7 @@ body.dark-theme .feature-description {
     align-items: center;
     text-align: center;
     gap: 14px;
-    padding: 0 16px;
+    padding: 0;
   }
   .stories-header-main {
     align-items: center;
@@ -12266,20 +12313,20 @@ body.dark-theme .feature-description {
 }
 
 @media (max-width: 480px) {
-  :root, .stories-section {
-    --story-card-w: clamp(280px, 83vw, 340px);
+  .stories-header {
+    padding: 0;
   }
   .stories-deck-wrapper {
-    padding: 10px 0 20px 0 !important;
+    padding: 6px 0 16px 0 !important;
   }
   .stories-track {
-    gap: 14px;
+    gap: 14px !important;
   }
   .stories-slide {
     gap: 14px !important;
   }
   .story-card {
-    padding: 20px 16px 16px 16px;
+    padding: 20px 18px 18px 18px;
     border-radius: 18px;
   }
   .story-quote {
@@ -12304,9 +12351,6 @@ body.dark-theme .feature-description {
 }
 
 @media (max-width: 360px) {
-  :root, .stories-section {
-    --story-card-w: calc(100vw - 40px);
-  }
   .story-card {
     padding: 18px 14px 14px 14px;
   }
@@ -12316,8 +12360,8 @@ body.dark-theme .feature-description {
 }
 
 @media (max-width: 300px) {
-  :root, .stories-section {
-    --story-card-w: calc(100vw - 24px);
+  .story-card {
+    padding: 14px 12px 12px 12px;
   }
 } /* Dark Theme Support */
 body.dark-theme .stories-title {
@@ -19546,14 +19590,16 @@ body.dark-theme .pf-proof-tag {
     position: absolute;
     bottom: 12px;
     left: 12px;
-    right: 12px;
+    right: auto;
+    width: fit-content;
+    max-width: calc(100% - 24px);
     background: rgba(25, 32, 35, 0.90);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 14px;
-    padding: 9px 13px;
-    display: flex;
+    padding: 9px 14px;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
@@ -19757,10 +19803,11 @@ body.dark-theme .pf-proof-tag {
     border-radius: 16px;
   }
   .pf-mobile-badge-overlay {
-    padding: 7px 11px;
+    padding: 7px 12px;
     bottom: 10px;
     left: 10px;
-    right: 10px;
+    right: auto;
+    max-width: calc(100% - 20px);
   }
   .pf-mb-title {
     font-size: 11px;
@@ -19843,7 +19890,8 @@ body.dark-theme .pf-proof-tag {
     padding: 6px 10px;
     bottom: 8px;
     left: 8px;
-    right: 8px;
+    right: auto;
+    max-width: calc(100% - 16px);
     gap: 8px;
   }
   .pf-mb-title {
@@ -19938,7 +19986,8 @@ body.dark-theme .pf-proof-tag {
     padding: 5px 8px;
     bottom: 6px;
     left: 6px;
-    right: 6px;
+    right: auto;
+    max-width: calc(100% - 12px);
     gap: 6px;
   }
   .pf-mb-title {
