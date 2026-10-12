@@ -530,7 +530,7 @@ body.dark-theme .dropdown-divider {
 }
 .btn-theme-toggle:hover .icon-moon {
   transform: rotate(-15deg);
-} /* Primary Action Pill Button: SCHEDULE SERVICE */
+} /* Primary Action Pill Button: Schedule Service */
 .btn-schedule {
   display: inline-flex;
   align-items: center;
@@ -538,11 +538,11 @@ body.dark-theme .dropdown-divider {
   background: var(--btn-gradient-primary);
   color: #ffffff;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
-  padding: 12px 26px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  padding: 11px 24px;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.22);
   cursor: pointer;
@@ -664,14 +664,15 @@ body.dark-theme .dropdown-divider {
 .btn-get-started {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 12px;
   background: var(--btn-gradient-primary);
   color: #ffffff;
   font-family: inherit;
   font-size: 15.5px;
   font-weight: 700;
   letter-spacing: 0.015em;
-  padding: 13px 26px;
+  padding: 8px 10px 8px 24px;
+  min-height: 48px;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.22);
   cursor: pointer;
@@ -684,8 +685,85 @@ body.dark-theme .dropdown-divider {
   animation: none !important;
   flex-shrink: 0;
 }
-.btn-hero-primary svg {
-  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke 0.38s ease, color 0.38s ease;
+.btn-get-started {
+  padding: 13px 26px;
+  gap: 9px;
+}
+
+/* Hero Primary Button: Round White Circular Arrow Medallion */
+.btn-hero-arrow-circle {
+  position: relative !important;
+  z-index: 4 !important;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background-color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  flex-shrink: 0 !important;
+  transition:
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background-color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.btn-hero-arrow-circle svg {
+  position: relative !important;
+  z-index: 4 !important;
+  width: 14px !important;
+  height: 14px !important;
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
+  fill: none !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+  transition:
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.btn-hero-primary:hover .btn-hero-arrow-circle {
+  transform: translateX(4px) scale(1.05) !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+.btn-hero-primary:hover .btn-hero-arrow-circle svg {
+  transform: none !important;
+  color: var(--brand-accent-hover, #b00403) !important;
+  stroke: var(--brand-accent-hover, #b00403) !important;
+}
+
+/* Fallback for direct SVG child in .btn-hero-primary without wrapper */
+.btn-hero-primary > svg:not(.btn-hero-arrow-circle svg) {
+  position: relative !important;
+  z-index: 4 !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  box-sizing: border-box !important;
+  padding: 8.5px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
+  fill: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16) !important;
+  flex-shrink: 0 !important;
+  transition:
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.btn-hero-primary:hover > svg:not(.btn-hero-arrow-circle svg) {
+  transform: translateX(4px) scale(1.05) !important;
+  background-color: #ffffff !important;
+  color: var(--brand-accent-hover, #b00403) !important;
+  stroke: var(--brand-accent-hover, #b00403) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
 } /* Secondary Button: Emergency Call 24/7 (Professional Reassuring Vibrant Green) */
 .btn-hero-secondary {
   display: inline-flex;
@@ -2829,61 +2907,119 @@ a.service-card-item *,
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-} /* Full-Width Pill Crimson Action Button (Exact Reference Match) */
+} /* Centered Pill Action Button with White Arrow Disc (Border-Free Clean Design) */
 .service-card-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 12px 20px;
+  gap: 12px;
+  width: auto;
+  min-width: auto;
+  max-width: 100%;
+  margin: 6px auto 0 auto;
+  padding: 7px 11px 7px 21px;
+  min-height: 46px;
   border-radius: 9999px;
   background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
   color: #ffffff !important;
   font-family: inherit;
-  font-size: 12.5px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  border: none !important;
+  outline: none !important;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   text-decoration: none !important;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  transition:
+    transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.service-card-btn span {
+.service-card-btn-wrap {
+  display: contents;
+}
+.service-card-btn span:not(.service-card-btn-arrow) {
   text-decoration: none !important;
   color: #ffffff !important;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: 13.5px;
   line-height: 1;
+  white-space: nowrap;
 }
-.service-card-btn svg {
-  width: 15px;
-  height: 15px;
-  color: #ffffff;
-  stroke: #ffffff;
+/* White Circular Icon Medallion */
+.service-card-btn-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke 0.38s ease, color 0.38s ease;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.10);
+  transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.service-card-btn-arrow svg {
+  width: 14px;
+  height: 14px;
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
+  stroke-width: 2.6;
+  background: transparent !important;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* Standalone SVG fallback if .service-card-btn-arrow wrapper is omitted */
+.service-card-btn > svg {
+  width: 32px;
+  height: 32px;
+  padding: 9px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
+  stroke-width: 2.6;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.10);
+  transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.service-card-btn-arrow svg,
+.service-card-btn-arrow path,
+.service-card-btn-arrow line,
+.service-card-btn-arrow polyline {
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
 }
 .service-card-btn:hover,
 .service-card-item:hover .service-card-btn {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
+  border: none !important;
+  outline: none !important;
   transform: translateY(-2px) !important;
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.20),
-    0 12px 28px rgba(0, 0, 0, 0.22),
-    0 4px 10px rgba(0, 0, 0, 0.08) !important;
+    0 8px 22px rgba(0, 0, 0, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
-.service-card-btn:hover svg,
-.service-card-item:hover .service-card-btn svg {
-  transform: translateX(4px);
+.service-card-btn:hover .service-card-btn-arrow,
+.service-card-item:hover .service-card-btn-arrow,
+.service-card-btn:hover > svg,
+.service-card-item:hover .service-card-btn > svg {
+  transform: translateX(3px);
 } /* ==========================================================================
    Globally Synchronized Shimmer Beam Calibrated for All White Action Buttons
    Pearlescent ice-navy specular shimmer on crisp white surfaces
@@ -6064,7 +6200,7 @@ body.dark-theme .kitchen-main-desc {
   font-size: 13.5px;
   font-weight: 800;
   letter-spacing: -0.01em;
-  padding: 6px 6px 6px 20px;
+  padding: 6px 10px 6px 20px;
   border-radius: 9999px;
   border: none;
   cursor: pointer;
@@ -8304,7 +8440,7 @@ body.dark-theme .trust-item svg {
     font-size: 12.5px;
     padding: 10px 18px;
     white-space: nowrap;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.01em;
   } /* Hero Section scaling */
   .hero-section {
     grid-template-columns: 1.12fr 0.88fr;
@@ -8530,7 +8666,7 @@ body.dark-theme .trust-item svg {
     color: #ffffff;
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.01em;
     border-radius: var(--radius-pill);
     border: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
@@ -8547,7 +8683,7 @@ body.dark-theme .trust-item svg {
   .btn-schedule {
     padding: 9px 18px;
     font-size: 12.5px;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.01em;
   }
   .btn-theme-toggle {
     width: 40px;
@@ -9262,6 +9398,20 @@ body.dark-theme .trust-item svg {
     padding: 12px 18px;
     font-size: 14px;
     box-sizing: border-box;
+  }
+  .btn-hero-primary {
+    padding: 7px 12px 7px 20px;
+    gap: 10px;
+  }
+  .btn-hero-arrow-circle,
+  .btn-hero-primary > svg:not(.btn-hero-arrow-circle svg) {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+  }
+  .btn-hero-arrow-circle svg {
+    width: 13px !important;
+    height: 13px !important;
   } /* Hero Trust Google Rating + 3 Badges Box: Compact Balanced Horizontal Card */
   .hero-trust-proof-row {
     display: flex;
@@ -10439,8 +10589,22 @@ body.dark-theme .trust-item svg {
     max-height: 32px;
   }
   .service-card-btn {
-    padding: 10px 14px;
-    font-size: 11.5px;
+    min-width: auto;
+    padding: 4px 8px 4px 16px;
+    gap: 10px;
+    justify-content: center;
+  }
+  .service-card-btn span:not(.service-card-btn-arrow) {
+    font-size: 12.5px;
+  }
+  .service-card-btn-arrow,
+  .service-card-btn > svg {
+    width: 28px;
+    height: 28px;
+  }
+  .service-card-btn-arrow svg {
+    width: 12px;
+    height: 12px;
   }
   .about-stats-column {
     width: 112px;
@@ -11393,37 +11557,46 @@ body.dark-theme .service-card-desc {
   color: #f1f5f9 !important;
   text-decoration: none !important;
 }
+body.dark-theme .service-card-btn-wrap {
+  display: contents;
+}
 body.dark-theme .service-card-btn {
   background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
   border: none !important;
+  outline: none !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
   text-decoration: none !important;
 }
-body.dark-theme .service-card-btn span {
+body.dark-theme .service-card-btn span:not(.service-card-btn-arrow) {
   color: #ffffff !important;
 }
-body.dark-theme .service-card-btn svg {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
+body.dark-theme .service-card-btn-arrow {
+  background: #ffffff !important;
+}
+body.dark-theme .service-card-btn-arrow svg,
+body.dark-theme .service-card-btn svg,
+body.dark-theme .service-card-btn:hover svg,
+body.dark-theme .service-card-item:hover .service-card-btn svg {
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
 }
 body.dark-theme .service-card-btn:hover,
 body.dark-theme .service-card-item:hover .service-card-btn {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
   border: none !important;
+  outline: none !important;
   color: #ffffff !important;
-  transform: translateY(-2px) !important;
   box-shadow:
     inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
     inset 0 -1px 2px rgba(0, 0, 0, 0.25),
-    0 14px 32px rgba(0, 0, 0, 0.60),
-    0 4px 12px rgba(0, 0, 0, 0.35) !important;
+    0 10px 28px rgba(0, 0, 0, 0.65) !important;
 }
-body.dark-theme .service-card-btn:hover svg,
-body.dark-theme .service-card-item:hover .service-card-btn svg {
-  transform: translateX(4px);
-  color: #ffffff !important;
-  stroke: #ffffff !important;
+body.dark-theme .service-card-btn:hover .service-card-btn-arrow,
+body.dark-theme .service-card-item:hover .service-card-btn-arrow,
+body.dark-theme .service-card-btn:hover > svg,
+body.dark-theme .service-card-item:hover .service-card-btn > svg {
+  transform: translateX(3px);
 }
 body.dark-theme .services-dispatch-bar {
   background-color: #171c1f;
@@ -17193,8 +17366,22 @@ body.dark-theme .expertise-card {
     margin-bottom: 12px;
   }
   .service-card-btn {
-    padding: 9px 12px;
-    font-size: 11px;
+    min-width: auto;
+    padding: 3.5px 7px 3.5px 14px;
+    gap: 8px;
+    justify-content: center;
+  }
+  .service-card-btn span:not(.service-card-btn-arrow) {
+    font-size: 11.5px;
+  }
+  .service-card-btn-arrow,
+  .service-card-btn > svg {
+    width: 26px;
+    height: 26px;
+  }
+  .service-card-btn-arrow svg {
+    width: 11px;
+    height: 11px;
   }
 } /* ==========================================================================   INDIVIDUAL SERVICE HERO SECTION (Centered Heading with Flanking Clipped Images)   Exact #main-hero-cut clip-path on Left and Right Images   ========================================================================== */
 .single-service-hero-section {
@@ -17290,6 +17477,16 @@ body.dark-theme .expertise-card {
   white-space: nowrap;
   box-sizing: border-box;
   flex: 0 0 auto;
+}
+.hero-center-cta-group .btn-hero-primary {
+  padding: 7px 10px 7px 20px;
+  gap: 10px;
+}
+.hero-center-cta-group .btn-hero-primary .btn-hero-arrow-circle,
+.hero-center-cta-group .btn-hero-primary > svg:not(.btn-hero-arrow-circle svg) {
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
 }
 /* Service Pages Center Hero: Secondary Direct Call Support (Matches Master Brand Green Standard) */
 .hero-center-cta-group .btn-hero-secondary {
@@ -17866,6 +18063,10 @@ body.dark-theme .hero-flank-card {
     justify-content: center;
     box-sizing: border-box;
   }
+  .hero-center-cta-group .btn-hero-primary {
+    padding: 6px 10px 6px 16px;
+    gap: 8px;
+  }
   .hero-center-social-proof {
     flex-direction: column;
     gap: 12px;
@@ -17931,6 +18132,9 @@ body.dark-theme .hero-flank-card {
     width: 100% !important;
     flex: 0 0 auto !important;
     padding: 12px 16px !important;
+  }
+  .hero-center-cta-group .btn-hero-primary {
+    padding: 7px 12px 7px 18px !important;
   }
   .hero-center-column {
     padding: 30px 14px 18px 14px;
@@ -18885,23 +19089,13 @@ body.dark-theme .service-issue-desc {
   overflow: hidden;
   transition: color 0.25s ease;
 }
-.portfolio-card-title .highlight-navy {
-  background: linear-gradient(135deg, #d71c1b 0%, #e02a24 50%, #b00403 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: #d71c1b !important;
-  display: inline;
+.portfolio-card-title,
+.portfolio-card-title * {
+  color: var(--text-dark, #192023) !important;
 }
-.portfolio-card:hover .portfolio-card-title {
+.portfolio-card:hover .portfolio-card-title,
+.portfolio-card:hover .portfolio-card-title * {
   color: #121618 !important;
-}
-.portfolio-card:hover .portfolio-card-title .highlight-navy {
-  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: #d71c1b !important;
 }
 .portfolio-card-desc {
   font-size: 12.5px;
@@ -18918,7 +19112,7 @@ body.dark-theme .service-issue-desc {
 .portfolio-card-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
   padding-top: 12px;
   border-top: 1px solid rgba(25, 32, 35, 0.08);
@@ -18939,77 +19133,112 @@ body.dark-theme .service-issue-desc {
 .pf-action-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 10px;
-  height: auto;
-  padding: 2px 6px 2px 0;
-  border-radius: 0;
-  background: transparent !important;
-  color: var(--text-dark, #192023) !important;
+  justify-content: center;
+  gap: 12px;
+  width: auto;
+  min-width: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 5px 10px 5px 20px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
+  color: #ffffff !important;
   font-family: inherit;
-  font-size: 12.5px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
   border: none !important;
+  outline: none !important;
   cursor: pointer;
-  box-shadow: none !important;
-  transition: color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   text-decoration: none !important;
   position: relative;
-  overflow: visible !important;
+  overflow: hidden;
   box-sizing: border-box;
-}
-.pf-action-btn span {
-  text-decoration: none !important;
-  color: var(--text-dark, #192023) !important;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  font-size: 12.5px;
-  line-height: 1;
-  transition: color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94), letter-spacing 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.pf-action-btn svg {
-  width: 28px;
-  height: 28px;
-  box-sizing: border-box;
-  padding: 6.5px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  align-self: flex-start;
   transition:
-    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: visible !important;
+    transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.pf-action-btn span:not(.pf-action-btn-arrow) {
+  text-decoration: none !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: 13.5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+/* White Circular Icon Medallion */
+.pf-action-btn-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.10);
+  transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.pf-action-btn-arrow svg {
+  width: 14px;
+  height: 14px;
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
+  stroke-width: 2.6;
+  background: transparent !important;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* Standalone SVG fallback if .pf-action-btn-arrow wrapper is omitted */
+.pf-action-btn > svg {
+  width: 32px;
+  height: 32px;
+  padding: 9px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
+  stroke-width: 2.6;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.10);
+  transition: transform 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.pf-action-btn-arrow svg,
+.pf-action-btn-arrow path,
+.pf-action-btn-arrow line,
+.pf-action-btn-arrow polyline {
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
 }
 .pf-action-btn:hover,
 .portfolio-card:hover .pf-action-btn {
-  background: transparent !important;
-  color: var(--brand-accent, #d71c1b) !important;
-  border: none !important;
-  box-shadow: none !important;
-  transform: none !important;
-}
-.pf-action-btn:hover span,
-.portfolio-card:hover .pf-action-btn span {
-  color: var(--brand-accent, #d71c1b) !important;
-  letter-spacing: 0.07em;
-}
-.pf-action-btn:hover svg,
-.portfolio-card:hover .pf-action-btn svg {
   background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
-  border-color: #e02a24 !important;
   color: #ffffff !important;
-  stroke: #ffffff !important;
-  transform: translateX(3px) scale(1.05);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  border: none !important;
+  outline: none !important;
+  transform: translateY(-2px) !important;
+  box-shadow:
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.20),
+    0 8px 22px rgba(0, 0, 0, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+.pf-action-btn:hover .pf-action-btn-arrow,
+.portfolio-card:hover .pf-action-btn-arrow,
+.pf-action-btn:hover > svg,
+.portfolio-card:hover .pf-action-btn > svg {
+  transform: translateX(3px);
 }
 /* Dark Theme for Portfolio Cards */
 body.dark-theme .pf-filter-btn {
@@ -19053,57 +19282,58 @@ body.dark-theme .portfolio-card-title {
   color: #ffffff !important;
   transition: color 0.25s ease;
 }
-body.dark-theme .portfolio-card-title .highlight-navy {
-  background: linear-gradient(135deg, #ff6b64 0%, #ff5a52 50%, #ff837d 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: #ff5a52 !important;
-  display: inline;
-}
-body.dark-theme .portfolio-card:hover .portfolio-card-title {
+body.dark-theme .portfolio-card-title,
+body.dark-theme .portfolio-card-title * {
   color: #ffffff !important;
 }
-body.dark-theme .portfolio-card:hover .portfolio-card-title .highlight-navy {
-  background: linear-gradient(135deg, #ff837d 0%, #ff5a52 50%, #ff9e9a 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: #ff5a52 !important;
+body.dark-theme .portfolio-card:hover .portfolio-card-title,
+body.dark-theme .portfolio-card:hover .portfolio-card-title * {
+  color: #ffffff !important;
 }
 body.dark-theme .portfolio-card-desc {
   color: #f1f5f9 !important;
 }
 body.dark-theme .portfolio-card-footer {
   border-top-color: rgba(255, 255, 255, 0.1);
+  justify-content: flex-start;
 }
 body.dark-theme .pf-action-btn {
-  background: transparent !important;
+  background: linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%) !important;
   border: none !important;
-  color: #e2e8f0 !important;
-  box-shadow: none !important;
-}
-body.dark-theme .pf-action-btn span {
-  color: #e2e8f0 !important;
-}
-body.dark-theme .pf-action-btn:hover span,
-body.dark-theme .portfolio-card:hover .pf-action-btn span {
-  color: #ff5a52 !important;
-}
-body.dark-theme .pf-action-btn svg {
-  background: linear-gradient(135deg, #e02a24 0%, #d71c1b 100%) !important;
-  border-color: #ff5a52 !important;
+  outline: none !important;
   color: #ffffff !important;
-  stroke: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  overflow: visible !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  text-decoration: none !important;
 }
+body.dark-theme .pf-action-btn span:not(.pf-action-btn-arrow) {
+  color: #ffffff !important;
+}
+body.dark-theme .pf-action-btn-arrow {
+  background: #ffffff !important;
+}
+body.dark-theme .pf-action-btn-arrow svg,
+body.dark-theme .pf-action-btn svg,
 body.dark-theme .pf-action-btn:hover svg,
 body.dark-theme .portfolio-card:hover .pf-action-btn svg {
-  background: linear-gradient(135deg, #ff5a52 0%, #e02a24 100%) !important;
-  border-color: #ff837d !important;
-  transform: translateX(3px) scale(1.05);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  color: var(--brand-accent, #d71c1b) !important;
+  stroke: var(--brand-accent, #d71c1b) !important;
+}
+body.dark-theme .pf-action-btn:hover,
+body.dark-theme .portfolio-card:hover .pf-action-btn {
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  border: none !important;
+  outline: none !important;
+  color: #ffffff !important;
+  box-shadow:
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
+    0 10px 28px rgba(0, 0, 0, 0.65) !important;
+}
+body.dark-theme .pf-action-btn:hover .pf-action-btn-arrow,
+body.dark-theme .portfolio-card:hover .pf-action-btn-arrow,
+body.dark-theme .pf-action-btn:hover > svg,
+body.dark-theme .portfolio-card:hover .pf-action-btn > svg {
+  transform: translateX(3px);
 }
 body.dark-theme .tag-location {
   background: rgba(15, 19, 21, 0.92);
@@ -19233,11 +19463,11 @@ body.dark-theme .tag-location svg {
   margin-bottom: 16px;
 }
 
-/* Step Card Deliverables / Technical Checklist (Soft Tinted Inner Spec Box) */
+/* Step Card Deliverables / Technical Checklist (Calibrated Brand Accent Spec Box) */
 .step-card-deliverables {
   margin-top: auto;
-  background: #f4f5f5;
-  border: 1px solid #e3e7e9;
+  background: #fff1f2;
+  border: 1.5px solid rgba(215, 28, 27, 0.16);
   border-radius: 14px;
   padding: 14px 16px;
   display: flex;
@@ -19246,8 +19476,8 @@ body.dark-theme .tag-location svg {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 .protocol-step-card:hover .step-card-deliverables {
-  background: #edf0f2;
-  border-color: rgba(215, 28, 27, 0.2);
+  background: #ffe4e6;
+  border-color: rgba(215, 28, 27, 0.28);
 }
 .step-deliverable-item {
   display: flex;
@@ -19259,7 +19489,7 @@ body.dark-theme .tag-location svg {
   height: 22px;
   min-width: 22px;
   border-radius: 6px;
-  background: #a81110;
+  background: var(--btn-gradient-primary, linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%));
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -19277,8 +19507,8 @@ body.dark-theme .tag-location svg {
   display: block;
 }
 .protocol-step-card:hover .step-deliverable-icon {
-  background: var(--brand-accent, #d71c1b);
-  transform: scale(1.06);
+  background: var(--btn-gradient-hover, linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%));
+  transform: scale(1.08);
 }
 .step-deliverable-text {
   font-size: 0.835rem;
@@ -19287,7 +19517,7 @@ body.dark-theme .tag-location svg {
 }
 .step-deliverable-text strong {
   font-weight: 700;
-  color: #a81110;
+  color: var(--brand-accent, #d71c1b);
   margin-right: 4px;
 }
 
@@ -19308,22 +19538,22 @@ body.dark-theme .step-card-desc {
   color: #f1f5f9 !important;
 }
 body.dark-theme .step-card-deliverables {
-  background: #1f2529;
-  border-color: #2a3136;
+  background: rgba(215, 28, 27, 0.08);
+  border: 1.5px solid rgba(255, 90, 82, 0.22);
 }
 body.dark-theme .protocol-step-card:hover .step-card-deliverables {
-  background: #242b30;
-  border-color: rgba(255, 90, 82, 0.3);
+  background: rgba(215, 28, 27, 0.14);
+  border-color: rgba(255, 90, 82, 0.35);
 }
 body.dark-theme .step-deliverable-icon {
-  background: #e02a24;
+  background: var(--btn-gradient-primary, linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%));
   color: #ffffff;
 }
 body.dark-theme .step-deliverable-icon svg {
   stroke: #ffffff;
 }
 body.dark-theme .protocol-step-card:hover .step-deliverable-icon {
-  background: #ff5a52;
+  background: var(--btn-gradient-hover, linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%));
 }
 body.dark-theme .step-deliverable-text {
   color: #f1f5f9 !important;
@@ -20079,9 +20309,22 @@ body.dark-theme .pf-proof-tag {
     padding: 4px 8px;
   }
   .pf-action-btn {
-    padding: 0 12px;
-    height: 34px;
-    font-size: 11px;
+    min-width: auto;
+    padding: 4px 8px 4px 16px;
+    gap: 10px;
+    justify-content: center;
+  }
+  .pf-action-btn span:not(.pf-action-btn-arrow) {
+    font-size: 12px;
+  }
+  .pf-action-btn-arrow,
+  .pf-action-btn > svg {
+    width: 28px;
+    height: 28px;
+  }
+  .pf-action-btn-arrow svg {
+    width: 12px;
+    height: 12px;
   }
 } /* --- Ultra-Compact Viewports (300px down to 250px - Galaxy Z Fold Outer, Smartwatch, Embedded) --- */
 @media (max-width: 300px) {
@@ -20174,9 +20417,22 @@ body.dark-theme .pf-proof-tag {
     padding: 3px 6px;
   }
   .pf-action-btn {
-    font-size: 10px;
-    padding: 0 10px;
-    height: 30px;
+    min-width: auto;
+    padding: 3.5px 7px 3.5px 14px;
+    gap: 8px;
+    justify-content: center;
+  }
+  .pf-action-btn span:not(.pf-action-btn-arrow) {
+    font-size: 11px;
+  }
+  .pf-action-btn-arrow,
+  .pf-action-btn > svg {
+    width: 26px;
+    height: 26px;
+  }
+  .pf-action-btn-arrow svg {
+    width: 11px;
+    height: 11px;
   }
 } /* ==========================================================================   PORTFOLIO IMAGE LIGHTBOX MODAL & DUBAI DIRECT CALL/WHATSAPP CONTACT BAR   ========================================================================== */
 .pf-lightbox-modal {

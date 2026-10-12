@@ -22,6 +22,7 @@ This project follows strict engineering and visual standards. Every change must 
 
 ## 3. UI Component Geometry & Full-Bleed Layout
 - Primary & Action Buttons: MUST use pill shape (`border-radius: var(--radius-pill);` or `9999px`) styled with the signature Call Now crimson gradient.
+- Button Typography & Casing Standard: All buttons across all pages (including the Master Navbar Button 'Schedule Service', Hero 'Book a Repair', 'Emergency Call 24/7', card action pills, and modal triggers) MUST use standard Title Case / Normal Casing with NO forced uppercase (`text-transform: none !important;`). Rogue uppercase button styling is strictly prohibited.
 - Brand Grid: All 20 brand logo cards MUST have `1.5px solid #e3e7e9` border with `#d71c1b` and soft elevation on hover.
 - Full-Bleed Architecture: Unified edge-to-edge canvas with zero outer frame border or grey gutters. Content centered inside 1360px container with clean internal padding. No outer floating card borders.
 
@@ -84,8 +85,9 @@ This project follows strict engineering and visual standards. Every change must 
 - **Text & Icon Protection**: Button text and SVG children must always be protected via `> span:not(.btn-circle)` with `position: relative !important; z-index: 3 !important;`. Never apply `> span` without `:not(.btn-circle)`.
 
 ## 8. Zero Red Glow / Zero Messy Icon Shadows Standard (Mandatory Rule)
-- **Zero Red Shadows on Icons**: Never apply red-tinted box-shadows or glows (`rgba(215, 28, 27, ...)`, `rgba(197, 18, 16, ...)`, `rgba(255, 90, 82, ...)`) to icons, icon badges, or medallions (`.why-card-icon-badge`, `.why-card-icon-box`, `.why-stat-icon-wrap`) on white or light backgrounds. Red shadows against white surfaces look messy, smudged, and dirty.
+- **Zero Red Shadows on Icons**: Never apply red-tinted box-shadows or glows (`rgba(215, 28, 27, ...)`, `rgba(197, 18, 16, ...)`, `rgba(255, 90, 82, ...)`) to icons, icon badges, or medallions (`.why-card-icon-badge`, `.why-card-icon-box`, `.why-stat-icon-wrap`, `.step-deliverable-icon`) on white or light backgrounds. Red shadows against white surfaces look messy, smudged, and dirty.
 - **Clean Flat Geometry**: All card icon badges must use `box-shadow: none;` on both default and hover states. Interactive feedback must be driven by micro-scaling (`transform: scale(1.08)`) and gradient shift, never colored blur halos.
+- **Unified Action Red Gradient for Bullet & Checklist Badges**: Never use uncalibrated dark maroon, brown, or dull red shades (e.g. `#a81110`, `#8b0000`, `#7f1d1d`) on bullet checkmark badges, step deliverable icons, or checklist boxes. All active icon badges must strictly match the signature Primary Action Gradient (`var(--btn-gradient-primary)`: `linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%)`) matching the Master Navbar Button (`.btn-schedule`).
 
 
 - **Colour-Flip Sync**: Hover text/icon colour must flip only after bubbles cover the button (`transition: color 0.45s <same curve> 0.3s` on :hover), never instantly, and pill buttons must have no border ring (`border: 0`) so bubbles fill edge to edge. On dark cards use crimson bubbles, not black.

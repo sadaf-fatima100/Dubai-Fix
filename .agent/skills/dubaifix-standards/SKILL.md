@@ -154,6 +154,10 @@ To prevent the common mistake of "fire-alarm / danger" visual fatigue associated
   ```
 - **CRITICAL**: Never apply `> span { position: relative; }` without `:not(.btn-circle)` as it turns absolute bubbles into flex items and breaks button layout geometry.
 
+### 6. Button Typography & Casing Standard (Strict Rule)
+- All button labels (including the Master Navbar Button 'Schedule Service', Hero 'Book a Repair', 'Emergency Call 24/7', card action pills, and modal triggers) MUST use standard Title Case / Normal Casing with NO forced uppercase (`text-transform: none !important;`).
+- Forced uppercase button labels are strictly banned across all pages.
+
 ---
 
 ## 7. Zero Red Glow / Zero Messy Icon Shadows Standard (Mandatory Rule)
@@ -172,6 +176,9 @@ To prevent the common mistake of "fire-alarm / danger" visual fatigue associated
    - Box-shadow: `none`.
 3. **Hover Interaction**:
    - Interactive feedback is achieved via subtle organic scale (`transform: scale(1.08)`) and gradient shift to `var(--btn-gradient-hover)`, NEVER by projecting a fuzzy red halo or colored blur onto the white canvas.
+4. **Bullet Points, Checklist Boxes & Deliverable Icons**:
+   - Never use uncalibrated dark maroon or muddy shades (such as `#a81110`, `#8b0000`, `#7f1d1d`).
+   - Bullet checkmark badges and deliverable icons MUST match the Master Navbar Button action gradient: `background: var(--btn-gradient-primary)` (`linear-gradient(135deg, #d71c1b 0%, #c41412 50%, #b00403 100%)`) with clean `#ffffff` SVG inside, shifting on hover to `var(--btn-gradient-hover)`.
 
 ---
 
