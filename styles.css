@@ -158,20 +158,11 @@ body {
   border-color: #e3e7e9;
   box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.12);
 }
-/* Top viewport scroll mask: seamlessly covers the 14px gap above floating navbar so text never bleeds through */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 14px;
-  background-color: var(--bg-canvas, #fbfbfe);
-  z-index: 999;
-  pointer-events: none;
-}
+/* Top viewport scroll mask removed: eliminates top space and scroll cutting */
+body::before,
 body.dark-theme::before {
-  background-color: #0f1315;
+  content: none !important;
+  display: none !important;
 }
 body.dark-theme .navbar {
   background: rgba(23, 28, 31, 0.88);
@@ -872,7 +863,7 @@ body.dark-theme .dropdown-divider {
   transition: color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
-.btn-hero-secondary svg {
+.btn-hero-secondary svg:not(.btn-arrow-icon) {
   color: #16a34a;
   stroke: #16a34a;
   fill: currentColor;
@@ -887,11 +878,61 @@ body.dark-theme .dropdown-divider {
 .btn-hero-secondary:hover > span {
   color: #ffffff !important;
 }
-.btn-hero-secondary:hover svg {
+.btn-hero-secondary:hover svg:not(.btn-arrow-icon) {
   animation: none !important;
   color: #ffffff !important;
   fill: #ffffff !important;
   stroke: #ffffff !important;
+}
+
+/* Option 2 Standard: Sleek Modern Open-Stroke Directional Arrow (Clean & Minimal, No Circle) */
+.btn-hero-secondary .btn-arrow-icon,
+.btn-hero-secondary svg.btn-arrow-icon,
+.btn-arrow-icon {
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px !important;
+  min-height: 15px !important;
+  color: #16a34a !important;
+  stroke: #16a34a !important;
+  fill: none !important;
+  stroke-width: 2.2 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 3 !important;
+  animation: none !important;
+  transform: none !important;
+  transform-origin: center center !important;
+  transition:
+    transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.btn-hero-secondary:hover .btn-arrow-icon,
+.btn-hero-secondary:hover svg.btn-arrow-icon {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: none !important;
+  transform: translateX(4px) !important;
+  animation: none !important;
+}
+
+body.dark-theme .btn-hero-secondary .btn-arrow-icon,
+body.dark-theme .btn-hero-secondary svg.btn-arrow-icon {
+  color: #25d366 !important;
+  stroke: #25d366 !important;
+  fill: none !important;
+}
+
+body.dark-theme .btn-hero-secondary:hover .btn-arrow-icon,
+body.dark-theme .btn-hero-secondary:hover svg.btn-arrow-icon {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: none !important;
+  transform: translateX(4px) !important;
 } /* ==========================================================================   Universal Button Animation & Interaction Suite (Hero-Quality Everywhere)   ========================================================================== */ /* Zero Idle Float Animation Standard: Buttons sit grounded, calm, and stable without floating */
 @keyframes primaryButtonPulseLoop {
   0%, 50%, 100% {
@@ -973,7 +1014,7 @@ body.dark-theme .dropdown-divider {
 /* Master Synchronized Ambient Phone Vibration on all Phone Icon Buttons */
 .btn-schedule svg,
 .nav-menu-schedule-btn svg,
-.btn-hero-secondary svg,
+.btn-hero-secondary svg:not(.btn-arrow-icon),
 .btn-hero-action-call svg,
 .btn-about-secondary svg,
 .btn-dispatch-call svg,
@@ -1016,7 +1057,7 @@ button[id*="phone"] svg {
 /* Responsive Active Ring Vibration on Hover */
 .btn-schedule:hover svg,
 .nav-menu-schedule-btn:hover svg,
-.btn-hero-secondary:hover svg,
+.btn-hero-secondary:hover svg:not(.btn-arrow-icon),
 .btn-hero-action-call:hover svg,
 .btn-about-secondary:hover svg,
 .btn-dispatch-call:hover svg,
@@ -8013,11 +8054,27 @@ body.dark-theme .prefooter-cta-overlay {
   flex-shrink: 0;
   transition: all 0.25s ease;
 }
-.footer-contact-item:hover .footer-contact-icon {
+.footer-contact-item:has(.contact-link):hover .footer-contact-icon {
   background-color: #ffffff;
   border-color: #ffffff;
   color: var(--brand-accent);
   transform: scale(1.08);
+}
+.footer-contact-item.footer-contact-static,
+.footer-contact-item.footer-contact-static .footer-contact-icon,
+.footer-contact-item.footer-contact-static .contact-value,
+.footer-contact-item:not(:has(.contact-link)),
+.footer-contact-item:not(:has(.contact-link)) .footer-contact-icon,
+.footer-contact-item:not(:has(.contact-link)) .contact-value {
+  cursor: default;
+}
+.footer-contact-item.footer-contact-static:hover .footer-contact-icon,
+.footer-contact-item:not(:has(.contact-link)):hover .footer-contact-icon {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  transform: none !important;
+  cursor: default !important;
 }
 .footer-contact-info {
   display: flex;
@@ -11490,7 +11547,7 @@ body.dark-theme .btn-about-secondary span:not(.btn-circle) {
   color: #25d366 !important;
   transition: color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
-body.dark-theme .btn-hero-secondary svg,
+body.dark-theme .btn-hero-secondary svg:not(.btn-arrow-icon),
 body.dark-theme .btn-about-secondary svg {
   color: #25d366;
   stroke: #25d366;
@@ -11507,7 +11564,7 @@ body.dark-theme .btn-about-secondary:hover {
     color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
-body.dark-theme .btn-hero-secondary:hover svg,
+body.dark-theme .btn-hero-secondary:hover svg:not(.btn-arrow-icon),
 body.dark-theme .btn-about-secondary:hover svg {
   color: #ffffff !important;
   fill: currentColor !important;
@@ -11875,10 +11932,19 @@ body.dark-theme .footer-contact-icon {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #ff5a52;
 }
-body.dark-theme .footer-contact-item:hover .footer-contact-icon {
+body.dark-theme .footer-contact-item:has(.contact-link):hover .footer-contact-icon {
   background: var(--btn-gradient-primary);
   border-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
+}
+body.dark-theme .footer-contact-item.footer-contact-static:hover .footer-contact-icon,
+body.dark-theme .footer-contact-item:not(:has(.contact-link)):hover .footer-contact-icon {
+  background: #171c1f !important;
+  background-color: #171c1f !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ff5a52 !important;
+  transform: none !important;
+  cursor: default !important;
 }
 body.dark-theme .contact-label {
   color: #e2e8f0;
