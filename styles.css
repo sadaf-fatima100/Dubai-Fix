@@ -8212,8 +8212,11 @@ body.dark-theme .prefooter-cta-overlay {
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.contact-link:hover {
-  color: #ffffff;
+.contact-link:hover,
+.contact-link:hover > span:not(.chat-status-pill),
+.footer-contact-item:has(.contact-link):hover .contact-link,
+.footer-contact-item:has(.contact-link):hover .contact-link > span:not(.chat-status-pill) {
+  color: #ff5a52 !important;
   text-decoration: underline;
 }
 .live-chat-link {
@@ -12110,7 +12113,10 @@ body.dark-theme .contact-value,
 body.dark-theme .contact-link {
   color: #f1f5f9;
 }
-body.dark-theme .contact-link:hover {
+body.dark-theme .contact-link:hover,
+body.dark-theme .contact-link:hover > span:not(.chat-status-pill),
+body.dark-theme .footer-contact-item:has(.contact-link):hover .contact-link,
+body.dark-theme .footer-contact-item:has(.contact-link):hover .contact-link > span:not(.chat-status-pill) {
   color: #ff5a52 !important;
 }
 body.dark-theme .footer-book-btn,
