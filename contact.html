@@ -524,6 +524,34 @@
       border-color: #ff5a52;
       box-shadow: 0 0 0 3px rgba(255, 90, 82, 0.2);
     }
+    .bform-input.is-invalid,
+    .bform-select.is-invalid,
+    .bform-textarea.is-invalid {
+      border-color: #dc2626 !important;
+      background: #fff8f8 !important;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.16) !important;
+    }
+    body.dark-theme .bform-input.is-invalid,
+    body.dark-theme .bform-select.is-invalid,
+    body.dark-theme .bform-textarea.is-invalid {
+      border-color: #ff5a52 !important;
+      background: rgba(220, 38, 38, 0.12) !important;
+      box-shadow: 0 0 0 3px rgba(255, 90, 82, 0.24) !important;
+    }
+    .bform-error-msg {
+      display: none;
+      color: #dc2626;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 5px;
+      line-height: 1.25;
+    }
+    body.dark-theme .bform-error-msg {
+      color: #ff837d;
+    }
+    .bform-field.has-error .bform-error-msg {
+      display: block;
+    }
     .bform-select-wrap {
       position: relative;
     }
@@ -1330,7 +1358,7 @@
               </p>
 
               <!-- Form with 2-Column Grid -->
-              <form class="booking-form-grid" id="contactForm" novalidate>
+              <form class="booking-form-grid" id="contactForm">
                 
                 <!-- Row 1: Full Name & Contact Number -->
                 <div class="bform-row-2">
@@ -1654,22 +1682,135 @@
   <script src="script.js?v=7.7"></script>
 
   <script>
-    // Contact form submit handler - shows toast
+    // Strict Contact Form Validation & Submission Handler
     (function() {
       var form = document.getElementById('contactForm');
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var toast = document.getElementById('toastMessage');
-          if (toast) {
-            toast.classList.add('show', 'toast-visible');
-            setTimeout(function() { 
-              toast.classList.remove('show', 'toast-visible'); 
-            }, 4500);
-          }
-          form.reset();
-        });
+      if (!form) return;
+
+      var fullName = document.getElementById('fullName');
+      var contactPhone = document.getElementById('contactPhone');
+      var emailAddress = document.getElementById('emailAddress');
+      var communityArea = document.getElementById('communityArea');
+      var applianceCategory = document.getElementById('applianceCategory');
+      var toast = document.getElementById('toastMessage');
+
+      var fields = [
+        {
+          el: fullName,
+          validate: function(val) { return val && val.trim().length >= 2; },
+          error: 'Please enter your full name.'
+        },
+        {
+          el: contactPhone,
+          validate: function(val) { 
+            var digits = (val || '').replace(/\D/g, '');
+            return digits.length >= 7; 
+          },
+          error: 'Please enter a valid phone number (e.g. +971 56 205 0036).'
+        },
+        {
+          el: emailAddress,
+          validate: function(val) { 
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((val || '').trim()); 
+          },
+          error: 'Please enter a valid email address.'
+        },
+        {
+          el: communityArea,
+          validate: function(val) { return !!val && val.trim() !== ''; },
+          error: 'Please select your Dubai community / area.'
+        },
+        {
+          el: applianceCategory,
+          validate: function(val) { return !!val && val.trim() !== ''; },
+          error: 'Please select an appliance category.'
+        }
+      ];
+
+      function clearError(item) {
+        if (!item.el) return;
+        item.el.classList.remove('is-invalid');
+        var parent = item.el.closest('.bform-field');
+        if (parent) {
+          parent.classList.remove('has-error');
+          var errEl = parent.querySelector('.bform-error-msg');
+          if (errEl) errEl.textContent = '';
+        }
       }
+
+      function setError(item) {
+        if (!item.el) return;
+        item.el.classList.add('is-invalid');
+        var parent = item.el.closest('.bform-field');
+        if (parent) {
+          parent.classList.add('has-error');
+          var errEl = parent.querySelector('.bform-error-msg');
+          if (!errEl) {
+            errEl = document.createElement('div');
+            errEl.className = 'bform-error-msg';
+            parent.appendChild(errEl);
+          }
+          errEl.textContent = item.error;
+        }
+      }
+
+      // Automatically clear validation error as soon as user types or selects
+      fields.forEach(function(item) {
+        if (!item.el) return;
+        item.el.addEventListener('input', function() {
+          if (item.validate(item.el.value)) {
+            clearError(item);
+          }
+        });
+        item.el.addEventListener('change', function() {
+          if (item.validate(item.el.value)) {
+            clearError(item);
+          }
+        });
+      });
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var firstInvalid = null;
+        var isValid = true;
+
+        fields.forEach(function(item) {
+          if (!item.el) return;
+          if (!item.validate(item.el.value)) {
+            isValid = false;
+            setError(item);
+            if (!firstInvalid) {
+              firstInvalid = item.el;
+            }
+          } else {
+            clearError(item);
+          }
+        });
+
+        // Block empty or invalid submission
+        if (!isValid) {
+          if (firstInvalid) {
+            firstInvalid.focus();
+          }
+          return false;
+        }
+
+        // All fields valid -> Show Success Toast
+        if (toast) {
+          var desc = toast.querySelector('.toast-desc');
+          if (desc && fullName && applianceCategory) {
+            desc.textContent = 'Thank you ' + fullName.value.trim() + '! Your ' + applianceCategory.value + ' repair dispatch has been alerted.';
+          }
+          toast.classList.add('show', 'toast-visible');
+          setTimeout(function() { 
+            toast.classList.remove('show', 'toast-visible'); 
+          }, 4500);
+        }
+
+        form.reset();
+        fields.forEach(clearError);
+      });
     })();
   </script>
 
