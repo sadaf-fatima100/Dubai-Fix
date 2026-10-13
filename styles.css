@@ -9064,6 +9064,17 @@ body.dark-theme .trust-item svg {
     text-wrap: nowrap !important;
     line-height: 1.35 !important;
     border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    transform: none !important;
+  }
+  .nav-dropdown .dropdown-link span {
+    text-align: center !important;
+  }
+  .nav-dropdown .dropdown-link:hover {
+    transform: none !important;
   }
   .nav-dropdown .dropdown-link-all {
     padding: 11px 14px !important;
@@ -9073,7 +9084,12 @@ body.dark-theme .trust-item svg {
     margin-bottom: 5px !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+  .nav-dropdown .dropdown-link-all span {
+    text-align: center !important;
   }
   .nav-dropdown .dropdown-divider {
     display: block !important;
@@ -25199,6 +25215,22 @@ body.dark-theme .sidebar-dispatch-card {
   background: #171c1f;
   border-color: #2a3136;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+body.dark-theme .article-cta-trust-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+body.dark-theme .article-cta-trust-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+body.dark-theme .article-cta-trust-icon {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.28);
+}
+body.dark-theme .article-cta-trust-icon svg {
+  color: #34d399;
+  stroke: #34d399;
 }
 body.dark-theme .article-cta-trust-strip {
   background: rgba(255, 255, 255, 0.03);
