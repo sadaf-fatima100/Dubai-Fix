@@ -13662,7 +13662,7 @@ body.dark-theme .brand-curved-card:hover .brand-card-footer svg {
    ========================================================================== */
 .brands-all-notice-bar {
   max-width: 100%;
-  margin: 30px auto 0 auto;
+  margin: 30px auto clamp(16px, 2.5vw, 24px) auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13801,6 +13801,7 @@ body.dark-theme .brands-notice-desc {
     gap: 16px;
     padding: 18px 20px;
     margin-top: 24px;
+    margin-bottom: clamp(14px, 2.5vw, 20px);
   }
   .brands-notice-action {
     width: 100%;
@@ -13848,7 +13849,7 @@ body.dark-theme .brands-notice-desc {
 @media (max-width: 900px) {
   .brands-section {
     padding-top: var(--section-py-sm);
-    padding-bottom: 14px;
+    padding-bottom: var(--section-py);
   }
   .brands-curved-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -15487,7 +15488,7 @@ body.dark-theme .cta-showcase-tech-img:hover {
    ========================================================================== */
 @media (max-width: 1080px) {
   .cta-showcase-section {
-    padding: 10px 0 0 0 !important;
+    padding: clamp(36px, 5vw, 48px) 0 0 0 !important;
   }
   .cta-showcase-container {
     grid-template-columns: 1fr;
@@ -15553,7 +15554,7 @@ body.dark-theme .cta-showcase-tech-img:hover {
 }
 @media (max-width: 520px) {
   .cta-showcase-section {
-    padding: 4px 0 0 0 !important;
+    padding: clamp(32px, 6vw, 44px) 0 0 0 !important;
   }
   .cta-showcase-left {
     margin-bottom: 18px;
