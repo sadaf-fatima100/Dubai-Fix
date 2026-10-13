@@ -4385,25 +4385,55 @@ body.dark-theme .why-card-content .why-card-desc {
   white-space: nowrap;
 }
 .areas-clear-btn {
-  background: rgba(0, 0, 0, 0.07);
-  border: none;
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
+  background: rgba(0, 0, 0, 0.08);
+  border: none !important;
+  border-radius: 50% !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  aspect-ratio: 1 / 1 !important;
+  flex-shrink: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
   cursor: pointer;
   color: var(--text-sub);
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  line-height: 1;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  position: relative;
+  overflow: hidden;
   transition:
-    background-color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+.areas-clear-btn svg {
+  width: 12px !important;
+  height: 12px !important;
+  display: block !important;
+  margin: auto !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 4 !important;
+  stroke: currentColor !important;
+  transform: none !important;
+  pointer-events: none;
 }
 .areas-clear-btn:hover {
-  background: rgba(0, 0, 0, 0.15);
-  color: var(--text-dark);
+  background: var(--brand-accent);
+  color: #ffffff !important;
+  transform: scale(1.06) !important;
+}
+.areas-clear-btn:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  transform: none !important;
 }
 .areas-counter-badge {
   background: var(--brand-accent-light);
@@ -13136,12 +13166,18 @@ body.dark-theme .area-search-input::placeholder {
   color: #e2e8f0 !important;
 }
 body.dark-theme .areas-clear-btn {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   color: #f1f5f9 !important;
 }
 body.dark-theme .areas-clear-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background: var(--brand-accent);
+  color: #ffffff !important;
+  transform: scale(1.06) !important;
+}
+body.dark-theme .areas-clear-btn:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  transform: none !important;
 }
 body.dark-theme .areas-counter-badge {
   background: rgba(215, 28, 27, 0.2);
@@ -14926,7 +14962,7 @@ body.dark-theme .emergency-pillar-item:hover {
 .cta-showcase-section {
   position: relative;
   background: #ffffff;
-  padding: 48px 0;
+  padding: 0 0 48px 0;
   margin: 0;
   overflow: visible;
   border-top: none;
