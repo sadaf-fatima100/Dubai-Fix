@@ -772,13 +772,15 @@ body.dark-theme .dropdown-divider {
     color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .btn-read-full-guide .btn-hero-arrow-circle,
-.btn-read-article .btn-hero-arrow-circle {
+.btn-read-article .btn-hero-arrow-circle,
+.brands-notice-btn .btn-hero-arrow-circle {
   width: 28px !important;
   height: 28px !important;
   min-width: 28px !important;
 }
 .btn-read-full-guide .btn-hero-arrow-circle svg,
-.btn-read-article .btn-hero-arrow-circle svg {
+.btn-read-article .btn-hero-arrow-circle svg,
+.brands-notice-btn .btn-hero-arrow-circle svg {
   width: 12px !important;
   height: 12px !important;
 }
@@ -790,6 +792,7 @@ body.dark-theme .dropdown-divider {
 .btn-read-full-guide:hover .btn-hero-arrow-circle,
 .btn-read-article:hover .btn-hero-arrow-circle,
 .btn-hero-action-primary:hover .btn-hero-arrow-circle,
+.brands-notice-btn:hover .btn-hero-arrow-circle,
 :hover > .btn-hero-arrow-circle {
   transform: translateX(4px) scale(1.05) !important;
   background-color: #ffffff !important;
@@ -803,6 +806,7 @@ body.dark-theme .dropdown-divider {
 .btn-read-full-guide:hover .btn-hero-arrow-circle svg,
 .btn-read-article:hover .btn-hero-arrow-circle svg,
 .btn-hero-action-primary:hover .btn-hero-arrow-circle svg,
+.brands-notice-btn:hover .btn-hero-arrow-circle svg,
 :hover > .btn-hero-arrow-circle svg {
   transform: none !important;
   color: var(--brand-accent-hover, #b00403) !important;
@@ -13713,10 +13717,6 @@ body.dark-theme .brand-curved-card:hover .brand-card-footer svg {
   color: var(--text-sub);
   line-height: 1.45;
 }
-.brands-notice-desc strong {
-  font-weight: 700;
-  color: var(--text-dark);
-}
 .brands-notice-action {
   flex-shrink: 0;
   display: flex;
@@ -13726,14 +13726,14 @@ body.dark-theme .brand-curved-card:hover .brand-card-footer svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   background: var(--btn-gradient-primary);
   color: #ffffff !important;
   font-size: 13.5px;
   font-weight: 700;
   line-height: 1.2;
   text-transform: none !important;
-  padding: 11px 22px;
+  padding: 8px 10px 8px 22px;
   border-radius: var(--radius-pill);
   text-decoration: none;
   white-space: nowrap;
@@ -13754,13 +13754,6 @@ body.dark-theme .brand-curved-card:hover .brand-card-footer svg {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(215, 28, 27, 0.42);
   color: #ffffff !important;
-}
-.brands-notice-btn svg {
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-.brands-notice-btn:hover svg {
-  transform: translateX(3px);
 }
 .brands-notice-btn:hover .btn-circle {
   transform: translate(-50%, -50%) scale(12) !important;
@@ -13786,9 +13779,6 @@ body.dark-theme .brands-notice-headline {
 }
 body.dark-theme .brands-notice-desc {
   color: #cbd5e1;
-}
-body.dark-theme .brands-notice-desc strong {
-  color: #ff837d;
 }
 
 @media (max-width: 900px) {
