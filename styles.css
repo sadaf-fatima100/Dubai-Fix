@@ -1087,7 +1087,7 @@ button[id*="phone"] svg {
 .float-call-btn:hover svg,
 .float-call-btn:hover .float-icon-svg,
 .footer-social-btn.btn-phone:hover svg,
-.footer-contact-item:hover .icon-phone-wrap svg,
+.footer-contact-item:has(.contact-link:hover) .icon-phone-wrap svg,
 .cta-primary-btn:hover svg,
 .btn-simple-cta-call:hover svg,
 .btn-simple-cta-call:hover .btn-simple-icon svg,
@@ -8155,6 +8155,7 @@ body.dark-theme .prefooter-cta-overlay {
   display: flex;
   align-items: center;
   gap: 13px;
+  width: fit-content;
 }
 .footer-contact-icon {
   width: 36px;
@@ -8169,7 +8170,7 @@ body.dark-theme .prefooter-cta-overlay {
   flex-shrink: 0;
   transition: all 0.25s ease;
 }
-.footer-contact-item:has(.contact-link):hover .footer-contact-icon {
+.footer-contact-item:has(.contact-link:hover) .footer-contact-icon {
   background-color: #ffffff;
   border-color: #ffffff;
   color: var(--brand-accent);
@@ -8195,6 +8196,7 @@ body.dark-theme .prefooter-cta-overlay {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  align-items: flex-start;
 }
 .contact-label {
   font-size: 11px;
@@ -8211,11 +8213,10 @@ body.dark-theme .prefooter-cta-overlay {
   color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease;
+  width: fit-content;
 }
 .contact-link:hover,
-.contact-link:hover > span:not(.chat-status-pill),
-.footer-contact-item:has(.contact-link):hover .contact-link,
-.footer-contact-item:has(.contact-link):hover .contact-link > span:not(.chat-status-pill) {
+.contact-link:hover > span:not(.chat-status-pill) {
   color: #ff5a52 !important;
   text-decoration: underline;
 }
@@ -12092,7 +12093,7 @@ body.dark-theme .footer-contact-icon {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #ff5a52;
 }
-body.dark-theme .footer-contact-item:has(.contact-link):hover .footer-contact-icon {
+body.dark-theme .footer-contact-item:has(.contact-link:hover) .footer-contact-icon {
   background: var(--btn-gradient-primary);
   border-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
@@ -12114,9 +12115,7 @@ body.dark-theme .contact-link {
   color: #f1f5f9;
 }
 body.dark-theme .contact-link:hover,
-body.dark-theme .contact-link:hover > span:not(.chat-status-pill),
-body.dark-theme .footer-contact-item:has(.contact-link):hover .contact-link,
-body.dark-theme .footer-contact-item:has(.contact-link):hover .contact-link > span:not(.chat-status-pill) {
+body.dark-theme .contact-link:hover > span:not(.chat-status-pill) {
   color: #ff5a52 !important;
 }
 body.dark-theme .footer-book-btn,
