@@ -64,6 +64,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
 }
+#home {
+  scroll-margin-top: 140px;
+}
 
 /* ==========================================================================
    GLOBAL TYPOGRAPHY & FONT ENFORCEMENT (Strict Plus Jakarta Sans Standard)
