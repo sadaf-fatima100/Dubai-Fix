@@ -3637,11 +3637,16 @@ a.service-card-item *,
 .why-choose-section {
   width: 100%;
   max-width: 100%;
-  padding-top: var(--section-py);
+  padding-top: calc(var(--section-py) + 48px);
   padding-bottom: var(--section-py);
   margin: 0;
   border-top: 1px solid var(--border-light);
   position: relative;
+}
+@media (max-width: 1080px) {
+  .why-choose-section {
+    padding-top: var(--section-py);
+  }
 }
 .why-header {
   margin-bottom: 44px;
@@ -14501,7 +14506,7 @@ body.dark-theme .faq-card-body {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 36px 16px 22px;
+  padding: 20px 36px 20px 22px;
   position: relative;
   z-index: 2;
   box-sizing: border-box;
@@ -14517,20 +14522,27 @@ body.dark-theme .faq-card-body {
   cursor: pointer;
 }
 @media (min-width: 1081px) {
+  .brand-emergency-bar {
+    min-height: 98px;
+  }
   .emergency-call-card {
     flex: 0 0 340px;
     width: 340px;
     min-width: 340px;
     max-width: 340px;
+    padding: 22px 36px 22px 24px;
   }
 }
 @media (min-width: 1280px) {
+  .brand-emergency-bar {
+    min-height: 104px;
+  }
   .emergency-call-card {
     flex: 0 0 350px;
     width: 350px;
     min-width: 350px;
     max-width: 350px;
-    padding: 16px 38px 16px 24px;
+    padding: 24px 38px 24px 26px;
   }
 }
 .emergency-call-card:hover {
@@ -14572,7 +14584,7 @@ body.dark-theme .faq-card-body {
 .emergency-call-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 5.5px;
 }
 .emergency-eyebrow-row {
   display: inline-flex;
@@ -14612,7 +14624,8 @@ body.dark-theme .faq-card-body {
   letter-spacing: 0.02em;
   color: #ffffff;
   white-space: nowrap;
-  line-height: 1.2;
+  line-height: 1.25;
+  margin: 1px 0;
   transition:
     color 0.2s ease,
     text-shadow 0.2s ease;
@@ -14633,7 +14646,7 @@ body.dark-theme .faq-card-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 18px 12px 8px;
+  padding: 16px 18px 16px 8px;
   gap: 4px;
 }
 .emergency-pillar-item {
@@ -14962,7 +14975,7 @@ body.dark-theme .emergency-pillar-item:hover {
 .cta-showcase-section {
   position: relative;
   background: #ffffff;
-  padding: 0 0 48px 0;
+  padding: 48px 0;
   margin: 0;
   overflow: visible;
   border-top: none;
