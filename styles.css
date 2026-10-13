@@ -1874,66 +1874,66 @@ button[class*="-btn"] * {
 /* --------------------------------------------------------------------------
    7. Protected Child Content Layer (z-index: 4 & pointer-events: none)
    -------------------------------------------------------------------------- */
-.btn-schedule > *:not(::before):not(::after):not(.btn-circle),
-.nav-menu-schedule-btn > *:not(::before):not(::after):not(.btn-circle),
-.btn-primary > *:not(::before):not(::after):not(.btn-circle),
-.btn-hero-primary > *:not(::before):not(::after):not(.btn-circle),
-.btn-hero-action-primary > *:not(::before):not(::after):not(.btn-circle),
-.btn-get-started > *:not(::before):not(::after):not(.btn-circle),
-.btn-about-primary > *:not(::before):not(::after):not(.btn-circle),
-.btn-prefooter-primary > *:not(::before):not(::after):not(.btn-circle),
-.btn-emergency-primary > *:not(::before):not(::after):not(.btn-circle),
-.btn-emergency-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-hub-open-maps > *:not(::before):not(::after):not(.btn-circle),
-.btn-cta-navy > *:not(::before):not(::after):not(.btn-circle),
-.btn-urgent-book > *:not(::before):not(::after):not(.btn-circle),
-.cta-primary-btn > *:not(::before):not(::after):not(.btn-circle),
-.cta-showcase-btn > *:not(::before):not(::after):not(.btn-circle),
-.footer-book-btn > *:not(::before):not(::after):not(.btn-circle),
-.sidebar-btn-book > *:not(::before):not(::after):not(.btn-circle),
-.article-cta-book-btn > *:not(::before):not(::after):not(.btn-circle),
-.compare-card-cta > *:not(::before):not(::after):not(.btn-circle),
-.btn-process-action > *:not(::before):not(::after):not(.btn-circle),
-.empty-cta-btn > *:not(::before):not(::after):not(.btn-circle),
-.why-btn-pill > *:not(::before):not(::after):not(.btn-circle),
-.btn-cta-banner-primary > *:not(::before):not(::after):not(.btn-circle),
-.mcard-featured-btn > *:not(::before):not(::after):not(.btn-circle),
-.btn-filter-browse > *:not(::before):not(::after):not(.btn-circle),
-.btn-read-article > *:not(::before):not(::after):not(.btn-circle),
-.btn-read-full-guide > *:not(::before):not(::after):not(.btn-circle),
-.btn-faq-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-simple-cta-call > *:not(::before):not(::after):not(.btn-circle),
-.article-cta-call-btn > *:not(::before):not(::after):not(.btn-circle),
-.sidebar-btn-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-lb-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-kitchen-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-service-why-action > *:not(::before):not(::after):not(.btn-circle),
-.areas-clear-btn > *:not(::before):not(::after):not(.btn-circle),
-.btn-hero-secondary > *:not(::before):not(::after):not(.btn-circle),
-.btn-hero-action-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-about-secondary > *:not(::before):not(::after):not(.btn-circle),
-.btn-urgent-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-cta-green > *:not(::before):not(::after):not(.btn-circle),
-.btn-prefooter-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-faq-talk > *:not(::before):not(::after):not(.btn-circle),
-.btn-cta-banner-call > *:not(::before):not(::after):not(.btn-circle),
-.process-phone-link > *:not(::before):not(::after):not(.btn-circle),
-.standards-call-link > *:not(::before):not(::after):not(.btn-circle),
-.btn-dispatch-wa > *:not(::before):not(::after):not(.btn-circle),
-.btn-dispatch-whatsapp > *:not(::before):not(::after):not(.btn-circle),
-.btn-simple-cta-whatsapp > *:not(::before):not(::after):not(.btn-circle),
-.btn-lb-whatsapp > *:not(::before):not(::after):not(.btn-circle),
-.btn-emergency-wa > *:not(::before):not(::after):not(.btn-circle),
-.btn-dispatch-phone > *:not(::before):not(::after):not(.btn-circle),
-.btn-contact-submit > *:not(::before):not(::after):not(.btn-circle),
-.modal-submit-btn > *:not(::before):not(::after):not(.btn-circle),
-.btn-bform-submit > *:not(::before):not(::after):not(.btn-circle),
-.service-card-btn > *:not(::before):not(::after):not(.btn-circle),
-.btn-modal-call > *:not(::before):not(::after):not(.btn-circle),
-.btn-modal-wa > *:not(::before):not(::after):not(.btn-circle),
-.btn-cta-banner-main > *:not(::before):not(::after):not(.btn-circle),
-.btn-cta-banner-secondary > *:not(::before):not(::after):not(.btn-circle),
-.pf-action-btn > *:not(::before):not(::after):not(.btn-circle) {
+.btn-schedule > *:not(.btn-circle),
+.nav-menu-schedule-btn > *:not(.btn-circle),
+.btn-primary > *:not(.btn-circle),
+.btn-hero-primary > *:not(.btn-circle),
+.btn-hero-action-primary > *:not(.btn-circle),
+.btn-get-started > *:not(.btn-circle),
+.btn-about-primary > *:not(.btn-circle),
+.btn-prefooter-primary > *:not(.btn-circle),
+.btn-emergency-primary > *:not(.btn-circle),
+.btn-emergency-call > *:not(.btn-circle),
+.btn-hub-open-maps > *:not(.btn-circle),
+.btn-cta-navy > *:not(.btn-circle),
+.btn-urgent-book > *:not(.btn-circle),
+.cta-primary-btn > *:not(.btn-circle),
+.cta-showcase-btn > *:not(.btn-circle),
+.footer-book-btn > *:not(.btn-circle),
+.sidebar-btn-book > *:not(.btn-circle),
+.article-cta-book-btn > *:not(.btn-circle),
+.compare-card-cta > *:not(.btn-circle),
+.btn-process-action > *:not(.btn-circle),
+.empty-cta-btn > *:not(.btn-circle),
+.why-btn-pill > *:not(.btn-circle),
+.btn-cta-banner-primary > *:not(.btn-circle),
+.mcard-featured-btn > *:not(.btn-circle),
+.btn-filter-browse > *:not(.btn-circle),
+.btn-read-article > *:not(.btn-circle),
+.btn-read-full-guide > *:not(.btn-circle),
+.btn-faq-call > *:not(.btn-circle),
+.btn-simple-cta-call > *:not(.btn-circle),
+.article-cta-call-btn > *:not(.btn-circle),
+.sidebar-btn-call > *:not(.btn-circle),
+.btn-lb-call > *:not(.btn-circle),
+.btn-kitchen-call > *:not(.btn-circle),
+.btn-service-why-action > *:not(.btn-circle),
+.areas-clear-btn > *:not(.btn-circle),
+.btn-hero-secondary > *:not(.btn-circle),
+.btn-hero-action-call > *:not(.btn-circle),
+.btn-about-secondary > *:not(.btn-circle),
+.btn-urgent-call > *:not(.btn-circle),
+.btn-cta-green > *:not(.btn-circle),
+.btn-prefooter-call > *:not(.btn-circle),
+.btn-faq-talk > *:not(.btn-circle),
+.btn-cta-banner-call > *:not(.btn-circle),
+.process-phone-link > *:not(.btn-circle),
+.standards-call-link > *:not(.btn-circle),
+.btn-dispatch-wa > *:not(.btn-circle),
+.btn-dispatch-whatsapp > *:not(.btn-circle),
+.btn-simple-cta-whatsapp > *:not(.btn-circle),
+.btn-lb-whatsapp > *:not(.btn-circle),
+.btn-emergency-wa > *:not(.btn-circle),
+.btn-dispatch-phone > *:not(.btn-circle),
+.btn-contact-submit > *:not(.btn-circle),
+.modal-submit-btn > *:not(.btn-circle),
+.btn-bform-submit > *:not(.btn-circle),
+.service-card-btn > *:not(.btn-circle),
+.btn-modal-call > *:not(.btn-circle),
+.btn-modal-wa > *:not(.btn-circle),
+.btn-cta-banner-main > *:not(.btn-circle),
+.btn-cta-banner-secondary > *:not(.btn-circle),
+.pf-action-btn > *:not(.btn-circle) {
   position: relative !important;
   z-index: 4 !important;
   pointer-events: none !important;
@@ -4581,20 +4581,90 @@ body.dark-theme .why-card-content .why-card-desc {
   line-height: 1.5;
 }
 .empty-cta-btn {
-  background: var(--btn-gradient-primary);
-  color: #ffffff;
-  font-family: var(--font-family);
-  font-size: 13.5px;
-  font-weight: 700;
-  padding: 10px 22px;
-  border-radius: var(--radius-pill);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: var(--btn-gradient-primary) !important;
+  color: #ffffff !important;
+  font-family: var(--font-family) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  padding: 12px 28px !important;
+  border-radius: var(--radius-pill) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28) !important;
+  transition:
+    transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: transform, box-shadow;
+}
+.empty-cta-btn > span {
+  position: relative !important;
+  z-index: 4 !important;
+  color: #ffffff !important;
+  pointer-events: none !important;
+  transition: color 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 .empty-cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
+  transform: translateY(-2.5px) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow:
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.20),
+    0 12px 28px rgba(0, 0, 0, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
+.empty-cta-btn:hover > span {
+  color: #ffffff !important;
+}
+.empty-cta-btn::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -60% !important;
+  left: -50% !important;
+  width: 35% !important;
+  height: 220% !important;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.35)) !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  transform: translateX(0) skewX(-25deg);
+  opacity: 0;
+  animation: synchronizedButtonShine 4s cubic-bezier(0.22, 1, 0.36, 1) infinite !important;
+  animation-delay: 0s !important;
+}
+.empty-cta-btn::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #e52524 0%, #d71c1b 50%, #b00403 100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transition: opacity 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: opacity;
+}
+.empty-cta-btn:hover::after {
+  opacity: 1 !important;
 } /* Bottom CTA Banner (ApexFix High-Contrast Dispatch Callout) */
 .areas-cta-banner {
   background: 
@@ -13256,7 +13326,25 @@ body.dark-theme .empty-desc {
   color: #f1f5f9 !important;
 }
 body.dark-theme .empty-cta-btn {
-  background: var(--btn-gradient-primary);
+  background: var(--btn-gradient-primary) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-theme .empty-cta-btn:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow:
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25),
+    0 14px 32px rgba(0, 0, 0, 0.65),
+    0 4px 12px rgba(0, 0, 0, 0.35) !important;
+}
+body.dark-theme .empty-cta-btn > span {
+  color: #ffffff !important;
+}
+body.dark-theme .empty-cta-btn:hover > span {
+  color: #ffffff !important;
 }
 body.dark-theme .areas-cta-banner {
   background:
@@ -15505,14 +15593,19 @@ body.dark-theme .cta-showcase-tech-img:hover {
     grid-template-columns: 1fr;
     row-gap: 0 !important;
     gap: 0 !important;
-    padding: 0 16px;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
     align-items: center;
   }
   .cta-showcase-left {
     order: 1;
     text-align: center;
     align-items: center;
-    padding-left: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
     margin-bottom: 24px;
   }
   .cta-left-accent-line {
@@ -15555,10 +15648,10 @@ body.dark-theme .cta-showcase-tech-img:hover {
     order: 3;
     margin-top: 0 !important;
     padding-bottom: 36px;
-    width: 100%;
-    max-width: 460px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     position: relative;
     z-index: 2;
   }
@@ -16552,11 +16645,15 @@ body.dark-theme .hero-trust-sub {
     min-height: auto !important;
     max-height: none !important;
     gap: 16px;
-    padding-top: 16px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
+    border-top: none !important;
     justify-content: unset;
     align-items: start;
+  }
+  body.dark-theme .hero-trust-bar {
+    border-top: none !important;
   }
   .hero-trust-item {
     flex-direction: column;
@@ -16597,9 +16694,10 @@ body.dark-theme .hero-trust-sub {
     min-height: auto !important;
     max-height: none !important;
     gap: 12px;
-    padding-top: 16px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
+    border-top: none !important;
   }
   .hero-trust-item {
     flex-direction: column;
@@ -16631,9 +16729,10 @@ body.dark-theme .hero-trust-sub {
   .hero-trust-bar {
     gap: 10px;
     grid-template-columns: repeat(2, 1fr) !important;
-    padding-top: 14px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
+    border-top: none !important;
   }
   .hero-trust-icon-box {
     width: 30px;
@@ -16651,9 +16750,10 @@ body.dark-theme .hero-trust-sub {
   .hero-trust-bar {
     grid-template-columns: 1fr !important;
     gap: 8px;
-    padding-top: 10px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
+    border-top: none !important;
   }
   .hero-trust-item {
     flex-direction: row;
@@ -16825,9 +16925,13 @@ body.dark-theme .blog-trust-divider {
     min-height: auto !important;
     max-height: none !important;
     gap: 16px;
-    padding-top: 16px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
+    border-top: none !important;
+  }
+  body.dark-theme .blog-hero-trust-bar {
+    border-top: none !important;
   }
   .blog-trust-divider {
     display: none !important;
@@ -16863,9 +16967,10 @@ body.dark-theme .blog-trust-divider {
     min-height: auto !important;
     max-height: none !important;
     gap: 12px;
-    padding-top: 16px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
+    border-top: none !important;
   }
   .blog-trust-icon-box {
     width: 32px;
@@ -16887,9 +16992,10 @@ body.dark-theme .blog-trust-divider {
   .blog-hero-trust-bar {
     gap: 10px;
     grid-template-columns: repeat(2, 1fr) !important;
-    padding-top: 14px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
+    border-top: none !important;
   }
   .blog-trust-icon-box {
     width: 30px;
@@ -16907,9 +17013,10 @@ body.dark-theme .blog-trust-divider {
   .blog-hero-trust-bar {
     grid-template-columns: 1fr !important;
     gap: 8px;
-    padding-top: 10px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
+    border-top: none !important;
   }
   .blog-trust-item {
     flex-direction: row;
