@@ -12252,12 +12252,18 @@ body.dark-theme .footer-brand-desc {
 body.dark-theme .footer-social-btn {
   background-color: #1f2529;
   border-color: rgba(255, 255, 255, 0.12);
-  color: #eceff1;
+  color: var(--brand-accent, #d71c1b);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+body.dark-theme .footer-social-btn svg {
+  color: var(--brand-accent, #d71c1b);
 }
 body.dark-theme .footer-social-btn:hover {
   border-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
+}
+body.dark-theme .footer-social-btn:hover svg {
+  color: #ffffff !important;
 }
 body.dark-theme .footer-social-btn.btn-whatsapp:hover {
   border-color: #25d366 !important;
@@ -24275,10 +24281,11 @@ body.dark-theme .article-table-wrapper::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 14px;
-  padding: 13px 14px;
+  padding: 14px 14px;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
   box-sizing: border-box;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
