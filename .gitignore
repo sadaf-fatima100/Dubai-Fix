@@ -52,3 +52,6 @@ scratch_*.json
 test_*.html
 optimized-images/
 assets/images-backup/
+# Scratch / temp captures
+scratch_*.png
+scratch_*.jpg
