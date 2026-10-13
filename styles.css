@@ -319,8 +319,8 @@ body.dark-theme .logo-icon-img {
   padding: 8px 16px 9px 16px;
   border-radius: 9999px;
 }
-.nav-link:hover,
-.nav-link:hover > span,
+.nav-link:not(.active-pill):hover,
+.nav-link:not(.active-pill):hover > span,
 .nav-dropdown:hover .nav-dropdown-toggle:not(.active-pill),
 .nav-dropdown:hover .nav-dropdown-toggle:not(.active-pill) > span,
 .nav-dropdown.hover-active .nav-dropdown-toggle:not(.active-pill),
@@ -329,10 +329,10 @@ body.dark-theme .logo-icon-img {
 .nav-dropdown.open .nav-dropdown-toggle:not(.active-pill) > span {
   color: var(--brand-accent);
 }
-.nav-dropdown:hover .dropdown-chevron,
-.nav-dropdown.hover-active .dropdown-chevron,
-.nav-dropdown.open .dropdown-chevron,
-.nav-link:hover .dropdown-chevron {
+.nav-dropdown:hover .nav-dropdown-toggle:not(.active-pill) .dropdown-chevron,
+.nav-dropdown.hover-active .nav-dropdown-toggle:not(.active-pill) .dropdown-chevron,
+.nav-dropdown.open .nav-dropdown-toggle:not(.active-pill) .dropdown-chevron,
+.nav-link:not(.active-pill):hover .dropdown-chevron {
   stroke: var(--brand-accent);
 } /* Active Pill (Home, About, Services, etc.) - Red Gradient Pill by Default */
 .nav-link.active-pill {
@@ -350,12 +350,17 @@ body.dark-theme .logo-icon-img {
   border: 1px solid rgba(215, 28, 27, 0.2) !important;
   box-shadow: 0 4px 14px rgba(215, 28, 27, 0.28) !important;
 }
+.nav-link.active-pill > span,
+.nav-link.active-pill:hover > span {
+  color: #ffffff !important;
+}
 .nav-link.active-pill:hover {
   background: var(--btn-gradient-hover) !important;
   color: #ffffff !important;
   box-shadow: 0 4px 16px rgba(215, 28, 27, 0.38) !important;
 }
-.nav-link.active-pill .dropdown-chevron {
+.nav-link.active-pill .dropdown-chevron,
+.nav-link.active-pill:hover .dropdown-chevron {
   stroke: #ffffff !important;
 } /* Services Dropdown */
 .nav-dropdown {
@@ -8939,12 +8944,16 @@ body.dark-theme .trust-item svg {
   body.dark-theme .nav-link {
     color: #f1f5f9 !important;
   }
-  body.dark-theme .nav-link:hover {
+  body.dark-theme .nav-link:not(.active-pill):hover {
     color: #ff5a52 !important;
     background-color: rgba(215, 28, 27, 0.12) !important;
   }
   body.dark-theme .nav-link.active-pill {
     background: var(--btn-gradient-primary) !important;
+    color: #ffffff !important;
+  }
+  body.dark-theme .nav-link.active-pill > span,
+  body.dark-theme .nav-link.active-pill:hover > span {
     color: #ffffff !important;
   }
   body.dark-theme .nav-dropdown .dropdown-content {
@@ -11543,8 +11552,8 @@ body.dark-theme .logo-sub-tag {
 body.dark-theme .nav-link {
   color: #f1f5f9 !important;
 }
-body.dark-theme .nav-link:hover,
-body.dark-theme .nav-link:hover > span,
+body.dark-theme .nav-link:not(.active-pill):hover,
+body.dark-theme .nav-link:not(.active-pill):hover > span,
 body.dark-theme .nav-dropdown:hover .nav-dropdown-toggle:not(.active-pill),
 body.dark-theme .nav-dropdown:hover .nav-dropdown-toggle:not(.active-pill) > span,
 body.dark-theme .nav-dropdown.hover-active .nav-dropdown-toggle:not(.active-pill),
@@ -11553,10 +11562,10 @@ body.dark-theme .nav-dropdown.open .nav-dropdown-toggle:not(.active-pill),
 body.dark-theme .nav-dropdown.open .nav-dropdown-toggle:not(.active-pill) > span {
   color: #ff5a52 !important;
 }
-body.dark-theme .nav-dropdown:hover .dropdown-chevron,
-body.dark-theme .nav-dropdown.hover-active .dropdown-chevron,
-body.dark-theme .nav-dropdown.open .dropdown-chevron,
-body.dark-theme .nav-link:hover .dropdown-chevron {
+body.dark-theme .nav-dropdown:hover .nav-dropdown-toggle:not(.active-pill) .dropdown-chevron,
+body.dark-theme .nav-dropdown.hover-active .nav-dropdown-toggle:not(.active-pill) .dropdown-chevron,
+body.dark-theme .nav-dropdown.open .nav-dropdown-toggle:not(.active-pill) .dropdown-chevron,
+body.dark-theme .nav-link:not(.active-pill):hover .dropdown-chevron {
   stroke: #ff5a52 !important;
 }
 body.dark-theme .nav-link.active-pill {
@@ -11565,12 +11574,16 @@ body.dark-theme .nav-link.active-pill {
   border: 1px solid rgba(255, 90, 82, 0.45) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
 }
-body.dark-theme .nav-link.active-pill:hover,
+body.dark-theme .nav-link.active-pill > span,
 body.dark-theme .nav-link.active-pill:hover > span {
+  color: #ffffff !important;
+}
+body.dark-theme .nav-link.active-pill:hover {
   background: var(--btn-gradient-hover) !important;
   color: #ffffff !important;
 }
-body.dark-theme .nav-link.active-pill .dropdown-chevron {
+body.dark-theme .nav-link.active-pill .dropdown-chevron,
+body.dark-theme .nav-link.active-pill:hover .dropdown-chevron {
   stroke: #ffffff !important;
 }
 body.dark-theme .dropdown-content {
