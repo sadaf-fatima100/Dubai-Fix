@@ -2368,7 +2368,7 @@ button[class*="-btn"]:active {
 .google-badge-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 .google-brand-title {
   font-family: var(--font-family, inherit);
@@ -9185,7 +9185,7 @@ body.dark-theme .trust-item svg {
   .google-badge-info {
     display: flex;
     flex-direction: column;
-    gap: 2.5px;
+    gap: 4px;
   }
   .google-brand-title {
     font-size: 16.5px;
@@ -9816,7 +9816,7 @@ body.dark-theme .trust-item svg {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto auto;
     column-gap: 8px;
-    row-gap: 2.5px;
+    row-gap: 4px;
     align-items: center;
     flex-shrink: 0;
   }
@@ -10528,7 +10528,7 @@ body.dark-theme .trust-item svg {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto auto;
     column-gap: 7px;
-    row-gap: 2px;
+    row-gap: 4px;
     align-items: center;
     flex-shrink: 0;
     width: auto;
@@ -10859,7 +10859,7 @@ body.dark-theme .trust-item svg {
   }
   .hero-google-badge {
     column-gap: 5.5px;
-    row-gap: 2px;
+    row-gap: 3.5px;
   }
   .google-brand-title {
     font-size: 13.5px;
@@ -11180,7 +11180,7 @@ body.dark-theme .trust-item svg {
   }
   .hero-google-badge {
     column-gap: 4.5px !important;
-    row-gap: 1.5px !important;
+    row-gap: 3px !important;
   }
   .google-brand-title {
     font-size: 12px !important;
@@ -17671,7 +17671,7 @@ body.dark-theme .expertise-card {
     align-items: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 8px 0 0 0 !important;
+    margin: 8px 0 18px 0 !important;
     gap: 12px !important;
   }
   .service-hero-copy-card .btn-hero-primary,
@@ -20600,6 +20600,18 @@ body.dark-theme .pf-proof-tag {
   .portfolio-hero-row .hero-cta-group {
     margin-bottom: 18px !important;
   }
+  .hero-trust-bar,
+  .blog-hero-trust-bar,
+  .hero-split-stats,
+  .portfolio-hero-row .hero-split-stats {
+    border-top: none !important;
+  }
+  body.dark-theme .hero-trust-bar,
+  body.dark-theme .blog-hero-trust-bar,
+  body.dark-theme .hero-split-stats,
+  body.dark-theme .portfolio-hero-row .hero-split-stats {
+    border-top: none !important;
+  }
 } /* ==========================================================================   MASTER RESPONSIVE SUITE FOR PORTFOLIO PAGE (Exact Match to Homepage)   Full Breakpoint Hierarchy: 992px -> 768px -> 576px -> 480px -> 360px -> 300px/250px   ========================================================================== */ /* --- Tablet Breakpoint (992px & Below) --- */
 @media (max-width: 992px) {
   .portfolio-hero-row {
@@ -20852,7 +20864,7 @@ body.dark-theme .pf-proof-tag {
     align-items: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 8px 0 0 0 !important;
+    margin: 8px 0 18px 0 !important;
     gap: 12px !important;
   }
   .portfolio-hero-row .btn-hero-primary,
