@@ -9904,60 +9904,74 @@ body.dark-theme .trust-item svg {
     box-shadow: none !important;
   }
   .hero-google-badge {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto auto;
-    column-gap: 8px;
-    row-gap: 4px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3.5px;
     flex-shrink: 0;
   }
   .google-g-icon {
-    grid-column: 1;
-    grid-row: 1;
+    display: none !important;
+  }
+  .google-badge-info {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3.5px;
+  }
+  .google-brand-title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-size: 18px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .google-g-mobile-icon {
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
     line-height: 1;
+    flex-shrink: 0;
   }
-  .google-g-icon svg {
-    width: 20px !important;
-    height: 20px !important;
+  .google-g-mobile-icon svg {
+    width: 21px !important;
+    height: 21px !important;
     display: block;
   }
-  .google-badge-info {
-    display: contents;
-  }
-  .google-brand-title {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-    font-size: 15.5px;
-    line-height: 1.15;
-    font-weight: 800;
-  }
   .google-rating-line {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
     line-height: 1;
   }
   .rating-score {
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .google-stars-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
   }
   .google-stars-row svg {
-    width: 12px;
-    height: 12px;
+    width: 13px !important;
+    height: 13px !important;
+    display: block;
   }
   .google-verified-label {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    font-size: 11px;
+    font-size: 10.5px;
     line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
   }
   .hero-trust-divider {
     display: block;
@@ -10624,73 +10638,78 @@ body.dark-theme .trust-item svg {
     box-sizing: border-box;
   }
   .hero-google-badge {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto auto;
-    column-gap: 7px;
-    row-gap: 4px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3px;
     flex-shrink: 0;
     width: auto;
-    justify-content: flex-start;
   }
   .google-g-icon {
-    grid-column: 1;
-    grid-row: 1;
+    display: none !important;
+  }
+  .google-badge-info {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3px;
+  }
+  .google-brand-title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6.5px;
+    font-size: 18px !important;
+    line-height: 1.15;
+    font-weight: 800;
+    color: var(--text-dark, #192023);
+    letter-spacing: -0.02em;
+  }
+  .google-g-mobile-icon {
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
     line-height: 1;
     flex-shrink: 0;
   }
-  .google-g-icon svg {
-    width: 18px !important;
-    height: 18px !important;
+  .google-g-mobile-icon svg {
+    width: 21px !important;
+    height: 21px !important;
     display: block;
   }
-  .google-badge-info {
-    display: contents;
-  }
-  .google-brand-title {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
+  .google-rating-line {
+    display: inline-flex;
     align-items: center;
-    font-size: 14.5px;
-    line-height: 1.15;
+    justify-content: center;
+    gap: 5px;
+    line-height: 1;
+  }
+  .rating-score {
+    font-size: 13.5px !important;
     font-weight: 800;
     color: var(--text-dark, #192023);
     letter-spacing: -0.01em;
   }
-  .google-rating-line {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    line-height: 1;
-  }
-  .rating-score {
-    font-size: 12.5px;
-    font-weight: 800;
-    color: var(--text-dark, #192023);
-  }
   .google-stars-row {
     display: inline-flex;
     align-items: center;
-    gap: 1.5px;
+    gap: 2px;
   }
   .google-stars-row svg {
-    width: 10.5px;
-    height: 10.5px;
+    width: 13px !important;
+    height: 13px !important;
+    display: block;
   }
   .google-verified-label {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    font-size: 10px;
-    line-height: 1.15;
+    font-size: 10.5px !important;
+    line-height: 1.2;
     font-weight: 600;
     color: #64748b;
+    text-align: center;
   }
   .hero-trust-divider {
     display: block;
@@ -10958,25 +10977,25 @@ body.dark-theme .trust-item svg {
     box-shadow: none !important;
   }
   .hero-google-badge {
-    column-gap: 5.5px;
-    row-gap: 3.5px;
+    gap: 3px;
   }
   .google-brand-title {
-    font-size: 13.5px;
+    font-size: 16.5px !important;
+    gap: 5.5px !important;
   }
-  .google-g-icon svg {
-    width: 16px !important;
-    height: 16px !important;
+  .google-g-mobile-icon svg {
+    width: 19px !important;
+    height: 19px !important;
   }
   .rating-score {
-    font-size: 11.5px;
+    font-size: 12.5px !important;
   }
   .google-stars-row svg {
-    width: 9px;
-    height: 9px;
+    width: 11.5px !important;
+    height: 11.5px !important;
   }
   .google-verified-label {
-    font-size: 9.5px;
+    font-size: 10px !important;
   }
   .hero-trust-divider {
     height: 46px;
@@ -11279,15 +11298,22 @@ body.dark-theme .trust-item svg {
     box-shadow: none !important;
   }
   .hero-google-badge {
-    column-gap: 4.5px !important;
-    row-gap: 3px !important;
+    gap: 2.5px !important;
   }
   .google-brand-title {
-    font-size: 12px !important;
+    font-size: 15px !important;
+    gap: 5px !important;
   }
-  .google-g-icon svg {
-    width: 14px !important;
-    height: 14px !important;
+  .google-g-mobile-icon svg {
+    width: 17px !important;
+    height: 17px !important;
+  }
+  .rating-score {
+    font-size: 11.5px !important;
+  }
+  .google-stars-row svg {
+    width: 10.5px !important;
+    height: 10.5px !important;
   }
   .hero-trust-divider {
     width: 1px !important;
@@ -25571,6 +25597,8 @@ body.dark-theme .article-cta-trust-pill svg {
     gap: 9px;
   }
   .article-cta-trust-card {
+    flex-direction: row;
+    align-items: center;
     padding: 11px 13px;
     gap: 10px;
   }
