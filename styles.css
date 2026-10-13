@@ -17991,7 +17991,7 @@ body.dark-theme .expertise-card {
 .proof-google-text {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 4px;
   text-align: left;
 }
 .proof-google-brand {
@@ -18052,7 +18052,7 @@ body.dark-theme .expertise-card {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1px;
+  gap: 3px;
   text-align: center;
   width: 100%;
 }
@@ -23189,7 +23189,7 @@ body.dark-theme .blog-section-subtitle-tag {
   border: 1.5px solid #e3e7e9;
   flex-wrap: wrap;
   margin-top: 40px;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 .share-bar-heading {
   display: inline-flex;
