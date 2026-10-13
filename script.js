@@ -624,19 +624,77 @@ document.addEventListener('DOMContentLoaded', () => {
   const dubaiMapHub = document.querySelector('.dubai-map-hub');
 
   if (areaSearchInput) {
-    const syncAreaPlaceholder = () => {
+    const getBaseAreaPlaceholder = () => {
       const w = window.innerWidth;
       if (w <= 360) {
-        areaSearchInput.placeholder = 'Search neighborhood...';
+        return 'Search neighborhood...';
       } else if (w <= 640) {
-        areaSearchInput.placeholder = 'Search your neighborhood...';
+        return 'Search your neighborhood...';
       } else {
-        areaSearchInput.placeholder = 'Search your neighborhood (e.g. Marina, Downtown)...';
+        return 'Search your neighborhood (e.g. Marina, Downtown)...';
       }
     };
-    syncAreaPlaceholder();
-    window.addEventListener('resize', syncAreaPlaceholder, { passive: true });
-    window.addEventListener('orientationchange', syncAreaPlaceholder, { passive: true });
+
+    let isInputFocused = false;
+    let isBlinkCursorVisible = true;
+    let areaBlinkInterval = null;
+
+    const renderAreaSearchPlaceholder = () => {
+      const base = getBaseAreaPlaceholder();
+      if (isInputFocused || (areaSearchInput.value && areaSearchInput.value.length > 0)) {
+        areaSearchInput.placeholder = base;
+      } else {
+        areaSearchInput.placeholder = isBlinkCursorVisible ? (base + ' |') : base;
+      }
+    };
+
+    const startAreaBlinking = () => {
+      if (areaBlinkInterval) clearInterval(areaBlinkInterval);
+      areaBlinkInterval = setInterval(() => {
+        if (!isInputFocused && (!areaSearchInput.value || areaSearchInput.value.length === 0)) {
+          isBlinkCursorVisible = !isBlinkCursorVisible;
+          renderAreaSearchPlaceholder();
+        }
+      }, 530);
+    };
+
+    areaSearchInput.addEventListener('focus', () => {
+      isInputFocused = true;
+      isBlinkCursorVisible = false;
+      renderAreaSearchPlaceholder();
+    });
+
+    areaSearchInput.addEventListener('blur', () => {
+      isInputFocused = false;
+      isBlinkCursorVisible = true;
+      renderAreaSearchPlaceholder();
+      startAreaBlinking();
+    });
+
+    areaSearchInput.addEventListener('input', () => {
+      if (areaSearchInput.value && areaSearchInput.value.length > 0) {
+        isInputFocused = true;
+      } else {
+        isInputFocused = document.activeElement === areaSearchInput;
+      }
+      renderAreaSearchPlaceholder();
+    });
+
+    // Make clicking anywhere inside the areas-search-box focus the input
+    const areasSearchBox = areaSearchInput.closest('.areas-search-box') || areaSearchInput.parentElement;
+    if (areasSearchBox) {
+      areasSearchBox.addEventListener('click', (e) => {
+        if (e.target !== searchClearBtn && !searchClearBtn?.contains(e.target)) {
+          areaSearchInput.focus();
+        }
+      });
+    }
+
+    renderAreaSearchPlaceholder();
+    startAreaBlinking();
+
+    window.addEventListener('resize', renderAreaSearchPlaceholder, { passive: true });
+    window.addEventListener('orientationchange', renderAreaSearchPlaceholder, { passive: true });
   }
 
   if (areaSearchInput && areaCards.length > 0) {
